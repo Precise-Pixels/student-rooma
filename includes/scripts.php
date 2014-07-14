@@ -3,9 +3,17 @@
 
     <script src="/js/all.js"></script>
 
+    <?php if($isIndex): ?>
+        <script src="/js/page-index.js"></script>
+    <?php endif; ?>
+
 <?php else:
 // LIVE ?>
 
     <script src="/build/all.min.js"></script>
+
+    <?php if($isIndex): ?>
+        <script src="/build/page-index.min.js"></script>
+    <?php endif; ?>
 
 <?php endif; ?>
