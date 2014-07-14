@@ -1,8 +1,42 @@
 <h1>Profile</h1>
 
-<?php
+<img src="https://graph.facebook.com/<?= $user->fbId; ?>/picture?type=square" alt="<?= $user->name; ?>"/>
+<p><?= $user->name; ?></p>
 
-echo $_SESSION['s_fbId'];
-echo $_SESSION['s_name'];
+<label for="looking-in">Looking in</label>
+<input type="radio" name="looking-in" value="Canterbury"<?= ($user->lookingIn === 'Canterbury' ? ' checked' : '') ?>/> Canterbury
+<input type="radio" name="looking-in" value="Medway"<?= ($user->lookingIn === 'Medway' ? ' checked' : '') ?>/> Medway
 
-?>
+<br>
+
+<label for="room-type">Room type</label>
+<select name="room-type">
+    <option value="any"<?= ($user->roomType === 'any' ? ' selected' : '') ?>>Any</option>
+    <option value="single"<?= ($user->roomType === 'single' ? ' selected' : '') ?>>Single</option>
+    <option value="double"<?= ($user->roomType === 'double' ? ' selected' : '') ?>>Double</option>
+    <option value="ensuite"<?= ($user->roomType === 'ensuite' ? ' selected' : '') ?>>En suite</option>
+</select>
+
+<br>
+
+<label for="available-from">Available from</label>
+<input type="date" name="available-from" value="<?= $user->availableFrom; ?>"/>
+
+<br>
+
+<label for="min-price">Min price</label>
+<input type="text" name="min-price" value="<?= $user->minPrice; ?>"/>
+
+<br>
+
+<label for="max-price">Max price</label>
+<input type="text" name="max-price" value="<?= $user->maxPrice; ?>"/>
+
+<br>
+
+<label for="phone">Phone number</label>
+<input type="tel" name="phone" value="<?= $user->phone; ?>"/>
+
+<br>
+
+<a href="logout">LOGOUT</a>

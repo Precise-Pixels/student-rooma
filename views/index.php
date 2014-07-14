@@ -4,6 +4,4 @@
 
 <div id="status"></div>
 
-<div id="logout">LOGOUT</div>
-
 <div id="fb-root"></div>

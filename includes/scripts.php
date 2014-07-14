@@ -7,6 +7,10 @@
         <script src="/js/page-index.js"></script>
     <?php endif; ?>
 
+    <?php if($isLogout): ?>
+        <script src="/js/page-logout.js"></script>
+    <?php endif; ?>
+
 <?php else:
 // LIVE ?>
 
@@ -14,6 +18,10 @@
 
     <?php if($isIndex): ?>
         <script src="/build/page-index.min.js"></script>
+    <?php endif; ?>
+
+    <?php if($isLogout): ?>
+        <script src="/build/page-logout.min.js"></script>
     <?php endif; ?>
 
 <?php endif; ?>

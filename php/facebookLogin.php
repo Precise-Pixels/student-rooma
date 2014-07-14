@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 require('db.php');
@@ -13,23 +14,28 @@ $result = $sth->fetch();
 
 // If new user
 if($result === false) {
-    if(strpos($location, 'Canterbury') !== false) {
-        $lookingIn = 'Canterbury';
-    } else if(strpos($location, 'Medway') !== false) {
+    if(strpos($location, 'Medway') !== false) {
         $lookingIn = 'Medway';
     } else {
-        $lookingIn = '';
+        $lookingIn = 'Canterbury';
     }
 
     $timestamp = date("Y-m-d H:i:s");
 
-    $sth = $dbh->prepare("INSERT INTO users (fbId, email, password, name, phone, lookingIn, roomType, availableFrom, minPrice, maxPrice, timestamp) value (:fbId, '', '', :name, '', :lookingIn, '', '', 0, 0, :timestamp)");
+    $sth = $dbh->prepare("INSERT INTO users (fbId, email, password, name, phone, lookingIn, roomType, availableFrom, minPrice, maxPrice, timestamp) value (:fbId, '', '', :name, '', :lookingIn, 'any', '', 0, 0, :timestamp)");
     $sth->bindParam(':fbId', $fbId);
     $sth->bindParam(':name', $name);
     $sth->bindParam(':lookingIn', $lookingIn);
     $sth->bindParam(':timestamp', $timestamp);
     $sth->execute();
+
+    $_SESSION['s_userId'] = $dbh->lastInsertId();
+} else {
+    $sth = $dbh->query("SELECT userId FROM users WHERE fbId=$fbId");
+    $sth->setFetchMode(PDO::FETCH_OBJ);
+    $result = $sth->fetch();
+
+    $_SESSION['s_userId'] = $result->userId;
 }
 
-$_SESSION['s_fbId'] = $fbId;
 $_SESSION['s_name'] = $name;

@@ -1,5 +1,4 @@
 var login  = document.getElementById('login');
-var logout = document.getElementById('logout');
 
 login.addEventListener('click', function() {
     FB.login(function(response) {
@@ -7,12 +6,6 @@ login.addEventListener('click', function() {
     },
         {scope: 'public_profile, user_location'}
     );
-});
-
-logout.addEventListener('click', function() {
-    FB.logout(function(response) {
-        console.log(response);
-    });
 });
 
 // Facebook SDK
