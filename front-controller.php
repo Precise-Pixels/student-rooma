@@ -21,10 +21,15 @@ if(empty($path)) {                                  // HOME
 
 $isIndex   = ($q == '');
 $isProfile = preg_match('#profile/?$#', $q);
+$isListing = preg_match('#listing/?$#', $q);
 $isLogout  = preg_match('#logout/?$#', $q);
 
 if($isProfile) {
     require_once('models/model-profile.php');
+}
+
+if($isListing) {
+    require_once('models/model-listing.php');
 }
 
 require_once('front-view.php');

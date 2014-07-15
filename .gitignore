@@ -1,6 +1,7 @@
 .sass-cache
 build
 css
+img/properties
 node_modules
 php/db.php
 php/Encryption.php
