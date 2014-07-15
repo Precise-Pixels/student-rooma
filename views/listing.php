@@ -27,6 +27,8 @@
             <p>Furnishing: <?= $listing->furnishing; ?></p>
 
             <p>First listed: <?= $listing->timestamp; ?></p>
+
+            <a href="http://maps.google.com/maps?q=<?= $listing->address; ?>" target="_blank"><img src="http://maps.googleapis.com/maps/api/staticmap?center=<?= $listing->address; ?>&zoom=15&size=600x300&maptype=roadmap&key=AIzaSyCNlx7Q6EFJ2nlJfkAnMIsCm94fdSzaqf4"/></a>
         </div>
     <?php endforeach; ?>
 </div>
