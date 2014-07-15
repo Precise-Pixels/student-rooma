@@ -6,3 +6,5 @@ unset($_SESSION['s_name']);
 ?>
 
 <p>Logging out...</p>
+
+<div id="fb-root"></div>

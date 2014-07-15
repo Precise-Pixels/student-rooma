@@ -1,6 +1,4 @@
-var login  = document.getElementById('login');
-
-login.addEventListener('click', function() {
+document.getElementById('login').addEventListener('click', function() {
     FB.login(function(response) {
         checkLoginState();
     },

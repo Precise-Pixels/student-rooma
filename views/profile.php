@@ -10,7 +10,7 @@
 <br>
 
 <label for="room-type">Room type</label>
-<select name="room-type">
+<select id="room-type" name="room-type">
     <option value="any"<?= ($user->roomType === 'any' ? ' selected' : '') ?>>Any</option>
     <option value="single"<?= ($user->roomType === 'single' ? ' selected' : '') ?>>Single</option>
     <option value="double"<?= ($user->roomType === 'double' ? ' selected' : '') ?>>Double</option>
@@ -20,22 +20,22 @@
 <br>
 
 <label for="available-from">Available from</label>
-<input type="date" name="available-from" value="<?= $user->availableFrom; ?>"/>
+<input type="date" id="available-from" name="available-from" value="<?= $user->availableFrom; ?>"/>
 
 <br>
 
 <label for="min-price">Min price</label>
-<input type="text" name="min-price" value="<?= $user->minPrice; ?>"/>
+<input type="text" id="min-price" name="min-price" value="<?= $user->minPrice; ?>"/>
 
 <br>
 
 <label for="max-price">Max price</label>
-<input type="text" name="max-price" value="<?= $user->maxPrice; ?>"/>
+<input type="text" id="max-price" name="max-price" value="<?= $user->maxPrice; ?>"/>
 
 <br>
 
 <label for="phone">Phone number</label>
-<input type="tel" name="phone" value="<?= $user->phone; ?>"/>
+<input type="tel" id="phone" name="phone" value="<?= $user->phone; ?>"/>
 
 <br>
 
