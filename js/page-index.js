@@ -69,7 +69,11 @@ function requestFBData() {
 
         request.onreadystatechange = function() {
             if(request.readyState == 4 && request.status == 200) {
-                window.location.href = 'profile';
+                if(request.responseText == 'new') {
+                    window.location.href = 'profile';
+                } else {
+                    window.location.href = 'listing';
+                }
             } else if(request.status != 200) {
                 console.log('An error has occurred. Please try again.');
             }
