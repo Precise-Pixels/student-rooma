@@ -10,4 +10,9 @@
         <div id="header-btn-l"><a href="shortlist">Shortlist</a></div>
         <div id="header-btn-r"><a href="profile">Profile</a></div>
     <?php endif; ?>
+
+    <?php if($isShortlist): ?>
+        <div id="header-btn-l"><a href="properties">Back to Properties</a></div>
+        <div id="header-btn-r"><a href="profile">Profile</a></div>
+    <?php endif; ?>
 </header>
