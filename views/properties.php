@@ -20,6 +20,8 @@
 
             <p>£<?= $property->price; ?>pcm</p>
 
+            <p><?= $property->rooms; ?> rooms</p>
+
             <p><?= $property->roomType; ?> room</p>
 
             <p>Date available: <?= $property->availableFrom; ?></p>

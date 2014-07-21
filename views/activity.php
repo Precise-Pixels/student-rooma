@@ -8,6 +8,7 @@
     <p>propertyId: <?= $property->propertyId; ?></p>
     <p>address: <?= $property->address; ?></p>
     <p>price: <?= $property->price; ?></p>
+    <p>rooms: <?= $property->rooms; ?></p>
     <p>roomType: <?= $property->roomType; ?></p>
     <br>
 
@@ -23,6 +24,7 @@
     <p>propertyId: <?= $property->propertyId; ?></p>
     <p>address: <?= $property->address; ?></p>
     <p>price: <?= $property->price; ?></p>
+    <p>rooms: <?= $property->rooms; ?></p>
     <p>roomType: <?= $property->roomType; ?></p>
     <br>
 
@@ -38,6 +40,7 @@
     <p>propertyId: <?= $property->propertyId; ?></p>
     <p>address: <?= $property->address; ?></p>
     <p>price: <?= $property->price; ?></p>
+    <p>rooms: <?= $property->rooms; ?></p>
     <p>roomType: <?= $property->roomType; ?></p>
     <br>
 

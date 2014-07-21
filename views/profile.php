@@ -9,13 +9,8 @@
 
 <br>
 
-<label for="room-type">Room type</label>
-<select id="room-type" name="room-type">
-    <option value="any"<?= ($user->roomType === 'any' ? ' selected' : '') ?>>Any</option>
-    <option value="single"<?= ($user->roomType === 'single' ? ' selected' : '') ?>>Single</option>
-    <option value="double"<?= ($user->roomType === 'double' ? ' selected' : '') ?>>Double</option>
-    <option value="ensuite"<?= ($user->roomType === 'ensuite' ? ' selected' : '') ?>>En suite</option>
-</select>
+<label for="rooms">No of rooms</label>
+<input type="text" id="rooms" name="rooms" value="<?= $user->rooms; ?>"/>
 
 <br>
 
