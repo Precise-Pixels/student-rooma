@@ -15,10 +15,10 @@ var lookingInAfter,
 document.getElementById('header-btn-l').addEventListener('click', function() {
     if(anyChanges()) {
         if(confirm('There are unsaved changes. Are you sure you want to cancel?')) {
-            window.location.href = 'listing';
+            window.location.href = 'properties';
         }
     } else {
-        window.location.href = 'listing';
+        window.location.href = 'properties';
     }
 });
 
@@ -32,13 +32,13 @@ document.getElementById('header-btn-r').addEventListener('click', function() {
 
         request.onreadystatechange = function() {
             if(request.readyState == 4 && request.status == 200) {
-                window.location.href = 'listing';
+                window.location.href = 'properties';
             } else if(request.status != 200) {
                 console.log('An error has occurred. Please try again.');
             }
         }
     } else {
-        window.location.href = 'listing';
+        window.location.href = 'properties';
     }
 });
 

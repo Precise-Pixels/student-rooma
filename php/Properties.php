@@ -1,7 +1,7 @@
 <?php
 
-class Listing {
-    static function getListings() {
+class Properties {
+    static function getProperties() {
         require('db.php');
 
         $userId = $_SESSION['s_userId'];

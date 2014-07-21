@@ -19,17 +19,17 @@ if(empty($path)) {                                  // HOME
     $file = '404';
 }
 
-$isIndex   = ($q == '');
-$isProfile = preg_match('#profile/?$#', $q);
-$isListing = preg_match('#listing/?$#', $q);
-$isLogout  = preg_match('#logout/?$#', $q);
+$isIndex      = ($q == '');
+$isProfile    = preg_match('#profile/?$#', $q);
+$isProperties = preg_match('#properties/?$#', $q);
+$isLogout     = preg_match('#logout/?$#', $q);
 
 if($isProfile) {
     require_once('models/model-profile.php');
 }
 
-if($isListing) {
-    require_once('models/model-listing.php');
+if($isProperties) {
+    require_once('models/model-properties.php');
 }
 
 require_once('front-view.php');

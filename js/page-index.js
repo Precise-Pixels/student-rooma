@@ -72,7 +72,7 @@ function requestFBData() {
                 if(request.responseText == 'new') {
                     window.location.href = 'profile';
                 } else {
-                    window.location.href = 'listing';
+                    window.location.href = 'properties';
                 }
             } else if(request.status != 200) {
                 console.log('An error has occurred. Please try again.');
