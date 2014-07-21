@@ -10,7 +10,7 @@ $status     = $_POST['status'];
 
 $timestamp = date("Y-m-d H:i:s");
 
-$sth = $dbh->prepare("INSERT INTO shortlist (userId, propertyId, status, timestamp) value (:userId, :propertyId, :status, :timestamp)");
+$sth = $dbh->prepare("INSERT INTO activity (userId, propertyId, status, timestamp) value (:userId, :propertyId, :status, :timestamp)");
 $sth->bindParam(':userId', $userId);
 $sth->bindParam(':propertyId', $propertyId);
 $sth->bindParam(':status', $status);

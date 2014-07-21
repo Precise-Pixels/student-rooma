@@ -22,7 +22,7 @@ class Properties {
                             AND price BETWEEN $user->minPrice
                             AND $user->maxPrice
                             AND availableFrom >= STR_TO_DATE('$user->availableFrom', '%Y-%m-%d') $roomTypeQuery
-                            AND propertyId NOT IN (SELECT propertyId FROM shortlist WHERE properties.propertyId=shortlist.propertyId)");
+                            AND propertyId NOT IN (SELECT propertyId FROM activity WHERE properties.propertyId=activity.propertyId)");
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $results = $sth->fetchAll();
 

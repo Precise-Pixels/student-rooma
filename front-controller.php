@@ -22,7 +22,7 @@ if(empty($path)) {                                  // HOME
 $isIndex      = ($q == '');
 $isProfile    = preg_match('#profile/?$#', $q);
 $isProperties = preg_match('#properties/?$#', $q);
-$isShortlist  = preg_match('#shortlist/?$#', $q);
+$isActivity   = preg_match('#activity/?$#', $q);
 $isLogout     = preg_match('#logout/?$#', $q);
 
 if($isProfile) {
@@ -33,8 +33,8 @@ if($isProperties) {
     require_once('models/model-properties.php');
 }
 
-if($isShortlist) {
-    require_once('models/model-shortlist.php');
+if($isActivity) {
+    require_once('models/model-activity.php');
 }
 
 require_once('front-view.php');
