@@ -23,6 +23,7 @@ $isIndex      = ($q == '');
 $isProfile    = preg_match('#profile/?$#', $q);
 $isProperties = preg_match('#properties/?$#', $q);
 $isActivity   = preg_match('#activity/?$#', $q);
+$isProperty   = preg_match('#property\/\d+/?$#', $q);
 $isLogout     = preg_match('#logout/?$#', $q);
 
 if($isProfile) {
@@ -35,6 +36,10 @@ if($isProperties) {
 
 if($isActivity) {
     require_once('models/model-activity.php');
+}
+
+if($isProperty) {
+    require_once('models/model-property.php');
 }
 
 require_once('front-view.php');

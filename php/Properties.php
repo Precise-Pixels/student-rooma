@@ -23,4 +23,14 @@ class Properties {
 
         return $results;
     }
+
+    static function getProperty($propertyId) {
+        require('db.php');
+
+        $sth = $dbh->query("SELECT propertyId, location, address, distanceUKC, distanceCCCU, distanceUKM, price, rooms, roomType, availableFrom, furnishing, timestamp FROM properties WHERE propertyId=$propertyId");
+        $sth->setFetchMode(PDO::FETCH_OBJ);
+        $result = $sth->fetch();
+
+        return $result;
+    }
 }

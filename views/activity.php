@@ -15,7 +15,7 @@
         <button class="book" disabled>BOOK</button>
         <button class="star">&#9733;</button>
         <button class="no">NO</button>
-        <button class="info">MORE INFO</button>
+        <a href="property/<?= $property->propertyId; ?>"><button class="info">MORE INFO</button></a>
     </div>
 
     <br>
@@ -39,7 +39,7 @@
         <button class="book">BOOK</button>
         <button class="star" disabled>&#9733;</button>
         <button class="no">NO</button>
-        <button class="info">MORE INFO</button>
+        <a href="property/<?= $property->propertyId; ?>"><button class="info">MORE INFO</button></a>
     </div>
 
     <br>
@@ -63,7 +63,7 @@
         <button class="book">BOOK</button>
         <button class="star">&#9733;</button>
         <button class="no" disabled>NO</button>
-        <button class="info">MORE INFO</button>
+        <a href="property/<?= $property->propertyId; ?>"><button class="info">MORE INFO</button></a>
     </div>
 
     <br>
