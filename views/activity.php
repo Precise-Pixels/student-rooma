@@ -10,6 +10,13 @@
     <p>price: <?= $property->price; ?></p>
     <p>rooms: <?= $property->rooms; ?></p>
     <p>roomType: <?= $property->roomType; ?></p>
+
+    <div class="activity--buttons" data-property-id="<?= $property->propertyId; ?>">
+        <button class="star">&#9733;</button>
+        <button class="no">NO</button>
+        <button class="info">MORE INFO</button>
+    </div>
+
     <br>
 
 <?php endforeach; ?>
@@ -26,6 +33,13 @@
     <p>price: <?= $property->price; ?></p>
     <p>rooms: <?= $property->rooms; ?></p>
     <p>roomType: <?= $property->roomType; ?></p>
+
+    <div class="activity--buttons" data-property-id="<?= $property->propertyId; ?>">
+        <button class="book">BOOK</button>
+        <button class="no">NO</button>
+        <button class="info">MORE INFO</button>
+    </div>
+
     <br>
 
 <?php endforeach; ?>
@@ -42,6 +56,13 @@
     <p>price: <?= $property->price; ?></p>
     <p>rooms: <?= $property->rooms; ?></p>
     <p>roomType: <?= $property->roomType; ?></p>
+
+    <div class="activity--buttons" data-property-id="<?= $property->propertyId; ?>">
+        <button class="book">BOOK</button>
+        <button class="star">&#9733;</button>
+        <button class="info">MORE INFO</button>
+    </div>
+
     <br>
 
 <?php endforeach; ?>

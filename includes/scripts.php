@@ -15,6 +15,10 @@
         <script src="/js/page-properties.js"></script>
     <?php endif; ?>
 
+    <?php if($isActivity): ?>
+        <script src="/js/page-activity.js"></script>
+    <?php endif; ?>
+
     <?php if($isLogout): ?>
         <script src="/js/page-logout.js"></script>
     <?php endif; ?>
@@ -34,6 +38,10 @@
 
     <?php if($isProperties): ?>
         <script src="/build/page-properties.min.js"></script>
+    <?php endif; ?>
+
+    <?php if($isActivity): ?>
+        <script src="/build/page-activity.min.js"></script>
     <?php endif; ?>
 
     <?php if($isLogout): ?>
