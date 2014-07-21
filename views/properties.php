@@ -28,7 +28,13 @@
 
             <p>First listed: <?= $property->timestamp; ?></p>
 
-            <a href="http://maps.google.com/maps?q=<?= $property->address; ?>" target="_blank"><img src="http://maps.googleapis.com/maps/api/staticmap?center=<?= $property->address; ?>&zoom=15&size=600x300&maptype=roadmap&key=AIzaSyCNlx7Q6EFJ2nlJfkAnMIsCm94fdSzaqf4"/></a>
+            <a href="http://maps.google.com/maps?q=<?= $property->address; ?>" target="_blank"><img src="http://maps.googleapis.com/maps/api/staticmap?center=<?= $property->address; ?>&zoom=15&size=200x100&maptype=roadmap&key=AIzaSyCNlx7Q6EFJ2nlJfkAnMIsCm94fdSzaqf4"/></a>
+
+            <div class="property--buttons" data-property-id="<?= $property->propertyId; ?>">
+                <button class="no">NO</button>
+                <button class="star">&#9733;</button>
+                <button class="book">BOOK</button>
+            </div>
         </div>
     <?php endforeach; ?>
 </div>

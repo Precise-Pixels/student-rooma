@@ -11,6 +11,10 @@
         <script src="/js/page-profile.js"></script>
     <?php endif; ?>
 
+    <?php if($isProperties): ?>
+        <script src="/js/page-properties.js"></script>
+    <?php endif; ?>
+
     <?php if($isLogout): ?>
         <script src="/js/page-logout.js"></script>
     <?php endif; ?>
@@ -26,6 +30,10 @@
 
     <?php if($isProfile): ?>
         <script src="/build/page-profile.min.js"></script>
+    <?php endif; ?>
+
+    <?php if($isProperties): ?>
+        <script src="/build/page-properties.min.js"></script>
     <?php endif; ?>
 
     <?php if($isLogout): ?>
