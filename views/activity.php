@@ -12,6 +12,7 @@
     <p>roomType: <?= $property->roomType; ?></p>
 
     <div class="activity--buttons" data-property-id="<?= $property->propertyId; ?>">
+        <button class="book" disabled>BOOK</button>
         <button class="star">&#9733;</button>
         <button class="no">NO</button>
         <button class="info">MORE INFO</button>
@@ -36,6 +37,7 @@
 
     <div class="activity--buttons" data-property-id="<?= $property->propertyId; ?>">
         <button class="book">BOOK</button>
+        <button class="star" disabled>&#9733;</button>
         <button class="no">NO</button>
         <button class="info">MORE INFO</button>
     </div>
@@ -60,6 +62,7 @@
     <div class="activity--buttons" data-property-id="<?= $property->propertyId; ?>">
         <button class="book">BOOK</button>
         <button class="star">&#9733;</button>
+        <button class="no" disabled>NO</button>
         <button class="info">MORE INFO</button>
     </div>
 
