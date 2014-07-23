@@ -4,10 +4,12 @@
             <?php
                 $images = scandir(__DIR__ . "/../img/properties/{$property->propertyId}/");
                 array_splice($images, 0, 2);
-                foreach($images as $image):
             ?>
-                <img src="/img/properties/<?= $property->propertyId; ?>/<?= $image; ?>" width="100"/>
-            <?php endforeach; ?>
+            <div id="property--images" class="image-count-<?= (count($images) > 5 ? '5' : count($images)); ?>">
+                <?php foreach($images as $image): ?>
+                    <img src="/img/properties/<?= $property->propertyId; ?>/<?= $image; ?>" width="100"/>
+                <?php endforeach; ?>
+            </div>
 
             <p><?= $property->address; ?></p>
 
