@@ -17,7 +17,7 @@ class Properties {
                             AND $user->maxPrice
                             AND availableFrom >= STR_TO_DATE('$user->availableFrom', '%Y-%m-%d')
                             AND rooms = $user->rooms
-                            AND propertyId NOT IN (SELECT propertyId FROM activity WHERE properties.propertyId=activity.propertyId)");
+                            AND propertyId NOT IN (SELECT propertyId FROM activity WHERE properties.propertyId=activity.propertyId AND activity.userId=$userId)");
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $results = $sth->fetchAll();
 
