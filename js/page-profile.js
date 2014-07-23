@@ -1,3 +1,35 @@
+// Rooms stepper
+var rooms          = document.getElementById('rooms');
+var roomsDecrement = document.getElementById('rooms-decrement');
+var roomsIncrement = document.getElementById('rooms-increment');
+
+roomsDecrement.addEventListener('click', roomsStepper);
+roomsIncrement.addEventListener('click', roomsStepper);
+
+function roomsStepper(e) {
+    if(e.target.id == 'rooms-increment' && rooms.value == 'ANY') {
+        rooms.value = 1;
+    } else if(e.target.id == 'rooms-increment') {
+        rooms.value = (+rooms.value) + 1;
+    } else if(e.target.id == 'rooms-decrement' && rooms.value == 1) {
+        rooms.value = 'ANY';
+    } else if(e.target.id == 'rooms-decrement' && rooms.value == 'ANY') {
+        rooms.value = 'ANY';
+    } else if(e.target.id == 'rooms-decrement') {
+        rooms.value = (+rooms.value) - 1;
+    }
+}
+
+// Phone dialog
+var phone = document.getElementById('phone');
+
+phone.addEventListener('focus', function() {
+    if(phone.value == '') {
+        openDialog('Your phone number', '<p>Your phone number is used to contact you to arrange a booking for any properties you choose to view.</p><p>You can change your phone number at any time from your Profile.</p>', 'Understood', 'alert');
+    }
+});
+
+// Form submission
 var lookingInBefore     = document.querySelector('input[name="looking-in"]:checked').value;
 var roomsBefore         = document.getElementById('rooms').value;
 var availableFromBefore = document.getElementById('available-from').value;
@@ -59,26 +91,5 @@ function anyChanges() {
         return true;
     } else {
         return false;
-    }
-}
-
-var rooms          = document.getElementById('rooms');
-var roomsDecrement = document.getElementById('rooms-decrement');
-var roomsIncrement = document.getElementById('rooms-increment');
-
-roomsDecrement.addEventListener('click', roomsStepper);
-roomsIncrement.addEventListener('click', roomsStepper);
-
-function roomsStepper(e) {
-    if(e.target.id == 'rooms-increment' && rooms.value == 'ANY') {
-        rooms.value = 1;
-    } else if(e.target.id == 'rooms-increment') {
-        rooms.value = (+rooms.value) + 1;
-    } else if(e.target.id == 'rooms-decrement' && rooms.value == 1) {
-        rooms.value = 'ANY';
-    } else if(e.target.id == 'rooms-decrement' && rooms.value == 'ANY') {
-        rooms.value = 'ANY';
-    } else if(e.target.id == 'rooms-decrement') {
-        rooms.value = (+rooms.value) - 1;
     }
 }
