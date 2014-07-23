@@ -61,3 +61,24 @@ function anyChanges() {
         return false;
     }
 }
+
+var rooms          = document.getElementById('rooms');
+var roomsDecrement = document.getElementById('rooms-decrement');
+var roomsIncrement = document.getElementById('rooms-increment');
+
+roomsDecrement.addEventListener('click', roomsStepper);
+roomsIncrement.addEventListener('click', roomsStepper);
+
+function roomsStepper(e) {
+    if(e.target.id == 'rooms-increment' && rooms.value == 'ANY') {
+        rooms.value = 1;
+    } else if(e.target.id == 'rooms-increment') {
+        rooms.value = (+rooms.value) + 1;
+    } else if(e.target.id == 'rooms-decrement' && rooms.value == 1) {
+        rooms.value = 'ANY';
+    } else if(e.target.id == 'rooms-decrement' && rooms.value == 'ANY') {
+        rooms.value = 'ANY';
+    } else if(e.target.id == 'rooms-decrement') {
+        rooms.value = (+rooms.value) - 1;
+    }
+}

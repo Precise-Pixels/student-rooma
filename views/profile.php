@@ -10,7 +10,9 @@
 <br>
 
 <label for="rooms">No of rooms</label>
-<input type="text" id="rooms" name="rooms" value="<?= $user->rooms; ?>"/>
+<button id="rooms-decrement">-</button>
+<input type="text" id="rooms" name="rooms" value="<?= $user->rooms; ?>" disabled/>
+<button id="rooms-increment">+</button>
 
 <br>
 
@@ -20,14 +22,15 @@
 <br>
 
 <label for="min-price">Min price</label>
-<input type="text" id="min-price" name="min-price" value="<?= $user->minPrice; ?>"/>
+<input type="number" id="min-price" name="min-price" value="<?= $user->minPrice; ?>"/>
 
 <br>
 
 <label for="max-price">Max price</label>
-<input type="text" id="max-price" name="max-price" value="<?= $user->maxPrice; ?>"/>
+<input type="number" id="max-price" name="max-price" value="<?= $user->maxPrice; ?>"/>
 
 <br>
+
 
 <label for="phone">Phone number</label>
 <input type="tel" id="phone" name="phone" value="<?= $user->phone; ?>"/>
