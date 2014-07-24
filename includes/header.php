@@ -20,4 +20,9 @@
         <div id="header-btn-l"><a href="/activity">Back to Activity</a></div>
         <div id="header-btn-r"><a href="/profile">Profile</a></div>
     <?php endif; ?>
+
+    <?php if($isGallery): ?>
+        <div id="header-btn-l"><a href="<?= $_SERVER['HTTP_REFERER']; ?>">Back</a></div>
+        <div id="header-btn-r"><a href="/profile">Profile</a></div>
+    <?php endif; ?>
 </header>
