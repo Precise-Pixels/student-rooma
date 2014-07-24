@@ -11,7 +11,8 @@ $minPrice      = $_POST['minPrice'];
 $maxPrice      = $_POST['maxPrice'];
 $phone         = $_POST['phone'];
 
-if($lookingIn != 'Canterbury' && $lookingIn != 'Medway') { return; }
+if(!preg_match('/Canterbury|Medway/', $lookingIn)) { return; }
+if(!preg_match('/ANY|\d+/', $rooms)) { return; }
 $phone = preg_replace('/[^0-9]/', '', $phone);
 
 $sth = $dbh->prepare("UPDATE users SET lookingIn=:lookingIn, rooms=:rooms, availableFrom=:availableFrom, minPrice=:minPrice, maxPrice=:maxPrice, phone=:phone WHERE userId=:userId");
