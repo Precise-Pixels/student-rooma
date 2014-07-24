@@ -24,6 +24,7 @@ $isProfile    = preg_match('#profile/?$#', $q);
 $isProperties = preg_match('#properties/?$#', $q);
 $isActivity   = preg_match('#activity/?$#', $q);
 $isProperty   = preg_match('#property\/\d+/?$#', $q);
+$isGallery    = preg_match('#property\/\d+/gallery/?$#', $q);
 $isLogout     = preg_match('#logout/?$#', $q);
 
 if($isProfile) {
@@ -40,6 +41,10 @@ if($isActivity) {
 
 if($isProperty) {
     require_once('models/model-property.php');
+}
+
+if($isGallery) {
+    require_once('models/model-gallery.php');
 }
 
 require_once('front-view.php');

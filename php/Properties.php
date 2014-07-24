@@ -73,4 +73,11 @@ class Properties {
 
         return $property;
     }
+
+    static function getImages($propertyId) {
+        $images = scandir(__DIR__ . "/../img/properties/{$propertyId}/");
+        array_splice($images, 0, 2);
+
+        return $images;
+    }
 }
