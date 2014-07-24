@@ -47,9 +47,9 @@ class Properties {
             $property->maxPrice = max($prices);
         }
 
-        // Remove properties if they are out of the specified price range
+        // Remove properties if they do not contain at least one room within the specified price range
         for($i = 0; $i < count($properties); $i++) {
-            if($properties[$i]->minPrice < $user->minPrice || $properties[$i]->maxPrice > $user->maxPrice) {
+            if(!(($properties[$i]->minPrice >= $user->minPrice && $properties[$i]->minPrice <= $user->maxPrice) || ($properties[$i]->maxPrice >= $user->minPrice && $properties[$i]->maxPrice <= $user->maxPrice))) {
                 unset($properties[$i]);
             }
         }
