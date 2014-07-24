@@ -26,6 +26,10 @@ class Properties {
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $rooms = $sth->fetchAll();
 
+        function getPrice($room) {
+            return $room->price;
+        }
+
         foreach($properties as $property) {
             $roomArray = array();
 
@@ -36,6 +40,18 @@ class Properties {
             }
 
             $property->rooms = ($roomArray);
+
+            // Get price range of rooms
+            $prices = array_map('getPrice', $roomArray);
+            $property->minPrice = min($prices);
+            $property->maxPrice = max($prices);
+        }
+
+        // Remove properties if they are out of the specified price range
+        for($i = 0; $i < count($properties); $i++) {
+            if($properties[$i]->minPrice < $user->minPrice || $properties[$i]->maxPrice > $user->maxPrice) {
+                unset($properties[$i]);
+            }
         }
 
         return $properties;
