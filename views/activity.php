@@ -7,9 +7,7 @@
     <p>activityId: <?= $property->activityId; ?></p>
     <p>propertyId: <?= $property->propertyId; ?></p>
     <p>address: <?= $property->address; ?></p>
-    <p>price: <?= $property->price; ?></p>
-    <p>rooms: <?= $property->rooms; ?></p>
-    <p>roomType: <?= $property->roomType; ?></p>
+    <p><?= $property->noOfRooms; ?> rooms</p>
 
     <div class="activity--buttons" data-property-id="<?= $property->propertyId; ?>">
         <button class="book" disabled>BOOK</button>
@@ -31,9 +29,7 @@
     <p>activityId: <?= $property->activityId; ?></p>
     <p>propertyId: <?= $property->propertyId; ?></p>
     <p>address: <?= $property->address; ?></p>
-    <p>price: <?= $property->price; ?></p>
-    <p>rooms: <?= $property->rooms; ?></p>
-    <p>roomType: <?= $property->roomType; ?></p>
+    <p><?= $property->noOfRooms; ?> rooms</p>
 
     <div class="activity--buttons" data-property-id="<?= $property->propertyId; ?>">
         <button class="book">BOOK</button>
@@ -55,9 +51,7 @@
     <p>activityId: <?= $property->activityId; ?></p>
     <p>propertyId: <?= $property->propertyId; ?></p>
     <p>address: <?= $property->address; ?></p>
-    <p>price: <?= $property->price; ?></p>
-    <p>rooms: <?= $property->rooms; ?></p>
-    <p>roomType: <?= $property->roomType; ?></p>
+    <p><?= $property->noOfRooms; ?> rooms</p>
 
     <div class="activity--buttons" data-property-id="<?= $property->propertyId; ?>">
         <button class="book">BOOK</button>

@@ -2,9 +2,20 @@
     <?php
         $images = scandir(__DIR__ . "/../img/properties/{$property->propertyId}/");
         array_splice($images, 0, 2);
-        foreach($images as $image):
     ?>
-        <img src="/img/properties/<?= $property->propertyId; ?>/<?= $image; ?>" width="100"/>
+    <div id="property--images" class="image-count-<?= (count($images) > 5 ? '5' : count($images)); ?>">
+        <?php foreach($images as $image): ?>
+            <img src="/img/properties/<?= $property->propertyId; ?>/<?= $image; ?>" width="100"/>
+        <?php endforeach; ?>
+    </div>
+
+    <p><?= $property->noOfRooms; ?> rooms</p>
+
+    <?php foreach($property->rooms as $room): ?>
+        <p><?= $room->roomNo; ?><br>
+        <?= $room->roomType; ?> room<br>
+        &pound;<?= $room->price; ?>pcm<br>
+        <?= ($room->status ? 'available' : 'not available' ); ?></p>
     <?php endforeach; ?>
 
     <p><?= $property->address; ?></p>
@@ -16,15 +27,9 @@
         <p><?= $property->distanceUKM; ?>m walk to UKM</p>
     <?php endif; ?>
 
-    <p>£<?= $property->price; ?>pcm</p>
-
-    <p><?= $property->rooms; ?> rooms</p>
-
-    <p><?= $property->roomType; ?> room</p>
-
     <p>Date available: <?= $property->availableFrom; ?></p>
 
-    <p>Furnishing: <?= $property->furnishing; ?></p>
+    <p>Info: <?= $property->info; ?></p>
 
     <p>First listed: <?= $property->timestamp; ?></p>
 

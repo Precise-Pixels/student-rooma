@@ -11,6 +11,15 @@
                 <?php endforeach; ?>
             </div>
 
+            <p><?= $property->noOfRooms; ?> rooms</p>
+
+            <?php foreach($property->rooms as $room): ?>
+                <p><?= $room->roomNo; ?><br>
+                <?= $room->roomType; ?> room<br>
+                &pound;<?= $room->price; ?>pcm<br>
+                <?= ($room->status ? 'available' : 'not available' ); ?></p>
+            <?php endforeach; ?>
+
             <p><?= $property->address; ?></p>
 
             <?php if($property->location == 'Canterbury'): ?>
@@ -20,15 +29,9 @@
                 <p><?= $property->distanceUKM; ?>m walk to UKM</p>
             <?php endif; ?>
 
-            <p>£<?= $property->price; ?>pcm</p>
-
-            <p><?= $property->rooms; ?> rooms</p>
-
-            <p><?= $property->roomType; ?> room</p>
-
             <p>Date available: <?= $property->availableFrom; ?></p>
 
-            <p>Furnishing: <?= $property->furnishing; ?></p>
+            <p>Info: <?= $property->info; ?></p>
 
             <p>First listed: <?= $property->timestamp; ?></p>
 
