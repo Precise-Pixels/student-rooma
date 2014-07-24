@@ -1,6 +1,6 @@
 <h1>Index</h1>
 
-<div id="login">LOGIN</div>
+<button id="login">LOGIN</button>
 
 <div id="status"></div>
 

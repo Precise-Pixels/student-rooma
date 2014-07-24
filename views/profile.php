@@ -37,4 +37,5 @@
 
 <br>
 
-<a href="logout">LOGOUT</a>
+
+<a href="logout"><button>LOGOUT</button></a>
