@@ -9,7 +9,7 @@ for(var i = 0, l = activityButtons.length; i < l; i++) {
 }
 
 function propertyDecision(e, status) {
-    var propertyId = getPropertyId(e);
+    var propertyId = e.target.parentElement.getAttribute('data-property-id');
 
     var data = 'propertyId=' + propertyId + '&status=' + status;
     var request = new XMLHttpRequest();
@@ -24,8 +24,4 @@ function propertyDecision(e, status) {
             console.log('An error has occurred. Please try again.');
         }
     }
-}
-
-function getPropertyId(e) {
-    return e.target.parentElement.getAttribute('data-property-id');
 }
