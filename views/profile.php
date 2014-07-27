@@ -37,5 +37,5 @@
 
 <br>
 
-
+<button id="reset">Reset No's</button>
 <a href="logout"><button>LOGOUT</button></a>
