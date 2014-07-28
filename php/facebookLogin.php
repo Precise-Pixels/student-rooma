@@ -10,11 +10,11 @@ $location = $_POST['location'];
 
 $sth = $dbh->query("SELECT fbId FROM users WHERE fbId=$fbId");
 $sth->setFetchMode(PDO::FETCH_OBJ);
-$result = $sth->fetch();
+$userExists = $sth->fetch();
 
 $_SESSION['s_name'] = $name;
 
-if($result === false) {
+if($userExists === false) {
     // New user
     if(strpos($location, 'Medway') !== false) {
         $lookingIn = 'Medway';
