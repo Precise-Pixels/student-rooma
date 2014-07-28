@@ -71,8 +71,10 @@ function requestFBData() {
             if(request.readyState == 4 && request.status == 200) {
                 if(request.responseText == 'new') {
                     window.location.href = 'profile';
-                } else {
+                } else if(request.responseText == 'existing') {
                     window.location.href = 'properties';
+                } else {
+                    console.log('An error has occurred. Please try again.');
                 }
             } else if(request.status != 200) {
                 console.log('An error has occurred. Please try again.');
