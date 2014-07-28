@@ -33,7 +33,7 @@ if($result === false) {
 
     $_SESSION['s_userId'] = $dbh->lastInsertId();
 
-    return 'new';
+    echo 'new';
 } else {
     // Existing user
     $sth = $dbh->query("SELECT userId FROM users WHERE fbId=$fbId");
@@ -42,5 +42,5 @@ if($result === false) {
 
     $_SESSION['s_userId'] = $result->userId;
 
-    return 'existing';
+    echo 'existing';
 }
