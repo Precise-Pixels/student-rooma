@@ -24,7 +24,7 @@ if($result === false) {
 
     $timestamp = date("Y-m-d H:i:s");
 
-    $sth = $dbh->prepare("INSERT INTO users (fbId, email, password, name, phone, lookingIn, rooms, availableFrom, minPrice, maxPrice, timestamp) value (:fbId, '', '', :name, '', :lookingIn, 4, '', 0, 1000, :timestamp)");
+    $sth = $dbh->prepare("INSERT INTO users (fbId, email, password, name, phone, lookingIn, rooms, availableFrom, minPrice, maxPrice, timestamp) value (:fbId, '', '', :name, '', :lookingIn, 'ANY', '', 0, 1000, :timestamp)");
     $sth->bindParam(':fbId', $fbId);
     $sth->bindParam(':name', $name);
     $sth->bindParam(':lookingIn', $lookingIn);
