@@ -1,7 +1,7 @@
 <h1>Activity</h1>
 
 <h2>Booked</h2>
-<?php foreach($activity as $property):
+<?php $i = 0; foreach($activity as $property):
     if($property->status != 'book') { continue; } ?>
 
     <p>activityId: <?= $property->activityId; ?></p>
@@ -18,12 +18,16 @@
 
     <br>
 
-<?php endforeach; ?>
+<?php $i++; endforeach; ?>
+
+<?php if($i === 0): ?>
+    <p>You haven't booked any viewings yet.</p>
+<?php endif; ?>
 
 <hr>
 
 <h2>&#9733;</h2>
-<?php foreach($activity as $property):
+<?php $i = 0; foreach($activity as $property):
     if($property->status != 'star') { continue; } ?>
 
     <p>activityId: <?= $property->activityId; ?></p>
@@ -40,12 +44,16 @@
 
     <br>
 
-<?php endforeach; ?>
+<?php $i++; endforeach; ?>
+
+<?php if($i === 0): ?>
+    <p>You haven't starred any properties yet.</p>
+<?php endif; ?>
 
 <hr>
 
 <h2>No's</h2>
-<?php foreach($activity as $property):
+<?php $i = 0; foreach($activity as $property):
     if($property->status != 'no') { continue; } ?>
 
     <p>activityId: <?= $property->activityId; ?></p>
@@ -62,4 +70,8 @@
 
     <br>
 
-<?php endforeach; ?>
+<?php $i++; endforeach; ?>
+
+<?php if($i === 0): ?>
+    <p>You haven't no'd any properties yet.</p>
+<?php endif; ?>
