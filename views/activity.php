@@ -9,7 +9,7 @@
     <p>address: <?= $property->address; ?></p>
     <p><?= $property->noOfRooms; ?> rooms</p>
 
-    <div class="activity--buttons" data-property-id="<?= $property->propertyId; ?>">
+    <div class="decision-buttons decision-buttons--update" data-property-id="<?= $property->propertyId; ?>">
         <button class="book" disabled>BOOK</button>
         <button class="star">&#9733;</button>
         <button class="no">NO</button>
@@ -31,7 +31,7 @@
     <p>address: <?= $property->address; ?></p>
     <p><?= $property->noOfRooms; ?> rooms</p>
 
-    <div class="activity--buttons" data-property-id="<?= $property->propertyId; ?>">
+    <div class="decision-buttons decision-buttons--update" data-property-id="<?= $property->propertyId; ?>">
         <button class="book">BOOK</button>
         <button class="star" disabled>&#9733;</button>
         <button class="no">NO</button>
@@ -53,7 +53,7 @@
     <p>address: <?= $property->address; ?></p>
     <p><?= $property->noOfRooms; ?> rooms</p>
 
-    <div class="activity--buttons" data-property-id="<?= $property->propertyId; ?>">
+    <div class="decision-buttons decision-buttons--update" data-property-id="<?= $property->propertyId; ?>">
         <button class="book">BOOK</button>
         <button class="star">&#9733;</button>
         <button class="no" disabled>NO</button>
