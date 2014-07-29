@@ -19,6 +19,10 @@
         <script src="/js/page-activity.js"></script>
     <?php endif; ?>
 
+    <?php if($isGallery): ?>
+        <script src="/js/page-gallery.js"></script>
+    <?php endif; ?>
+
     <?php if($isLogout): ?>
         <script src="/js/page-logout.js"></script>
     <?php endif; ?>
@@ -42,6 +46,10 @@
 
     <?php if($isActivity): ?>
         <script src="/build/page-activity.min.js"></script>
+    <?php endif; ?>
+
+    <?php if($isGallery): ?>
+        <script src="/build/page-gallery.min.js"></script>
     <?php endif; ?>
 
     <?php if($isLogout): ?>

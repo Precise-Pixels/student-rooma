@@ -4,3 +4,9 @@
     <img src="/img/properties/<?= $propertyId; ?>/<?= $image; ?>"/>
     <div class="image-caption"><?= str_replace('.jpg', '', $image); ?></div>
 <?php endforeach; ?>
+
+<div class="property--buttons" data-property-id="<?= $propertyId; ?>">
+    <button class="no">NO</button>
+    <button class="star">&#9733;</button>
+    <button class="book">BOOK</button>
+</div>
