@@ -4,26 +4,30 @@ var dialogText    = document.getElementById('dialog-text');
 var dialogButtonY = document.getElementById('dialog-button-y');
 var dialogButtonN = document.getElementById('dialog-button-n');
 
-function openDialog(heading, text, buttonY, buttonN, type) {
+function openDialog(heading, text, buttonY, buttonN, event, type) {
     dialogHeading.innerHTML = heading;
     dialogText.innerHTML    = text;
     dialogButtonY.innerHTML = buttonY;
     dialogButtonN.innerHTML = buttonN;
 
     dialogButtonY.addEventListener('click', function() {
-        switch(type) {
-            case 'alert':
+        switch(event) {
+            case 'newPhone':
                 closeDialog();
                 break;
-            case 'prompt':
+            case 'cancelChanges':
+                cancelChanges();
+                break;
+            case 'resetNos':
                 resetNos();
                 break;
         }
     });
 
     dialogButtonN.addEventListener('click', function() {
-        switch(type) {
-            case 'prompt':
+        switch(event) {
+            case 'cancelChanges':
+            case 'resetNos':
                 closeDialog();
                 break;
         }
@@ -34,6 +38,10 @@ function openDialog(heading, text, buttonY, buttonN, type) {
 
 function closeDialog() {
     dialog.className = '';
+}
+
+function cancelChanges() {
+    window.location.href = 'properties';
 }
 
 function resetNos() {

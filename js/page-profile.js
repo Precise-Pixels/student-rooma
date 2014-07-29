@@ -25,7 +25,7 @@ var phone = document.getElementById('phone');
 
 phone.addEventListener('focus', function() {
     if(phone.value == '') {
-        openDialog('Your phone number', '<p>Your phone number is used to contact you to arrange a booking for any properties you choose to view.</p><p>You can change your phone number at any time from your Profile.</p>', 'Understood', '', 'alert');
+        openDialog('Your phone number', '<p>Your phone number is used to contact you to arrange a booking for any properties you choose to view.</p><p>You can change your phone number at any time from your Profile.</p>', 'Understood', '', 'newPhone', 'alert');
     }
 });
 
@@ -46,9 +46,7 @@ var lookingInAfter,
 
 document.getElementById('header-btn-l').addEventListener('click', function() {
     if(anyChanges()) {
-        if(confirm('There are unsaved changes. Are you sure you want to cancel?')) {
-            window.location.href = 'properties';
-        }
+        openDialog("Cancel Changes", "<p>There are unsaved changes. Are you sure you want to cancel?</p>", 'Yes', 'No', 'cancelChanges', prompt);
     } else {
         window.location.href = 'properties';
     }
@@ -96,5 +94,5 @@ function anyChanges() {
 
 // Reset no's
 document.getElementById('reset').addEventListener('click', function() {
-    openDialog("Reset No's", "<p>All properties that you previously decided 'no' on will be reset and will appear in the property listings again. Are you sure you want to reset no's?</p>", 'Reset', 'Cancel', 'prompt');
+    openDialog("Reset No's", "<p>All properties that you previously decided 'no' on will be reset and will appear in the property listings again. Are you sure you want to reset no's?</p>", 'Reset', 'Cancel', 'resetNos', prompt);
 });
