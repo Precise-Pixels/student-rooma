@@ -16,3 +16,8 @@ $sth->bindParam(':propertyId', $propertyId);
 $sth->bindParam(':status', $status);
 $sth->bindParam(':timestamp', $timestamp);
 $sth->execute();
+
+if($status === 'book') {
+    require_once('MailClient.php');
+    MailClient::sendMsg($userId, $propertyId);
+}
