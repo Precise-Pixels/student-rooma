@@ -1,8 +1,8 @@
 var dialog        = document.getElementById('dialog');
-var dialogHeading = document.getElementById('dialog--heading');
-var dialogText    = document.getElementById('dialog--text');
-var dialogButtonY = document.getElementById('dialog--button-y');
-var dialogButtonN = document.getElementById('dialog--button-n');
+var dialogHeading = document.getElementById('dialog-heading');
+var dialogText    = document.getElementById('dialog-text');
+var dialogButtonY = document.getElementById('dialog-button-y');
+var dialogButtonN = document.getElementById('dialog-button-n');
 
 function openDialog(heading, text, buttonY, buttonN, type) {
     dialogHeading.innerHTML = heading;

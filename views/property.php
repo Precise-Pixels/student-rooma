@@ -4,7 +4,7 @@
         array_splice($images, 0, 2);
     ?>
     <a href="/property/<?= $property->propertyId; ?>/gallery">
-        <div id="property--images" class="image-count-<?= (count($images) > 5 ? '5' : count($images)); ?>">
+        <div id="property-images" class="image-count-<?= (count($images) > 5 ? '5' : count($images)); ?>">
             <?php foreach($images as $image): ?>
                 <img src="/img/properties/<?= $property->propertyId; ?>/<?= $image; ?>" width="100"/>
             <?php endforeach; ?>
