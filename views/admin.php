@@ -1,6 +1,6 @@
 <h1>Admin Tools</h1>
 
-<?php if(!isset($_SESSION['admin'])): ?>
+<?php if(!isset($_SESSION['s_admin'])): ?>
     <form action="" method="post">
         <label for="login-password">Password</label>
         <input type="password" name="login-password" autofocus required/>
@@ -15,7 +15,7 @@ require_once('php/hash.php');
 if(!empty($_POST['login-submit'])) {
     if(!empty($_POST['login-password'])) {
         if($hash === hash('sha256', $_POST['login-password'])) {
-            $_SESSION['admin'] = true;
+            $_SESSION['s_admin'] = true;
             header('location: admin');
         } else {
             return '<p class="error">Wrong password.</p>';
@@ -26,7 +26,7 @@ if(!empty($_POST['login-submit'])) {
 }
 ?>
 
-<?php if(isset($_SESSION['admin'])): ?>
+<?php if(isset($_SESSION['s_admin'])): ?>
     <p>Logged in as admin.</p>
 
     <p><a href="admin/activity">View user activity</a> - View the activity of every user</p>
