@@ -74,10 +74,10 @@ function requestFBData() {
                 } else if(request.responseText == 'existing') {
                     window.location.href = '/properties';
                 } else {
-                    console.log('An error has occurred. Please try again.');
+                    openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
                 }
             } else if(request.status != 200) {
-                console.log('An error has occurred. Please try again.');
+                openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
             }
         }
     }

@@ -24,6 +24,9 @@ function openDialog(heading, text, buttonY, buttonN, event, type) {
             case 'cancelAdminUpdateRoomAvailabilityChanges':
                 cancelAdminUpdateRoomAvailabilityChanges();
                 break;
+            case 'error':
+                closeDialog();
+                break;
         }
     });
 
@@ -57,7 +60,7 @@ function resetNos() {
         if(request.readyState == 4 && request.status == 200) {
             window.location.href = '/properties';
         } else if(request.status != 200) {
-            console.log('An error has occurred. Please try again.');
+            openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
         }
     }
 }

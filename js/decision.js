@@ -25,7 +25,7 @@ function propertyDecision(e, status) {
         if(request.readyState == 4 && request.status == 200) {
             console.log('Done', propertyId, status);
         } else if(request.status != 200) {
-            console.log('An error has occurred. Please try again.');
+            openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
         }
     }
 }
@@ -43,7 +43,7 @@ function propertyUpdate(e, status) {
         if(request.readyState == 4 && request.status == 200) {
             console.log('Done', propertyId, status);
         } else if(request.status != 200) {
-            console.log('An error has occurred. Please try again.');
+            openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
         }
     }
 }
