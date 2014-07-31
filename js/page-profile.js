@@ -46,7 +46,7 @@ var lookingInAfter,
 
 document.getElementById('header-btn-l').addEventListener('click', function() {
     if(anyChanges()) {
-        openDialog("Cancel Changes", "<p>There are unsaved changes. Are you sure you want to cancel?</p>", 'Yes', 'No', 'cancelChanges', prompt);
+        openDialog("Cancel Changes", "<p>There are unsaved changes. Are you sure you want to cancel?</p>", 'Yes', 'No', 'cancelProfileChanges', prompt);
     } else {
         window.location.href = 'properties';
     }

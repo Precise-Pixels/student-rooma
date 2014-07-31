@@ -15,19 +15,23 @@ function openDialog(heading, text, buttonY, buttonN, event, type) {
             case 'newPhone':
                 closeDialog();
                 break;
-            case 'cancelChanges':
-                cancelChanges();
+            case 'cancelProfileChanges':
+                cancelProfileChanges();
                 break;
             case 'resetNos':
                 resetNos();
+                break;
+            case 'cancelAdminUpdateRoomStatusChanges':
+                cancelAdminUpdateRoomStatusChanges();
                 break;
         }
     });
 
     dialogButtonN.addEventListener('click', function() {
         switch(event) {
-            case 'cancelChanges':
+            case 'cancelProfileChanges':
             case 'resetNos':
+            case 'cancelAdminUpdateRoomStatusChanges':
                 closeDialog();
                 break;
         }
@@ -40,8 +44,8 @@ function closeDialog() {
     dialog.className = '';
 }
 
-function cancelChanges() {
-    window.location.href = 'properties';
+function cancelProfileChanges() {
+    window.location.href = '/properties';
 }
 
 function resetNos() {
@@ -56,4 +60,8 @@ function resetNos() {
             console.log('An error has occurred. Please try again.');
         }
     }
+}
+
+function cancelAdminUpdateRoomStatusChanges() {
+    window.location.href = '/admin';
 }

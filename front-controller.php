@@ -60,4 +60,8 @@ if($isAdminActivity) {
     require_once('models/model-admin-activity.php');
 }
 
+if($isAdminUpdateRoomStatus) {
+    require_once('models/model-admin-update-room-status.php');
+}
+
 require_once('front-view.php');

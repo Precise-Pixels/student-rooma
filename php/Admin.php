@@ -14,4 +14,16 @@ class Admin {
 
         return $results;
     }
+
+    static function getProperties() {
+        require('db.php');
+
+        $sth = $dbh->query("SELECT rooms.roomId, rooms.roomNo, rooms.status, properties.address
+                            FROM rooms
+                            INNER JOIN properties ON rooms.propertyId=properties.propertyId");
+        $sth->setFetchMode(PDO::FETCH_OBJ);
+        $results = $sth->fetchAll();
+
+        return $results;
+    }
 }
