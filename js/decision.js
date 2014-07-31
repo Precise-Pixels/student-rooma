@@ -41,7 +41,7 @@ function propertyUpdate(e, status) {
 
     request.onreadystatechange = function() {
         if(request.readyState == 4 && request.status == 200) {
-            console.log('Done', propertyId, status);
+            window.location.href = '/activity';
         } else if(request.status != 200) {
             openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
         }
