@@ -1,4 +1,4 @@
-<h1>Admin Update Room Status</h1>
+<h1>Admin Update Room Availability</h1>
 
 <?php if(isset($_GET['status']) && $_GET['status'] === 'success'): ?>
     <p class="toast">Success</p>
@@ -13,7 +13,7 @@
         <tr>
             <th>Address</th>
             <th>Room number</th>
-            <th>Status</th>
+            <th>Availability</th>
         </tr>
     </thead>
     <tbody>
@@ -22,9 +22,9 @@
                 <td><?= $property->address; ?></td>
                 <td><?= $property->roomNo; ?></td>
                 <td>
-                    <select class="status" data-room-id="<?= $property->roomId; ?>">
-                        <option value="1"<?= ($property->status == 1 ? ' selected' : ''); ?>>Available</option>
-                        <option value="0"<?= ($property->status == 0 ? ' selected' : ''); ?>>Unavailable</option>
+                    <select class="availability" data-room-id="<?= $property->roomId; ?>">
+                        <option value="1"<?= ($property->availability == 1 ? ' selected' : ''); ?>>Available</option>
+                        <option value="0"<?= ($property->availability == 0 ? ' selected' : ''); ?>>Unavailable</option>
                     </select>
                 </td>
             </tr>

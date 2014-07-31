@@ -21,8 +21,8 @@ function openDialog(heading, text, buttonY, buttonN, event, type) {
             case 'resetNos':
                 resetNos();
                 break;
-            case 'cancelAdminUpdateRoomStatusChanges':
-                cancelAdminUpdateRoomStatusChanges();
+            case 'cancelAdminUpdateRoomAvailabilityChanges':
+                cancelAdminUpdateRoomAvailabilityChanges();
                 break;
         }
     });
@@ -31,7 +31,7 @@ function openDialog(heading, text, buttonY, buttonN, event, type) {
         switch(event) {
             case 'cancelProfileChanges':
             case 'resetNos':
-            case 'cancelAdminUpdateRoomStatusChanges':
+            case 'cancelAdminUpdateRoomAvailabilityChanges':
                 closeDialog();
                 break;
         }
@@ -62,6 +62,6 @@ function resetNos() {
     }
 }
 
-function cancelAdminUpdateRoomStatusChanges() {
+function cancelAdminUpdateRoomAvailabilityChanges() {
     window.location.href = '/admin';
 }

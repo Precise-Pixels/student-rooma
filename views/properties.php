@@ -19,7 +19,7 @@
                 <p><?= $room->roomNo; ?><br>
                 <?= $room->roomType; ?> room<br>
                 &pound;<?= $room->price; ?>pcm<br>
-                <?= ($room->status ? 'available' : 'not available' ); ?></p>
+                <?= ($room->availability ? 'available' : 'unavailable'); ?></p>
             <?php endforeach; ?>
 
             <p><?= $property->address; ?></p>

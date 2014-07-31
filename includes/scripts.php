@@ -27,8 +27,8 @@
         <script src="/js/page-logout.js"></script>
     <?php endif; ?>
 
-    <?php if($isAdminUpdateRoomStatus): ?>
-        <script src="/js/page-admin-update-room-status.js"></script>
+    <?php if($isAdminUpdateRoomAvailability): ?>
+        <script src="/js/page-admin-update-room-availability.js"></script>
     <?php endif; ?>
 
 <?php else:
@@ -60,8 +60,8 @@
         <script src="/build/page-logout.min.js"></script>
     <?php endif; ?>
 
-    <?php if($isAdminUpdateRoomStatus): ?>
-        <script src="/build/page-admin-update-room-status.min.js"></script>
+    <?php if($isAdminUpdateRoomAvailability): ?>
+        <script src="/build/page-admin-update-room-availability.min.js"></script>
     <?php endif; ?>
 
 <?php endif; ?>

@@ -29,7 +29,7 @@ if(!empty($_POST['login-submit'])) {
 <?php if(isset($_SESSION['s_admin'])): ?>
     <p>Logged in as admin.</p>
 
-    <p><a href="admin/activity">View user activity</a> - View the activity of every user</p>
-    <p><a href="admin/new-property">Add a new property</a> - Use this form to add new properties to the application</p>
-    <p><a href="admin/update-room-status">Update a room's status</a> - If a room has become occupied, it's status can be changed here</p>
+    <p><a href="/admin/activity">View user activity</a> - View the activity of every user</p>
+    <p><a href="/admin/new-property">Add a new property</a> - Use this form to add new properties to the application</p>
+    <p><a href="/admin/update-room-availability">Update a room's availability</a> - If a room has become occupied, it's availability can be changed here</p>
 <?php endif; ?>
