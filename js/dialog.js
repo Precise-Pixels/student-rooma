@@ -55,7 +55,7 @@ function resetNos() {
 
     request.onreadystatechange = function() {
         if(request.readyState == 4 && request.status == 200) {
-            window.location.href = 'properties';
+            window.location.href = '/properties';
         } else if(request.status != 200) {
             console.log('An error has occurred. Please try again.');
         }
