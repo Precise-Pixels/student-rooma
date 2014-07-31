@@ -4,8 +4,8 @@
 <p><?= $user->name; ?></p>
 
 <label for="looking-in">Looking in</label>
-<input type="radio" name="looking-in" value="Canterbury"<?= ($user->lookingIn === 'Canterbury' ? ' checked' : '') ?>/> Canterbury
-<input type="radio" name="looking-in" value="Medway"<?= ($user->lookingIn === 'Medway' ? ' checked' : '') ?>/> Medway
+<input type="radio" id="canterbury" name="looking-in" value="Canterbury"<?= ($user->lookingIn === 'Canterbury' ? ' checked' : '') ?>/> <label for="canterbury">Canterbury</label>
+<input type="radio" id="medway" name="looking-in" value="Medway"<?= ($user->lookingIn === 'Medway' ? ' checked' : '') ?>/> <label for="medway">Medway</label>
 
 <br>
 
