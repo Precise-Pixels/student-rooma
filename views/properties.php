@@ -1,6 +1,6 @@
 <div class="properties">
     <?php foreach($properties as $property): ?>
-        <div id="property-<?= $property->propertyId; ?>" class="property">
+        <div class="property">
             <?php
                 $images = scandir(__DIR__ . "/../img/properties/{$property->propertyId}/");
                 array_splice($images, 0, 2);
