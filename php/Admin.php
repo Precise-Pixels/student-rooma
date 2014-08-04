@@ -24,7 +24,7 @@ class Admin {
         $distanceUKM = (int)$post['distance-UKM'];
         $noOfRooms = (int)$post['rooms'];
         $availableFrom = date("Y-m-d", strtotime($post['available-from']));
-        $info = mysql_real_escape_string($post['info']);
+        $info = addslashes($post['info']);
         $timestamp = date("Y-m-d H:i:s");
 
         $sth = $dbh->prepare("INSERT INTO properties (location, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp) VALUE (:location, :address, :distanceUKC, :distanceCCCU, :distanceUKM, :noOfRooms, :availableFrom, :info, :timestamp)");

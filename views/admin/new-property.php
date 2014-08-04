@@ -2,7 +2,7 @@
 
 <?php
 if(!empty($_POST['submit'])) {
-    require('/php/Admin.php');
+    require('php/Admin.php');
     $success = Admin::postProperty($_POST);
 
     if($success):
