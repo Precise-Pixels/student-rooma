@@ -4,6 +4,13 @@
             <?php
                 $images = scandir(__DIR__ . "/../img/properties/{$property->propertyId}/");
                 array_splice($images, 0, 2);
+
+                // Only show room images here
+                foreach($images as $key => $value) {
+                    if(strpos($value, 'Room ') === false) {
+                        unset($images[$key]);
+                    }
+                }
             ?>
             <a href="/property/<?= $property->propertyId; ?>/gallery">
                 <div id="property-images" class="image-count-<?= (count($images) > 5 ? '5' : count($images)); ?>">
