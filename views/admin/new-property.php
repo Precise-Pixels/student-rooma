@@ -67,5 +67,13 @@ if(!empty($_POST['submit'])) {
 
     <div id="room-fields"></div>
 
+    <br>
+
+    <label for="other-images">Other images</label>
+    <input type="file" name="other-images[]" multiple required/>
+    <span class="hint">The file name will be used as the image's caption in the gallery. Ctrl+click / Cmd+click to select multiple images.Valid file types: .jpg .jpeg .png</span>
+
+    <br>
+
     <input type="submit" name="submit" value="Submit"/>
 </form>

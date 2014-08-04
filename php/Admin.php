@@ -18,7 +18,7 @@ class Admin {
     static function postProperty($post) {
         require('db.php');
 
-        // Property
+        // Insert property
         $distanceUKC = (int)$post['distance-UKC'];
         $distanceCCCU = (int)$post['distance-CCCU'];
         $distanceUKM = (int)$post['distance-UKM'];
@@ -43,7 +43,7 @@ class Admin {
 
         $propertyId = $dbh->lastInsertId();
 
-        // Rooms
+        // Insert rooms
         mkdir("img/properties/$propertyId", 0777, true);
 
         $values = '';
@@ -57,6 +57,48 @@ class Admin {
         $sth = $dbh->prepare("INSERT INTO rooms (propertyId, roomNo, roomType, price, availability) VALUES $values");
         $result = $sth->execute();
 
+        // Verify, compress and write other images
+        // http://php.net/manual/en/features.file-upload.multiple.php#53240
+        function reArrayFiles(&$file_post) {
+            $file_ary = array();
+            $file_count = count($file_post['name']);
+            $file_keys = array_keys($file_post);
+
+            for ($i=0; $i<$file_count; $i++) {
+                foreach ($file_keys as $key) {
+                    $file_ary[$i][$key] = $file_post[$key][$i];
+                }
+            }
+
+            return $file_ary;
+        }
+
+        $i = 1;
+
+        foreach(reArrayFiles($_FILES['other-images']) as $image) {
+            $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
+            $jpg = (($ext === 'jpg' || $ext === 'jpeg') && $image['type'] === 'image/jpeg');
+            $png = ($ext === 'png' && $image['type'] === 'image/png');
+
+            if($jpg || $png) {
+                if($jpg) {
+                    $img = imagecreatefromjpeg($image['tmp_name']);
+                } elseif($png) {
+                    $img = imagecreatefrompng($image['tmp_name']);
+                }
+
+                $filename = pathinfo($image['name'], PATHINFO_FILENAME);
+
+                imagejpeg($img, "img/properties/$propertyId/$filename.jpg", 50);
+                imagedestroy($img);
+            }
+
+            $i++;
+        }
+
+        unset($_FILES['other-images']);
+
+        // Verify, compress and write room images
         $i = 1;
 
         foreach($_FILES as $image) {
