@@ -42,6 +42,7 @@ function addRoomFields() {
                        <br>\
                        <label for="room-image-' + rooms.value + '">Room image</label>\
                        <input type="file" name="room-image-' + rooms.value + '" required/>\
+                       <span class="hint">Valid file types: .jpg .jpeg .png</span>\
                    </div><br>';
     roomFields.appendChild(e);
 }

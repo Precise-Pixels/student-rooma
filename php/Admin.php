@@ -57,6 +57,27 @@ class Admin {
         $sth = $dbh->prepare("INSERT INTO rooms (propertyId, roomNo, roomType, price, availability) VALUES $values");
         $result = $sth->execute();
 
+        $i = 1;
+
+        foreach($_FILES as $image) {
+            $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
+            $jpg = (($ext === 'jpg' || $ext === 'jpeg') && $image['type'] === 'image/jpeg');
+            $png = ($ext === 'png' && $image['type'] === 'image/png');
+
+            if($jpg || $png) {
+                if($jpg) {
+                    $img = imagecreatefromjpeg($image['tmp_name']);
+                } elseif($png) {
+                    $img = imagecreatefrompng($image['tmp_name']);
+                }
+
+                imagejpeg($img, "img/properties/$propertyId/Room $i.jpg", 50);
+                imagedestroy($img);
+            }
+
+            $i++;
+        }
+
         return $result;
     }
 

@@ -15,7 +15,7 @@ if(!empty($_POST['submit'])) {
 }
 ?>
 
-<form action="" method="post" novalidate>
+<form action="" method="post" enctype="multipart/form-data" novalidate>
     <label for="location">Location</label>
     <input type="radio" id="canterbury" name="location" value="Canterbury" required/> <label for="canterbury">Canterbury</label>
     <input type="radio" id="medway" name="location" value="Medway"/> <label for="medway">Medway</label>
