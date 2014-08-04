@@ -33,7 +33,7 @@
 
             <p>Date available: <?= $property->availableFrom; ?></p>
 
-            <p>Info: <?= nl2br($property->info); ?></p>
+            <p>Info: <?= nl2br(stripcslashes($property->info)); ?></p>
 
             <p>First listed: <?= $property->timestamp; ?></p>
 
