@@ -64,12 +64,14 @@ class Properties {
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $property = $sth->fetch();
 
-        // Find all the rooms for this property and append to property object
-        $sth = $dbh->query("SELECT roomNo, roomType, price, availability FROM rooms WHERE propertyId=$property->propertyId");
-        $sth->setFetchMode(PDO::FETCH_OBJ);
-        $rooms = $sth->fetchAll();
+        if($property) {
+            // Find all the rooms for this property and append to property object
+            $sth = $dbh->query("SELECT roomNo, roomType, price, availability FROM rooms WHERE propertyId=$property->propertyId");
+            $sth->setFetchMode(PDO::FETCH_OBJ);
+            $rooms = $sth->fetchAll();
 
-        $property->rooms = $rooms;
+            $property->rooms = $rooms;
+        }
 
         return $property;
     }
