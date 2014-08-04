@@ -1,0 +1,11 @@
+// For use with @media queries
+// e.g. @media ($a) {}
+
+// mobile:    0    - 640px
+// tablet:    641  - 800px
+// desktop:   801  - 1200px
+// max-width: 1200px
+
+$a: 'min-width: 640px';
+$b: 'min-width: 800px';
+$c: 'min-width: 1200px';

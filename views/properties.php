@@ -1,61 +1,61 @@
-<div class="properties">
-    <?php foreach($properties as $property): ?>
-        <div class="property">
-            <?php
-                $images = scandir(__DIR__ . "/../img/properties/{$property->propertyId}/");
-                array_splice($images, 0, 2);
+<main>
+    <div class="properties">
+        <?php foreach($properties as $property): ?>
+            <div class="property">
+                <div class="rooms">
+                    <div class="room-tabs">
+                        <?php foreach($property->rooms as $room): ?>
+                            <div class="room-tab">Room <?= $room->roomNo; ?></div>
+                        <?php endforeach; ?>
+                    </div>
 
-                // Only show room images here
-                foreach($images as $key => $value) {
-                    if(strpos($value, 'Room ') === false) {
-                        unset($images[$key]);
-                    }
-                }
-            ?>
-            <a href="/property/<?= $property->propertyId; ?>/gallery">
-                <div id="property-images" class="image-count-<?= (count($images) > 5 ? '5' : count($images)); ?>">
-                    <?php foreach($images as $image): ?>
-                        <img src="/img/properties/<?= $property->propertyId; ?>/<?= $image; ?>" width="100"/>
-                    <?php endforeach; ?>
+                    <div class="room-content">
+                        <?php foreach($property->rooms as $room): ?>
+                            <div class="room room--<?= ($room->availability ? 'available' : 'unavailable'); ?>">
+                                <img src="/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg"/>
+                                <span>&pound;<?= $room->price; ?>pcm</span>
+                                <span><?= $room->roomType; ?> room</span>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="room-controls">
+                        <div class="room-control--left"></div>
+                        <div class="room-control--right"></div>
+                        <a href="/property/<?= $property->propertyId; ?>/gallery" class="view-house-gallery">View house gallery</a>
+                    </div>
                 </div>
-            </a>
 
-            <p><?= $property->noOfRooms; ?> rooms</p>
+                <p><?= $property->address; ?></p>
 
-            <?php foreach($property->rooms as $room): ?>
-                <p><?= $room->roomNo; ?><br>
-                <?= $room->roomType; ?> room<br>
-                &pound;<?= $room->price; ?>pcm<br>
-                <?= ($room->availability ? 'available' : 'unavailable'); ?></p>
-            <?php endforeach; ?>
+                <?php if($property->location == 'Canterbury'): ?>
+                    <p><?= $property->distanceUKC; ?>m walk to UKC</p>
+                    <p><?= $property->distanceCCCU; ?>m walk to CCCU</p>
+                <?php else: ?>
+                    <p><?= $property->distanceUKM; ?>m walk to UKM</p>
+                <?php endif; ?>
 
-            <p><?= $property->address; ?></p>
+                <p>Date available: <?= $property->availableFrom; ?></p>
 
-            <?php if($property->location == 'Canterbury'): ?>
-                <p><?= $property->distanceUKC; ?>m walk to UKC</p>
-                <p><?= $property->distanceCCCU; ?>m walk to CCCU</p>
-            <?php else: ?>
-                <p><?= $property->distanceUKM; ?>m walk to UKM</p>
-            <?php endif; ?>
+                <p>Info: <?= nl2br(stripcslashes($property->info)); ?></p>
 
-            <p>Date available: <?= $property->availableFrom; ?></p>
+                <p>First listed: <?= $property->timestamp; ?></p>
 
-            <p>Info: <?= nl2br(stripcslashes($property->info)); ?></p>
+                <a href="http://maps.google.com/maps?q=<?= $property->address; ?>" target="_blank"><img src="http://maps.googleapis.com/maps/api/staticmap?center=<?= $property->address; ?>&zoom=15&size=200x100&maptype=roadmap&key=AIzaSyCNlx7Q6EFJ2nlJfkAnMIsCm94fdSzaqf4"/></a>
 
-            <p>First listed: <?= $property->timestamp; ?></p>
-
-            <a href="http://maps.google.com/maps?q=<?= $property->address; ?>" target="_blank"><img src="http://maps.googleapis.com/maps/api/staticmap?center=<?= $property->address; ?>&zoom=15&size=200x100&maptype=roadmap&key=AIzaSyCNlx7Q6EFJ2nlJfkAnMIsCm94fdSzaqf4"/></a>
-
-            <div class="decision-buttons decision-buttons--decide" data-property-id="<?= $property->propertyId; ?>">
-                <button class="no">NO</button>
-                <button class="star">&#9733;</button>
-                <button class="book">BOOK</button>
+                <div class="decision-buttons decision-buttons--decide" data-property-id="<?= $property->propertyId; ?>">
+                    <button class="no">NO</button>
+                    <button class="star">&#9733;</button>
+                    <button class="book">BOOK</button>
+                </div>
             </div>
-        </div>
-    <?php endforeach; ?>
 
-    <?php if(empty($properties)): ?>
-        <p>There are no properties available within your search filters.</p>
-        <p>Expand your filters in your <a href="profile">Profile</a>.</p>
-    <?php endif; ?>
-</div>
+            <hr>
+        <?php endforeach; ?>
+
+        <?php if(empty($properties)): ?>
+            <p>There are no properties available within your search filters.</p>
+            <p>Expand your filters in your <a href="profile">Profile</a>.</p>
+        <?php endif; ?>
+    </div>
+</main>

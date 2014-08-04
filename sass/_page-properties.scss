@@ -1,0 +1,22 @@
+.room-tabs {
+    height: 30px;
+    background: $lgrey;
+}
+
+.room-tab {
+    float: left;
+}
+
+.room-content {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.room {
+    float: left;
+}
+
+.room img {
+    width: 100%;
+    display: block;
+}

@@ -1,5 +1,5 @@
 <header>
-    <img src="/img/logo.png" alt="Student Rooma"/>
+    <img src="/img/logo.png" alt="Student Rooma" id="logo"/>
 
     <?php if($isProfile): ?>
         <div id="header-btn-l">Cross</div>
