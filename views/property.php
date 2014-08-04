@@ -1,46 +1,48 @@
-<div class="property">
-    <?php
-        $images = scandir(__DIR__ . "/../img/properties/{$property->propertyId}/");
-        array_splice($images, 0, 2);
+<main>
+    <div class="property property--active">
+        <div class="rooms">
+            <div class="tabs<?= ($property->noOfRooms <= 5 ? " tabs--$property->noOfRooms" : ' tabs--small'); ?>">
+                <?php foreach($property->rooms as $room): ?>
+                    <div class="tab">Room <?= $room->roomNo; ?></div>
+                <?php endforeach; ?>
+            </div>
 
-        // Only show room images here
-        foreach($images as $key => $value) {
-            if(strpos($value, 'Room ') === false) {
-                unset($images[$key]);
-            }
-        }
-    ?>
-    <a href="/property/<?= $property->propertyId; ?>/gallery">
-        <div id="property-images" class="image-count-<?= (count($images) > 5 ? '5' : count($images)); ?>">
-            <?php foreach($images as $image): ?>
-                <img src="/img/properties/<?= $property->propertyId; ?>/<?= $image; ?>" width="100"/>
-            <?php endforeach; ?>
+            <div class="room-content">
+                <?php foreach($property->rooms as $room): ?>
+                    <div class="room room--<?= ($room->availability ? 'available' : 'unavailable'); ?>">
+                        <img src="/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg"/>
+                        <div class="padding">
+                            <span class="room-price">&pound;<?= $room->price; ?>pcm</span>
+                            <span class="room-type"><?= $room->roomType; ?> room</span>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <div class="room-controls">
+                <div class="room-control--left"></div>
+                <div class="room-control--right"></div>
+                <a href="/property/<?= $property->propertyId; ?>/gallery" class="view-house-gallery">View house gallery</a>
+            </div>
         </div>
-    </a>
 
-    <p><?= $property->noOfRooms; ?> rooms</p>
+        <div class="padding">
+            <p><?= $property->address; ?></p>
 
-    <?php foreach($property->rooms as $room): ?>
-        <p><?= $room->roomNo; ?><br>
-        <?= $room->roomType; ?> room<br>
-        &pound;<?= $room->price; ?>pcm<br>
-        <?= ($room->availability ? 'available' : 'unavailable'); ?></p>
-    <?php endforeach; ?>
+            <?php if($property->location == 'Canterbury'): ?>
+                <p><?= $property->distanceUKC; ?>m walk to UKC</p>
+                <p><?= $property->distanceCCCU; ?>m walk to CCCU</p>
+            <?php else: ?>
+                <p><?= $property->distanceUKM; ?>m walk to UKM</p>
+            <?php endif; ?>
 
-    <p><?= $property->address; ?></p>
+            <p>Date available: <?= $property->availableFrom; ?></p>
 
-    <?php if($property->location == 'Canterbury'): ?>
-        <p><?= $property->distanceUKC; ?>m walk to UKC</p>
-        <p><?= $property->distanceCCCU; ?>m walk to CCCU</p>
-    <?php else: ?>
-        <p><?= $property->distanceUKM; ?>m walk to UKM</p>
-    <?php endif; ?>
+            <p>Info: <?= nl2br(stripcslashes($property->info)); ?></p>
 
-    <p>Date available: <?= $property->availableFrom; ?></p>
+            <p>First listed: <?= $property->timestamp; ?></p>
 
-    <p>Info: <?= nl2br(stripcslashes($property->info)); ?></p>
-
-    <p>First listed: <?= $property->timestamp; ?></p>
-
-    <a href="http://maps.google.com/maps?q=<?= $property->address; ?>" target="_blank"><img src="http://maps.googleapis.com/maps/api/staticmap?center=<?= $property->address; ?>&zoom=15&size=200x100&maptype=roadmap&key=AIzaSyCNlx7Q6EFJ2nlJfkAnMIsCm94fdSzaqf4"/></a>
-</div>
+            <a href="http://maps.google.com/maps?q=<?= $property->address; ?>" target="_blank"><img src="http://maps.googleapis.com/maps/api/staticmap?center=<?= $property->address; ?>&zoom=15&size=200x100&maptype=roadmap&key=AIzaSyCNlx7Q6EFJ2nlJfkAnMIsCm94fdSzaqf4" class="property-map"/></a>
+        </div>
+    </div>
+</main>

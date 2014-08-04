@@ -1,11 +1,11 @@
 <main>
     <div class="properties">
-        <?php foreach($properties as $property): ?>
-            <div class="property">
+        <?php $first = true; foreach($properties as $property): ?>
+            <div class="property<?= ($first === true ? ' property--active' : ''); $first = false; ?>">
                 <div class="rooms">
-                    <div class="room-tabs">
+                    <div class="tabs<?= ($property->noOfRooms <= 5 ? " tabs--$property->noOfRooms" : ' tabs--small'); ?>">
                         <?php foreach($property->rooms as $room): ?>
-                            <div class="room-tab">Room <?= $room->roomNo; ?></div>
+                            <div class="tab">Room <?= $room->roomNo; ?></div>
                         <?php endforeach; ?>
                     </div>
 
@@ -13,8 +13,10 @@
                         <?php foreach($property->rooms as $room): ?>
                             <div class="room room--<?= ($room->availability ? 'available' : 'unavailable'); ?>">
                                 <img src="/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg"/>
-                                <span>&pound;<?= $room->price; ?>pcm</span>
-                                <span><?= $room->roomType; ?> room</span>
+                                <div class="padding">
+                                    <span class="room-price">&pound;<?= $room->price; ?>pcm</span>
+                                    <span class="room-type"><?= $room->roomType; ?> room</span>
+                                </div>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -26,22 +28,24 @@
                     </div>
                 </div>
 
-                <p><?= $property->address; ?></p>
+                <div class="padding">
+                    <p><?= $property->address; ?></p>
 
-                <?php if($property->location == 'Canterbury'): ?>
-                    <p><?= $property->distanceUKC; ?>m walk to UKC</p>
-                    <p><?= $property->distanceCCCU; ?>m walk to CCCU</p>
-                <?php else: ?>
-                    <p><?= $property->distanceUKM; ?>m walk to UKM</p>
-                <?php endif; ?>
+                    <?php if($property->location == 'Canterbury'): ?>
+                        <p><?= $property->distanceUKC; ?>m walk to UKC</p>
+                        <p><?= $property->distanceCCCU; ?>m walk to CCCU</p>
+                    <?php else: ?>
+                        <p><?= $property->distanceUKM; ?>m walk to UKM</p>
+                    <?php endif; ?>
 
-                <p>Date available: <?= $property->availableFrom; ?></p>
+                    <p>Date available: <?= $property->availableFrom; ?></p>
 
-                <p>Info: <?= nl2br(stripcslashes($property->info)); ?></p>
+                    <p>Info: <?= nl2br(stripcslashes($property->info)); ?></p>
 
-                <p>First listed: <?= $property->timestamp; ?></p>
+                    <p>First listed: <?= $property->timestamp; ?></p>
 
-                <a href="http://maps.google.com/maps?q=<?= $property->address; ?>" target="_blank"><img src="http://maps.googleapis.com/maps/api/staticmap?center=<?= $property->address; ?>&zoom=15&size=200x100&maptype=roadmap&key=AIzaSyCNlx7Q6EFJ2nlJfkAnMIsCm94fdSzaqf4"/></a>
+                    <a href="http://maps.google.com/maps?q=<?= $property->address; ?>" target="_blank"><img src="http://maps.googleapis.com/maps/api/staticmap?center=<?= $property->address; ?>&zoom=15&size=200x100&maptype=roadmap&key=AIzaSyCNlx7Q6EFJ2nlJfkAnMIsCm94fdSzaqf4"/></a>
+                </div>
 
                 <div class="decision-buttons decision-buttons--decide" data-property-id="<?= $property->propertyId; ?>">
                     <button class="no">NO</button>
@@ -49,8 +53,6 @@
                     <button class="book">BOOK</button>
                 </div>
             </div>
-
-            <hr>
         <?php endforeach; ?>
 
         <?php if(empty($properties)): ?>

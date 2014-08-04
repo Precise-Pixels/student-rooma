@@ -4,6 +4,7 @@ header {
     position: fixed;
     text-align: center;
     background: $dgrey;
+    z-index: 9;
 }
 
 #logo {
@@ -11,20 +12,20 @@ header {
     height: 60px;
 }
 
-#header-btn-l {
-    width: 60px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: red;
-}
-
+#header-btn-l,
 #header-btn-r {
     width: 60px;
     height: 100%;
     position: absolute;
     top: 0;
-    right: 0;
+    line-height: 60px;
     background: red;
+}
+
+#header-btn-l {
+    left: 0;
+}
+
+#header-btn-r {
+    right: 0;
 }
