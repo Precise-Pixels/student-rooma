@@ -33,7 +33,6 @@ function addRoomFields() {
                        <br>\
                        <label for="price-' + rooms.value + '">Price (pcm)</label>\
                        <input type="number" name="price-' + rooms.value + '" required/>\
-                       <span class="hint">Prices must contain two decimal places: £££.pp</span>\
                        <br>\
                        <label for="availability-' + rooms.value + '">Availabile for letting?</label>\
                        <select name="availability-' + rooms.value + '" required>\
@@ -44,7 +43,6 @@ function addRoomFields() {
                        <label for="room-image-' + rooms.value + '">Room image</label>\
                        <input type="file" name="room-image-' + rooms.value + '" required/>\
                    </div><br>';
-
     roomFields.appendChild(e);
 }
 
