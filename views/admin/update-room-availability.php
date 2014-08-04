@@ -1,13 +1,5 @@
 <h1>Admin Update Room Availability</h1>
 
-<?php if(isset($_GET['status']) && $_GET['status'] === 'success'): ?>
-    <p class="toast">Success</p>
-<?php endif; ?>
-
-<?php if(isset($_GET['status']) && $_GET['status'] === 'unchanged'): ?>
-    <p class="toast">Unchanged</p>
-<?php endif; ?>
-
 <table>
     <thead>
         <tr>

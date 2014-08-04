@@ -1,13 +1,10 @@
 <?php
 
-session_start();
-
 require('db.php');
 
-$updateQuery = $_POST['updateQuery'];
+$roomId       = $_POST['roomId'];
+$availability = $_POST['availability'];
 
-$sth = $dbh->prepare("INSERT INTO rooms (roomId, availability)
-                      VALUES $updateQuery
-                      ON DUPLICATE KEY UPDATE availability=VALUES(availability)");
+$sth = $dbh->prepare("UPDATE rooms SET availability=:availability WHERE roomId=$roomId");
 $sth->bindParam(':availability', $availability);
 $sth->execute();
