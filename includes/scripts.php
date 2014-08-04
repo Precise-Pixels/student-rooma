@@ -27,6 +27,10 @@
         <script src="/js/page-logout.js"></script>
     <?php endif; ?>
 
+    <?php if($isAdminNewProperty): ?>
+        <script src="/js/page-admin-new-property.js"></script>
+    <?php endif; ?>
+
     <?php if($isAdminUpdateRoomAvailability): ?>
         <script src="/js/page-admin-update-room-availability.js"></script>
     <?php endif; ?>
@@ -58,6 +62,10 @@
 
     <?php if($isLogout): ?>
         <script src="/build/page-logout.min.js"></script>
+    <?php endif; ?>
+
+    <?php if($isAdminNewProperty): ?>
+        <script src="/build/page-admin-new-property.min.js"></script>
     <?php endif; ?>
 
     <?php if($isAdminUpdateRoomAvailability): ?>

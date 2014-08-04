@@ -26,11 +26,11 @@
         <div id="header-btn-r"><a href="/profile">Profile</a></div>
     <?php endif; ?>
 
-    <?php if($isAdminActivity): ?>
+    <?php if($isAdminActivity || $isAdminNewProperty): ?>
         <div id="header-btn-l"><a href="/admin">Back</a></div>
     <?php endif; ?>
 
-    <?php if($isAdminNewProperty || $isAdminUpdateRoomAvailability): ?>
+    <?php if($isAdminUpdateRoomAvailability): ?>
         <div id="header-btn-l">Cross</div>
         <div id="header-btn-r">Tick</div>
     <?php endif; ?>
