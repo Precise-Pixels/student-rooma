@@ -1,7 +1,9 @@
-<h1>Index</h1>
+<main>
+    <h1>Index</h1>
 
-<button id="login">LOGIN</button>
+    <button id="login">LOGIN</button>
 
-<div id="status"></div>
+    <div id="status"></div>
 
-<div id="fb-root"></div>
+    <div id="fb-root"></div>
+</main>
