@@ -26,6 +26,10 @@
         <div id="header-btn-r"><a href="/profile">Profile</a></div>
     <?php endif; ?>
 
+    <?php if($isAbout): ?>
+        <div id="header-btn-l"><a href="/profile">Back</a></div>
+    <?php endif; ?>
+
     <?php if($isAdminActivity || $isAdminNewProperty || $isAdminUpdateRoomAvailability): ?>
         <div id="header-btn-l"><a href="/admin">Back</a></div>
     <?php endif; ?>

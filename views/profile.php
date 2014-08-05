@@ -39,3 +39,5 @@
 
 <button id="reset">Reset No's</button>
 <a href="logout"><button>LOGOUT</button></a>
+
+<p><a href="/about">About this app</a></p>

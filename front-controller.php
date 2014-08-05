@@ -11,6 +11,7 @@ $isProperties                  = preg_match('#^properties/?$#', $q);
 $isActivity                    = preg_match('#^activity/?$#', $q);
 $isProperty                    = preg_match('#^property\/\d+/?$#', $q);
 $isGallery                     = preg_match('#^property\/\d+/gallery/?$#', $q);
+$isAbout                       = preg_match('#^about/?$#', $q);
 $isLogout                      = preg_match('#^logout/?$#', $q);
 $isAdmin                       = preg_match('#^admin/?$#', $q);
 $isAdminActivity               = preg_match('#^admin\/activity/?$#', $q);
