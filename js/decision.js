@@ -46,6 +46,7 @@ function propertyDecision(e, status) {
         if(propertyNext !== null) {
             propertyNext.className = 'property property--active';
         }
+        enableDecisionButtons();
     }
 
     var propertyId = propertyActive[0].getAttribute('data-property-id');
@@ -59,16 +60,13 @@ function propertyDecision(e, status) {
     request.onreadystatechange = function() {
         if(request.readyState == 4 && request.status == 200) {
             // If last property has been decided on
-            setTimeout(function() {
-                if(end === true) {
+            if(end === true) {
+                setTimeout(function() {
                     window.location.reload();
-                } else {
-                    enableDecisionButtons();
-                }
-            }, 600);
+                }, 600);
+            }
         } else if(request.status != 200) {
             openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
-            enableDecisionButtons();
             propertyActive[0].className = 'property property--active';
             propertyNext.className      = 'property';
         }
