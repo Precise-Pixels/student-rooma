@@ -4,7 +4,29 @@ for(var i = 0, l = decisionButtons.length; i < l; i++) {
     decisionButtons[i].addEventListener('click', function(e) {
         if(e.target.className.match('no|star|book')) {
             if(e.target.parentNode.className.match('decision-buttons--decide')) {
+                // Fire off AJAX call
                 propertyDecision(e, e.target.className);
+
+                // Get active and next properties
+                var propertyActive = document.getElementsByClassName('property--active');
+                var propertyNext   = propertyActive[0].nextElementSibling;
+
+                // Setup animationend event listeners
+                propertyActive[0].addEventListener('animationend', animationEnd);
+                propertyActive[0].addEventListener('webkitAnimationEnd', animationEnd);
+                propertyActive[0].addEventListener('oanimationend', animationEnd);
+                propertyActive[0].addEventListener('MSAnimationEnd', animationEnd);
+
+                // Resize height of active property and append classes for animations
+                propertyActive[0].style.height = (window.innerHeight || document.documentElement.clientHeight) - 60 + 'px';
+                propertyNext.className = 'property property--next';
+                propertyActive[0].className += ' property--' + e.target.className;
+
+                // Make next property active
+                function animationEnd() {
+                    propertyActive[0].className = 'property';
+                    propertyNext.className      = 'property property--active';
+                }
             } else if(e.target.parentNode.className.match('decision-buttons--update')) {
                 propertyUpdate(e, e.target.className);
             }

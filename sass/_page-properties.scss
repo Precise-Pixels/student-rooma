@@ -1,6 +1,7 @@
 .property {
     width: 100%;
     display: none;
+    overflow: hidden;
     background: $lgrey;
 }
 
@@ -8,9 +9,52 @@
     display: block;
 }
 
-.properties > .property {
+.property--book {
     position: absolute;
-    padding-bottom: 60px;
+    z-index: 8;
+    animation: property--book .6s ease-in forwards;
+}
+
+.property--star {
+    position: absolute;
+    z-index: 8;
+    animation: property--star .6s ease-in forwards;
+}
+
+.property--no {
+    position: absolute;
+    z-index: 8;
+    animation: property--no .6s ease-in forwards;
+}
+
+.property--next {
+    display: block;
+    position: absolute;
+    animation: property--next .6s ease-out forwards;
+}
+
+@keyframes property--book {
+    0%   { transform: translate3d(0,0,0)     scale(1);  }
+    100% { transform: translate3d(30%,70%,0) scale(.3); }
+}
+
+@keyframes property--star {
+    0%   { transform: translate3d(0,0,0)   scale(1);  }
+    100% { transform: translate3d(0,70%,0) scale(.3); }
+}
+
+@keyframes property--no {
+    0%   { transform: translate3d(0,0,0)      scale(1);  }
+    100% { transform: translate3d(-30%,70%,0) scale(.3); }
+}
+
+@keyframes property--next {
+    0%   { transform: scale(.8); opacity: 0; }
+    100% { transform: scale(1);  opacity: 1; }
+}
+
+.properties > .property {
+    padding-bottom: 75px;
 }
 
 .rooms {
