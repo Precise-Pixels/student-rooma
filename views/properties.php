@@ -1,8 +1,8 @@
 <main>
-    <div class="properties">
-        <?php if(!empty($properties)): ?>
+    <?php if(!empty($properties)): ?>
+        <div class="properties">
             <?php $first = true; foreach($properties as $property): ?>
-                <div class="property<?= ($first === true ? ' property--active' : ''); $first = false; ?>">
+                <div class="property<?= ($first === true ? ' property--active' : ''); $first = false; ?>" data-property-id="<?= $property->propertyId; ?>">
                     <div class="rooms">
                         <div class="tabs<?= ($property->noOfRooms <= 5 ? " tabs--$property->noOfRooms" : ' tabs--small'); ?>">
                             <?php foreach($property->rooms as $room): ?>
@@ -47,17 +47,18 @@
 
                         <a href="http://maps.google.com/maps?q=<?= $property->address; ?>" target="_blank"><img src="http://maps.googleapis.com/maps/api/staticmap?center=<?= $property->address; ?>&zoom=15&size=200x100&maptype=roadmap&key=AIzaSyCNlx7Q6EFJ2nlJfkAnMIsCm94fdSzaqf4" class="property-map"/></a>
                     </div>
-
-                    <div class="decision-buttons decision-buttons--decide" data-property-id="<?= $property->propertyId; ?>">
-                        <button class="no">NO</button>
-                        <button class="star">&#9733;</button>
-                        <button class="book">BOOK</button>
-                    </div>
                 </div>
             <?php endforeach; ?>
-        <?php else: ?>
+        </div>
+        <div class="decision-buttons decision-buttons--decide">
+            <button class="no">NO</button>
+            <button class="star">&#9733;</button>
+            <button class="book">BOOK</button>
+        </div>
+    <?php else: ?>
+        <div class="properties">
             <p>There are no properties available within your search filters.</p>
             <p>Expand your filters in your <a href="profile">Profile</a>.</p>
-        <?php endif; ?>
-    </div>
+        </div>
+    <?php endif; ?>
 </main>

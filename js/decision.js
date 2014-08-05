@@ -13,6 +13,11 @@ for(var i = 0, l = decisionButtons.length; i < l; i++) {
 }
 
 function propertyDecision(e, status) {
+    // Disable decision buttons
+    decisionButtons[0].children[0].disabled = true;
+    decisionButtons[0].children[1].disabled = true;
+    decisionButtons[0].children[2].disabled = true;
+
     // Get active and next properties
     var propertyActive = document.getElementsByClassName('property--active');
     var propertyNext   = propertyActive[0].nextElementSibling;
@@ -43,7 +48,7 @@ function propertyDecision(e, status) {
         }
     }
 
-    var propertyId = e.target.parentElement.getAttribute('data-property-id');
+    var propertyId = propertyActive[0].getAttribute('data-property-id');
 
     var data = 'propertyId=' + propertyId + '&status=' + status;
     var request = new XMLHttpRequest();
@@ -53,16 +58,26 @@ function propertyDecision(e, status) {
 
     request.onreadystatechange = function() {
         if(request.readyState == 4 && request.status == 200) {
-            if(end === true) {
-                setTimeout(function() {
+            // If last property has been decided on
+            setTimeout(function() {
+                if(end === true) {
                     window.location.reload();
-                }, 600);
-            }
+                } else {
+                    enableDecisionButtons();
+                }
+            }, 600);
         } else if(request.status != 200) {
             openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
+            enableDecisionButtons();
             propertyActive[0].className = 'property property--active';
             propertyNext.className      = 'property';
         }
+    }
+
+    function enableDecisionButtons() {
+        decisionButtons[0].children[0].disabled = false;
+        decisionButtons[0].children[1].disabled = false;
+        decisionButtons[0].children[2].disabled = false;
     }
 }
 
