@@ -1,0 +1,37 @@
+button {
+    background: $dgrey;
+    border: none;
+    box-shadow: 0 0 0 2px $dgrey-a;
+    border-radius: 15px;
+    color: #FFF;
+}
+
+button:focus {
+    outline: none;
+}
+
+.decision-buttons {
+    button {
+        width: 100%;
+        height: 30px;
+    }
+
+    .star {
+        width: 30px;
+    }
+}
+
+.no-wrapper {
+    width: 42%;
+    float: left;
+}
+
+.star-wrapper {
+    width: 16%;
+    float: left;
+}
+
+.book-wrapper {
+    width: 42%;
+    float: left;
+}
