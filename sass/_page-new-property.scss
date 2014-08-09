@@ -1,0 +1,4 @@
+input[value='Canterbury']:checked ~ #distances-medway,
+input[value='Medway']:checked ~ #distances-canterbury {
+    display: none;
+}

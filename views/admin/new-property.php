@@ -29,21 +29,22 @@
 
         <br>
 
-        <label for="distance-UKC">Walking distance from UKC (mins)</label>
-        <input type="number" name="distance-UKC" min="0" required/>
-        <span class="hint">Enter 0 for N/A.</span>
+        <div id="distances-canterbury">
+            <label for="distance-UKC">Walking distance from UKC (mins)</label>
+            <input type="number" name="distance-UKC" value="0" min="0" required/>
+
+            <br>
+
+            <label for="distance-CCCU">Walking distance from CCCU (mins)</label>
+            <input type="number" name="distance-CCCU" value="0" min="0" required/>
+        </div>
 
         <br>
 
-        <label for="distance-CCCU">Walking distance from CCCU (mins)</label>
-        <input type="number" name="distance-CCCU" min="0" required/>
-        <span class="hint">Enter 0 for N/A.</span>
-
-        <br>
-
-        <label for="distance-UKM">Walking distance from UKM (mins)</label>
-        <input type="number" name="distance-UKM" min="0" required/>
-        <span class="hint">Enter 0 for N/A.</span>
+        <div id="distances-medway">
+            <label for="distance-UKM">Walking distance from UKM (mins)</label>
+            <input type="number" name="distance-UKM" value="0" min="0" required/>
+        </div>
 
         <br>
 
