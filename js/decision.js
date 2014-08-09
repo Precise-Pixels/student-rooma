@@ -5,8 +5,12 @@ for(var i = 0, l = decisionButtons.length; i < l; i++) {
         if(e.target.className.match('no|star|book')) {
             if(e.target.parentNode.parentNode.className.match('decision-buttons--decide')) {
                 propertyDecision(e, e.target.className);
+            } else if(e.target.parentNode.parentNode.parentNode.className.match('decision-buttons--decide')) {
+                propertyDecision(e, 'star');
             } else if(e.target.parentNode.parentNode.className.match('decision-buttons--update')) {
-                propertyUpdate(e, e.target.className);
+                propertyUpdate(e, e.target.className, e.target.parentNode.parentNode.getAttribute('data-property-id'));
+            } else if(e.target.parentNode.parentNode.parentNode.className.match('decision-buttons--update')) {
+                propertyUpdate(e, 'star', e.target.parentNode.parentNode.parentNode.getAttribute('data-property-id'));
             }
         }
     });
@@ -35,7 +39,7 @@ function propertyDecision(e, status) {
     propertyActive[0].addEventListener('MSAnimationEnd', animationEnd);
 
     // Resize height of active property and append classes for animations
-    propertyActive[0].className += ' property--' + e.target.className;
+    propertyActive[0].className += ' property--' + status;
     if(propertyNext !== null) {
         propertyNext.className = 'property property--next';
     }
@@ -79,9 +83,7 @@ function propertyDecision(e, status) {
     }
 }
 
-function propertyUpdate(e, status) {
-    var propertyId = e.target.parentElement.parentElement.getAttribute('data-property-id');
-
+function propertyUpdate(e, status, propertyId) {
     var data = 'propertyId=' + propertyId + '&status=' + status;
     var request = new XMLHttpRequest();
     request.open('POST', '/php/updateActivity.php', true);
