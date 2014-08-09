@@ -74,3 +74,7 @@ function changeLocation(e) {
         distancesCanterbury.className = 'form-row--hide';
     }
 }
+
+window.onbeforeunload = function() {
+    return 'Unsaved changes will be lost. Click the Submit button at the bottom of the page to finish adding a new property.';
+};
