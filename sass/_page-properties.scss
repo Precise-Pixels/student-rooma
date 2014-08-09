@@ -62,28 +62,6 @@
     position: relative;
 }
 
-.tabs {
-    height: 30px;
-}
-
-.tab {
-    height: 100%;
-    float: left;
-    text-align: center;
-    line-height: 30px;
-    background: $lgrey;
-}
-
-@for $i from 1 through 5 {
-    .tabs--#{$i} > .tab {
-        width: 100%/$i;
-    }
-}
-
-.tabs--small > .tab {
-    width: 60px;
-}
-
 .room-content {
     width: 100%;
     height: 230px;

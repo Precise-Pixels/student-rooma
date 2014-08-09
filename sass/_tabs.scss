@@ -1,0 +1,62 @@
+.tabs {
+    height: 40px;
+    font-size: 18px;
+}
+
+.tabs--small > .tab {
+    width: 60px;
+}
+
+@for $i from 1 through 5 {
+    .tabs--#{$i} > .tab {
+        width: 100%/$i;
+    }
+}
+
+.tab {
+    height: 100%;
+    float: left;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+    background: $lgrey;
+
+    &:hover {
+        color: $white;
+        background: $orange;
+    }
+}
+
+#tab--booked,
+#tab--nos {
+    width: 40%;
+}
+
+#tab--starred {
+    width: 20%;
+}
+
+.tab--active {
+    position: relative;
+    color: $white;
+    background: $orange;
+
+    &:after {
+        content: '';
+        border-top: 10px solid $orange;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        position: absolute;
+        margin-left: -10px;
+        left: 50%;
+        bottom: -10px;
+    }
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content--show {
+    display: block;
+}

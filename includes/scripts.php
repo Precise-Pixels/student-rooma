@@ -17,6 +17,7 @@
 
     <?php if($isActivity): ?>
         <script src="/js/decision.js"></script>
+        <script src="/js/page-activity.js"></script>
     <?php endif; ?>
 
     <?php if($isGallery): ?>
@@ -54,6 +55,7 @@
 
     <?php if($isActivity): ?>
         <script src="/build/decision.min.js"></script>
+        <script src="/build/page-activity.min.js"></script>
     <?php endif; ?>
 
     <?php if($isGallery): ?>
