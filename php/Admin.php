@@ -49,7 +49,8 @@ class Admin {
         $values = '';
 
         for($i = 1; $i <= $noOfRooms; $i++) {
-            $values .= "({$propertyId},{$i},'{$post["room-type-$i"]}',{$post["price-$i"]},{$post["availability-$i"]}),";
+            $availability = (isset($_POST["availability-$i"]) ? 1 : 0);
+            $values .= "({$propertyId},{$i},'{$post["room-type-$i"]}',{$post["price-$i"]},{$availability}),";
         }
 
         $values = rtrim($values, ',');

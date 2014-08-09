@@ -7,7 +7,7 @@ for(var i = 0, l = availabilities.length; i < l; i++) {
 function changeAvailability(e) {
     e.target.parentNode.className = 'spinner--show';
 
-    var data = 'roomId=' + e.target.getAttribute('data-room-id') + '&availability=' + (e.target.options.selectedIndex^1);
+    var data = 'roomId=' + e.target.getAttribute('data-room-id') + '&availability=' + +e.target.checked;
     var request = new XMLHttpRequest();
     request.open('POST', '/php/updateRoomAvailability.php', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');

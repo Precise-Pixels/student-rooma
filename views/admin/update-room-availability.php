@@ -10,15 +10,13 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach($properties as $property): ?>
+            <?php foreach($properties as $i => $property): ?>
                 <tr>
                     <td><?= $property->address; ?></td>
                     <td><?= $property->roomNo; ?></td>
                     <td>
-                        <select class="availability" data-room-id="<?= $property->roomId; ?>">
-                            <option value="1"<?= ($property->availability == 1 ? ' selected' : ''); ?>>Available</option>
-                            <option value="0"<?= ($property->availability == 0 ? ' selected' : ''); ?>>Unavailable</option>
-                        </select>
+                        <input type="checkbox" id="checkbox-<?= $i; ?>" class="availability" data-room-id="<?= $property->roomId; ?>"<?= ($property->availability == 1 ? ' checked' : ''); ?>/>
+                        <label for="checkbox-<?= $i; ?>" class="checkbox-style"></label>
                     </td>
                 </tr>
             <?php endforeach; ?>

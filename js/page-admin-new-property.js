@@ -26,19 +26,17 @@ function addRoomFields() {
                        <label for="room-' + rooms.value + '">Room ' + rooms.value + '</label>\
                        <br>\
                        <label for="room-type">Room type</label>\
-                       <input type="radio" name="room-type-' + rooms.value + '" value="single" required/> <label for="single">Single</label>\
-                       <input type="radio" name="room-type-' + rooms.value + '" value="double"/> <label for="double">Double</label>\
-                       <input type="radio" name="room-type-' + rooms.value + '" value="single-ensuite"/> <label for="single-ensuite">Single Ensuite</label>\
-                       <input type="radio" name="room-type-' + rooms.value + '" value="double-ensuite"/> <label for="double-ensuite">Double Ensuite</label>\
+                       <input type="radio" id="single-' + rooms.value + '" name="room-type-' + rooms.value + '" value="single" required/> <label for="single-' + rooms.value + '" class="radio-style">Single</label>\
+                       <input type="radio" id="double-' + rooms.value + '" name="room-type-' + rooms.value + '" value="double"/> <label for="double-' + rooms.value + '" class="radio-style">Double</label>\
+                       <input type="radio" id="single-ensuite-' + rooms.value + '" name="room-type-' + rooms.value + '" value="single-ensuite"/> <label for="single-ensuite-' + rooms.value + '" class="radio-style">Single Ensuite</label>\
+                       <input type="radio" id="double-ensuite-' + rooms.value + '" name="room-type-' + rooms.value + '" value="double-ensuite"/> <label for="double-ensuite-' + rooms.value + '" class="radio-style">Double Ensuite</label>\
                        <br>\
                        <label for="price-' + rooms.value + '">Price (pcm)</label>\
                        <input type="number" name="price-' + rooms.value + '" required/>\
                        <br>\
                        <label for="availability-' + rooms.value + '">Availabile for letting?</label>\
-                       <select name="availability-' + rooms.value + '" required>\
-                           <option value="1" selected>Available</option>\
-                           <option value="0">Unavailable</option>\
-                       </select>\
+                       <input type="checkbox" id="checkbox-' + rooms.value + '" name="availability-' + rooms.value + '" value="1" checked/>\
+                       <label for="checkbox-' + rooms.value + '" class="checkbox-style"></label>\
                        <br>\
                        <label for="room-image-' + rooms.value + '">Room image</label>\
                        <input type="file" name="room-image-' + rooms.value + '" required/>\
