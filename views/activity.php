@@ -8,80 +8,69 @@
     </div>
 
     <div id="booked" class="tab-content">
-        <div class="padding">
-            <?php $i = 0; foreach($activity as $property):
-                if($property->status != 'book') { continue; } ?>
-
-                <p>activityId: <?= $property->activityId; ?></p>
-                <p>propertyId: <?= $property->propertyId; ?></p>
-                <p>address: <?= $property->address; ?></p>
-                <p><?= $property->noOfRooms; ?> rooms</p>
+        <?php $i = 0; foreach($activity as $property):
+            if($property->status != 'book') { continue; } ?>
+            <div class="activity padding">
+                <img src="/img/properties/<?= $property->propertyId; ?>/Room 1.jpg" class="activity-image"/>
+                <span class="activity-price">£320-340<span>pcm</span></span>
+                <span class="activity-address"><?= $property->address; ?></span>
+                <span class="activity-rooms"><?= $property->noOfRooms; ?></span>
 
                 <div class="decision-buttons decision-buttons--update" data-property-id="<?= $property->propertyId; ?>">
                     <div class="star-wrapper"><button class="star"><i class="ico-star ico--centre"><span>STAR</span></i></button></div>
                     <div class="no-wrapper"><button class="no">NO</button></div>
                     <div class="more-info-wrapper"><a href="property/<?= $property->propertyId; ?>"><button class="more-info">MORE INFO</button></a></div>
                 </div>
+            </div>
+        <?php $i++; endforeach; ?>
 
-                <br>
-
-            <?php $i++; endforeach; ?>
-
-            <?php if($i === 0): ?>
-                <p>You haven't booked any viewings yet.</p>
-            <?php endif; ?>
-        </div>
+        <?php if($i === 0): ?>
+            <p class="padding">You haven't booked any viewings yet.</p>
+        <?php endif; ?>
     </div>
 
     <div id="starred" class="tab-content--show">
-        <div class="padding">
-            <?php $i = 0; foreach($activity as $property):
-                if($property->status != 'star') { continue; } ?>
-
-                <p>activityId: <?= $property->activityId; ?></p>
-                <p>propertyId: <?= $property->propertyId; ?></p>
-                <p>address: <?= $property->address; ?></p>
-                <p><?= $property->noOfRooms; ?> rooms</p>
+        <?php $i = 0; foreach($activity as $property):
+            if($property->status != 'star') { continue; } ?>
+            <div class="activity padding">
+                <img src="/img/properties/<?= $property->propertyId; ?>/Room 1.jpg" class="activity-image"/>
+                <span class="activity-price">£320-340<span>pcm</span></span>
+                <i class="ico-pointer"></i>
+                <span class="activity-address"><?= $property->address; ?></span>
+                <span class="activity-rooms"><i class="ico-home"></i><?= $property->noOfRooms; ?></span>
 
                 <div class="decision-buttons decision-buttons--update" data-property-id="<?= $property->propertyId; ?>">
                     <div class="book-wrapper"><button class="book">BOOK</button></div>
                     <div class="no-wrapper"><button class="no">NO</button></div>
                     <div class="more-info-wrapper"><a href="property/<?= $property->propertyId; ?>"><button class="more-info">MORE INFO</button></a></div>
                 </div>
+            </div>
+        <?php $i++; endforeach; ?>
 
-                <br>
-
-            <?php $i++; endforeach; ?>
-
-            <?php if($i === 0): ?>
-                <p>You haven't starred any properties yet.</p>
-            <?php endif; ?>
-        </div>
+        <?php if($i === 0): ?>
+            <p class="padding">You haven't starred any properties yet.</p>
+        <?php endif; ?>
     </div>
 
     <div id="nos" class="tab-content">
-        <div class="padding">
-            <?php $i = 0; foreach($activity as $property):
-                if($property->status != 'no') { continue; } ?>
-
-                <p>activityId: <?= $property->activityId; ?></p>
-                <p>propertyId: <?= $property->propertyId; ?></p>
-                <p>address: <?= $property->address; ?></p>
-                <p><?= $property->noOfRooms; ?> rooms</p>
+        <?php $i = 0; foreach($activity as $property):
+            if($property->status != 'no') { continue; } ?>
+            <div class="activity padding">
+                <img src="/img/properties/<?= $property->propertyId; ?>/Room 1.jpg" class="activity-image"/>
+                <span class="activity-price">£320-340<span>pcm</span></span>
+                <span class="activity-address"><?= $property->address; ?></span>
+                <span class="activity-rooms"><?= $property->noOfRooms; ?></span>
 
                 <div class="decision-buttons decision-buttons--update" data-property-id="<?= $property->propertyId; ?>">
                     <div class="book-wrapper"><button class="book">BOOK</button></div>
                     <div class="star-wrapper"><button class="star"><i class="ico-star ico--centre"><span>STAR</span></i></button></div>
                     <div class="more-info-wrapper"><a href="property/<?= $property->propertyId; ?>"><button class="more-info">MORE INFO</button></a></div>
                 </div>
+            </div>
+        <?php $i++; endforeach; ?>
 
-                <br>
-
-            <?php $i++; endforeach; ?>
-
-            <?php if($i === 0): ?>
-                <p>You haven't no'd any properties yet.</p>
-            <?php endif; ?>
-        </div>
+        <?php if($i === 0): ?>
+            <p class="padding">You haven't no'd any properties yet.</p>
+        <?php endif; ?>
     </div>
 </main>

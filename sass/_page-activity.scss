@@ -1,0 +1,59 @@
+.activity {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    overflow: hidden;
+
+    &:nth-child(even) {
+        background: $lgrey;
+    }
+}
+
+.activity-image {
+    width: 33%;
+    float: left;
+    margin-right: 4%;
+    margin-bottom: 15px;
+}
+
+.activity-price {
+    width: 63%;
+    display: block;
+    float: left;
+    margin-bottom: 10px;
+    color: $orange;
+    font-size: 24px;
+
+    span {
+        color: $mgrey;
+        font-size: 18px;
+    }
+}
+
+.ico-pointer {
+    float: left;
+    color: $mgrey;
+    font-size: 20px;
+}
+
+.activity-address {
+    width: 38%;
+    display: block;
+    float: left;
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 12px;
+}
+
+.activity-rooms {
+    width: 15%;
+    display: block;
+    float: right;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+
+    i {
+        color: $mgrey;
+    }
+}

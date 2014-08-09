@@ -12,7 +12,7 @@
                     <div class="room room--<?= ($room->availability ? 'available' : 'unavailable'); ?>">
                         <img src="/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg"/>
                         <div class="padding">
-                            <span class="room-price">&pound;<?= $room->price; ?>pcm</span>
+                            <span class="room-price">£<?= $room->price; ?>pcm</span>
                             <span class="room-type"><?= $room->roomType; ?> room</span>
                         </div>
                     </div>
