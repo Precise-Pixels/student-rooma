@@ -1,5 +1,11 @@
 <header>
-    <img src="/img/logo.png" alt="Student Rooma" id="logo"/>
+    <?php if($isAdmin || $isAdminActivity || $isAdminNewProperty || $isAdminUpdateRoomAvailability): ?>
+        <a href="/">
+            <img src="/img/logo.png" alt="Student Rooma" id="logo"/>
+        </a>
+    <?php else: ?>
+        <img src="/img/logo.png" alt="Student Rooma" id="logo"/>
+    <?php endif; ?>
 
     <?php if($isProfile): ?>
         <div id="header-btn-l"><i class="ico-cross ico--centre"><span>Cancel</span></i></div>
