@@ -54,3 +54,21 @@ function removeRoomFields() {
         roomFields.removeChild(roomFields.childNodes[roomFields.childNodes.length - 1]);
     }
 }
+
+var radios              = document.form.location;
+var distancesCanterbury = document.getElementById('distances-canterbury');
+var distancesMedway     = document.getElementById('distances-medway');
+
+for(var i = 0, l = radios.length; i < l; i++) {
+    radios[i].addEventListener('change', changeLocation);
+}
+
+function changeLocation(e) {
+    distancesCanterbury.className = distancesMedway.className = 'form-row';
+
+    if(e.target.id === 'canterbury') {
+        distancesMedway.className = 'form-row--hide';
+    } else if(e.target.id === 'medway') {
+        distancesCanterbury.className = 'form-row--hide';
+    }
+}

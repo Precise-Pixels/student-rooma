@@ -17,7 +17,7 @@
         }
         ?>
 
-        <form action="" method="post" enctype="multipart/form-data" novalidate>
+        <form action="" method="post" enctype="multipart/form-data" name="form" novalidate>
             <div class="form-row">
                 <label for="location">Location</label>
                 <input type="radio" id="canterbury" name="location" value="Canterbury" required/> <label for="canterbury" class="radio-style">Canterbury</label>
@@ -30,21 +30,17 @@
                 <span class="hint">The address is used to generate the Google Maps. For best results, use the following format: [House number optional] Road, Town/City, County (e.g. 100 Downs Road, Canterbury, Kent)</span>
             </div>
 
-            <div class="form-row">
-                <div id="distances-canterbury">
-                    <label for="distance-UKC">Walking distance from UKC (mins)</label>
-                    <input type="number" name="distance-UKC" value="0" min="0" required/>
+            <div id="distances-canterbury" class="form-row">
+                <label for="distance-UKC">Walking distance from UKC (mins)</label>
+                <input type="number" name="distance-UKC" value="0" min="0" required/>
 
-                    <label for="distance-CCCU">Walking distance from CCCU (mins)</label>
-                    <input type="number" name="distance-CCCU" value="0" min="0" required/>
-                </div>
+                <label for="distance-CCCU">Walking distance from CCCU (mins)</label>
+                <input type="number" name="distance-CCCU" value="0" min="0" required/>
             </div>
 
-            <div class="form-row">
-                <div id="distances-medway">
-                    <label for="distance-UKM">Walking distance from UKM (mins)</label>
-                    <input type="number" name="distance-UKM" value="0" min="0" required/>
-                </div>
+            <div id="distances-medway" class="form-row">
+                <label for="distance-UKM">Walking distance from UKM (mins)</label>
+                <input type="number" name="distance-UKM" value="0" min="0" required/>
             </div>
 
             <div class="form-row">
