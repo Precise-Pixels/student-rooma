@@ -8,6 +8,11 @@ input[type='submit'] {
     padding: 5px 15px;
     outline: none;
     color: $white;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 0 0 2px $orange;
+    }
 }
 
 .decision-buttons {
