@@ -25,11 +25,13 @@ function addRoomFields() {
     div.id  = 'room-' + rooms.value;
     div.innerHTML =    '<label for="room-' + rooms.value + '">Room ' + rooms.value + '</label>\
                         <div class="form-row">\
-                            <label for="room-type">Room type</label>\
-                            <input type="radio" id="single-' + rooms.value + '" name="room-type-' + rooms.value + '" value="single" required/> <label for="single-' + rooms.value + '" class="radio-style">Single</label>\
-                            <input type="radio" id="double-' + rooms.value + '" name="room-type-' + rooms.value + '" value="double"/> <label for="double-' + rooms.value + '" class="radio-style">Double</label>\
-                            <input type="radio" id="single-ensuite-' + rooms.value + '" name="room-type-' + rooms.value + '" value="single-ensuite"/> <label for="single-ensuite-' + rooms.value + '" class="radio-style">Single Ensuite</label>\
-                            <input type="radio" id="double-ensuite-' + rooms.value + '" name="room-type-' + rooms.value + '" value="double-ensuite"/> <label for="double-ensuite-' + rooms.value + '" class="radio-style">Double Ensuite</label>\
+                            <label for="room-type-' + rooms.value + '">Room type</label>\
+                            <select name="room-type-' + rooms.value + '" required>\
+                                <option value="single">Single</option>\
+                                <option value="double">Double</option>\
+                                <option value="single-ensuite">Single Ensuite</option>\
+                                <option value="double-ensuite">Double Ensuite</option>\
+                            </select>\
                         </div>\
                         <div class="form-row">\
                             <label for="price-' + rooms.value + '">Price (pcm)</label>\
