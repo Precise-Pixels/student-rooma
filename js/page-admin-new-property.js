@@ -21,28 +21,32 @@ function roomsStepper(e) {
 }
 
 function addRoomFields() {
-    var e = document.createElement('div');
-    e.innerHTML = '<div id="room-' + rooms.value + '">\
-                       <label for="room-' + rooms.value + '">Room ' + rooms.value + '</label>\
-                       <br>\
-                       <label for="room-type">Room type</label>\
-                       <input type="radio" id="single-' + rooms.value + '" name="room-type-' + rooms.value + '" value="single" required/> <label for="single-' + rooms.value + '" class="radio-style">Single</label>\
-                       <input type="radio" id="double-' + rooms.value + '" name="room-type-' + rooms.value + '" value="double"/> <label for="double-' + rooms.value + '" class="radio-style">Double</label>\
-                       <input type="radio" id="single-ensuite-' + rooms.value + '" name="room-type-' + rooms.value + '" value="single-ensuite"/> <label for="single-ensuite-' + rooms.value + '" class="radio-style">Single Ensuite</label>\
-                       <input type="radio" id="double-ensuite-' + rooms.value + '" name="room-type-' + rooms.value + '" value="double-ensuite"/> <label for="double-ensuite-' + rooms.value + '" class="radio-style">Double Ensuite</label>\
-                       <br>\
-                       <label for="price-' + rooms.value + '">Price (pcm)</label>\
-                       <input type="number" name="price-' + rooms.value + '" required/>\
-                       <br>\
-                       <label for="availability-' + rooms.value + '">Availabile for letting?</label>\
-                       <input type="checkbox" id="checkbox-' + rooms.value + '" name="availability-' + rooms.value + '" value="1" checked/>\
-                       <label for="checkbox-' + rooms.value + '" class="checkbox-style"></label>\
-                       <br>\
-                       <label for="room-image-' + rooms.value + '">Room image</label>\
-                       <input type="file" name="room-image-' + rooms.value + '" required/>\
-                       <span class="hint">Valid file types: .jpg .jpeg .png</span>\
-                   </div><br>';
-    roomFields.appendChild(e);
+    var div = document.createElement('div');
+    div.id  = 'room-' + rooms.value;
+    div.innerHTML =    '<label for="room-' + rooms.value + '">Room ' + rooms.value + '</label>\
+                        <div class="form-row">\
+                            <label for="room-type">Room type</label>\
+                            <input type="radio" id="single-' + rooms.value + '" name="room-type-' + rooms.value + '" value="single" required/> <label for="single-' + rooms.value + '" class="radio-style">Single</label>\
+                            <input type="radio" id="double-' + rooms.value + '" name="room-type-' + rooms.value + '" value="double"/> <label for="double-' + rooms.value + '" class="radio-style">Double</label>\
+                            <input type="radio" id="single-ensuite-' + rooms.value + '" name="room-type-' + rooms.value + '" value="single-ensuite"/> <label for="single-ensuite-' + rooms.value + '" class="radio-style">Single Ensuite</label>\
+                            <input type="radio" id="double-ensuite-' + rooms.value + '" name="room-type-' + rooms.value + '" value="double-ensuite"/> <label for="double-ensuite-' + rooms.value + '" class="radio-style">Double Ensuite</label>\
+                        </div>\
+                        <div class="form-row">\
+                            <label for="price-' + rooms.value + '">Price (pcm)</label>\
+                            <input type="number" name="price-' + rooms.value + '" required/>\
+                        </div>\
+                        <div class="form-row">\
+                            <label for="availability-' + rooms.value + '">Availabile for letting?</label>\
+                            <input type="checkbox" id="checkbox-' + rooms.value + '" name="availability-' + rooms.value + '" value="1" checked/>\
+                            <label for="checkbox-' + rooms.value + '" class="checkbox-style"></label>\
+                        </div>\
+                        <div class="form-row">\
+                            <label for="room-image-' + rooms.value + '">Room image</label>\
+                            <input type="file" name="room-image-' + rooms.value + '" required/>\
+                            <span class="hint">Valid file types: .jpg .jpeg .png</span>\
+                        </div>\
+                        <hr>';
+    roomFields.appendChild(div);
 }
 
 function removeRoomFields() {

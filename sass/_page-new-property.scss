@@ -1,4 +1,19 @@
-input[value='Canterbury']:checked ~ #distances-medway,
-input[value='Medway']:checked ~ #distances-canterbury {
-    display: none;
+.stepper {
+    position: relative;
+
+    input {
+        text-align: center;
+    }
+}
+
+#rooms-decrement {
+    position: absolute;
+    border-radius: 2px 0 0 2px;
+}
+
+#rooms-increment {
+    border-radius: 0 2px 2px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
