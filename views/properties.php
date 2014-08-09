@@ -52,7 +52,7 @@
         </div>
         <div class="decision-buttons decision-buttons--decide padding">
             <div class="no-wrapper"><button class="no">NO</button></div>
-            <div class="star-wrapper"><button class="star">&#9733;</button></div>
+            <div class="star-wrapper"><button class="star"><i class="ico-star ico--centre"><span>STAR</span></i></button></div>
             <div class="book-wrapper"><button class="book">BOOK</button></div>
         </div>
     <?php else: ?>

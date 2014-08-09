@@ -3,9 +3,9 @@ var decisionButtons = document.getElementsByClassName('decision-buttons');
 for(var i = 0, l = decisionButtons.length; i < l; i++) {
     decisionButtons[i].addEventListener('click', function(e) {
         if(e.target.className.match('no|star|book')) {
-            if(e.target.parentNode.className.match('decision-buttons--decide')) {
+            if(e.target.parentNode.parentNode.className.match('decision-buttons--decide')) {
                 propertyDecision(e, e.target.className);
-            } else if(e.target.parentNode.className.match('decision-buttons--update')) {
+            } else if(e.target.parentNode.parentNode.className.match('decision-buttons--update')) {
                 propertyUpdate(e, e.target.className);
             }
         }
