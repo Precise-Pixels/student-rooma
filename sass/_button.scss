@@ -1,12 +1,11 @@
-button {
+button,
+input[type='file'],
+input[type='submit'] {
     background: $dgrey;
     border: none;
     box-shadow: 0 0 0 2px $dgrey-a;
     border-radius: 15px;
     color: #FFF;
-}
-
-button:focus {
     outline: none;
 }
 
