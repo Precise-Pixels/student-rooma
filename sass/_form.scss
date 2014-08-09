@@ -5,30 +5,30 @@ input[type='checkbox'] {
     & + .checkbox-style {
         width: 44px;
         height: 22px;
-        border: 2px solid #333;
+        border: 2px solid $dgrey;
         border-radius: 2px;
         display: block;
         position: relative;
-        background: #EEE;
+        background: $lgrey;
     }
 
     & + .checkbox-style:after {
         content: '';
         width: 18px;
         height: 16px;
-        border: 1px solid #EEE;
+        border: 1px solid $lgrey;
         position: absolute;
         right: 0;
-        background: #999;
+        background: $mgrey;
     }
 
     &:checked + .checkbox-style:after {
         left: 0;
-        background: #F90;
+        background: $orange;
     }
 
     &:focus + .checkbox-style {
-        border-color: #F90;
+        border-color: $orange;
     }
 }
 
@@ -40,19 +40,19 @@ input[type='radio'] {
         content: '';
         width: 20px;
         height: 20px;
-        border: 2px solid #333;
+        border: 2px solid $dgrey;
         border-radius: 50%;
         display: inline-block;
         margin-right: 5px;
-        background: #EEE;
+        background: $lgrey;
     }
 
     &:checked +.radio-style:before {
-        background: #F90;
+        background: $orange;
     }
 
     &:focus + .radio-style:before {
-        border-color: #F90;
+        border-color: $orange;
     }
 }
 
@@ -62,14 +62,14 @@ input[type='number'],
 input[type='date'],
 input[type='tel'],
 textarea {
-    border: 2px solid #333;
+    border: 2px solid $dgrey;
     border-radius: 2px;
     padding: 4px;
     outline: 0;
-    background: #EEE;
+    background: $lgrey;
 
     &:focus {
-        border-color: #F90;
+        border-color: $orange;
     }
 }
 
