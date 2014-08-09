@@ -80,7 +80,7 @@ function propertyDecision(e, status) {
 }
 
 function propertyUpdate(e, status) {
-    var propertyId = e.target.parentElement.getAttribute('data-property-id');
+    var propertyId = e.target.parentElement.parentElement.getAttribute('data-property-id');
 
     var data = 'propertyId=' + propertyId + '&status=' + status;
     var request = new XMLHttpRequest();
