@@ -46,7 +46,7 @@ var lookingInAfter,
 
 document.getElementById('header-btn-l').addEventListener('click', function() {
     if(anyChanges()) {
-        openDialog("Cancel Changes", "<p>There are unsaved changes. Are you sure you want to cancel?</p>", 'Yes', 'No', 'cancelProfileChanges', prompt);
+        openDialog("Cancel Changes", "<p>There are unsaved changes. Are you sure you want to cancel?</p>", 'Yes', 'No', 'cancelProfileChanges', 'prompt');
     } else {
         window.location.href = '/properties';
     }
@@ -94,5 +94,5 @@ function anyChanges() {
 
 // Reset no's
 document.getElementById('reset').addEventListener('click', function() {
-    openDialog("Reset No's", "<p>All properties that you previously decided 'no' on will be reset and will appear in the property listings again. Are you sure you want to reset no's?</p>", 'Reset', 'Cancel', 'resetNos', prompt);
+    openDialog("Reset No's", "<p>All properties that you previously decided 'no' on will be reset and will appear in the property listings again. Are you sure you want to reset no's?</p>", 'Reset', 'Cancel', 'resetNos', 'prompt');
 });
