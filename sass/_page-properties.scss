@@ -58,22 +58,39 @@
 }
 
 .rooms {
-    height: 260px;
     position: relative;
 }
 
+.property .tabs {
+    position: relative;
+    z-index: 3;
+}
+
 .room-content {
-    width: 100%;
-    height: 230px;
+    height: 0;
+    margin-bottom: 60px;
+    padding-bottom: 56.25%;
+    position: relative;
+    z-index: 1;
+    cursor: move;
+}
+
+.room-slider {
+    // http://stackoverflow.com/a/16637689/1696757
+    // 100% * maximum 100 images @ 1200px = 120000px
+    width: 10000%;
+    height: 100%;
+    position: absolute;
+    top: 0;
 }
 
 .room {
-    position: absolute;
+    height: 100%;
+    float: left;
 }
 
 .room img {
-    width: 100%;
-    height: 170px;
+    height: 100%;
     display: block;
 }
 
@@ -91,9 +108,54 @@
 
 .room-controls {
     width: 100%;
-    height: 170px;
+    height: 100%;
     position: absolute;
-    top: 30px;
+    bottom: 0;
+    z-index: 2;
+}
+
+.room-control--left,
+.room-control--right {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+
+    i {
+        position: absolute;
+        top: 50%;
+        opacity: 0;
+        color: $white;
+        font-size: 30px;
+        text-shadow: 0 0 10px $dgrey;
+        transition: opacity .3s;
+        animation: fadeout 3s linear;
+    }
+}
+
+.room-control--left {
+    i {
+        left: 15px;
+    }
+}
+
+.room-control--right {
+    right: 0;
+
+    i {
+        right: 15px;
+    }
+}
+
+.room-control--left:hover > i,
+.room-control--right:hover > i {
+    opacity: 1;
+}
+
+@keyframes fadeout {
+    0%   { opacity: 1; }
+    80%  { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 .view-house-gallery {
@@ -101,7 +163,10 @@
     height: 30px;
     position: absolute;
     bottom: 0;
+    color: $white;
+    font-size: 12px;
     text-align: center;
+    text-decoration: none;
     line-height: 30px;
     background: $dgrey-a;
 }

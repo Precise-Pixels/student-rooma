@@ -10,21 +10,23 @@
             </div>
 
             <div class="room-content">
-                <?php foreach($property->rooms as $room): ?>
-                    <div class="room room--<?= ($room->availability ? 'available' : 'unavailable'); ?>">
-                        <img src="/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg"/>
-                        <div class="padding">
-                            <span class="room-price">£<?= $room->price; ?>pcm</span>
-                            <span class="room-type"><?= $room->roomType; ?> room</span>
+                <div class="room-slider">
+                    <?php foreach($property->rooms as $room): ?>
+                        <div class="room room--<?= ($room->availability ? 'available' : 'unavailable'); ?>">
+                            <img src="/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg"/>
+                            <div class="padding">
+                                <span class="room-price">£<?= $room->price; ?>pcm</span>
+                                <span class="room-type"><?= $room->roomType; ?> room</span>
+                            </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </div>
             </div>
 
             <div class="room-controls">
                 <div class="room-control--left"></div>
                 <div class="room-control--right"></div>
-                <a href="/property/<?= $property->propertyId; ?>/gallery" class="view-house-gallery">View house gallery</a>
+                <a href="/property/<?= $property->propertyId; ?>/gallery" class="view-house-gallery"><i class="ico-home"></i>View house gallery</a>
             </div>
         </div>
 
