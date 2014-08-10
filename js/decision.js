@@ -1,4 +1,7 @@
 var decisionButtons = document.getElementsByClassName('decision-buttons');
+var bookButton      = document.getElementsByClassName('book');
+var starButton      = document.getElementsByClassName('star');
+var noButton        = document.getElementsByClassName('no');
 
 for(var i = 0, l = decisionButtons.length; i < l; i++) {
     decisionButtons[i].addEventListener('click', function(e) {
@@ -18,9 +21,9 @@ for(var i = 0, l = decisionButtons.length; i < l; i++) {
 
 function propertyDecision(e, status) {
     // Disable decision buttons
-    decisionButtons[0].children[0].disabled = true;
-    decisionButtons[0].children[1].disabled = true;
-    decisionButtons[0].children[2].disabled = true;
+    bookButton[0].disabled = true;
+    starButton[0].disabled = true;
+    noButton[0].disabled   = true;
 
     // Get active and next properties
     var propertyActive = document.getElementsByClassName('property--active');
@@ -77,9 +80,9 @@ function propertyDecision(e, status) {
     }
 
     function enableDecisionButtons() {
-        decisionButtons[0].children[0].disabled = false;
-        decisionButtons[0].children[1].disabled = false;
-        decisionButtons[0].children[2].disabled = false;
+        bookButton[0].disabled = false;
+        starButton[0].disabled = false;
+        noButton[0].disabled   = false;
     }
 }
 
