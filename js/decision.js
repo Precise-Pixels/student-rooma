@@ -6,20 +6,20 @@ var noButton        = document.getElementsByClassName('no');
 for(var i = 0, l = decisionButtons.length; i < l; i++) {
     decisionButtons[i].addEventListener('click', function(e) {
         if(e.target.className.match('no|star|book')) {
-            if(e.target.parentNode.parentNode.className.match('decision-buttons--decide')) {
-                propertyDecision(e, e.target.className);
-            } else if(e.target.parentNode.parentNode.parentNode.className.match('decision-buttons--decide')) {
-                propertyDecision(e, 'star');
-            } else if(e.target.parentNode.parentNode.className.match('decision-buttons--update')) {
-                propertyUpdate(e, e.target.className, e.target.parentNode.parentNode.getAttribute('data-property-id'));
-            } else if(e.target.parentNode.parentNode.parentNode.className.match('decision-buttons--update')) {
-                propertyUpdate(e, 'star', e.target.parentNode.parentNode.parentNode.getAttribute('data-property-id'));
+            if(e.target.parentNode.parentNode.className.match('decide')) {
+                propertyDecision(e.target.className);
+            } else if(e.target.parentNode.parentNode.parentNode.className.match('decide')) {
+                propertyDecision('star');
+            } else if(e.target.parentNode.parentNode.className.match('update')) {
+                propertyUpdate(e.target.className, e.target.parentNode.parentNode.getAttribute('data-property-id'));
+            } else if(e.target.parentNode.parentNode.parentNode.className.match('update')) {
+                propertyUpdate('star', e.target.parentNode.parentNode.parentNode.getAttribute('data-property-id'));
             }
         }
     });
 }
 
-function propertyDecision(e, status) {
+function propertyDecision(status) {
     // Disable decision buttons
     bookButton[0].disabled = true;
     starButton[0].disabled = true;
@@ -86,7 +86,7 @@ function propertyDecision(e, status) {
     }
 }
 
-function propertyUpdate(e, status, propertyId) {
+function propertyUpdate(status, propertyId) {
     var data = 'propertyId=' + propertyId + '&status=' + status;
     var request = new XMLHttpRequest();
     request.open('POST', '/php/updateActivity.php', true);
