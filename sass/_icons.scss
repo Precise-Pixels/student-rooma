@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'Student-Rooma-Icon-Font';
-	src:url('/fonts/Student-Rooma-Icon-Font.eot?-1qgjdl');
-	src:url('/fonts/Student-Rooma-Icon-Font.eot?#iefix-1qgjdl') format('embedded-opentype'),
-		url('/fonts/Student-Rooma-Icon-Font.woff?-1qgjdl') format('woff'),
-		url('/fonts/Student-Rooma-Icon-Font.ttf?-1qgjdl') format('truetype'),
-		url('/fonts/Student-Rooma-Icon-Font.svg?-1qgjdl#Student-Rooma-Icon-Font') format('svg');
+	src:url('/fonts/Student-Rooma-Icon-Font.eot?-wcmn4z');
+	src:url('/fonts/Student-Rooma-Icon-Font.eot?#iefix-wcmn4z') format('embedded-opentype'),
+		url('/fonts/Student-Rooma-Icon-Font.woff?-wcmn4z') format('woff'),
+		url('/fonts/Student-Rooma-Icon-Font.ttf?-wcmn4z') format('truetype'),
+		url('/fonts/Student-Rooma-Icon-Font.svg?-wcmn4z#Student-Rooma-Icon-Font') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -39,6 +39,9 @@ a[class*="ico-"] {
     text-decoration: none;
 }
 
+.ico-bed:before {
+	content: "\42";
+}
 .ico-activity:before {
 	content: "\61";
 }
@@ -65,9 +68,6 @@ a[class*="ico-"] {
 }
 .ico-refresh:before {
 	content: "\52";
-}
-.ico-search:before {
-	content: "\73";
 }
 .ico-star:before {
 	content: "\2a";
