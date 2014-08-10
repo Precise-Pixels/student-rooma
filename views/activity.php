@@ -37,7 +37,7 @@
                 <span class="activity-price">£320-340<span>pcm</span></span>
                 <i class="ico-pointer"></i>
                 <span class="activity-address"><?= $property->address; ?></span>
-                <span class="activity-rooms"><i class="ico-home"></i><?= $property->noOfRooms; ?></span>
+                <span class="activity-rooms"><i class="ico-bed"></i><?= $property->noOfRooms; ?></span>
 
                 <div class="decision-buttons decision-buttons--update" data-property-id="<?= $property->propertyId; ?>">
                     <div class="book-wrapper"><button class="book">BOOK</button></div>
