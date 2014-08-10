@@ -75,7 +75,7 @@
             </div>
 
             <div class="form-row">
-                <input type="submit" name="submit" value="Submit"/>
+                <input type="submit" id="submit" name="submit" value="Submit"/>
             </div>
         </form>
     </div>

@@ -75,6 +75,14 @@ function changeLocation(e) {
     }
 }
 
+var submit = false;
+
+document.getElementById('submit').addEventListener('click', function() {
+    submit = true;
+});
+
 window.onbeforeunload = function() {
-    return 'Unsaved changes will be lost. Click the Submit button at the bottom of the page to finish adding a new property.';
+    if(!submit) {
+        return 'Unsaved changes will be lost. Click the Submit button at the bottom of the page to finish adding a new property.';
+    }
 };
