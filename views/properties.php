@@ -1,4 +1,6 @@
 <main>
+    <h1>Properties</h1>
+
     <?php if(!empty($properties)): ?>
         <div class="properties">
             <?php $first = true; foreach($properties as $property): ?>

@@ -1,4 +1,6 @@
 <main>
+    <h1>Property</h1>
+
     <div class="property property--active">
         <div class="rooms">
             <div class="tabs<?= ($property->noOfRooms <= 5 ? " tabs--$property->noOfRooms" : ' tabs--small'); ?>">
