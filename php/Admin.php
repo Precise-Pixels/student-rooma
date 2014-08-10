@@ -74,6 +74,31 @@ class Admin {
             return $file_ary;
         }
 
+        function resizeImage($img) {
+            $oldWidth = imagesx($img);
+            $oldHeight = imagesy($img);
+
+            $goalWidth = 1200;
+            $goalHeight = 675;
+
+            $oldAspect  = $oldWidth / $oldHeight;
+            $goalAspect = $goalWidth / $goalHeight;
+
+            if($oldAspect >= $goalAspect) {
+                $newHeight = $goalWidth;
+                $newWidth  = $oldWidth / ($oldHeight / $goalHeight);
+            } else {
+                $newWidth  = $goalWidth;
+                $newHeight = $oldHeight / ($oldWidth / $goalWidth);
+            }
+
+            $newImg = imagecreatetruecolor($goalWidth, $goalHeight);
+
+            imagecopyresampled($newImg, $img, 0 - ($newWidth - $goalWidth) / 2, 0 - ($newHeight - $goalHeight) / 2, 0, 0, $newWidth, $newHeight, $oldWidth, $oldHeight);
+
+            return $newImg;
+        }
+
         $i = 1;
 
         foreach(reArrayFiles($_FILES['other-images']) as $image) {
@@ -88,10 +113,13 @@ class Admin {
                     $img = imagecreatefrompng($image['tmp_name']);
                 }
 
+                $resizedImage = resizeImage($img);
+
                 $filename = pathinfo($image['name'], PATHINFO_FILENAME);
 
-                imagejpeg($img, "img/properties/$propertyId/$filename.jpg", 50);
+                imagejpeg($resizedImage, "img/properties/$propertyId/$filename.jpg", 50);
                 imagedestroy($img);
+                imagedestroy($resizedImage);
             }
 
             $i++;
@@ -114,8 +142,11 @@ class Admin {
                     $img = imagecreatefrompng($image['tmp_name']);
                 }
 
-                imagejpeg($img, "img/properties/$propertyId/Room $i.jpg", 50);
+                $resizedImage = resizeImage($img);
+
+                imagejpeg($resizedImage, "img/properties/$propertyId/Room $i.jpg", 50);
                 imagedestroy($img);
+                imagedestroy($resizedImage);
             }
 
             $i++;
