@@ -56,7 +56,7 @@
                             <?= nl2br(stripcslashes($property->info)); ?>
                         </p>
 
-                        <a href="http://maps.google.com/maps?q=<?= $property->address; ?>" target="_blank"><img src="http://maps.googleapis.com/maps/api/staticmap?center=<?= $property->address; ?>&zoom=15&size=200x100&maptype=roadmap&key=AIzaSyCNlx7Q6EFJ2nlJfkAnMIsCm94fdSzaqf4" class="property-map"/></a>
+                        <a href="http://maps.google.com/maps?q=<?= $property->address; ?>" target="_blank"><div data-src="http://maps.googleapis.com/maps/api/staticmap?center=<?= $property->address; ?>&zoom=15&size=200x100&maptype=roadmap&key=AIzaSyCNlx7Q6EFJ2nlJfkAnMIsCm94fdSzaqf4" class="property-map"></div></a>
                     </div>
                 </div>
             <?php endforeach; ?>
