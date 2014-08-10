@@ -54,7 +54,7 @@
 }
 
 .properties > .property {
-    padding-bottom: 75px;
+    padding-bottom: 60px;
 }
 
 .rooms {
@@ -92,18 +92,6 @@
 .room img {
     height: 100%;
     display: block;
-}
-
-.room-price {
-    float: left;
-    color: $orange;
-    line-height: 60px;
-}
-
-.room-type {
-    float: right;
-    color: $dgrey;
-    line-height: 60px;
 }
 
 .room-controls {
@@ -171,7 +159,70 @@
     background: $dgrey-a;
 }
 
+.room-info {
+    height: 60px;
+}
+
+.room-price {
+    float: left;
+    color: $orange;
+    font-size: 26px;
+    margin-top: 13px;
+
+    span {
+        color: $mgrey;
+        font-size: 18px;
+    }
+}
+
+.room-type {
+    float: right;
+    color: $dgrey;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 26px;
+}
+
+.property-address {
+    color: $dgrey;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.property-col {
+    float: left;
+
+    p {
+        font-size: 11px;
+    }
+
+    span {
+        font-weight: 700;
+    }
+}
+
+.property-col--l {
+    width: 60%;
+}
+
+.property-col--r {
+    width: 40%;
+}
+
+.property-info {
+    max-height: 60px;
+    clear: both;
+    overflow-y: auto;
+    font-size: 11px;
+
+    span {
+        display: block;
+        font-weight: 700;
+    }
+}
+
 .property-map {
     width: 100%;
     display: block;
+    margin-bottom: 15px;
 }
