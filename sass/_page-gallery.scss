@@ -1,0 +1,25 @@
+.gallery {
+    padding-bottom: 60px;
+}
+
+.gallery-figure {
+    margin: 0;
+    position: relative;
+}
+
+.gallery-figure img {
+    width: 100%;
+    display: block;
+}
+
+.gallery-figure figcaption {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    color: $white;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+    background: $dgrey-a;
+}

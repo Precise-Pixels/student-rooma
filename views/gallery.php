@@ -1,10 +1,14 @@
 <main>
     <h1>Gallery</h1>
 
-    <?php foreach($images as $image): ?>
-        <img src="/img/properties/<?= $propertyId; ?>/<?= $image; ?>"/>
-        <div class="image-caption"><?= str_replace('.jpg', '', $image); ?></div>
-    <?php endforeach; ?>
+    <div class="gallery">
+        <?php foreach($images as $image): ?>
+            <figure class="gallery-figure">
+                <img src="/img/properties/<?= $propertyId; ?>/<?= $image; ?>"/>
+                <figcaption><?= str_replace('.jpg', '', $image); ?></figcaption>
+            </figure>
+        <?php endforeach; ?>
+    </div>
 
     <div class="decision-buttons decision-buttons--decide padding" data-property-id="<?= $propertyId; ?>">
         <div class="no-wrapper"><button class="no">NO</button></div>
