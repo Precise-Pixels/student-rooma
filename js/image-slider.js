@@ -2,16 +2,20 @@ loadSlider();
 
 function loadSlider() {
     var property     = document.getElementsByClassName('property--active');
-    var controls     = property[0].getElementsByClassName('room-controls');
     var slider       = property[0].getElementsByClassName('room-slider');
     var totalSlides  = property[0].getElementsByClassName('room').length;
+    var controls     = property[0].getElementsByClassName('room-controls');
     var slideWidth   = controls[0].offsetWidth;
+    var left         = controls[0].getElementsByClassName('room-control--left');
+    var right        = controls[0].getElementsByClassName('room-control--right');
     var tabs         = document.getElementsByClassName('tab');
     var currentSlide = 0;
 
     controls[0].addEventListener('touchstart', sliderStart);
     controls[0].addEventListener('touchmove', sliderMove);
-    controls[0].addEventListener('touchend', slideEnd);
+    controls[0].addEventListener('touchend', sliderEnd);
+    left[0].addEventListener('click', sliderLeft);
+    right[0].addEventListener('click', sliderRight);
 
     var touchStart,
         touchMove,
@@ -37,8 +41,7 @@ function loadSlider() {
         }
     }
 
-    function slideEnd(e) {
-        slider[0].className = 'room-slider room-slider--animate';
+    function sliderEnd(e) {
         if((touchStart - touchMove) > slideWidth / 2 && currentSlide < totalSlides - 1) {
             currentSlide++;
         }
@@ -47,8 +50,24 @@ function loadSlider() {
             currentSlide--;
         }
 
-        slider[0].style.transform = 'translate3d(-' + currentSlide * slideWidth + 'px,0,0)';
+        animateSlide();
         updateTabs();
+    }
+
+    function sliderLeft() {
+        if(currentSlide > 0) {
+            currentSlide--;
+            animateSlide();
+            updateTabs();
+        }
+    }
+
+    function sliderRight() {
+        if(currentSlide < totalSlides - 1) {
+            currentSlide++;
+            animateSlide();
+            updateTabs();
+        }
     }
 
     function updateTabs() {
@@ -56,5 +75,10 @@ function loadSlider() {
             tabs[i].className = 'tab';
         }
         tabs[currentSlide].className += ' tab--active';
+    }
+
+    function animateSlide() {
+        slider[0].className = 'room-slider room-slider--animate';
+        slider[0].style.transform = 'translate3d(-' + currentSlide * slideWidth + 'px,0,0)';
     }
 }
