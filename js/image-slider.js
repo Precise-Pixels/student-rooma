@@ -46,11 +46,11 @@ function loadSlider() {
     }
 
     function sliderEnd(e) {
-        if((touchStart - touchMove) > slideWidth / 2 && currentSlide < totalSlides - 1) {
+        if((touchStart - touchMove) > slideWidth / 4 && currentSlide < totalSlides - 1) {
             currentSlide++;
         }
 
-        if((touchStart - touchMove) < ((slideWidth / 2) * -1) && currentSlide > 0) {
+        if((touchStart - touchMove) < ((slideWidth / 4) * -1) && currentSlide > 0) {
             currentSlide--;
         }
 
