@@ -23,8 +23,7 @@ function loadSlider() {
 
     var touchStart,
         touchMove,
-        move,
-        pan;
+        move;
 
     slider[0].style.width = totalSlides * 100 + '%';
 
