@@ -5,13 +5,13 @@
         <div class="rooms">
             <div class="tabs<?= ($property->noOfRooms <= 5 ? " tabs--$property->noOfRooms" : ' tabs--small'); ?>">
                 <?php foreach($property->rooms as $room): ?>
-                    <div class="tab">Room <?= $room->roomNo; ?></div>
+                    <div class="tab-<?= $key; ?>">Room <?= $room->roomNo; ?></div>
                 <?php endforeach; ?>
             </div>
 
             <div class="room-content">
                 <div class="room-slider">
-                    <?php foreach($property->rooms as $room): ?>
+                    <?php foreach($property->rooms as $key => $room): ?>
                         <div class="room room--<?= ($room->availability ? 'available' : 'unavailable'); ?>">
                             <img src="/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg"/>
                             <div class="room-info padding">

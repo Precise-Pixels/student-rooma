@@ -7,8 +7,8 @@
                 <div class="property<?= ($first === true ? ' property--active' : ''); $first = false; ?>" data-property-id="<?= $property->propertyId; ?>">
                     <div class="rooms">
                         <div class="tabs<?= ($property->noOfRooms <= 5 ? " tabs--$property->noOfRooms" : ' tabs--small'); ?>">
-                            <?php foreach($property->rooms as $room): ?>
-                                <div class="tab">Room <?= $room->roomNo; ?></div>
+                            <?php foreach($property->rooms as $key => $room): ?>
+                                <div class="tab tab-<?= $key; ?>">Room <?= $room->roomNo; ?></div>
                             <?php endforeach; ?>
                         </div>
 

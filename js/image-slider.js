@@ -17,6 +17,10 @@ function loadSlider() {
     left[0].addEventListener('click', sliderLeft);
     right[0].addEventListener('click', sliderRight);
 
+    for(var i = 0, l = tabs.length; i < l; i++) {
+        tabs[i].addEventListener('click', clickTabs);
+    }
+
     var touchStart,
         touchMove,
         move,
@@ -70,9 +74,15 @@ function loadSlider() {
         }
     }
 
+    function clickTabs(e) {
+        currentSlide = e.target.className.match(/\d+/)[0];
+        animateSlide();
+        updateTabs();
+    }
+
     function updateTabs() {
         for(var i = 0, l = tabs.length; i < l; i++) {
-            tabs[i].className = 'tab';
+            tabs[i].className = tabs[i].className.replace(' tab--active', '');
         }
         tabs[currentSlide].className += ' tab--active';
     }
