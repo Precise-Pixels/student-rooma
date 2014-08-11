@@ -6,6 +6,7 @@ function loadSlider() {
     var slider       = property[0].getElementsByClassName('room-slider');
     var totalSlides  = property[0].getElementsByClassName('room').length;
     var slideWidth   = controls[0].offsetWidth;
+    var tabs         = document.getElementsByClassName('tab');
     var currentSlide = 0;
 
     controls[0].addEventListener('touchstart', sliderStart);
@@ -18,6 +19,8 @@ function loadSlider() {
         pan;
 
     slider[0].style.width = totalSlides * 100 + '%';
+
+    updateTabs();
 
     function sliderStart(e) {
         slider[0].className = 'room-slider';
@@ -45,5 +48,13 @@ function loadSlider() {
         }
 
         slider[0].style.transform = 'translate3d(-' + currentSlide * slideWidth + 'px,0,0)';
+        updateTabs();
+    }
+
+    function updateTabs() {
+        for(var i = 0, l = tabs.length; i < l; i++) {
+            tabs[i].className = 'tab';
+        }
+        tabs[currentSlide].className += ' tab--active';
     }
 }
