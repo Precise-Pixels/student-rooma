@@ -39,7 +39,7 @@ function loadSlider() {
         touchMove = e.touches[0].pageX;
 
         // Don't overscroll if on the last slide
-        if(currentSlide != totalSlides - 1 || touchStart < touchMove) {
+        if(currentSlide !== totalSlides - 1 || touchStart < touchMove) {
             move = currentSlide * slideWidth + touchStart - touchMove;
             slider[0].style.transform = 'translate3d(-' + move + 'px,0,0)';
         }
@@ -75,7 +75,7 @@ function loadSlider() {
     }
 
     function clickTabs(e) {
-        currentSlide = e.target.className.match(/\d+/)[0];
+        currentSlide = +e.target.className.match(/\d+/)[0];
         animateSlide();
         updateTabs();
     }
