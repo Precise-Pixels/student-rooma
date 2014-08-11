@@ -39,6 +39,9 @@ a[class*="ico-"] {
     text-decoration: none;
 }
 
+.ico-facebook:before {
+	content: "\66";
+}
 .ico-bed:before {
 	content: "\42";
 }

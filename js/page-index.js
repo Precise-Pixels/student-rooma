@@ -36,9 +36,9 @@ function statusChangeCallback(response) {
     if(response.status === 'connected') {
         requestFBData();
     } else if(response.status === 'not_authorized') {
-        document.getElementById('status').innerHTML = 'Please log into this app.';
+        // document.getElementById('status').innerHTML = 'Please log into this app.';
     } else {
-        document.getElementById('status').innerHTML = 'Please log into Facebook.';
+        // document.getElementById('status').innerHTML = 'Please log into Facebook.';
     }
 }
 
@@ -48,7 +48,7 @@ function requestFBData() {
         location;
 
     FB.api('/me', function(response) {
-        console.log('Successful login for: ' + response.name + ' (' + response.id + ')' + ' (' + response.location.name + ')');
+        // console.log('Successful login for: ' + response.name + ' (' + response.id + ')' + ' (' + response.location.name + ')');
         fbId     = encodeURI(response.id);
         name     = encodeURI(response.name);
         location = encodeURI(response.location.name);
@@ -57,7 +57,7 @@ function requestFBData() {
     });
 
     FB.api('/me/permissions', function(response) {
-        console.log(response);
+        // console.log(response);
     });
 
     function proceedLogin() {
