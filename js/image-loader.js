@@ -1,10 +1,16 @@
-var maps = document.getElementsByClassName('property-map');
+loadImages();
 
+function loadImages() {
+    var property = document.getElementsByClassName('property--active');
+    var map      = property[0].getElementsByClassName('property-map');
 
-for(var i = 0, l = maps.length; i < l; i++) {
     var img = new Image();
-    img.src = maps[i].getAttribute('data-src');
+    img.src = map[0].getAttribute('data-src');
     img.className = 'property-map';
 
-    maps[i].parentNode.replaceChild(img, maps[i]);
+    img.addEventListener('load', function() {
+        img.className = 'property-map property-map--loaded';
+    });
+
+    map[0].parentNode.replaceChild(img, map[0]);
 }
