@@ -1,8 +1,9 @@
 .index {
+    background: url(/img/index-bkg.jpg) no-repeat center center fixed;
+    background-size: cover;
+
     main {
         padding-bottom: 15px;
-        background: url(/img/index-bkg.jpg);
-        background-size: cover;
     }
 
     header {
