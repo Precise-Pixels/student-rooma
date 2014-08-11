@@ -13,6 +13,7 @@
 
     <?php if($isProperties): ?>
         <script src="/js/decision.js"></script>
+        <script src="/js/image-slider.js"></script>
         <script src="/js/image-loader.js"></script>
     <?php endif; ?>
 
@@ -22,6 +23,7 @@
     <?php endif; ?>
 
     <?php if($isProperty): ?>
+        <script src="/js/image-slider.js"></script>
         <script src="/js/image-loader.js"></script>
     <?php endif; ?>
 
@@ -56,6 +58,7 @@
 
     <?php if($isProperties): ?>
         <script src="/build/decision.min.js"></script>
+        <script src="/build/image-slider.min.js"></script>
         <script src="/build/image-loader.min.js"></script>
     <?php endif; ?>
 
@@ -65,6 +68,7 @@
     <?php endif; ?>
 
     <?php if($isProperty): ?>
+        <script src="/build/image-slider.min.js"></script>
         <script src="/build/image-loader.min.js"></script>
     <?php endif; ?>
 

@@ -72,16 +72,17 @@
     padding-bottom: 56.25%;
     position: relative;
     z-index: 1;
-    cursor: move;
 }
 
 .room-slider {
-    // http://stackoverflow.com/a/16637689/1696757
-    // 100% * maximum 100 images @ 1200px = 120000px
-    width: 10000%;
+    width: 0;
     height: 100%;
     position: absolute;
     top: 0;
+}
+
+.room-slider--animate {
+    transition: transform .3s ease-out;
 }
 
 .room {
@@ -178,7 +179,7 @@
 .room-type {
     float: right;
     color: $dgrey;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     margin-top: 26px;
 }

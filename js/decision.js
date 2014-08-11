@@ -53,6 +53,7 @@ function propertyDecision(status) {
         if(propertyNext !== null) {
             propertyNext.className = 'property property--active';
             loadImages();
+            loadSlider();
         }
         enableDecisionButtons();
     }
