@@ -37,6 +37,9 @@ if(empty($path)) {                                  // HOME
     $file = '404';
 }
 
+if($isIndex) {
+    require_once('models/model-index.php');
+}
 
 if($isProfile) {
     require_once('models/model-profile.php');
