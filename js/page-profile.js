@@ -56,6 +56,9 @@ document.getElementById('header-btn-l').addEventListener('click', function() {
 
 document.getElementById('header-btn-r').addEventListener('click', function() {
     if(anyChanges()) {
+        var tick = document.getElementsByClassName('ico-tick');
+        tick[0].className = 'ico-spinner ico--centre';
+
         var data = 'lookingIn=' + lookingInAfter + '&rooms=' + roomsAfter + '&availableFrom=' + availableFromAfter + '&minPrice=' + minPriceAfter + '&maxPrice=' + maxPriceAfter + '&phone=' + phoneAfter;
         var request = new XMLHttpRequest();
         request.open('POST', '/php/saveProfile.php', true);
@@ -67,6 +70,7 @@ document.getElementById('header-btn-r').addEventListener('click', function() {
                 window.location.href = '/properties';
             } else if(request.status != 200) {
                 openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
+                tick[0].className = 'ico-tick ico--centre';
             }
         }
     } else {

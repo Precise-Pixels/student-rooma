@@ -78,3 +78,7 @@ a[class*="ico-"] {
 .ico-tick:before {
 	content: "\74";
 }
+
+.ico-spinner:before {
+	content: url(/img/spinner-ico.gif);
+}
