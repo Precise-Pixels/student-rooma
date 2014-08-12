@@ -7,10 +7,10 @@ function loadSlider() {
         var slider       = property[0].getElementsByClassName('room-slider');
         var totalSlides  = property[0].getElementsByClassName('room').length;
         var controls     = property[0].getElementsByClassName('room-controls');
+        var tabs         = property[0].getElementsByClassName('tab');
         var slideWidth   = controls[0].offsetWidth;
         var left         = controls[0].getElementsByClassName('room-control--left');
         var right        = controls[0].getElementsByClassName('room-control--right');
-        var tabs         = document.getElementsByClassName('tab');
         var currentSlide = 0;
 
         controls[0].addEventListener('touchstart', sliderStart);
