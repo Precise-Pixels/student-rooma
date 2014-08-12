@@ -68,8 +68,10 @@
         </div>
     <?php else: ?>
         <div class="properties">
-            <p>There are no properties available within your search filters.</p>
-            <p>Expand your filters in your <a href="profile">Profile</a>.</p>
+            <div class="padding">
+                <p>There are no properties available within your search filters.</p>
+                <p>Expand your filters in your <a href="profile">Profile</a>.</p>
+            </div>
         </div>
     <?php endif; ?>
 </main>
