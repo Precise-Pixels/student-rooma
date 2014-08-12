@@ -100,3 +100,11 @@ input[type='submit'] {
         line-height: 13px;
     }
 }
+
+.decision-buttons--spinner {
+    background: url(/img/spinner.gif) no-repeat center;
+
+    * {
+        visibility: hidden;
+    }
+}

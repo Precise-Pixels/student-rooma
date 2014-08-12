@@ -11,9 +11,9 @@ for(var i = 0, l = decisionButtons.length; i < l; i++) {
             } else if(e.target.parentNode.parentNode.parentNode.className.match('decide')) {
                 propertyDecision('star');
             } else if(e.target.parentNode.parentNode.className.match('update')) {
-                propertyUpdate(e.target.className, e.target.parentNode.parentNode.getAttribute('data-property-id'));
+                propertyUpdate(this, e.target.className, e.target.parentNode.parentNode.getAttribute('data-property-id'));
             } else if(e.target.parentNode.parentNode.parentNode.className.match('update')) {
-                propertyUpdate('star', e.target.parentNode.parentNode.parentNode.getAttribute('data-property-id'));
+                propertyUpdate(this, 'star', e.target.parentNode.parentNode.parentNode.getAttribute('data-property-id'));
             }
         }
     });
@@ -88,7 +88,9 @@ function propertyDecision(status) {
     }
 }
 
-function propertyUpdate(status, propertyId) {
+function propertyUpdate(wrapper, status, propertyId) {
+    wrapper.className += ' decision-buttons--spinner';
+
     var data = 'propertyId=' + propertyId + '&status=' + status;
     var request = new XMLHttpRequest();
     request.open('POST', '/php/updateActivity.php', true);
@@ -100,6 +102,7 @@ function propertyUpdate(status, propertyId) {
             window.location.href = '/activity';
         } else if(request.status != 200) {
             openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
+            wrapper.className = wrapper.className.replace(' decision-buttons--spinner', '');
         }
     }
 }
