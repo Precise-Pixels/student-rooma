@@ -26,6 +26,11 @@ function loadImages() {
     }
 
     // Map
+    if(width > 640 || height > 640) {
+        width = 640;
+        height = 360;
+    }
+
     var img = new Image();
     img.src = map[0].childNodes[0].getAttribute('data-src').replace('WIDTH', width).replace('HEIGHT', height);
 
