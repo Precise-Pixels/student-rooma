@@ -19,7 +19,7 @@
                                         <div data-src="/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg" class="room-image"></div>
                                         <div class="room-info padding">
                                             <span class="room-price">&pound;<?= $room->price; ?><span>pcm</span></span>
-                                            <span class="room-type"><i class="ico-bed"></i><?= ucfirst($room->roomType); ?> room</span>
+                                            <span class="room-type"><i class="ico-bed"></i><?= ucfirst($room->roomType); ?></span>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
