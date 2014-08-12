@@ -4,8 +4,8 @@
     <div class="property property--active">
         <div class="rooms">
             <div class="tabs<?= ($property->noOfRooms <= 5 ? " tabs--$property->noOfRooms" : ' tabs--small'); ?>">
-                <?php foreach($property->rooms as $room): ?>
-                    <div class="tab-<?= $key; ?>">Room <?= $room->roomNo; ?></div>
+                <?php foreach($property->rooms as $key => $room): ?>
+                    <div class="tab tab-<?= $key; ?>">Room <?= $room->roomNo; ?></div>
                 <?php endforeach; ?>
             </div>
 
@@ -13,7 +13,7 @@
                 <div class="room-slider">
                     <?php foreach($property->rooms as $key => $room): ?>
                         <div class="room room--<?= ($room->availability ? 'available' : 'unavailable'); ?>">
-                            <img src="/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg"/>
+                            <div data-src="/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg" class="room-image"></div>
                             <div class="room-info padding">
                                 <span class="room-price">£<?= $room->price; ?><span>pcm</span></span>
                                 <span class="room-type"><i class="ico-bed"></i><?= ucfirst($room->roomType); ?> room</span>
@@ -24,8 +24,8 @@
             </div>
 
             <div class="room-controls">
-                <div class="room-control--left"></div>
-                <div class="room-control--right"></div>
+                <div class="room-control--left"><i class="ico-arrow-left ico--centre"></i></div>
+                <div class="room-control--right"><i class="ico-arrow-right ico--centre"></i></div>
                 <a href="/property/<?= $property->propertyId; ?>/gallery" class="view-house-gallery"><i class="ico-home"></i>View house gallery</a>
             </div>
         </div>

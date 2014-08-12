@@ -59,6 +59,11 @@
 
 .rooms {
     position: relative;
+    background: url(/img/spinner.gif) no-repeat center;
+}
+
+.rooms--loaded {
+    background: none;
 }
 
 .property .tabs {
@@ -90,7 +95,7 @@
     float: left;
 }
 
-.room img {
+.room-image {
     height: 100%;
     display: block;
 }

@@ -16,7 +16,7 @@
                             <div class="room-slider">
                                 <?php foreach($property->rooms as $room): ?>
                                     <div class="room room--<?= ($room->availability ? 'available' : 'unavailable'); ?>">
-                                        <img src="/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg"/>
+                                        <div data-src="/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg" class="room-image"></div>
                                         <div class="room-info padding">
                                             <span class="room-price">&pound;<?= $room->price; ?><span>pcm</span></span>
                                             <span class="room-type"><i class="ico-bed"></i><?= ucfirst($room->roomType); ?> room</span>
