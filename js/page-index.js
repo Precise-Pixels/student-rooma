@@ -1,3 +1,6 @@
+var loginBtn  = document.getElementById('login');
+var loginText = document.getElementById('login-text');
+
 // Facebook SDK
 (function(d, s, id) {
 var js, fjs = d.getElementsByTagName(s)[0];
@@ -14,11 +17,15 @@ window.fbAsyncInit = function() {
         version : 'v2.0'
     });
     FB.getLoginStatus(function(response) {
+        loginBtn.className = 'login--loading';
+        loginText.innerHTML = 'Logging in...';
         statusChangeCallback(response);
     });
 };
 
-document.getElementById('login').addEventListener('click', function() {
+loginBtn.addEventListener('click', function() {
+    loginBtn.className = 'login--loading';
+    loginText.innerHTML = 'Logging in...';
     FB.login(function(response) {
         FB.getLoginStatus(function(response) {
             statusChangeCallback(response);
@@ -31,6 +38,8 @@ document.getElementById('login').addEventListener('click', function() {
 function statusChangeCallback(response) {
     if(response.status === 'connected') {
         requestFBData();
+    } else {
+        resetLoginButton();
     }
 }
 
@@ -62,12 +71,19 @@ function requestFBData() {
                     window.location.href = '/properties';
                 } else {
                     openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
+                    resetLoginButton();
                 }
             } else if(request.status != 200) {
                 openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
+                resetLoginButton();
             }
         }
     }
+}
+
+function resetLoginButton() {
+    loginBtn.className = '';
+    loginText.innerHTML = 'Continue with Facebook';
 }
 
 var youtube = document.getElementById('youtube');

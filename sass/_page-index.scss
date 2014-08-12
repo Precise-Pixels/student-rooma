@@ -59,6 +59,13 @@
     }
 }
 
+#login.login--loading {
+    i {
+        font-size: 0;
+        background: url(/img/spinner-fb.gif) no-repeat center;
+    }
+}
+
 #why-continue {
     margin-top: 60px;
     font-weight: 700;
