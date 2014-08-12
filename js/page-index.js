@@ -69,3 +69,12 @@ function requestFBData() {
         }
     }
 }
+
+var youtube = document.getElementById('youtube');
+
+var iframe = document.createElement('iframe');
+iframe.src = youtube.getAttribute('data-src');
+iframe.frameBorder = '0';
+iframe.setAttribute('allowfullscreen', '');
+
+youtube.parentNode.replaceChild(iframe, youtube);
