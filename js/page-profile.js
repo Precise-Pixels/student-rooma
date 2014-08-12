@@ -9,10 +9,12 @@ roomsIncrement.addEventListener('click', roomsStepper);
 function roomsStepper(e) {
     if(e.target.id == 'rooms-increment' && rooms.value == 'ANY') {
         rooms.value = 1;
+        roomsDecrement.disabled = false;
     } else if(e.target.id == 'rooms-increment') {
         rooms.value = (+rooms.value) + 1;
     } else if(e.target.id == 'rooms-decrement' && rooms.value == 1) {
         rooms.value = 'ANY';
+        roomsDecrement.disabled = true;
     } else if(e.target.id == 'rooms-decrement' && rooms.value == 'ANY') {
         rooms.value = 'ANY';
     } else if(e.target.id == 'rooms-decrement') {

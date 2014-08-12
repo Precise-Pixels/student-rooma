@@ -90,16 +90,16 @@
     margin-top: 30px;
     font-size: 12px;
     text-shadow: 0 0 5px $mgrey;
-}
 
-#small-print a {
-    border-bottom: 1px solid $dgrey;
-    color: $dgrey;
-    text-decoration: none;
+    a {
+        border-bottom: 1px solid $dgrey;
+        color: $dgrey;
+        text-decoration: none;
 
-    &:hover {
-    border-bottom: 1px solid $orange;
-    color: $orange;
+        &:hover {
+            border-bottom: 1px solid $orange;
+            color: $orange;
+        }
     }
 }
 

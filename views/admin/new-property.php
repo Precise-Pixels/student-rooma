@@ -50,7 +50,7 @@
             </div>
 
             <div class="form-row">
-                <label for="info">House info</label>
+                <label for="info">General information</label>
                 <textarea name="info" required></textarea>
                 <span class="hint">General information about the house such as number of bathrooms, garden, pets allowed, etc. Return carriages will be preserved.</span>
             </div>
@@ -59,7 +59,7 @@
                 <label for="rooms">Number of bedrooms</label>
                 <div class="stepper">
                     <button type="button" id="rooms-decrement" disabled>-</button>
-                    <input type="number" id="rooms" name="rooms" readonly />
+                    <input type="number" id="rooms" name="rooms" readonly/>
                     <button type="button" id="rooms-increment">+</button>
                 </div>
             </div>
