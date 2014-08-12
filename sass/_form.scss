@@ -16,6 +16,7 @@ label {
 
 input[type='checkbox'] {
     position: absolute;
+    left: -999%;
     opacity: 0;
 
     & + .checkbox-style {
@@ -52,6 +53,7 @@ input[type='checkbox'] {
 
 input[type='radio'] {
     position: absolute;
+    left: -999%;
     opacity: 0;
 
     & + .radio-style {
