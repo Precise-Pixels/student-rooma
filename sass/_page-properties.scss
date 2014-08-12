@@ -240,9 +240,18 @@
     display: block;
     margin-bottom: 15px;
     background: url(/img/spinner.gif) no-repeat center;
+
+    img {
+        opacity: 0;
+        transition: opacity .3s;
+    }
 }
 
 .property-map--loaded {
     height: auto;
     padding-bottom: 0;
+
+    img {
+        opacity: 1;
+    }
 }

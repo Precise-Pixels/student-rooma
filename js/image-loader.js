@@ -27,12 +27,11 @@ function loadImages() {
 
     // Map
     var img = new Image();
-    img.src = map[0].getAttribute('data-src').replace('WIDTH', width).replace('HEIGHT', height);
-    img.className = 'property-map';
+    img.src = map[0].childNodes[0].getAttribute('data-src').replace('WIDTH', width).replace('HEIGHT', height);
 
     img.addEventListener('load', function() {
-        img.className = 'property-map property-map--loaded';
+        map[0].className = 'property-map property-map--loaded';
     });
 
-    map[0].parentNode.replaceChild(img, map[0]);
+    map[0].replaceChild(img, map[0].childNodes[0]);
 }
