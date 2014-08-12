@@ -26,11 +26,12 @@ function loadSlider() {
         move;
 
     slider[0].style.width = totalSlides * 100 + '%';
+    slider[0].className = 'room-slider room-slider--loaded';
 
     updateTabs();
 
     function sliderStart(e) {
-        slider[0].className = 'room-slider';
+        slider[0].className = 'room-slider room-slider--loaded';
         touchStart = e.touches[0].pageX;
     }
 
@@ -87,7 +88,7 @@ function loadSlider() {
     }
 
     function animateSlide() {
-        slider[0].className = 'room-slider room-slider--animate';
+        slider[0].className = 'room-slider room-slider--loaded room-slider--animate';
         slider[0].style.transform = 'translate3d(-' + currentSlide * slideWidth + 'px,0,0)';
     }
 }
