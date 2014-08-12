@@ -41,10 +41,10 @@
 
             <div class="property-col property-col--r">
                 <?php if($property->location == 'Canterbury'): ?>
-                    <p><span>Walk to UKC:</span> <?= $property->distanceUKC; ?>m</p>
-                    <p><span>Walk to CCCU:</span> <?= $property->distanceCCCU; ?>m</p>
+                    <p><span>Walk to UKC:</span> <?= $property->distanceUKC; ?>min</p>
+                    <p><span>Walk to CCCU:</span> <?= $property->distanceCCCU; ?>min</p>
                 <?php else: ?>
-                    <p><span>Walk to UKM:</span> <?= $property->distanceUKM; ?>m</p>
+                    <p><span>Walk to UKM:</span> <?= $property->distanceUKM; ?>min</p>
                 <?php endif; ?>
             </div>
 
