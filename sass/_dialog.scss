@@ -50,22 +50,22 @@
 
 .dialog--alert,
 .dialog--error {
-    #dialog-button-y {
-        width: 100%;
-    }
-
     #dialog-button-n {
         display: none;
+    }
+
+    #dialog-button-y {
+        width: 100%;
     }
 }
 
 .dialog--prompt {
-    #dialog-button-y {
+    #dialog-button-n {
         width: 47%;
         float: left;
     }
 
-    #dialog-button-n {
+    #dialog-button-y {
         width: 47%;
         float: right;
     }
