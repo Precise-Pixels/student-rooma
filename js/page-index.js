@@ -1,11 +1,3 @@
-document.getElementById('login').addEventListener('click', function() {
-    FB.login(function(response) {
-        checkLoginState();
-    },
-        {scope: 'public_profile, user_location'}
-    );
-});
-
 // Facebook SDK
 (function(d, s, id) {
 var js, fjs = d.getElementsByTagName(s)[0];
@@ -26,19 +18,19 @@ window.fbAsyncInit = function() {
     });
 };
 
-function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-    });
-}
+document.getElementById('login').addEventListener('click', function() {
+    FB.login(function(response) {
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    },
+        {scope: 'public_profile, user_location'}
+    );
+});
 
 function statusChangeCallback(response) {
     if(response.status === 'connected') {
         requestFBData();
-    } else if(response.status === 'not_authorized') {
-        // document.getElementById('status').innerHTML = 'Please log into this app.';
-    } else {
-        // document.getElementById('status').innerHTML = 'Please log into Facebook.';
     }
 }
 
@@ -48,16 +40,11 @@ function requestFBData() {
         location;
 
     FB.api('/me', function(response) {
-        // console.log('Successful login for: ' + response.name + ' (' + response.id + ')' + ' (' + response.location.name + ')');
         fbId     = encodeURI(response.id);
         name     = encodeURI(response.name);
         location = encodeURI(response.location.name);
 
         proceedLogin();
-    });
-
-    FB.api('/me/permissions', function(response) {
-        // console.log(response);
     });
 
     function proceedLogin() {
