@@ -20,7 +20,7 @@
         <div class="form-row">
             <label for="rooms">No of rooms</label>
             <div class="stepper">
-                <button id="rooms-decrement" disabled>-</button>
+                <button id="rooms-decrement"<?= ($user->rooms === 'ANY' ? ' disabled' : ''); ?>>-</button>
                 <input type="text" id="rooms" name="rooms" value="<?= $user->rooms; ?>" readonly/>
                 <button id="rooms-increment">+</button>
             </div>
