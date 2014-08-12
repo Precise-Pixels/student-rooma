@@ -176,9 +176,10 @@
 
 .room-price {
     float: left;
+    margin-top: 10px;
     color: $orange;
-    font-size: 26px;
-    margin-top: 13px;
+    font-size: 30px;
+    font-weight: 600;
 
     span {
         color: $mgrey;
@@ -188,10 +189,10 @@
 
 .room-type {
     float: right;
+    margin-top: 27px;
     color: $dgrey;
-    font-size: 12px;
-    font-weight: 700;
-    margin-top: 26px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .property-address {
