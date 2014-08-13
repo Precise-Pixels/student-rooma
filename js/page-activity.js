@@ -1,9 +1,9 @@
 var tabBooked  = document.getElementById('tab--booked');
 var tabStarred = document.getElementById('tab--starred');
 var tabNos     = document.getElementById('tab--nos');
-var booked     = document.getElementById('booked');
-var starred    = document.getElementById('starred');
-var nos        = document.getElementById('nos');
+var booked     = document.getElementById('booked-content');
+var starred    = document.getElementById('starred-content');
+var nos        = document.getElementById('nos-content');
 
 tabBooked.addEventListener('click', function() {
     changeTab('booked');

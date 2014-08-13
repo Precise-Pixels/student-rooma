@@ -7,7 +7,7 @@
         <div id="tab--nos" class="tab">No's</div>
     </div>
 
-    <div id="booked" class="tab-content">
+    <div id="booked-content" class="tab-content">
         <?php $i = 0; foreach($activity as $property):
             if($property->status != 'book') { continue; } ?>
             <div class="activity padding">
@@ -30,7 +30,7 @@
         <?php endif; ?>
     </div>
 
-    <div id="starred" class="tab-content--show">
+    <div id="starred-content" class="tab-content--show">
         <?php $i = 0; foreach($activity as $property):
             if($property->status != 'star') { continue; } ?>
             <div class="activity padding">
@@ -53,7 +53,7 @@
         <?php endif; ?>
     </div>
 
-    <div id="nos" class="tab-content">
+    <div id="nos-content" class="tab-content">
         <?php $i = 0; foreach($activity as $property):
             if($property->status != 'no') { continue; } ?>
             <div class="activity padding">
