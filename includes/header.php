@@ -22,7 +22,7 @@
         <?php endif; ?>
 
         <?php if($isProperties): ?>
-            <a href="/activity"><div id="header-btn-l"><i class="ico-activity ico--centre"><span>Activity</span></i></div></a>
+            <a href="/activity#starred"><div id="header-btn-l"><i class="ico-activity ico--centre"><span>Activity</span></i></div></a>
             <a href="/profile"><div id="header-btn-r"><i class="ico-profile ico--centre"><span>Profile</span></i></div></a>
         <?php endif; ?>
 

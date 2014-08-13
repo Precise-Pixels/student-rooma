@@ -6,25 +6,42 @@ var starred    = document.getElementById('starred');
 var nos        = document.getElementById('nos');
 
 tabBooked.addEventListener('click', function() {
-    resetTabs();
-    tabBooked.className = 'tab tab--active';
-    booked.className    = 'tab-content tab-content--show';
-    changeHash('booked');
+    changeTab('booked');
 });
 
 tabStarred.addEventListener('click', function() {
-    resetTabs();
-    tabStarred.className = 'tab tab--active';
-    starred.className    = 'tab-content tab-content--show';
-    changeHash('starred');
+    changeTab('starred');
 });
 
 tabNos.addEventListener('click', function() {
-    resetTabs();
-    tabNos.className = 'tab tab--active';
-    nos.className    = 'tab-content tab-content--show';
-    changeHash('nos');
+    changeTab('nos');
 });
+
+window.addEventListener('hashchange', function() {
+    changeTab(location.hash.substring(1));
+});
+
+function changeTab(which) {
+    resetTabs();
+
+    switch(which) {
+        case 'booked':
+            tabBooked.className = 'tab tab--active';
+            booked.className    = 'tab-content tab-content--show';
+            changeHash('booked');
+            break;
+        case 'starred':
+            tabStarred.className = 'tab tab--active';
+            starred.className    = 'tab-content tab-content--show';
+            changeHash('starred');
+            break;
+        case 'nos':
+            tabNos.className = 'tab tab--active';
+            nos.className    = 'tab-content tab-content--show';
+            changeHash('nos');
+            break;
+    }
+}
 
 function changeHash(hash) {
     if('replaceState' in history) {
