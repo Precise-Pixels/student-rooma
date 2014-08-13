@@ -32,7 +32,7 @@
         <?php endif; ?>
 
         <?php if($isProperty): ?>
-            <a href="/activity"><div id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back to Activity</span></i></div></a>
+            <a href="/activity#starred"><div id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back to Activity</span></i></div></a>
             <a href="/profile"><div id="header-btn-r"><i class="ico-profile ico--centre"><span>Profile</span></i></div></a>
         <?php endif; ?>
 

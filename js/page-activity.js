@@ -21,6 +21,8 @@ window.addEventListener('hashchange', function() {
     changeTab(location.hash.substring(1));
 });
 
+changeTab(location.hash.substring(1));
+
 function changeTab(which) {
     resetTabs();
 

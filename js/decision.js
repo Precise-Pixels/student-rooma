@@ -99,7 +99,7 @@ function propertyUpdate(wrapper, status, propertyId) {
 
     request.onreadystatechange = function() {
         if(request.readyState == 4 && request.status == 200) {
-            window.location.href = '/activity';
+            window.location.reload();
         } else if(request.status != 200) {
             openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
             wrapper.className = wrapper.className.replace(' decision-buttons--spinner', '');
