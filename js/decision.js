@@ -47,8 +47,13 @@ function propertyDecision(status) {
         propertyNext.className = 'property property--next';
     }
 
+    // Pulse the Activity icon
+    var activityIcon = document.getElementById('header-btn-l');
+    activityIcon.className = 'header-btn-l--pulse';
+
     // Make next property active
     function animationEnd() {
+        activityIcon.className = '';
         propertyActive[0].className = 'property';
         if(propertyNext !== null) {
             propertyNext.className = 'property property--active';
