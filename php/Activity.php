@@ -12,8 +12,19 @@ class Activity {
                             WHERE userId=$userId
                             ORDER BY activity.timestamp DESC");
         $sth->setFetchMode(PDO::FETCH_OBJ);
-        $results = $sth->fetchAll();
+        $activity = $sth->fetchAll();
 
-        return $results;
+        foreach($activity as $property) {
+            $sth = $dbh->query("SELECT MIN(price) AS minPrice, MAX(price) AS maxPrice
+                                FROM rooms
+                                WHERE propertyId=$property->propertyId");
+            $sth->setFetchMode(PDO::FETCH_OBJ);
+            $prices = $sth->fetch();
+
+            $property->minPrice = $prices->minPrice;
+            $property->maxPrice = $prices->maxPrice;
+        }
+
+        return $activity;
     }
 }

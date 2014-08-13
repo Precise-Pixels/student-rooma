@@ -12,7 +12,7 @@
             if($property->status != 'book') { continue; } ?>
             <div class="activity padding">
                 <img src="/img/properties/<?= $property->propertyId; ?>/Room 1.jpg" class="activity-image"/>
-                <span class="activity-price">£320-340<span>pcm</span></span>
+                <span class="activity-price">£<?= str_replace('.00', '', $property->minPrice); ?>-<?= str_replace('.00', '', $property->maxPrice); ?><span>pcm</span></span>
                 <span class="activity-address"><?= $property->address; ?></span>
                 <span class="activity-rooms"><?= $property->noOfRooms; ?></span>
 
@@ -34,7 +34,7 @@
             if($property->status != 'star') { continue; } ?>
             <div class="activity padding">
                 <img src="/img/properties/<?= $property->propertyId; ?>/Room 1.jpg" class="activity-image"/>
-                <span class="activity-price">£320-340<span>pcm</span></span>
+                <span class="activity-price">£<?= str_replace('.00', '', $property->minPrice); ?>-<?= str_replace('.00', '', $property->maxPrice); ?><span>pcm</span></span>
                 <i class="ico-pointer"></i>
                 <span class="activity-address"><?= $property->address; ?></span>
                 <span class="activity-rooms"><i class="ico-bed"></i><?= $property->noOfRooms; ?></span>
@@ -57,7 +57,7 @@
             if($property->status != 'no') { continue; } ?>
             <div class="activity padding">
                 <img src="/img/properties/<?= $property->propertyId; ?>/Room 1.jpg" class="activity-image"/>
-                <span class="activity-price">£320-340<span>pcm</span></span>
+                <span class="activity-price">£<?= str_replace('.00', '', $property->minPrice); ?>-<?= str_replace('.00', '', $property->maxPrice); ?><span>pcm</span></span>
                 <span class="activity-address"><?= $property->address; ?></span>
                 <span class="activity-rooms"><?= $property->noOfRooms; ?></span>
 
