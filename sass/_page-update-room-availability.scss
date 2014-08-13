@@ -1,4 +1,28 @@
-.spinner--show {
-    background: url(/img/spinner.gif) no-repeat right;
-    background-size: 22px;
+.availability-row {
+    border-top: 1px solid $mgrey;
+    padding: 15px 0;
+}
+
+.availability-address {
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.availability-rooms {
+    overflow: hidden;
+}
+
+.availability-room {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+
+    &.spinner--show {
+        background: url(/img/spinner.gif) no-repeat center bottom;
+        background-size: 22px;
+
+        > .checkbox-style {
+            visibility: hidden;
+        }
+    }
 }

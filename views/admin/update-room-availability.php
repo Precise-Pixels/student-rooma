@@ -4,26 +4,19 @@
 
         <p>All changes are saved automatically.</p>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Address</th>
-                    <th>Room number</th>
-                    <th>Availability</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach($properties as $i => $property): ?>
-                    <tr>
-                        <td><?= $property->address; ?></td>
-                        <td><?= $property->roomNo; ?></td>
-                        <td>
-                            <input type="checkbox" id="checkbox-<?= $i; ?>" class="availability" data-room-id="<?= $property->roomId; ?>"<?= ($property->availability == 1 ? ' checked' : ''); ?>/>
-                            <label for="checkbox-<?= $i; ?>" class="checkbox-style"></label>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+        <?php foreach($properties as $property): ?>
+            <div class="availability-row">
+                <div class="availability-address"><?= $property->address; ?></div>
+                <div class="availability-rooms">
+                    <?php foreach($property->rooms as $room): ?>
+                        <div class="availability-room">
+                            <label>Room <?= $room->roomNo; ?></label>
+                            <input type="checkbox" id="checkbox-<?= $room->roomId; ?>" class="availability" data-room-id="<?= $room->roomId; ?>"<?= ($room->availability == 1 ? ' checked' : ''); ?>/>
+                            <label for="checkbox-<?= $room->roomId; ?>" class="checkbox-style"></label>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 </main>

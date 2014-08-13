@@ -158,12 +158,26 @@ class Admin {
     static function getProperties() {
         require('db.php');
 
-        $sth = $dbh->query("SELECT rooms.roomId, rooms.roomNo, rooms.availability, properties.address
-                            FROM rooms
-                            INNER JOIN properties ON rooms.propertyId=properties.propertyId");
+        $sth = $dbh->query("SELECT propertyId, address FROM properties");
         $sth->setFetchMode(PDO::FETCH_OBJ);
-        $results = $sth->fetchAll();
+        $properties = $sth->fetchAll();
 
-        return $results;
+        $sth = $dbh->query("SELECT roomId, propertyId, roomNo, availability FROM rooms");
+        $sth->setFetchMode(PDO::FETCH_OBJ);
+        $rooms = $sth->fetchAll();
+
+        foreach($properties as $property) {
+            $roomArray = array();
+
+            foreach($rooms as $room) {
+                if($room->propertyId === $property->propertyId) {
+                    array_push($roomArray, $room);
+                }
+            }
+
+            $property->rooms = $roomArray;
+        }
+
+        return $properties;
     }
 }
