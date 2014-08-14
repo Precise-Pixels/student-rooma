@@ -17,7 +17,7 @@
 
         <hr>
 
-        <div class="form-row">
+        <div class="form-row form-row--half">
             <label for="rooms">No of rooms</label>
             <div class="stepper">
                 <button id="rooms-decrement"<?= ($user->rooms === 'ANY' ? ' disabled' : ''); ?>>-</button>
@@ -26,18 +26,18 @@
             </div>
         </div>
 
-        <div class="form-row">
+        <div class="form-row form-row--half">
             <label for="available-from">Available from</label>
             <input type="date" id="available-from" name="available-from" value="<?= $user->availableFrom; ?>"/>
             <span class="hint hint--date">yyyy-mm-dd</span>
         </div>
 
-        <div class="form-row">
+        <div class="form-row form-row--half">
             <label for="min-price">Min price</label>
             <input type="number" id="min-price" name="min-price" value="<?= $user->minPrice; ?>"/>
         </div>
 
-        <div class="form-row">
+        <div class="form-row form-row--half">
             <label for="max-price">Max price</label>
             <input type="number" id="max-price" name="max-price" value="<?= $user->maxPrice; ?>"/>
         </div>
