@@ -10,7 +10,7 @@
 
         <div class="profile-looking-in form-row">
             <p>Your search filters</p>
-            <label for="looking-in">Looking in</label>
+            <label for="looking-in" id="profile-looking-in-label">Looking in</label>
             <input type="radio" id="canterbury" name="looking-in" value="Canterbury"<?= ($user->lookingIn === 'Canterbury' ? ' checked' : '') ?>/> <label for="canterbury" class="radio-style">Canterbury</label>
             <input type="radio" id="medway" name="looking-in" value="Medway"<?= ($user->lookingIn === 'Medway' ? ' checked' : '') ?>/> <label for="medway" class="radio-style">Medway</label>
         </div>
@@ -18,7 +18,7 @@
         <hr>
 
         <div class="form-row form-row--half">
-            <label for="rooms">No of rooms</label>
+            <label for="rooms">Number of bedrooms</label>
             <div class="stepper">
                 <button id="rooms-decrement"<?= ($user->rooms === 'ANY' ? ' disabled' : ''); ?>>-</button>
                 <input type="text" id="rooms" name="rooms" value="<?= $user->rooms; ?>" readonly/>
@@ -50,7 +50,7 @@
         </div>
 
         <button id="reset" class="button-profile--left"><i class="ico-refresh"></i>Reset No's</button>
-        <a href="logout"><button class="button-profile--right">LOGOUT</button></a>
+        <a href="logout"><button class="button-profile--right">Logout</button></a>
 
         <p id="about-this-app"><a href="/about">About this app</a></p>
     </div>

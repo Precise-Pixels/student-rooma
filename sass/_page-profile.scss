@@ -17,7 +17,12 @@
 }
 
 .profile-looking-in {
+    margin: 0;
     text-align: center;
+}
+
+#profile-looking-in-label {
+    margin-bottom: 15px;
 }
 
 .profile-other {
@@ -28,7 +33,10 @@
 }
 
 #phone {
+    height: 40px;
     text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
 }
 
 .button-profile--left,
