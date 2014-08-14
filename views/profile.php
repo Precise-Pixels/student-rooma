@@ -34,12 +34,12 @@
 
         <div class="form-row form-row--half">
             <label for="min-price">Min price</label>
-            <input type="number" id="min-price" name="min-price" value="<?= $user->minPrice; ?>"/>
+            <input type="number" step="10" id="min-price" name="min-price" value="<?= $user->minPrice; ?>"/>
         </div>
 
         <div class="form-row form-row--half">
             <label for="max-price">Max price</label>
-            <input type="number" id="max-price" name="max-price" value="<?= $user->maxPrice; ?>"/>
+            <input type="number" step="10" id="max-price" name="max-price" value="<?= $user->maxPrice; ?>"/>
         </div>
     </div>
 
