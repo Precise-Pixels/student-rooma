@@ -23,8 +23,8 @@ $isAdminUpdateRoomAvailability = preg_match('#^admin\/update-room-availability/?
 $path = preg_replace('/\/$|.php/', '', $q);
 if(empty($path)) {                                  // HOME
     $file = 'index';
-} elseif($isTerms || $isPrivacy) {
-    $file = $path;
+} elseif($isTerms || $isPrivacy || $isAdmin) {
+    $file = $path;                                  // ALLOW WITHOUT LOGGING IN
 } elseif($isAdminActivity || $isAdminNewProperty || $isAdminUpdateRoomAvailability) {
     if(!isset($_SESSION['s_admin'])) {
         header('location: /admin');
