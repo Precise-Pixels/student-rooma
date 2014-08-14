@@ -11,7 +11,7 @@
 
             <div class="room-content">
                 <div class="room-slider">
-                    <?php foreach($property->rooms as $key => $room): ?>
+                    <?php foreach($property->rooms as $room): ?>
                         <div class="room room--<?= ($room->availability ? 'available' : 'unavailable'); ?>">
                             <div data-src="/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg" class="room-image"></div>
                             <div class="room-info padding">
