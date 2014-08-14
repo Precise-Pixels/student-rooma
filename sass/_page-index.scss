@@ -3,7 +3,9 @@
     background-size: cover;
 
     main {
+        padding-top: 40px;
         padding-bottom: 15px;
+        text-align: center;
     }
 
     header {
@@ -15,16 +17,15 @@
     #logo {
         width: 70%;
         max-width: 400px;
-    }
-
-    main {
-        text-align: center;
+        margin: 0;
     }
 }
 
 #slogan {
+    width: 70%;
+    margin: 10px auto;
     color: $white;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
 }
 
@@ -67,7 +68,8 @@
 }
 
 #why-continue {
-    margin-top: 60px;
+    margin-top: 30px;
+    font-size: 14px;
     font-weight: 700;
 }
 
@@ -87,8 +89,8 @@
 }
 
 #small-print {
-    margin-top: 30px;
-    font-size: 12px;
+    margin: 15px auto;
+    font-size: 9px;
     text-shadow: 0 0 5px $mgrey;
 
     a {
@@ -104,7 +106,7 @@
 }
 
 #copyright {
-    font-size: 12px;
+    font-size: 9px;
     font-weight: 700;
     text-shadow: 0 0 5px $mgrey;
 }
