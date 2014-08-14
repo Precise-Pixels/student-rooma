@@ -2,7 +2,7 @@
     <div class="padding">
         <h1>Student Rooma</h1>
 
-        <button id="login"><i class="ico-facebook"></i><span id="login-text">Continue with Facebook</span></button>
+        <button id="login" autofocus><i class="ico-facebook"></i><span id="login-text">Continue with Facebook</span></button>
 
         <p id="why-continue">Why continue?</p>
 
