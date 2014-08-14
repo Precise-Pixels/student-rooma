@@ -12,6 +12,8 @@ $isActivity                    = preg_match('#^activity/?$#', $q);
 $isProperty                    = preg_match('#^property\/\d+/?$#', $q);
 $isGallery                     = preg_match('#^property\/\d+/gallery/?$#', $q);
 $isAbout                       = preg_match('#^about/?$#', $q);
+$isTerms                       = preg_match('#^terms-and-conditions/?$#', $q);
+$isPrivacy                     = preg_match('#^privacy-policy/?$#', $q);
 $isLogout                      = preg_match('#^logout/?$#', $q);
 $isAdmin                       = preg_match('#^admin/?$#', $q);
 $isAdminActivity               = preg_match('#^admin\/activity/?$#', $q);
@@ -21,6 +23,8 @@ $isAdminUpdateRoomAvailability = preg_match('#^admin\/update-room-availability/?
 $path = preg_replace('/\/$|.php/', '', $q);
 if(empty($path)) {                                  // HOME
     $file = 'index';
+} elseif($isTerms || $isPrivacy) {
+    $file = $path;
 } elseif($isAdminActivity || $isAdminNewProperty || $isAdminUpdateRoomAvailability) {
     if(!isset($_SESSION['s_admin'])) {
         header('location: /admin');

@@ -45,6 +45,10 @@
             <a href="/profile"><div id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></div></a>
         <?php endif; ?>
 
+        <?php if($isTerms || $isPrivacy): ?>
+            <a href="/"><div id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></div></a>
+        <?php endif; ?>
+
         <?php if($isAdminActivity || $isAdminNewProperty || $isAdminUpdateRoomAvailability): ?>
             <a href="/admin"><div id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></div></a>
         <?php endif; ?>
