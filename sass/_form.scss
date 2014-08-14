@@ -131,10 +131,10 @@ input[type='date']::-webkit-inner-spin-button {
 input[type=date]::-webkit-calendar-picker-indicator {
     -webkit-appearance: none;
     color: transparent;
-    width: 20px;
-    height: 26px;
+    width: 24px;
+    height: 30px;
     margin-left: 5px;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5QTFRFhYWF/v7+6enp29vbyMjItLS09fX1ZmZmn5+fXFxcWQ3esAAAAKpJREFUeNq0k90agyAIQOVHwvd/4SELYyx31bg4X3ZCULMdP6M9oMeMnVaBCLkgLfQcgJCq4gUI3UwRYrdHdujEXveiARG2Ws+2ZHawkDT13m32gA+T1s95J3rS/pIXau2b7KwFEWXhPUwamRkL/tGanSyrIWcjEYlDFm5bA9/Psqkx+WBfE5aFRWuDZJXZZ/ve5AO1z098125sgpgL2s1/PlY8dku28RJgANRPEyEDx80dAAAAAElFTkSuQmCC) no-repeat;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAMAAAANmfvwAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5QTFRF6OjojY2N////ZmZm29vbzMzMtbW1pqam9PT0dnZ2kfXTxwAAAMpJREFUeNq8U1sOwyAMS7IkhPtfeA50iKmlj59awkLIMjYP+lyCXpXUPq97DAnJAjYkIRI5ChAKcnGwTRISUiVqc/OxzAuJpqRSpihnkiOXloUYIAOVKGD/l1w1ImGcQYl00XThA5dMx3OjusvCWaDHtdaId41uuJi7W4CcKDnawuNG97J0idmTRvy0Ea5RSUAa0aZ9YZboT2KBG42NFhtp4FXABYhV3NxI20axdFlI8Bjgkr9Cj7Oszl90SPArEo3LDH7/25/jK8AAqz4O+Aiec4YAAAAASUVORK5CYII=) no-repeat;
 }
 
 input[disabled],
