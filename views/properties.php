@@ -3,8 +3,8 @@
 
     <?php if(!empty($properties)): ?>
         <div class="properties">
-            <?php $first = true; foreach($properties as $property): ?>
-                <div class="property<?= ($first === true ? ' property--active' : ''); $first = false; ?>" data-property-id="<?= $property->propertyId; ?>">
+            <?php foreach($properties as $key => $property): ?>
+                <div class="property<?= ($key === 0 ? ' property--active' : ''); ?>" data-property-id="<?= $property->propertyId; ?>">
                     <div class="rooms">
                         <div class="tabs<?= ($property->noOfRooms <= 5 ? " tabs--$property->noOfRooms" : ' tabs--small'); ?>">
                             <?php foreach($property->rooms as $key => $room): ?>
