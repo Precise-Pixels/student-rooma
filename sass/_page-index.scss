@@ -90,8 +90,11 @@
 
 #small-print {
     margin: 15px auto;
-    font-size: 9px;
-    text-shadow: 0 0 5px $mgrey;
+
+    p {
+        font-size: 9px;
+        text-shadow: 0 0 5px $mgrey;
+    }
 
     a {
         border-bottom: 1px solid $dgrey;
