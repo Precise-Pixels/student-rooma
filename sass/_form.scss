@@ -106,6 +106,24 @@ select {
     }
 }
 
+input[type='date'] {
+    padding-right: 0;
+}
+
+input[type='date']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+    -webkit-appearance: none;
+    color: transparent;
+    width: 20px;
+    height: 26px;
+    margin-left: 5px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5QTFRFhYWF/v7+6enp29vbyMjItLS09fX1ZmZmn5+fXFxcWQ3esAAAAKpJREFUeNq0k90agyAIQOVHwvd/4SELYyx31bg4X3ZCULMdP6M9oMeMnVaBCLkgLfQcgJCq4gUI3UwRYrdHdujEXveiARG2Ws+2ZHawkDT13m32gA+T1s95J3rS/pIXau2b7KwFEWXhPUwamRkL/tGanSyrIWcjEYlDFm5bA9/Psqkx+WBfE5aFRWuDZJXZZ/ve5AO1z098125sgpgL2s1/PlY8dku28RJgANRPEyEDx80dAAAAAElFTkSuQmCC) no-repeat;
+}
+
 input[disabled],
 input[readonly] {
     border-color: transparent;
@@ -122,4 +140,14 @@ input[type='submit'] {
 .hint {
     color: $mgrey;
     font-size: 14px;
+}
+
+.hint--date {
+    display: inline;
+}
+
+@media (-webkit-min-device-pixel-ratio: 0) {
+    .hint--date {
+        display: none;
+    }
 }

@@ -29,6 +29,7 @@
         <div class="form-row">
             <label for="available-from">Available from</label>
             <input type="date" id="available-from" name="available-from" value="<?= $user->availableFrom; ?>"/>
+            <span class="hint hint--date">yyyy-mm-dd</span>
         </div>
 
         <div class="form-row">
