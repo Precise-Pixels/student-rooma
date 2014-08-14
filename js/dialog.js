@@ -15,7 +15,8 @@ function openDialog(heading, text, buttonY, buttonN, func, type) {
     dialogButtonY.addEventListener('click', clickDialogButtonY);
     dialogButtonN.addEventListener('click', clickDialogButtonN);
 
-    dialog.className = 'dialog--show dialog--' + type;
+    dialog.className        = 'dialog--show dialog--' + type;
+    document.body.className = 'dialog--show';
 }
 
 function clickDialogButtonY() {
@@ -49,8 +50,9 @@ function clickDialogButtonN() {
 }
 
 function closeDialog() {
-    dialogFunc = null;
-    dialog.className = '';
+    dialogFunc              = null;
+    dialog.className        = '';
+    document.body.className = '';
     dialogHeading.innerHTML = '';
     dialogText.innerHTML    = '';
     dialogButtonY.innerHTML = '';

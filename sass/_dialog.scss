@@ -12,6 +12,10 @@
     display: block;
 }
 
+body.dialog--show {
+    overflow: hidden;
+}
+
 #dialog-heading {
     height: 60px;
     display: block;
