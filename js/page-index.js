@@ -20,6 +20,7 @@ window.fbAsyncInit = function() {
         loginBtn.className = 'login--loading';
         loginText.innerHTML = 'Logging in...';
         statusChangeCallback(response);
+        loadYoutubeVideo();
     });
 };
 
@@ -86,11 +87,13 @@ function resetLoginButton() {
     loginText.innerHTML = 'Continue with Facebook';
 }
 
-var youtube = document.getElementById('youtube');
+function loadYoutubeVideo() {
+    var youtube = document.getElementById('youtube');
 
-var iframe = document.createElement('iframe');
-iframe.src = youtube.getAttribute('data-src');
-iframe.frameBorder = '0';
-iframe.setAttribute('allowfullscreen', '');
+    var iframe = document.createElement('iframe');
+    iframe.src = youtube.getAttribute('data-src');
+    iframe.frameBorder = '0';
+    iframe.setAttribute('allowfullscreen', '');
 
-youtube.parentNode.replaceChild(iframe, youtube);
+    youtube.parentNode.replaceChild(iframe, youtube);
+}
