@@ -8,7 +8,7 @@
 <?php else: ?>
 
     <header>
-        <?php if($isAdmin || $isAdminActivity || $isAdminNewProperty || $isAdminUpdateRoomAvailability): ?>
+        <?php if($isAdmin || $isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability): ?>
             <a href="/">
                 <img src="/img/logo.png" alt="Student Rooma" id="logo"/>
             </a>
@@ -49,7 +49,7 @@
             <a href="/"><div id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></div></a>
         <?php endif; ?>
 
-        <?php if($isAdminActivity || $isAdminNewProperty || $isAdminUpdateRoomAvailability): ?>
+        <?php if($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability): ?>
             <a href="/admin"><div id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></div></a>
         <?php endif; ?>
     </header>

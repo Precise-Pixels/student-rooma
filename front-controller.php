@@ -17,6 +17,7 @@ $isPrivacy                     = preg_match('#^privacy-policy/?$#', $q);
 $isLogout                      = preg_match('#^logout/?$#', $q);
 $isAdmin                       = preg_match('#^admin/?$#', $q);
 $isAdminActivity               = preg_match('#^admin\/activity/?$#', $q);
+$isAdminAllProperties          = preg_match('#^admin\/all-properties/?$#', $q);
 $isAdminNewProperty            = preg_match('#^admin\/new-property/?$#', $q);
 $isAdminUpdateRoomAvailability = preg_match('#^admin\/update-room-availability/?$#', $q);
 
@@ -25,7 +26,7 @@ if(empty($path)) {                                  // HOME
     $file = 'index';
 } elseif($isTerms || $isPrivacy || $isAdmin) {
     $file = $path;                                  // ALLOW WITHOUT LOGGING IN
-} elseif($isAdminActivity || $isAdminNewProperty || $isAdminUpdateRoomAvailability) {
+} elseif($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability) {
     if(!isset($_SESSION['s_admin'])) {
         header('location: /admin');
     } else {
@@ -67,6 +68,10 @@ if($isGallery) {
 
 if($isAdminActivity) {
     require_once('models/model-admin-activity.php');
+}
+
+if($isAdminAllProperties) {
+    require_once('models/model-admin-all-properties.php');
 }
 
 if($isAdminUpdateRoomAvailability) {

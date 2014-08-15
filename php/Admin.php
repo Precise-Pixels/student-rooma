@@ -15,6 +15,33 @@ class Admin {
         return $results;
     }
 
+    static function getAllProperties() {
+        require('db.php');
+
+        $sth = $dbh->query("SELECT propertyId, location, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp FROM properties");
+        $sth->setFetchMode(PDO::FETCH_OBJ);
+        $properties = $sth->fetchAll();
+
+        // Find all the rooms for each property and append to property object
+        $sth = $dbh->query("SELECT propertyId, roomNo, roomType, price, availability FROM rooms");
+        $sth->setFetchMode(PDO::FETCH_OBJ);
+        $rooms = $sth->fetchAll();
+
+        foreach($properties as $property) {
+            $roomArray = array();
+
+            foreach($rooms as $room) {
+                if($room->propertyId == $property->propertyId) {
+                    array_push($roomArray, $room);
+                }
+            }
+
+            $property->rooms = ($roomArray);
+        }
+
+        return $properties;
+    }
+
     static function postProperty($post) {
         require('db.php');
 

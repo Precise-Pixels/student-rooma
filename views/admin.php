@@ -36,6 +36,7 @@
             <p>Logged in as admin.</p>
 
             <p><a href="/admin/activity">View user activity</a> - View the activity of every user</p>
+            <p><a href="/admin/all-properties">View all properties</a> - View all the properties and rooms in the application</p>
             <p><a href="/admin/new-property">Add a new property</a> - Use this form to add new properties to the application</p>
             <p><a href="/admin/update-room-availability">Update a room's availability</a> - If a room has become occupied, it's availability can be changed here</p>
         <?php endif; ?>

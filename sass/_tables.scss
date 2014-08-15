@@ -1,0 +1,33 @@
+table {
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+    background: $lgrey;
+}
+
+tr.tr--odd {
+    background: $white;
+}
+
+tr.tr--even {
+    background: $lgrey;
+}
+
+th,
+td {
+    padding: 5px;
+}
+
+th {
+    text-align: left;
+}
+
+td {
+    vertical-align: top;
+}
+
+.td--centre {
+    text-align: center;
+    font-weight: 600;
+}
