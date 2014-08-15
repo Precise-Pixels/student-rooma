@@ -1,6 +1,6 @@
 <main>
     <div class="padding">
-        <h1 class="h1--show">Admin Activity</h1>
+        <h1 class="h1--show">View User Activity</h1>
 
         <table>
             <thead>

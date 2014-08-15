@@ -1,6 +1,6 @@
 <main>
     <div class="padding">
-        <h1 class="h1--show">Admin Update Room Availability</h1>
+        <h1 class="h1--show">Update Room Availability</h1>
 
         <p>All changes are saved automatically.</p>
 

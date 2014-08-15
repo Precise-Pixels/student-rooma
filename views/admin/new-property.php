@@ -1,6 +1,6 @@
 <main>
     <div class="padding">
-        <h1 class="h1--show">Admin New Property</h1>
+        <h1 class="h1--show">Add A New Property</h1>
 
         <?php
         if(!empty($_POST['submit'])) {
