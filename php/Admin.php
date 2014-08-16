@@ -18,7 +18,7 @@ class Admin {
     static function getAllProperties() {
         require('db.php');
 
-        $sth = $dbh->query("SELECT propertyId, location, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp FROM properties");
+        $sth = $dbh->query("SELECT propertyId, location, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp FROM properties ORDER BY propertyId DESC");
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $properties = $sth->fetchAll();
 
@@ -185,7 +185,7 @@ class Admin {
     static function getProperties() {
         require('db.php');
 
-        $sth = $dbh->query("SELECT propertyId, address FROM properties");
+        $sth = $dbh->query("SELECT propertyId, address FROM properties ORDER BY propertyId DESC");
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $properties = $sth->fetchAll();
 
