@@ -6,15 +6,6 @@ session_start();
 $q = $_GET['q'];
 
 $isIndex                       = ($q == '');
-$isProfile                     = preg_match('#^profile/?$#', $q);
-$isProperties                  = preg_match('#^properties/?$#', $q);
-$isActivity                    = preg_match('#^activity/?$#', $q);
-$isProperty                    = preg_match('#^property\/\d+/?$#', $q);
-$isGallery                     = preg_match('#^property\/\d+/gallery/?$#', $q);
-$isAbout                       = preg_match('#^about/?$#', $q);
-$isTerms                       = preg_match('#^terms-and-conditions/?$#', $q);
-$isPrivacy                     = preg_match('#^privacy-policy/?$#', $q);
-$isLogout                      = preg_match('#^logout/?$#', $q);
 $isAdmin                       = preg_match('#^admin/?$#', $q);
 $isAdminActivity               = preg_match('#^admin\/activity/?$#', $q);
 $isAdminAllProperties          = preg_match('#^admin\/all-properties/?$#', $q);
@@ -24,7 +15,7 @@ $isAdminUpdateRoomAvailability = preg_match('#^admin\/update-room-availability/?
 $path = preg_replace('/\/$|.php/', '', $q);
 if(empty($path)) {                                  // HOME
     $file = 'index';
-} elseif($isTerms || $isPrivacy || $isAdmin) {
+} elseif($isAdmin) {
     $file = $path;                                  // ALLOW WITHOUT LOGGING IN
 } elseif($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability) {
     if(!isset($_SESSION['s_admin'])) {
@@ -44,26 +35,6 @@ if(empty($path)) {                                  // HOME
 
 if($isIndex) {
     require_once('models/model-index.php');
-}
-
-if($isProfile) {
-    require_once('models/model-profile.php');
-}
-
-if($isProperties) {
-    require_once('models/model-properties.php');
-}
-
-if($isActivity) {
-    require_once('models/model-activity.php');
-}
-
-if($isProperty) {
-    require_once('models/model-property.php');
-}
-
-if($isGallery) {
-    require_once('models/model-gallery.php');
 }
 
 if($isAdminActivity) {
