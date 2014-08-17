@@ -12,7 +12,6 @@ $sth = $dbh->query("SELECT fbId FROM users WHERE fbId=$fbId");
 $sth->setFetchMode(PDO::FETCH_OBJ);
 $userExists = $sth->fetch();
 
-
 if($userExists === false) {
     // New user
     if(strpos($location, 'Medway') !== false) {
@@ -31,7 +30,6 @@ if($userExists === false) {
     $sth->execute();
 
     $_SESSION['s_userId'] = $dbh->lastInsertId();
-    setcookie('c_userId', $dbh->lastInsertId(), time()+60*60*24*30, '/');
 
     echo 'new';
 } else {
@@ -41,7 +39,6 @@ if($userExists === false) {
     $result = $sth->fetch();
 
     $_SESSION['s_userId'] = $result->userId;
-    setcookie('c_userId', $result->userId, time()+60*60*24*30, '/');
 
     echo 'existing';
 }
