@@ -10,14 +10,16 @@ class Properties {
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $user = $sth->fetch();
 
-        $roomsQuery = ($user->rooms == 'ANY' ? '' : "AND noOfRooms = $user->rooms");
+        $roomsQuery = ($user->rooms == 'ANY' ? '' : "HAVING SUM(availability=1) = $user->rooms");
 
-        $sth = $dbh->query("SELECT propertyId, location, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp
+        $sth = $dbh->query("SELECT DISTINCT properties.propertyId, location, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp
                             FROM properties
+                            INNER JOIN rooms ON properties.propertyId=rooms.propertyId
                             WHERE location = '$user->lookingIn'
-                            $roomsQuery
                             AND availableFrom >= STR_TO_DATE('$user->availableFrom', '%Y-%m-%d')
-                            AND propertyId NOT IN (SELECT propertyId FROM activity WHERE properties.propertyId=activity.propertyId AND activity.userId=$userId)");
+                            AND properties.propertyId NOT IN (SELECT propertyId FROM activity WHERE properties.propertyId=activity.propertyId AND activity.userId=$userId)
+                            GROUP BY properties.propertyId
+                            $roomsQuery");
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $properties = $sth->fetchAll();
 
