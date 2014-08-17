@@ -42,7 +42,7 @@
                                     <span><?= ucfirst($room->roomType); ?></span>
                                     <span><?= $room->price; ?></span>
                                     <span><?= ($room->availability ? 'Available' : 'Unavailable'); ?></span>
-                                    <img src="/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg"/>
+                                    <img src="http://sr.precisepixels.co.uk/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg"/>
                                 </div>
                             <?php endforeach; ?>
                         </td>
@@ -53,7 +53,7 @@
                     <tr<?= ($key % 2 === 1 ? ' class="tr--even"' : ' class="tr--odd"'); ?>>
                         <td colspan="10">
                             <?php
-                                $images = scandir(__DIR__ . "/../../img/properties/{$property->propertyId}/");
+                                $images = scandir(__DIR__ . "/../../../student-rooma/img/properties/{$property->propertyId}/");
                                 array_splice($images, 0, 2);
 
                                 foreach($images as $key => $image) {
@@ -66,7 +66,7 @@
                             ?>
                                 <div class="admin-room">
                                     <span><?= str_replace('.jpg', '', $image); ?></span>
-                                    <img src="/img/properties/<?= $property->propertyId; ?>/<?= $image; ?>"/>
+                                    <img src="http://sr.precisepixels.co.uk/img/properties/<?= $property->propertyId; ?>/<?= $image; ?>"/>
                                 </div>
                             <?php endforeach; ?>
                         </td>

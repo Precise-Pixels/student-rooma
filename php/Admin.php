@@ -71,7 +71,7 @@ class Admin {
         $propertyId = $dbh->lastInsertId();
 
         // Insert rooms
-        mkdir("img/properties/$propertyId", 0777, true);
+        mkdir(__DIR__ . "/../../student-rooma/img/properties/$propertyId", 0777, true);
 
         $values = '';
 
@@ -144,7 +144,7 @@ class Admin {
 
                 $filename = pathinfo($image['name'], PATHINFO_FILENAME);
 
-                imagejpeg($resizedImage, "img/properties/$propertyId/$filename.jpg", 50);
+                imagejpeg($resizedImage, __DIR__ . "/../../student-rooma/img/properties/$propertyId/$filename.jpg", 50);
                 imagedestroy($img);
                 imagedestroy($resizedImage);
             }
@@ -171,7 +171,7 @@ class Admin {
 
                 $resizedImage = resizeImage($img);
 
-                imagejpeg($resizedImage, "img/properties/$propertyId/Room $i.jpg", 50);
+                imagejpeg($resizedImage, __DIR__ . "/../../student-rooma/img/properties/$propertyId/Room $i.jpg", 50);
                 imagedestroy($img);
                 imagedestroy($resizedImage);
             }
