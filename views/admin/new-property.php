@@ -8,9 +8,9 @@
             $success = Admin::postProperty($_POST);
 
             if($success):
+                header('location: /admin/all-properties');
+            else:
         ?>
-            <p>The new property has been successfully added.</p>
-        <?php else: ?>
             <p>Something went wrong.</p>
         <?php
             endif;
