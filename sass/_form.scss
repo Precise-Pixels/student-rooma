@@ -50,12 +50,13 @@ input[type='checkbox'] {
         height: 16px;
         border: 1px solid $lgrey;
         position: absolute;
-        right: 0;
+        left: 0;
         background: $mgrey;
     }
 
     &:checked + .checkbox-style:after {
-        left: 0;
+        left: auto;
+        right: 0;
         background: $orange;
     }
 
