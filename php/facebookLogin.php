@@ -12,8 +12,6 @@ $sth = $dbh->query("SELECT fbId FROM users WHERE fbId=$fbId");
 $sth->setFetchMode(PDO::FETCH_OBJ);
 $userExists = $sth->fetch();
 
-$_SESSION['s_name'] = $name;
-
 if($userExists === false) {
     // New user
     if(strpos($location, 'Medway') !== false) {
