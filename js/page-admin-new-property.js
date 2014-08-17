@@ -79,6 +79,8 @@ var submit = false;
 
 document.getElementById('submit').addEventListener('click', function() {
     submit = true;
+    this.disabled = true;
+    this.className = 'submit--loading';
 });
 
 window.onbeforeunload = function() {
