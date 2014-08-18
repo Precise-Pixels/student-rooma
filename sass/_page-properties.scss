@@ -9,26 +9,26 @@
 }
 
 .property--book {
-    position: absolute;
+    position: fixed;
     z-index: 8;
     animation: property--book .6s ease-in forwards;
 }
 
 .property--star {
-    position: absolute;
+    position: fixed;
     z-index: 8;
     animation: property--star .6s ease-in forwards;
 }
 
 .property--no {
-    position: absolute;
+    position: fixed;
     z-index: 8;
     animation: property--no .6s ease-in forwards;
 }
 
 .property--next {
     display: block;
-    position: absolute;
+    position: fixed;
     animation: property--next .6s ease-out forwards;
 }
 

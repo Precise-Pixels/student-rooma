@@ -1,4 +1,5 @@
 table {
+    width: 100%;
     border-collapse: collapse;
 }
 
@@ -6,22 +7,45 @@ tr:nth-child(even) {
     background: $lgrey;
 }
 
-tr.tr--odd {
-    background: $white;
+tr:nth-child(even) > td {
+    border-right: 1px solid #E2E2E2;
 }
 
-tr.tr--even {
-    background: $lgrey;
+tr.highlight {
+    background: $orange;
 }
 
 th,
 td {
-    padding: 5px;
+    border-right: 1px solid $lgrey;
+    padding: 15px;
     vertical-align: top;
+}
+
+tr:nth-child(even) > td:last-child,
+th:last-child,
+td:last-child {
+    border-right: 0;
 }
 
 th {
     text-align: left;
+}
+
+.th--xs {
+    min-width: 50px;
+}
+
+.th--s {
+    min-width: 120px;
+}
+
+.th--m {
+    min-width: 120px;
+}
+
+.th--l {
+    min-width: 275px;
 }
 
 .td--centre {
