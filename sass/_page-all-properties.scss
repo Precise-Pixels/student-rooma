@@ -1,13 +1,14 @@
 .admin-room {
-    float: left;
-    margin-right: 15px;
+    width: 120px;
+    display: inline-block;
 
-    span,
-    img {
+    span {
         display: block;
+        word-wrap: break-word;
     }
 
     img {
-        width: 120px;
+        width: 100%;
+        display: block;
     }
 }

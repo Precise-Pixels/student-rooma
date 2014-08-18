@@ -1,4 +1,4 @@
-<main>
+<main class="main--non-centre">
     <div class="padding">
         <h1 class="h1--show">View All Properties</h1>
 
@@ -7,19 +7,21 @@
                 <tr>
                     <th>ID</th>
                     <th>Location</th>
-                    <th>Address</th>
+                    <th class="th--min-width-l">Address</th>
                     <th>Distance UKC</th>
                     <th>Distance CCCU</th>
                     <th>Distance UKM</th>
-                    <th>Number of Rooms</th>
-                    <th>Available From</th>
-                    <th>Info</th>
+                    <th>No. of Rooms</th>
+                    <th class="th--min-width-s">Available From</th>
+                    <th class="th--min-width-l">Info</th>
                     <th>Timestamp</th>
+                    <th class="th--min-width-l">Rooms</th>
+                    <th class="th--min-width-l">General House Images</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach($properties as $key => $property): ?>
-                    <tr<?= ($key % 2 === 1 ? ' class="tr--even"' : ' class="tr--odd"'); ?>>
+                    <tr>
                         <td><?= $property->propertyId; ?></td>
                         <td><?= $property->location; ?></td>
                         <td><?= $property->address; ?></td>
@@ -30,28 +32,18 @@
                         <td><?= $property->availableFrom; ?></td>
                         <td><?= nl2br(stripcslashes($property->info)); ?></td>
                         <td><?= $property->timestamp; ?></td>
-                    </tr>
-                    <tr<?= ($key % 2 === 1 ? ' class="tr--even"' : ' class="tr--odd"'); ?>>
-                        <td colspan="10" class="td--centre">Rooms</td>
-                    </tr>
-                    <tr<?= ($key % 2 === 1 ? ' class="tr--even"' : ' class="tr--odd"'); ?>>
-                        <td colspan="10">
+                        <td>
                             <?php foreach($property->rooms as $room): ?>
                                 <div class="admin-room">
+                                    <img src="/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg"/>
                                     <span>Room <?= $room->roomNo; ?></span>
                                     <span><?= ucfirst($room->roomType); ?></span>
                                     <span><?= $room->price; ?></span>
                                     <span><?= ($room->availability ? 'Available' : 'Unavailable'); ?></span>
-                                    <img src="/img/properties/<?= $property->propertyId; ?>/Room <?= $room->roomNo; ?>.jpg"/>
                                 </div>
                             <?php endforeach; ?>
                         </td>
-                    </tr>
-                    <tr<?= ($key % 2 === 1 ? ' class="tr--even"' : ' class="tr--odd"'); ?>>
-                        <td colspan="10" class="td--centre">General House Images</td>
-                    </tr>
-                    <tr<?= ($key % 2 === 1 ? ' class="tr--even"' : ' class="tr--odd"'); ?>>
-                        <td colspan="10">
+                        <td>
                             <?php
                                 $images = scandir(__DIR__ . "/../../img/properties/{$property->propertyId}/");
                                 array_splice($images, 0, 2);
@@ -65,8 +57,8 @@
                                 foreach($images as $image):
                             ?>
                                 <div class="admin-room">
-                                    <span><?= str_replace('.jpg', '', $image); ?></span>
                                     <img src="/img/properties/<?= $property->propertyId; ?>/<?= $image; ?>"/>
+                                    <span><?= str_replace('.jpg', '', $image); ?></span>
                                 </div>
                             <?php endforeach; ?>
                         </td>
