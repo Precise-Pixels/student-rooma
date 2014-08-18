@@ -11,7 +11,7 @@
                 header('location: /admin/all-properties');
             else:
         ?>
-            <p>Something went wrong.</p>
+            <p class="error">Something went wrong.</p>
         <?php
             endif;
         }
