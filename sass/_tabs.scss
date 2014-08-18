@@ -21,6 +21,7 @@
     text-align: center;
     line-height: 40px;
     background: $lgrey;
+    user-select: none;
 
     &:hover {
         border: none;
