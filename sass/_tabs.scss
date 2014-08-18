@@ -3,14 +3,14 @@
     font-size: 14px;
 }
 
-.tabs--small > .tab {
-    width: 70px;
-}
-
-@for $i from 1 through 5 {
+@for $i from 1 through 10 {
     .tabs--#{$i} > .tab {
         width: 100%/$i;
     }
+}
+
+.tabs--small > .tab {
+    width: 70px;
 }
 
 .tab {

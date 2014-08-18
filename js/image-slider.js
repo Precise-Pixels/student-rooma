@@ -33,7 +33,8 @@ function loadSlider() {
             tabs[i].addEventListener('click', clickTabs);
         }
 
-        if(totalSlides > 5) {
+        if(screenWidth < totalSlides * tabWidth) {
+            tabsWrapper[0].className  += ' tabs--small';
             tabsWrapper[0].style.width = totalSlides * tabWidth + 'px';
         }
 
