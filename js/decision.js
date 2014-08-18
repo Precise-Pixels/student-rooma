@@ -6,10 +6,17 @@ var noButton        = document.getElementsByClassName('no');
 for(var i = 0, l = decisionButtons.length; i < l; i++) {
     decisionButtons[i].addEventListener('click', function(e) {
         if(e.target.className.match('no|star|book')) {
+            // /properties
             if(e.target.parentNode.parentNode.className.match('decide')) {
                 propertyDecision(e.target.className);
             } else if(e.target.parentNode.parentNode.parentNode.className.match('decide')) {
                 propertyDecision('star');
+            // /gallery
+            } else if(e.target.parentNode.parentNode.className.match('gallery')) {
+                propertyDecisionFromGallery(e.target.className, e.target.parentNode.parentNode.getAttribute('data-property-id'));
+            } else if(e.target.parentNode.parentNode.parentNode.className.match('gallery')) {
+                propertyDecisionFromGallery('star', e.target.parentNode.parentNode.parentNode.getAttribute('data-property-id'));
+            // /activity
             } else if(e.target.parentNode.parentNode.className.match('update')) {
                 propertyUpdate(this, e.target.className, e.target.parentNode.parentNode.getAttribute('data-property-id'));
             } else if(e.target.parentNode.parentNode.parentNode.className.match('update')) {
@@ -20,10 +27,7 @@ for(var i = 0, l = decisionButtons.length; i < l; i++) {
 }
 
 function propertyDecision(status) {
-    // Disable decision buttons
-    bookButton[0].disabled = true;
-    starButton[0].disabled = true;
-    noButton[0].disabled   = true;
+    disableDecisionButtons();
 
     // Get active and next properties
     var propertyActive = document.getElementsByClassName('property--active');
@@ -85,12 +89,26 @@ function propertyDecision(status) {
             propertyNext.className      = 'property';
         }
     }
+}
 
-    function enableDecisionButtons() {
-        bookButton[0].disabled = false;
-        starButton[0].disabled = false;
-        noButton[0].disabled   = false;
+function propertyDecisionFromGallery(status, propertyId) {
+    disableDecisionButtons();
+
+    var data = 'propertyId=' + propertyId + '&status=' + status;
+    var request = new XMLHttpRequest();
+    request.open('POST', '/php/propertyDecision.php', true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    request.send(data);
+
+    request.onreadystatechange = function() {
+        if(request.readyState == 4 && request.status == 200) {
+            window.location = '/properties';
+        } else if(request.status != 200) {
+            openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
+            enableDecisionButtons();
+        }
     }
+
 }
 
 function propertyUpdate(wrapper, status, propertyId) {
@@ -110,4 +128,16 @@ function propertyUpdate(wrapper, status, propertyId) {
             wrapper.className = wrapper.className.replace(' decision-buttons--spinner', '');
         }
     }
+}
+
+function disableDecisionButtons() {
+    bookButton[0].disabled = true;
+    starButton[0].disabled = true;
+    noButton[0].disabled   = true;
+}
+
+function enableDecisionButtons() {
+    bookButton[0].disabled = false;
+    starButton[0].disabled = false;
+    noButton[0].disabled   = false;
 }
