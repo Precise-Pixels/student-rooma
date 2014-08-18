@@ -33,13 +33,16 @@ function loadSlider() {
             tabs[i].addEventListener('click', clickTabs);
         }
 
+        tabsWrapper[0].className   = tabsWrapper[0].className.replace(' tabs--small', '');
+        tabsWrapper[0].style.width = '';
+
         if(screenWidth < totalSlides * tabWidth) {
             tabsWrapper[0].className  += ' tabs--small';
             tabsWrapper[0].style.width = totalSlides * tabWidth + 'px';
         }
 
         slider[0].style.width = totalSlides * 100 + '%';
-        slider[0].className = 'room-slider room-slider--loaded';
+        slider[0].className   = 'room-slider room-slider--loaded';
 
         updateTabs();
 
@@ -146,3 +149,10 @@ function loadSlider() {
         }
     }
 }
+
+var resizeTimer;
+
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(loadSlider, 100);
+});
