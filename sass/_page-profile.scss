@@ -1,4 +1,4 @@
-.profile-user {
+#profile-user {
     height: 70px;
     text-align: center;
     line-height: 70px;
@@ -12,11 +12,11 @@
     }
 }
 
-.profile-filters {
+#profile-filters {
     overflow: hidden;
 }
 
-.profile-looking-in {
+#profile-looking-in {
     margin: 0;
     text-align: center;
 }
@@ -25,7 +25,7 @@
     margin-bottom: 15px;
 }
 
-.profile-other {
+#profile-other {
     padding: 15px;
     color: $white;
     text-align: center;

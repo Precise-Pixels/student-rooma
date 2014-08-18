@@ -1,7 +1,7 @@
 <main>
     <h1>Gallery</h1>
 
-    <div class="gallery">
+    <div id="gallery">
         <?php foreach($images as $image): ?>
             <figure class="gallery-figure">
                 <img src="/img/properties/<?= $propertyId; ?>/<?= $image; ?>"/>

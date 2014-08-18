@@ -1,14 +1,14 @@
 <main>
     <h1>Profile</h1>
 
-    <div class="profile-user">
+    <div id="profile-user">
         <img src="https://graph.facebook.com/<?= $user->fbId; ?>/picture?type=square&width=40&height=40" alt="<?= $user->name; ?>"/>
         <?= $user->name; ?>
     </div>
 
-    <div class="profile-filters padding">
+    <div id="profile-filters" class="padding">
 
-        <div class="profile-looking-in form-row">
+        <div id="profile-looking-in" class="form-row">
             <p>Your search filters</p>
             <label for="looking-in" id="profile-looking-in-label">Looking in</label>
             <input type="radio" id="canterbury" name="looking-in" value="Canterbury"<?= ($user->lookingIn === 'Canterbury' ? ' checked' : '') ?>/> <label for="canterbury" class="radio-style">Canterbury</label>
@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <div class="profile-other">
+    <div id="profile-other">
         <div class="form-row">
             <label for="phone">Phone number</label>
             <input type="tel" id="phone" name="phone" value="<?= $user->phone; ?>"/>

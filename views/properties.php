@@ -2,7 +2,7 @@
     <h1>Properties</h1>
 
     <?php if(!empty($properties)): ?>
-        <div class="properties">
+        <div id="properties">
             <?php foreach($properties as $key => $property): ?>
                 <div class="property<?= ($key === 0 ? ' property--active' : ''); ?>" data-property-id="<?= $property->propertyId; ?>">
                     <div class="rooms">
@@ -67,7 +67,7 @@
             <div class="book-wrapper"><button class="book">BOOK</button></div>
         </div>
     <?php else: ?>
-        <div class="properties">
+        <div id="properties">
             <div class="padding">
                 <p>There are no properties available within your search filters.</p>
                 <p>Expand your filters in your <a href="profile">Profile</a>.</p>

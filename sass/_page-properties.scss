@@ -1,3 +1,7 @@
+#properties > .property {
+    padding-bottom: 60px;
+}
+
 .property {
     width: 100%;
     display: none;
@@ -50,10 +54,6 @@
 @keyframes property--next {
     0%   { transform: scale(.8); opacity: 0; }
     100% { transform: scale(1);  opacity: 1; }
-}
-
-.properties > .property {
-    padding-bottom: 60px;
 }
 
 .rooms {
