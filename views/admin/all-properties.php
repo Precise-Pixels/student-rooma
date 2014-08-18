@@ -1,4 +1,4 @@
-<main class="main--non-centre">
+<main class="main--full-width">
     <div class="padding">
         <h1 class="h1--show">View All Properties</h1>
 
