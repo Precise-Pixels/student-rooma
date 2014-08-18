@@ -10,6 +10,7 @@ function loadSlider() {
         var controls     = property[0].getElementsByClassName('room-controls');
         var tabsWrapper  = property[0].getElementsByClassName('tabs');
         var tabs         = property[0].getElementsByClassName('tab');
+        var tabWidth     = 70;
         var slideWidth   = controls[0].offsetWidth;
         var left         = controls[0].getElementsByClassName('room-control--left');
         var right        = controls[0].getElementsByClassName('room-control--right');
@@ -33,7 +34,7 @@ function loadSlider() {
         }
 
         if(totalSlides > 5) {
-            tabsWrapper[0].style.width = totalSlides * 60 + 'px';
+            tabsWrapper[0].style.width = totalSlides * tabWidth + 'px';
         }
 
         slider[0].style.width = totalSlides * 100 + '%';
@@ -54,7 +55,7 @@ function loadSlider() {
 
         function tabsMove(e) {
             if(tabsMoving) {
-                var excess    = (totalSlides * 60 - screenWidth) * -1;
+                var excess    = (totalSlides * tabWidth - screenWidth) * -1;
                 tabsTouchMove = e.pageX || e.touches[0].pageX;
                 tabsMoveAmt   = tabsMoveEnd + tabsTouchMove - tabsTouchStart;
 
