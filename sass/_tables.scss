@@ -11,6 +11,10 @@ tr:nth-child(even) > td {
     border-right: 1px solid #E2E2E2;
 }
 
+tr.highlight {
+    background: $orange;
+}
+
 th,
 td {
     border-right: 1px solid $lgrey;
