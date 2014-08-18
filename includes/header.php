@@ -41,7 +41,7 @@
             <a href="/profile"><div id="header-btn-r"><i class="ico-profile ico--centre"><span>Profile</span></i></div></a>
         <?php endif; ?>
 
-        <?php if($isAbout): ?>
+        <?php if($isInstall || $isAbout): ?>
             <a href="/profile"><div id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></div></a>
         <?php endif; ?>
 

@@ -52,6 +52,7 @@
         <button id="reset" class="button-profile--left"><i class="ico-refresh"></i>Reset No's</button>
         <a href="logout"><button class="button-profile--right">Logout</button></a>
 
+        <p id="install-this-app"><a href="/install">Install this app on your device</a></p>
         <p id="about-this-app"><a href="/about">About this app</a></p>
     </div>
 </main>

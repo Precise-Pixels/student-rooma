@@ -27,6 +27,7 @@
 
 #profile-other {
     padding: 15px;
+    overflow: hidden;
     color: $white;
     text-align: center;
     background: $dgrey;
@@ -53,12 +54,16 @@
     margin-left: 1%;
 }
 
+#install-this-app,
 #about-this-app {
-    font-size: 12px;
+    width: 50%;
+    float: left;
+    margin-top: 20px;
 
     a {
         border-bottom: 1px solid $white;
         color: $white;
+        font-size: 12px;
         text-decoration: none;
 
         &:hover {

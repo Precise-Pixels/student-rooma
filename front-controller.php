@@ -11,6 +11,7 @@ $isProperties                  = preg_match('#^properties/?$#', $q);
 $isActivity                    = preg_match('#^activity/?$#', $q);
 $isProperty                    = preg_match('#^property\/\d+/?$#', $q);
 $isGallery                     = preg_match('#^property\/\d+/gallery/?$#', $q);
+$isInstall                     = preg_match('#^install/?$#', $q);
 $isAbout                       = preg_match('#^about/?$#', $q);
 $isTerms                       = preg_match('#^terms-and-conditions/?$#', $q);
 $isPrivacy                     = preg_match('#^privacy-policy/?$#', $q);
