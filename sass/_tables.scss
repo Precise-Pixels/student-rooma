@@ -32,11 +32,19 @@ th {
     text-align: left;
 }
 
-.th--min-width-s {
+.th--xs {
+    min-width: 50px;
+}
+
+.th--s {
     min-width: 120px;
 }
 
-.th--min-width-l {
+.th--m {
+    min-width: 120px;
+}
+
+.th--l {
     min-width: 275px;
 }
 

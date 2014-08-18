@@ -5,18 +5,18 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Location</th>
-                    <th class="th--min-width-l">Address</th>
-                    <th>Distance UKC</th>
-                    <th>Distance CCCU</th>
-                    <th>Distance UKM</th>
-                    <th>No. of Rooms</th>
-                    <th class="th--min-width-s">Available From</th>
-                    <th class="th--min-width-l">Info</th>
-                    <th>Timestamp</th>
-                    <th class="th--min-width-l">Rooms</th>
-                    <th class="th--min-width-l">General House Images</th>
+                    <th class="th--xs">ID</th>
+                    <th class="th--m">Location</th>
+                    <th class="th--l">Address</th>
+                    <th class="th--s">Distance UKC</th>
+                    <th class="th--s">Distance CCCU</th>
+                    <th class="th--s">Distance UKM</th>
+                    <th class="th--s">No. of Rooms</th>
+                    <th class="th--m">Available From</th>
+                    <th class="th--l">Info</th>
+                    <th class="th--m">Timestamp</th>
+                    <th class="th--l">Rooms</th>
+                    <th class="th--l">General House Images</th>
                 </tr>
             </thead>
             <tbody>
