@@ -8,7 +8,7 @@
     </div>
 
     <div id="content-wrapper">
-        <div id="content-slider">
+        <div id="content-slider" class="content-slider--animate">
             <div id="booked-content">
                 <?php $i = 0; foreach($activity as $property):
                     if($property->status != 'book') { continue; } ?>

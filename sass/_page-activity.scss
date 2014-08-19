@@ -5,7 +5,23 @@
 
 #content-slider {
     width: 300%;
-    transition: transform .6s ease-out;
+    transform: translate3d(-33.33%,0,0);
+}
+
+.content-slider--animate {
+    transition: transform .3s ease-out;
+}
+
+#content-slider.content-slider--booked {
+    transform: translate3d(0,0,0);
+}
+
+#content-slider.content-slider--starred {
+    transform: translate3d(-33.33%,0,0);
+}
+
+#content-slider.content-slider--nos {
+    transform: translate3d(-66.66%,0,0);
 }
 
 #booked-content,
@@ -13,18 +29,6 @@
 #nos-content {
     width: 33.33%;
     float: left;
-}
-
-.content-slider--booked {
-    transform: translate3d(0,0,0);
-}
-
-.content-slider--starred {
-    transform: translate3d(-33.33%,0,0);
-}
-
-.content-slider--nos {
-    transform: translate3d(-66.66%,0,0);
 }
 
 .activity {
