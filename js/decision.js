@@ -108,7 +108,6 @@ function propertyDecisionFromGallery(status, propertyId) {
             enableDecisionButtons();
         }
     }
-
 }
 
 function propertyUpdate(wrapper, status, propertyId) {
