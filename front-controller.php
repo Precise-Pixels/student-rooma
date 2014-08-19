@@ -29,7 +29,11 @@ if(empty($path)) {                                  // HOME
     $file = $path;                                  // ALLOW WITHOUT LOGGING IN
 } elseif($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability) {
     if(!isset($_SESSION['s_admin'])) {
-        header('location: /admin');
+        if($isAdminActivity)               { $r = 'activity'; }
+        if($isAdminAllProperties)          { $r = 'all-properties'; }
+        if($isAdminNewProperty)            { $r = 'new-property'; }
+        if($isAdminUpdateRoomAvailability) { $r = 'update-room-availability'; }
+        header("location: /admin?r=$r");
     } else {
         $file = $path;                              // ADMIN
     }

@@ -22,7 +22,7 @@
             if(!empty($_POST['login-password'])) {
                 if($hash === hash('sha256', $_POST['login-password'])) {
                     $_SESSION['s_admin'] = true;
-                    header('location: admin');
+                    header('location: admin' . (isset($_GET['r']) ? '/' . $_GET['r'] : ''));
                 } else {
                     echo '<p class="error">Wrong password.</p>';
                 }
