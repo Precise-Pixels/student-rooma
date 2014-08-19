@@ -4,8 +4,10 @@ var dialogText    = document.getElementById('dialog-text-wrapper');
 var dialogButtonY = document.getElementById('dialog-button-y');
 var dialogButtonN = document.getElementById('dialog-button-n');
 var dialogFunc;
+var phoneDialogOpened = false;
 
 function openDialog(heading, text, buttonY, buttonN, func, type) {
+    if(func == 'newPhone' && phoneDialogOpened) { return }
     dialogFunc = func;
     dialogHeading.innerHTML = heading;
     dialogText.innerHTML    = '<div id="dialog-text">' + text + '</div>';
@@ -22,6 +24,7 @@ function openDialog(heading, text, buttonY, buttonN, func, type) {
 function clickDialogButtonY() {
     switch(dialogFunc) {
         case 'newPhone':
+            phoneDialogOpened = true;
             closeDialog();
             break;
         case 'cancelProfileChanges':
