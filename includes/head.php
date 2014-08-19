@@ -2,6 +2,7 @@
 <meta name="description" content=""/>
 <meta name="author" content="Precise Pixels"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<meta name="mobile-web-app-capable" content="yes"/>
 <title>Student Rooma</title>
 <?php if($_SERVER['SERVER_NAME'] == 'sr.dev'): ?>
     <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
