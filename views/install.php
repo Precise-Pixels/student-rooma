@@ -5,7 +5,7 @@
         <p>Add Student Rooma to your homescreen to have quick and easy access to it at any time.</p>
         <p>Follow the instructions for your browser below.</p>
 
-        <h2>Chrome</h2>
+        <h2 id="chrome">Chrome</h2>
         <p>
             <ol>
                 <li>Go <a href="/">back to the homepage</a></li>
@@ -14,7 +14,7 @@
             </ol>
         </p>
 
-        <h2>Safari iOS 7</h2>
+        <h2 id="ios-7">Safari iOS 7</h2>
         <p>
             <ol>
                 <li>Tap the 'Share' icon</li>
@@ -24,7 +24,7 @@
             </ol>
         </p>
 
-        <h2>Safari iOS 6-</h2>
+        <h2 id="ios-6">Safari iOS 6-</h2>
         <p>
             <ol>
                 <li>Go <a href="/">back to the homepage</a></li>
@@ -34,7 +34,7 @@
             </ol>
         </p>
 
-        <h2>Android Browser 4.x</h2>
+        <h2 id="android-4">Android Browser 4.x</h2>
         <p>
             <ol>
                 <li>Tap the 'More/Menu' icon</li>
@@ -45,7 +45,7 @@
             </ol>
         </p>
 
-        <h2>Android Browser 3.x-</h2>
+        <h2 id="android-3">Android Browser 3.x-</h2>
         <p>
             <ol>
                 <li>Tap the 'Bookmark' icon or tap the 'Menu' button then 'Bookmarks'</li>
@@ -57,7 +57,7 @@
             </ol>
         </p>
 
-        <h2>Windows Phone</h2>
+        <h2 id="windows-phone">Windows Phone</h2>
         <p>
             <ol>
                 <li>Go <a href="/">back to the homepage</a></li>

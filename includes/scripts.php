@@ -31,6 +31,11 @@
         <script src="/js/decision.js"></script>
     <?php endif; ?>
 
+    <?php if($isInstall): ?>
+        <script src="/js/bowser.min.js"></script>
+        <script src="/js/page-install.js"></script>
+    <?php endif; ?>
+
     <?php if($isLogout): ?>
         <script src="/js/page-logout.js"></script>
     <?php endif; ?>
@@ -74,6 +79,11 @@
 
     <?php if($isGallery): ?>
         <script src="/build/decision.min.js"></script>
+    <?php endif; ?>
+
+    <?php if($isInstall): ?>
+        <script src="/build/bowser.min.js"></script>
+        <script src="/build/page-install.min.js"></script>
     <?php endif; ?>
 
     <?php if($isLogout): ?>
