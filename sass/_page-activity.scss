@@ -1,3 +1,32 @@
+#content-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+#content-slider {
+    width: 300%;
+    transition: transform .6s ease-out;
+}
+
+#booked-content,
+#starred-content,
+#nos-content {
+    width: 33.33%;
+    float: left;
+}
+
+.content-slider--booked {
+    transform: translate3d(0,0,0);
+}
+
+.content-slider--starred {
+    transform: translate3d(-33.33%,0,0);
+}
+
+.content-slider--nos {
+    transform: translate3d(-66.66%,0,0);
+}
+
 .activity {
     padding-top: 15px;
     padding-bottom: 15px;

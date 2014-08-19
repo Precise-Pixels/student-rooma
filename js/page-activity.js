@@ -1,9 +1,7 @@
 var tabBooked  = document.getElementById('tab--booked');
 var tabStarred = document.getElementById('tab--starred');
 var tabNos     = document.getElementById('tab--nos');
-var booked     = document.getElementById('booked-content');
-var starred    = document.getElementById('starred-content');
-var nos        = document.getElementById('nos-content');
+var slider     = document.getElementById('content-slider');
 
 tabBooked.addEventListener('click', function() {
     changeTab('booked');
@@ -28,18 +26,18 @@ function changeTab(which) {
 
     switch(which) {
         case 'booked':
+            slider.className = 'content-slider--booked';
             tabBooked.className = 'tab tab--active';
-            booked.className    = 'tab-content tab-content--show';
             changeHash('booked');
             break;
         case 'starred':
+            slider.className = 'content-slider--starred';
             tabStarred.className = 'tab tab--active';
-            starred.className    = 'tab-content tab-content--show';
             changeHash('starred');
             break;
         case 'nos':
+            slider.className = 'content-slider--nos';
             tabNos.className = 'tab tab--active';
-            nos.className    = 'tab-content tab-content--show';
             changeHash('nos');
             break;
     }
@@ -57,7 +55,4 @@ function resetTabs() {
     tabBooked.className  = 'tab';
     tabStarred.className = 'tab';
     tabNos.className     = 'tab';
-    booked.className     = 'tab-content';
-    starred.className    = 'tab-content';
-    nos.className        = 'tab-content';
 }
