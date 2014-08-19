@@ -2,6 +2,10 @@
     <div class="padding">
         <h1 class="h1--show">View User Activity</h1>
 
+        <?php if(isset($_GET['propertyId']) && isset($_GET['userId'])): ?>
+            <p>If no row is highlighted orange, this means that the user has cancelled their booking and reset their no's.</p>
+        <?php endif; ?>
+
         <table>
             <thead>
                 <tr>
