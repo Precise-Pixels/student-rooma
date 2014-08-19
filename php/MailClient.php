@@ -12,10 +12,10 @@ class MailClient {
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $property = $sth->fetch();
 
-        $email   = 'test@student-rooma.co.uk';
+        $email   = 'bookings@studentrooma.co.uk';
         $subject = 'New property booking';
-        $msg     = "Name:    $user->name\nPhone:   $user->phone\nAddress: $property->address\n\nhttp://student-rooma.co.uk/admin/activity?propertyId=$propertyId&userId=$userId";
-        $headers = 'From: info@cell-industries.co.uk';
+        $msg     = "Name:    $user->name\nPhone:   $user->phone\nAddress: $property->address\n\nhttp://studentrooma.co.uk/admin/activity?propertyId=$propertyId&userId=$userId";
+        $headers = 'From: system@studentrooma.co.uk';
         mail($email, $subject, $msg, $headers);
 
         // testing
