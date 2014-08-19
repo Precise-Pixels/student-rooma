@@ -17,7 +17,10 @@ $sth->bindParam(':status', $status);
 $sth->bindParam(':timestamp', $timestamp);
 $sth->execute();
 
+
 if($status === 'book') {
+    $activityId = $dbh->lastInsertId();
+
     require_once('MailClient.php');
-    MailClient::sendMsg($userId, $propertyId);
+    MailClient::sendMsg($userId, $propertyId, $activityId);
 }

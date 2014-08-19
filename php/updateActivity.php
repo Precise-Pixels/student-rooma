@@ -12,7 +12,12 @@ $sth = $dbh->prepare("UPDATE activity SET status=:status WHERE propertyId=$prope
 $sth->bindParam(':status', $status);
 $sth->execute();
 
+
 if($status === 'book') {
+    $sth = $dbh->query("SELECT activityId FROM activity WHERE propertyId=$propertyId");
+    $sth->setFetchMode(PDO::FETCH_OBJ);
+    $result = $sth->fetch();
+
     require_once('MailClient.php');
-    MailClient::sendMsg($userId, $propertyId);
+    MailClient::sendMsg($userId, $propertyId, $result->activityId);
 }
