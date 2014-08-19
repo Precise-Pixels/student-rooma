@@ -37,7 +37,7 @@
         <?php endif; ?>
 
         <?php if($isGallery): ?>
-            <a href="<?= $_SERVER['HTTP_REFERER']; ?>"><div id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></div></a>
+            <a href="<?= (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '/properties'); ?>"><div id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></div></a>
             <a href="/profile"><div id="header-btn-r"><i class="ico-profile ico--centre"><span>Profile</span></i></div></a>
         <?php endif; ?>
 
