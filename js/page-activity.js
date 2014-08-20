@@ -1,9 +1,8 @@
 var tabBooked    = document.getElementById('tab--booked');
 var tabStarred   = document.getElementById('tab--starred');
 var tabNos       = document.getElementById('tab--nos');
-var wrapper      = document.getElementById('content-wrapper');
 var slider       = document.getElementById('content-slider');
-var wrapperWidth = wrapper.offsetWidth;
+var wrapperWidth = document.getElementById('content-wrapper').offsetWidth;
 var currentSlide;
 
 tabBooked.addEventListener('click', function() {
@@ -63,9 +62,9 @@ function resetTabs() {
     tabNos.className     = 'tab';
 }
 
-wrapper.addEventListener('touchstart', sliderStart);
-wrapper.addEventListener('touchmove', sliderMove);
-wrapper.addEventListener('touchend', sliderEnd);
+window.addEventListener('touchstart', sliderStart);
+window.addEventListener('touchmove', sliderMove);
+window.addEventListener('touchend', sliderEnd);
 
 var sliderTouchStart,
     sliderTouchMove,
@@ -75,6 +74,7 @@ var sliderTouchStart,
 function sliderStart(e) {
     slider.className = slider.className.replace(' content-slider--animate', '');
     sliderTouchStart = e.touches[0].pageX;
+    sliderTouchMove  = 0;
 }
 
 function sliderMove(e) {
@@ -90,12 +90,14 @@ function sliderMove(e) {
 function sliderEnd(e) {
     sliderMoveEnd = sliderMoveAmt;
 
-    if(sliderTouchMove - sliderTouchStart < wrapperWidth / 4 && currentSlide != 2) {
-        currentSlide++;
-    }
+    if(sliderTouchMove != 0) {
+        if(sliderTouchMove - sliderTouchStart < wrapperWidth / 4 && currentSlide != 2) {
+            currentSlide++;
+        }
 
-    if(sliderTouchMove - sliderTouchStart > wrapperWidth / 4 && currentSlide != 0) {
-        currentSlide--;
+        if(sliderTouchMove - sliderTouchStart > wrapperWidth / 4 && currentSlide != 0) {
+            currentSlide--;
+        }
     }
 
     switch(currentSlide) {
