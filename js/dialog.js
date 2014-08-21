@@ -25,6 +25,7 @@ function clickDialogButtonY() {
     switch(dialogFunc) {
         case 'newPhone':
             phoneDialogOpened = true;
+            document.getElementById('phone').focus();
             closeDialog();
             break;
         case 'profileIncomplete':
