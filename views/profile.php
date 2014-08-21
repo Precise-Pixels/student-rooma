@@ -41,6 +41,13 @@
             <label for="max-price">Max price</label>
             <input type="number" step="10" id="max-price" name="max-price" value="<?= $user->maxPrice; ?>"/>
         </div>
+
+        <div class="form-row">
+            <div id="double-range-input" data-min="<?= $min; ?>" data-max="<?= $max; ?>">
+                <div id="double-range-input-handle-l" class="double-range-input-handle"></div>
+                <div id="double-range-input-handle-r" class="double-range-input-handle"></div>
+            </div>
+        </div>
     </div>
 
     <div id="profile-other">

@@ -22,6 +22,115 @@ function roomsStepper(e) {
     }
 }
 
+// Double range input
+loadDoubleRangeInput();
+
+function loadDoubleRangeInput() {
+    var container       = document.getElementById('double-range-input');
+    var handleL         = document.getElementById('double-range-input-handle-l');
+    var handleR         = document.getElementById('double-range-input-handle-r');
+    var minPriceField   = document.getElementById('min-price');
+    var maxPriceField   = document.getElementById('max-price');
+    var width           = container.offsetWidth;
+    var min             = +container.getAttribute('data-min');
+    var max             = +container.getAttribute('data-max');
+    var range           = max - min;
+    var handleLDragging = false;
+    var handleRDragging = false;
+    var move            = 0;
+    var endL            = 0;
+    var endR            = 0;
+
+    setHandleLPos();
+    setHandleRPos();
+
+    function setHandleLPos() {
+        var handleLPos = endL = ((minPriceField.value - min) / range) * (width - 24);
+
+        if(handleLPos < 0) {
+            handleL.style.transform = 'translate3d(0,0,0)';
+        } else {
+            handleL.style.transform = 'translate3d(' + handleLPos + 'px,0,0)';
+        }
+    }
+
+    function setHandleRPos() {
+        var handleRPos = endR = ((maxPriceField.value - min) / range) * (width - 24);
+
+        if(handleRPos > width) {
+            handleR.style.transform = 'translate3d(' + (width - 24) + 'px,0,0)';
+        } else {
+            handleR.style.transform = 'translate3d(' + handleRPos + 'px,0,0)';
+        }
+    }
+
+    // Field events
+    minPriceField.addEventListener('change', setHandleLPos);
+    maxPriceField.addEventListener('change', setHandleRPos);
+
+    // Handle events
+    handleL.addEventListener('touchstart', handleLStart);
+    handleR.addEventListener('touchstart', handleRStart);
+    window.addEventListener('touchmove', handleMove);
+    window.addEventListener('touchend', handleEnd);
+
+    handleL.addEventListener('mousedown', handleLStart);
+    handleR.addEventListener('mousedown', handleRStart);
+    window.addEventListener('mousemove', handleMove);
+    window.addEventListener('mouseup', handleEnd);
+
+    function handleLStart() {
+        handleLDragging = true;
+    }
+
+    function handleRStart() {
+        handleRDragging = true;
+    }
+
+    function handleMove(e) {
+        if(handleLDragging) {
+            move = (e.pageX || e.touches[0].pageX) - 24;
+
+            if(move >= 0 && move <= endR) {
+                handleL.style.transform = 'translate3d(' + move + 'px,0,0)';
+
+                var perc = move / (width - 24);
+                minPriceField.value = Math.round(perc * range + min);
+            }
+        }
+
+        if(handleRDragging) {
+            move = (e.pageX || e.touches[0].pageX) - 24;
+
+            if(move <= width - 24 && move >= endL) {
+                handleR.style.transform = 'translate3d(' + move + 'px,0,0)';
+
+                var perc = move / (width - 24);
+                maxPriceField.value = Math.round(perc * range + min);
+            }
+        }
+    }
+
+    function handleEnd() {
+        if(handleLDragging) {
+            handleLDragging = false;
+            endL = move;
+        }
+
+        if(handleRDragging) {
+            handleRDragging = false;
+            endR = move;
+        }
+    }
+}
+
+var resizeTimer;
+
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(loadDoubleRangeInput, 100);
+});
+
 // Phone dialog
 var phone = document.getElementById('phone');
 

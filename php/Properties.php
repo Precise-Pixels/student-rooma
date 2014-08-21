@@ -84,4 +84,24 @@ class Properties {
 
         return $images;
     }
+
+    static function getMinPrice() {
+        require('db.php');
+
+        $sth = $dbh->query("SELECT MIN(price) FROM rooms");
+        $sth->setFetchMode(PDO::FETCH_NUM);
+        $min = $sth->fetch();
+
+        return $min[0];
+    }
+
+    static function getMaxPrice() {
+        require('db.php');
+
+        $sth = $dbh->query("SELECT MAX(price) FROM rooms");
+        $sth->setFetchMode(PDO::FETCH_NUM);
+        $max = $sth->fetch();
+
+        return $max[0];
+    }
 }
