@@ -21,7 +21,7 @@
         <p>This app also requires Javascript and cookies to be enabled at all times.</p>
 
         <h2>Support</h2>
-        <p>Having troubles with this app? Drop us an email at: <a href="mailto:support@studentrooma.co.uk">support@studentrooma.co.uk</a></p>
+        <p>Having troubles with this app? Drop us an email at: <a href="&#109;ailto:support&#64;studentrooma&#46;co&#46;uk">support&#64;studentrooma&#46;co&#46;uk</a></p>
 
         <hr>
 
