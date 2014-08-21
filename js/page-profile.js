@@ -47,14 +47,10 @@ var lookingInAfter,
     phoneAfter;
 
 document.getElementById('header-btn-l').addEventListener('click', function() {
-    if(formComplete()) {
-        if(anyChanges()) {
-            openDialog("Cancel Changes", "<p>There are unsaved changes. Are you sure you want to cancel?</p>", 'Yes', 'No', 'cancelProfileChanges', 'prompt');
-        } else {
-            window.location.href = '/properties';
-        }
+    if(anyChanges()) {
+        openDialog("Cancel Changes", "<p>There are unsaved changes. Are you sure you want to cancel?</p>", 'Yes', 'No', 'cancelProfileChanges', 'prompt');
     } else {
-        openDialog("Profile Incomplete", "<p>Please ensure all the fields are filled out correctly.</p>", 'Okay', '', 'profileIncomplete', 'alert');
+        window.location.href = '/properties';
     }
 });
 
