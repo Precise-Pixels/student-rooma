@@ -50,7 +50,7 @@ class Properties {
         }
 
         // Remove properties if they do not contain at least one room within the specified price range
-        for($i = 0; $i < count($properties); $i++) {
+        for($i = count($properties) - 1; $i >= 0; $i--) {
             if(!(($properties[$i]->minPrice >= $user->minPrice && $properties[$i]->minPrice <= $user->maxPrice) || ($properties[$i]->maxPrice >= $user->minPrice && $properties[$i]->maxPrice <= $user->maxPrice))) {
                 unset($properties[$i]);
             }
