@@ -14,17 +14,7 @@
             </ol>
         </p>
 
-        <h2 id="ios-7" class="anchor-target">Safari iOS 7</h2>
-        <p>
-            <ol>
-                <li>Tap the 'Share' icon</li>
-                <li>Tap 'Add to Home Screen'</li>
-                <li>Change the URL to: http://studentrooma.co.uk</li>
-                <li>Tap 'Add'</li>
-            </ol>
-        </p>
-
-        <h2 id="ios-6" class="anchor-target">Safari iOS 6-</h2>
+        <h2 id="ios" class="anchor-target">iOS Safari</h2>
         <p>
             <ol>
                 <li>Go <a href="/">back to the homepage</a></li>
