@@ -1,6 +1,6 @@
 <main>
     <div class="padding">
-        <h1 class="h1--show">About this app</h1>
+        <h1 class="h1--show">About This App</h1>
 
         <h2>What is Student Rooma?</h2>
         <p>...</p>
