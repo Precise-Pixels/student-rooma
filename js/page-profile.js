@@ -26,6 +26,7 @@ function roomsStepper(e) {
 loadDoubleRangeInput();
 
 function loadDoubleRangeInput() {
+    var main            = document.getElementsByTagName('main');
     var container       = document.getElementById('double-range-input');
     var handleL         = document.getElementById('double-range-input-handle-l');
     var handleR         = document.getElementById('double-range-input-handle-r');
@@ -37,6 +38,8 @@ function loadDoubleRangeInput() {
     var range           = max - min;
     var handleLDragging = false;
     var handleRDragging = false;
+    var startL          = 0;
+    var startR          = 0;
     var move            = 0;
     var endL            = 0;
     var endR            = 0;
@@ -69,27 +72,54 @@ function loadDoubleRangeInput() {
     maxPriceField.addEventListener('change', setHandleRPos);
 
     // Handle events
-    handleL.addEventListener('touchstart', handleLStart);
-    handleR.addEventListener('touchstart', handleRStart);
-    window.addEventListener('touchmove', handleMove);
+    handleL.addEventListener('touchstart', function(e) {
+        handleLStart(e, 'touch');
+    });
+
+    handleR.addEventListener('touchstart', function(e) {
+        handleRStart(e, 'touch')
+    });
+
+    main[0].addEventListener('touchmove', function(e) {
+        handleMove(e, 'touch');
+    });
+
     window.addEventListener('touchend', handleEnd);
 
-    handleL.addEventListener('mousedown', handleLStart);
-    handleR.addEventListener('mousedown', handleRStart);
-    window.addEventListener('mousemove', handleMove);
+    handleL.addEventListener('mousedown', function(e) {
+        handleLStart(e, 'mouse')
+    });
+
+    handleR.addEventListener('mousedown', function(e) {
+        handleRStart(e, 'mouse')
+    });
+
+    main[0].addEventListener('mousemove', function(e) {
+        handleMove(e, 'mouse');
+    });
+
     window.addEventListener('mouseup', handleEnd);
 
-    function handleLStart() {
+    function handleLStart(e, interaction) {
+        var pageX = (interaction == 'touch' ? e.touches[0].pageX : e.pageX);
+        startL = (e.pageX || e.touches[0].pageX) - 24;
         handleLDragging = true;
     }
 
-    function handleRStart() {
+    function handleRStart(e, interaction) {
+        var pageX = (interaction == 'touch' ? e.touches[0].pageX : e.pageX);
+        startR = (e.pageX || e.touches[0].pageX) - 24;
         handleRDragging = true;
     }
 
-    function handleMove(e) {
+    function handleMove(e, interaction) {
         if(handleLDragging) {
-            move = (e.pageX || e.touches[0].pageX) - 24;
+            var pageX = (interaction == 'touch' ? e.touches[0].pageX : e.pageX);
+            move = endL + pageX - startL - 24;
+
+            if(move <= 0) {
+                endL = 0;
+            }
 
             if(move >= 0 && move <= endR) {
                 handleL.style.transform = 'translate3d(' + move + 'px,0,0)';
@@ -100,7 +130,12 @@ function loadDoubleRangeInput() {
         }
 
         if(handleRDragging) {
-            move = (e.pageX || e.touches[0].pageX) - 24;
+            var pageX = (interaction == 'touch' ? e.touches[0].pageX : e.pageX);
+            move = endR + pageX - startR - 24;
+
+            if(move >= width - 24) {
+                endR = width - 24;
+            }
 
             if(move <= width - 24 && move >= endL) {
                 handleR.style.transform = 'translate3d(' + move + 'px,0,0)';
