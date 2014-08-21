@@ -79,14 +79,38 @@
     margin: 0 auto;
     padding-bottom: 56.25%;
     position: relative;
+    cursor: pointer;
     text-align: left;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
 
     iframe {
         width: 100%;
         height: 100%;
         position: absolute;
     }
+
+    &:after {
+        content: '';
+        width: 60px;
+        height: 42px;
+        margin-top: -21px;
+        margin-left: -30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: url(http://www.youtube.com/yt/brand/media/image/YouTube_light_color_icon.png);
+        background-size: 60px;
+    }
 }
+
+.youtube--loaded:after {
+    display: none;
+}
+
 
 #small-print {
     margin: 15px auto;

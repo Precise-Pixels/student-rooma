@@ -7,7 +7,7 @@
         <p id="why-continue">Why continue?</p>
 
         <div id="youtube-wrapper">
-            <div data-src="http://www.youtube.com/embed/GUNMBw6p73k?showinfo=0&amp;controls=0&amp;rel=0" id="youtube"></div>
+            <img src="http://img.youtube.com/vi/GUNMBw6p73k/hqdefault.jpg" data-src="http://www.youtube.com/embed/GUNMBw6p73k?showinfo=0&amp;controls=0&amp;rel=0" id="youtube"/>
         </div>
 
         <div id="small-print">

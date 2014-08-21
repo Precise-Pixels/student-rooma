@@ -1,5 +1,7 @@
-var loginBtn  = document.getElementById('login');
-var loginText = document.getElementById('login-text');
+var loginBtn       = document.getElementById('login');
+var loginText      = document.getElementById('login-text');
+var youtubeWrapper = document.getElementById('youtube-wrapper');
+var youtube        = document.getElementById('youtube');
 
 // Facebook SDK
 (function(d, s, id) {
@@ -20,7 +22,6 @@ window.fbAsyncInit = function() {
         loginBtn.className = 'login--loading';
         loginText.innerHTML = 'Logging in...';
         statusChangeCallback(response);
-        loadYoutubeVideo();
     });
 };
 
@@ -87,13 +88,12 @@ function resetLoginButton() {
     loginText.innerHTML = 'Continue with Facebook';
 }
 
-function loadYoutubeVideo() {
-    var youtube = document.getElementById('youtube');
-
+youtubeWrapper.addEventListener('click', function() {
     var iframe = document.createElement('iframe');
     iframe.src = youtube.getAttribute('data-src');
     iframe.frameBorder = '0';
     iframe.setAttribute('allowfullscreen', '');
 
-    youtube.parentNode.replaceChild(iframe, youtube);
-}
+    youtubeWrapper.replaceChild(iframe, youtube);
+    youtubeWrapper.className = 'youtube--loaded';
+});
