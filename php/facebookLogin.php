@@ -31,6 +31,8 @@ if($userExists === false) {
 
     $_SESSION['s_userId'] = $dbh->lastInsertId();
 
+    $_SESSION['s_firstTime'] = 'true';
+
     echo 'new';
 } else {
     // Existing user

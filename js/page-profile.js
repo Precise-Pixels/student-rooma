@@ -46,13 +46,17 @@ var lookingInAfter,
     maxPriceAfter,
     phoneAfter;
 
-document.getElementById('header-btn-l').addEventListener('click', function() {
-    if(anyChanges()) {
-        openDialog("Cancel Changes", "<p>There are unsaved changes. Are you sure you want to cancel?</p>", 'Yes', 'No', 'cancelProfileChanges', 'prompt');
-    } else {
-        window.location.href = '/properties';
-    }
-});
+var cross = document.getElementById('header-btn-l');
+
+if(cross) {
+    cross.addEventListener('click', function() {
+        if(anyChanges()) {
+            openDialog("Cancel Changes", "<p>There are unsaved changes. Are you sure you want to cancel?</p>", 'Yes', 'No', 'cancelProfileChanges', 'prompt');
+        } else {
+            window.location.href = '/properties';
+        }
+    });
+}
 
 document.getElementById('header-btn-r').addEventListener('click', function() {
     if(formComplete()) {

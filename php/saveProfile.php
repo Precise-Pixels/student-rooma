@@ -24,3 +24,7 @@ $sth->bindParam(':maxPrice', $maxPrice);
 $sth->bindParam(':phone', $phone);
 $sth->bindParam(':userId', $_SESSION['s_userId']);
 $result = $sth->execute();
+
+if(isset($_SESSION['s_firstTime'])) {
+    unset($_SESSION['s_firstTime']);
+}

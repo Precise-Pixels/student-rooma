@@ -17,7 +17,9 @@
         <?php endif; ?>
 
         <?php if($isProfile): ?>
-            <div id="header-btn-l"><i class="ico-cross ico--centre"><span>Cancel</span></i></div>
+            <?php if(!isset($_SESSION['s_firstTime']) || !$_SESSION['s_firstTime']): ?>
+                <div id="header-btn-l"><i class="ico-cross ico--centre"><span>Cancel</span></i></div>
+            <?php endif; ?>
             <div id="header-btn-r"><i class="ico-tick ico--centre"><span>Save</span></i></div>
         <?php endif; ?>
 
