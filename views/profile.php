@@ -2,7 +2,7 @@
     <h1>Profile</h1>
 
     <div id="profile-user">
-        <img src="https://graph.facebook.com/<?= $user->fbId; ?>/picture?type=square&width=40&height=40" alt="<?= $user->name; ?>"/>
+        <img src="https://graph.facebook.com/<?= $user->fbId; ?>/picture?type=square&width=40" alt="<?= $user->name; ?>"/>
         <?= $user->name; ?>
     </div>
 
