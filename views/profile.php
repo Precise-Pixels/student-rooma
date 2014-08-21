@@ -46,7 +46,7 @@
     <div id="profile-other">
         <div class="form-row">
             <label for="phone">Phone number</label>
-            <input type="tel" id="phone" name="phone" value="<?= $user->phone; ?>"/>
+            <input type="tel" id="phone" name="phone" value="<?= $user->phone; ?>" placeholder="Enter your phone number"/>
         </div>
 
         <button id="reset" class="button-profile--left"><i class="ico-refresh"></i>Reset No's</button>
