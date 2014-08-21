@@ -47,36 +47,64 @@ var lookingInAfter,
     phoneAfter;
 
 document.getElementById('header-btn-l').addEventListener('click', function() {
-    if(anyChanges()) {
-        openDialog("Cancel Changes", "<p>There are unsaved changes. Are you sure you want to cancel?</p>", 'Yes', 'No', 'cancelProfileChanges', 'prompt');
+    if(formComplete()) {
+        if(anyChanges()) {
+            openDialog("Cancel Changes", "<p>There are unsaved changes. Are you sure you want to cancel?</p>", 'Yes', 'No', 'cancelProfileChanges', 'prompt');
+        } else {
+            window.location.href = '/properties';
+        }
     } else {
-        window.location.href = '/properties';
+        openDialog("Profile Incomplete", "<p>Please ensure all the fields are filled out correctly.</p>", 'Okay', '', 'profileIncomplete', 'alert');
     }
 });
 
 document.getElementById('header-btn-r').addEventListener('click', function() {
-    if(anyChanges()) {
-        var tick = document.getElementsByClassName('ico-tick');
-        tick[0].className = 'ico-spinner ico--centre';
+    if(formComplete()) {
+        if(anyChanges()) {
+            var tick = document.getElementsByClassName('ico-tick');
+            tick[0].className = 'ico-spinner ico--centre';
 
-        var data = 'lookingIn=' + lookingInAfter + '&rooms=' + roomsAfter + '&availableFrom=' + availableFromAfter + '&minPrice=' + minPriceAfter + '&maxPrice=' + maxPriceAfter + '&phone=' + phoneAfter;
-        var request = new XMLHttpRequest();
-        request.open('POST', '/php/saveProfile.php', true);
-        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-        request.send(data);
+            var data = 'lookingIn=' + lookingInAfter + '&rooms=' + roomsAfter + '&availableFrom=' + availableFromAfter + '&minPrice=' + minPriceAfter + '&maxPrice=' + maxPriceAfter + '&phone=' + phoneAfter;
+            var request = new XMLHttpRequest();
+            request.open('POST', '/php/saveProfile.php', true);
+            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+            request.send(data);
 
-        request.onreadystatechange = function() {
-            if(request.readyState == 4 && request.status == 200) {
-                window.location.href = '/properties';
-            } else if(request.status != 200) {
-                openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
-                tick[0].className = 'ico-tick ico--centre';
+            request.onreadystatechange = function() {
+                if(request.readyState == 4 && request.status == 200) {
+                    window.location.href = '/properties';
+                } else if(request.status != 200) {
+                    openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
+                    tick[0].className = 'ico-tick ico--centre';
+                }
             }
+        } else {
+            window.location.href = '/properties';
         }
     } else {
-        window.location.href = '/properties';
+        openDialog("Profile Incomplete", "<p>Please ensure all the fields are filled out correctly.</p>", 'Okay', '', 'profileIncomplete', 'alert');
     }
 });
+
+function formComplete() {
+    lookingInAfter     = document.querySelector('input[name="looking-in"]:checked');
+    roomsAfter         = document.getElementById('rooms').value;
+    availableFromAfter = document.getElementById('available-from').value;
+    minPriceAfter      = document.getElementById('min-price').value;
+    maxPriceAfter      = document.getElementById('max-price').value;
+    phoneAfter         = document.getElementById('phone').value;
+
+    if(lookingInAfter     != null &&
+       roomsAfter         != ''   &&
+       availableFromAfter != ''   &&
+       minPriceAfter      != ''   &&
+       maxPriceAfter      != ''   &&
+       phoneAfter         != '') {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function anyChanges() {
     lookingInAfter     = document.querySelector('input[name="looking-in"]:checked').value;

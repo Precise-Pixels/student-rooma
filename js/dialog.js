@@ -27,6 +27,9 @@ function clickDialogButtonY() {
             phoneDialogOpened = true;
             closeDialog();
             break;
+        case 'profileIncomplete':
+            closeDialog();
+            break;
         case 'cancelProfileChanges':
             cancelProfileChanges();
             break;
