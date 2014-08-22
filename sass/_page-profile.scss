@@ -95,7 +95,8 @@
         font-size: 12px;
         text-decoration: none;
 
-        &:hover {
+        &:hover,
+        &:focus {
             border-bottom: 1px solid $orange;
             color: $orange;
         }
