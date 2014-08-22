@@ -49,6 +49,12 @@ function loadSlider() {
         slider[0].style.width = totalSlides * 100 + '%';
         slider[0].className   = 'room-slider room-slider--loaded';
 
+        // Fix height:100% not redrawing on resize
+        // Thanks: http://stackoverflow.com/a/3485654/1696757
+        slider[0].style.display = 'none';
+        slider[0].offsetHeight;
+        slider[0].style.display = 'block';
+
         updateTabs();
 
         var tabsTouchStart,
