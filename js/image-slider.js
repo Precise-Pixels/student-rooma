@@ -28,6 +28,7 @@ function loadSlider() {
             tabsMoveAmt,
             tabsMoveEnd = 0,
             tabsMoving  = false;
+            tabsSmall   = false;
 
         function tabsStart(e) {
             tabsMoving     = true;
@@ -35,7 +36,7 @@ function loadSlider() {
         }
 
         function tabsMove(e) {
-            if(tabsMoving) {
+            if(tabsMoving && tabsSmall) {
                 var excess    = (totalSlides * tabWidth - screenWidth) * -1;
                 tabsTouchMove = e.pageX || e.touches[0].pageX;
                 tabsMoveAmt   = tabsMoveEnd + tabsTouchMove - tabsTouchStart;
@@ -132,6 +133,7 @@ function loadSlider() {
         if(screenWidth < totalSlides * tabWidth) {
             tabsWrapper[0].className  += ' tabs--small';
             tabsWrapper[0].style.width = totalSlides * tabWidth + 'px';
+            tabsSmall = true;
         }
 
         slider[0].style.width = totalSlides * 100 + '%';
