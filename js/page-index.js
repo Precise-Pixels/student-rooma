@@ -1,3 +1,8 @@
+/*!
+  * Precise Pixels | http://precisepixels.co.uk
+  * https://github.com/Precise-Pixels/student-rooma
+  */
+
 var loginBtn       = document.getElementById('login');
 var loginText      = document.getElementById('login-text');
 var youtubeWrapper = document.getElementById('youtube-wrapper');

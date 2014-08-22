@@ -1,3 +1,8 @@
+/*!
+  * Precise Pixels | http://precisepixels.co.uk
+  * https://github.com/Precise-Pixels/student-rooma
+  */
+
 var availabilities = document.getElementsByClassName('availability');
 
 for(var i = 0, l = availabilities.length; i < l; i++) {

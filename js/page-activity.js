@@ -1,3 +1,8 @@
+/*!
+  * Precise Pixels | http://precisepixels.co.uk
+  * https://github.com/Precise-Pixels/student-rooma
+  */
+
 var tabBooked    = document.getElementById('tab--booked');
 var tabStarred   = document.getElementById('tab--starred');
 var tabNos       = document.getElementById('tab--nos');

@@ -9,6 +9,9 @@ module.exports = function(grunt) {
             }
         },
         cssmin: {
+            options: {
+                banner: '/*!\r\n  * Precise Pixels | http://precisepixels.co.uk\r\n  * https://github.com/Precise-Pixels/student-rooma\r\n  */'
+            },
             minify: {
                 src: 'css/styles.css',
                 dest: 'build/styles.min.css'
@@ -38,6 +41,9 @@ module.exports = function(grunt) {
         },
         uglify: {
             build: {
+                options: {
+                    preserveComments: 'some'
+                },
                 files: [{
                     expand: true,
                     cwd: 'js',
@@ -49,13 +55,13 @@ module.exports = function(grunt) {
         },
         watch: {
             scripts: {
+                options: {
+                    spawn: false
+                },
                 files: [
                     'sass/**/*'
                 ],
-                tasks: ['sass:dev', 'autoprefixer'],
-                options: {
-                    spawn: false
-                }
+                tasks: ['sass:dev', 'autoprefixer']
             }
         }
     });

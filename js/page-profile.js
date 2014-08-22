@@ -1,3 +1,8 @@
+/*!
+  * Precise Pixels | http://precisepixels.co.uk
+  * https://github.com/Precise-Pixels/student-rooma
+  */
+
 // Rooms stepper
 var rooms          = document.getElementById('rooms');
 var roomsDecrement = document.getElementById('rooms-decrement');

@@ -1,3 +1,8 @@
+/*!
+  * Precise Pixels | http://precisepixels.co.uk
+  * https://github.com/Precise-Pixels/student-rooma
+  */
+
 loadImages();
 
 function loadImages() {

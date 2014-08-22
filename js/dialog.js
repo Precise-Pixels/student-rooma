@@ -1,3 +1,8 @@
+/*!
+  * Precise Pixels | http://precisepixels.co.uk
+  * https://github.com/Precise-Pixels/student-rooma
+  */
+
 var dialog        = document.getElementById('dialog');
 var dialogHeading = document.getElementById('dialog-heading');
 var dialogText    = document.getElementById('dialog-text-wrapper');

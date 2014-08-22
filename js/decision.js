@@ -1,3 +1,8 @@
+/*!
+  * Precise Pixels | http://precisepixels.co.uk
+  * https://github.com/Precise-Pixels/student-rooma
+  */
+
 var decisionButtons = document.getElementsByClassName('decision-buttons');
 var bookButton      = document.getElementsByClassName('book');
 var starButton      = document.getElementsByClassName('star');

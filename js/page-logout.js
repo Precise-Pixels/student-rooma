@@ -1,3 +1,8 @@
+/*!
+  * Precise Pixels | http://precisepixels.co.uk
+  * https://github.com/Precise-Pixels/student-rooma
+  */
+
 // Facebook SDK
 (function(d, s, id) {
 var js, fjs = d.getElementsByTagName(s)[0];
