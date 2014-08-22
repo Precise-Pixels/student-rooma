@@ -3,6 +3,10 @@
 <head>
     <?php require_once('includes/head.php'); ?>
 </head>
+<!--
+Precise Pixels | http://precisepixels.co.uk
+https://github.com/Precise-Pixels/student-rooma
+-->
 <body<?= ($isIndex ? ' class="index"' : ''); ?>>
     <?php require_once('includes/header.php'); ?>
     <?php require_once("views/$file.php"); ?>
