@@ -4,7 +4,7 @@
         unset($_SESSION['s_userId']);
         ?>
 
-        <p>Logging out...</p>
+        <h1 class="h1--show">Logging out...</h1>
 
         <div id="fb-root"></div>
     </div>
