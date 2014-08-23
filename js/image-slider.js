@@ -127,8 +127,9 @@ function loadSlider() {
         }
 
         // Init
-        tabsWrapper[0].className   = tabsWrapper[0].className.replace(' tabs--small', '');
-        tabsWrapper[0].style.width = '';
+        tabsWrapper[0].className       = tabsWrapper[0].className.replace(' tabs--small', '');
+        tabsWrapper[0].style.width     = '';
+        tabsWrapper[0].style.transform = '';
 
         if(screenWidth < totalSlides * tabWidth) {
             tabsWrapper[0].className  += ' tabs--small';
