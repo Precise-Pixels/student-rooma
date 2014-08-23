@@ -8,6 +8,7 @@ var dialogHeading = document.getElementById('dialog-heading');
 var dialogText    = document.getElementById('dialog-text-wrapper');
 var dialogButtonY = document.getElementById('dialog-button-y');
 var dialogButtonN = document.getElementById('dialog-button-n');
+var main          = document.getElementsByTagName('main')[0];
 var dialogFunc;
 var phoneDialogOpened = false;
 
@@ -22,8 +23,8 @@ function openDialog(heading, text, buttonY, buttonN, func, type) {
     dialogButtonY.addEventListener('click', clickDialogButtonY);
     dialogButtonN.addEventListener('click', clickDialogButtonN);
 
-    dialog.className         = 'dialog--show dialog--' + type;
-    document.body.className += ' dialog--show';
+    dialog.className = 'dialog--show dialog--' + type;
+    main.className  += ' dialog--show';
 }
 
 function clickDialogButtonY() {
@@ -64,7 +65,7 @@ function clickDialogButtonN() {
 function closeDialog() {
     dialogFunc              = null;
     dialog.className        = '';
-    document.body.className = document.body.className.replace(' dialog--show', '');
+    main.className          = main.className.replace(' dialog--show', '');
     dialogHeading.innerHTML = '';
     dialogText.innerHTML    = '';
     dialogButtonY.innerHTML = '';

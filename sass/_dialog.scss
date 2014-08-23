@@ -12,7 +12,7 @@
     display: block;
 }
 
-body.dialog--show {
+.dialog--show {
     position: fixed;
     overflow: hidden;
 }
@@ -73,5 +73,16 @@ body.dialog--show {
     #dialog-button-y {
         width: 47%;
         float: right;
+    }
+}
+
+@media ($c) {
+    #dialog {
+        left: 600px;
+    }
+
+    .dialog--show {
+        margin-left: -600px;
+        left: 50%;
     }
 }
