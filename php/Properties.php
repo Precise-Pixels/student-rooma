@@ -79,8 +79,12 @@ class Properties {
     }
 
     static function getImages($propertyId) {
-        $images = scandir(__DIR__ . "/../img/properties/{$propertyId}/");
-        array_splice($images, 0, 2);
+        $images = null;
+
+        if(file_exists(__DIR__ . "/../img/properties/{$propertyId}/")) {
+            $images = scandir(__DIR__ . "/../img/properties/{$propertyId}/");
+            array_splice($images, 0, 2);
+        }
 
         return $images;
     }
