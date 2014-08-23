@@ -77,32 +77,13 @@ function loadDoubleRangeInput() {
     maxPriceField.addEventListener('change', setHandleRPos);
 
     // Handle events
-    handleL.addEventListener('touchstart', function(e) {
-        handleLStart(e, 'touch');
-    });
-
-    handleR.addEventListener('touchstart', function(e) {
-        handleRStart(e, 'touch')
-    });
-
-    main[0].addEventListener('touchmove', function(e) {
-        handleMove(e, 'touch');
-    });
-
+    handleL.addEventListener('touchstart', function(e) { handleLStart(e, 'touch'); });
+    handleR.addEventListener('touchstart', function(e) { handleRStart(e, 'touch'); });
+    main[0].addEventListener('touchmove', function(e) { handleMove(e, 'touch'); });
     window.addEventListener('touchend', handleEnd);
-
-    handleL.addEventListener('mousedown', function(e) {
-        handleLStart(e, 'mouse')
-    });
-
-    handleR.addEventListener('mousedown', function(e) {
-        handleRStart(e, 'mouse')
-    });
-
-    main[0].addEventListener('mousemove', function(e) {
-        handleMove(e, 'mouse');
-    });
-
+    handleL.addEventListener('mousedown', function(e) { handleLStart(e, 'mouse'); });
+    handleR.addEventListener('mousedown', function(e) { handleRStart(e, 'mouse'); });
+    main[0].addEventListener('mousemove', function(e) { handleMove(e, 'mouse'); });
     window.addEventListener('mouseup', handleEnd);
 
     function handleLStart(e, interaction) {
