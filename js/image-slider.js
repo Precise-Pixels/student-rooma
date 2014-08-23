@@ -41,16 +41,16 @@ function loadSlider() {
                 tabsTouchMove = (interaction == 'touch' ? e.touches[0].pageX : e.pageX);
                 tabsMoveAmt   = tabsMoveEnd + tabsTouchMove - tabsTouchStart;
 
-                tabsWrapper[0].style.transform = 'translate3d(' + tabsMoveAmt + 'px,0,0)';
+                tabsWrapper[0].style.transform = tabsWrapper[0].style.webkitTransform = 'translate3d(' + tabsMoveAmt + 'px,0,0)';
 
                 if(tabsMoveAmt > 0) {
                     tabsMoveAmt = 0;
-                    tabsWrapper[0].style.transform = 'translate3d(' + tabsMoveAmt + 'px,0,0)';
+                    tabsWrapper[0].style.transform = tabsWrapper[0].style.webkitTransform = 'translate3d(' + tabsMoveAmt + 'px,0,0)';
                 }
 
                 if(tabsMoveAmt < excess) {
                     tabsMoveAmt = excess;
-                    tabsWrapper[0].style.transform = 'translate3d(' + tabsMoveAmt + 'px,0,0)';
+                    tabsWrapper[0].style.transform = tabsWrapper[0].style.webkitTransform = 'translate3d(' + tabsMoveAmt + 'px,0,0)';
                 }
             }
         }
@@ -75,7 +75,7 @@ function loadSlider() {
             // Don't overscroll if on the last slide
             if(currentSlide !== totalSlides - 1 || sliderTouchStart < sliderTouchMove) {
                 sliderMoveAmt = currentSlide * slideWidth + sliderTouchStart - sliderTouchMove;
-                slider[0].style.transform = 'translate3d(-' + sliderMoveAmt + 'px,0,0)';
+                slider[0].style.transform = slider[0].style.webkitTransform = 'translate3d(-' + sliderMoveAmt + 'px,0,0)';
             }
         }
 
@@ -123,13 +123,13 @@ function loadSlider() {
 
         function animateSlide() {
             slider[0].className = 'room-slider room-slider--loaded room-slider--animate';
-            slider[0].style.transform = 'translate3d(-' + currentSlide * slideWidth + 'px,0,0)';
+            slider[0].style.transform = slider[0].style.webkitTransform = 'translate3d(-' + currentSlide * slideWidth + 'px,0,0)';
         }
 
         // Init
         tabsWrapper[0].className       = tabsWrapper[0].className.replace(' tabs--small', '');
         tabsWrapper[0].style.width     = '';
-        tabsWrapper[0].style.transform = '';
+        tabsWrapper[0].style.transform = tabsWrapper[0].style.webkitTransform = '';
 
         if(screenWidth < totalSlides * tabWidth) {
             tabsWrapper[0].className  += ' tabs--small';

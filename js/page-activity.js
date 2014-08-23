@@ -88,7 +88,7 @@ function sliderMove(e) {
     // Don't overscroll if on the last slide
     if(currentSlide !== 2 || sliderTouchStart < sliderTouchMove) {
         sliderMoveAmt = currentSlide * wrapperWidth + sliderTouchStart - sliderTouchMove;
-        slider.style.transform = 'translate3d(-' + sliderMoveAmt + 'px,0,0)';
+        slider.style.transform = slider.style.webkitTransform = 'translate3d(-' + sliderMoveAmt + 'px,0,0)';
     }
 }
 
@@ -117,5 +117,5 @@ function sliderEnd(e) {
             break;
     }
 
-    slider.style.transform = '';
+    slider.style.transform = slider.style.webkitTransform = '';
 }

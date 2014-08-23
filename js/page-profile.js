@@ -56,9 +56,9 @@ function loadDoubleRangeInput() {
         var handleLPos = endL = ((minPriceField.value - min) / range) * (width - 24);
 
         if(handleLPos < 0) {
-            handleL.style.transform = 'translate3d(0,0,0)';
+            handleL.style.transform = handleL.style.webkitTransform = 'translate3d(0,0,0)';
         } else {
-            handleL.style.transform = 'translate3d(' + handleLPos + 'px,0,0)';
+            handleL.style.transform = handleL.style.webkitTransform = 'translate3d(' + handleLPos + 'px,0,0)';
         }
     }
 
@@ -66,9 +66,9 @@ function loadDoubleRangeInput() {
         var handleRPos = endR = ((maxPriceField.value - min) / range) * (width - 24);
 
         if(handleRPos > width) {
-            handleR.style.transform = 'translate3d(' + (width - 24) + 'px,0,0)';
+            handleR.style.transform = handleR.style.webkitTransform = 'translate3d(' + (width - 24) + 'px,0,0)';
         } else {
-            handleR.style.transform = 'translate3d(' + handleRPos + 'px,0,0)';
+            handleR.style.transform = handleR.style.webkitTransform = 'translate3d(' + handleRPos + 'px,0,0)';
         }
     }
 
@@ -108,7 +108,7 @@ function loadDoubleRangeInput() {
             }
 
             if(move >= 0 && move <= endR) {
-                handleL.style.transform = 'translate3d(' + move + 'px,0,0)';
+                handleL.style.transform = handleL.style.webkitTransform = 'translate3d(' + move + 'px,0,0)';
 
                 var perc = move / (width - 24);
                 minPriceField.value = Math.round(perc * range + min);
@@ -124,7 +124,7 @@ function loadDoubleRangeInput() {
             }
 
             if(move <= width - 24 && move >= endL) {
-                handleR.style.transform = 'translate3d(' + move + 'px,0,0)';
+                handleR.style.transform = handleR.style.webkitTransform = 'translate3d(' + move + 'px,0,0)';
 
                 var perc = move / (width - 24);
                 maxPriceField.value = Math.round(perc * range + min);
