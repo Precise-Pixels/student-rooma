@@ -3,7 +3,7 @@
 
     <div class="property property--active">
         <div class="rooms">
-            <div class="tabs<?= ($property->noOfRooms <= 5 ? " tabs--$property->noOfRooms" : ' tabs--small'); ?>">
+            <div class="tabs tabs--<?= $property->noOfRooms; ?>">
                 <?php foreach($property->rooms as $key => $room): ?>
                     <div class="tab tab-<?= $key; ?>">Room <?= $room->roomNo; ?></div>
                 <?php endforeach; ?>
