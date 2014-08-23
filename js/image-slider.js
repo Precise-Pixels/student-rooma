@@ -30,15 +30,15 @@ function loadSlider() {
             tabsMoving  = false;
             tabsSmall   = false;
 
-        function tabsStart(e) {
+        function tabsStart(e, interaction) {
             tabsMoving     = true;
-            tabsTouchStart = e.pageX || e.touches[0].pageX;
+            tabsTouchStart = (interaction == 'touch' ? e.touches[0].pageX : e.pageX);
         }
 
-        function tabsMove(e) {
+        function tabsMove(e, interaction) {
             if(tabsMoving && tabsSmall) {
                 var excess    = (totalSlides * tabWidth - screenWidth) * -1;
-                tabsTouchMove = e.pageX || e.touches[0].pageX;
+                tabsTouchMove = (interaction == 'touch' ? e.touches[0].pageX : e.pageX);
                 tabsMoveAmt   = tabsMoveEnd + tabsTouchMove - tabsTouchStart;
 
                 tabsWrapper[0].style.transform = 'translate3d(' + tabsMoveAmt + 'px,0,0)';
@@ -157,11 +157,11 @@ function loadSlider() {
             tabs[i].addEventListener('click', clickTabs);
         }
 
-        tabsWrapper[0].addEventListener('touchstart', tabsStart);
-        tabsWrapper[0].addEventListener('touchmove', tabsMove);
+        tabsWrapper[0].addEventListener('touchstart', function(e) { tabsStart(e, 'touch'); });
+        tabsWrapper[0].addEventListener('touchmove', function(e) { tabsMove(e, 'touch'); });
         tabsWrapper[0].addEventListener('touchend', tabsEnd);
-        tabsWrapper[0].addEventListener('mousedown', tabsStart);
-        tabsWrapper[0].addEventListener('mousemove', tabsMove);
+        tabsWrapper[0].addEventListener('mousedown', function(e) { tabsStart(e, 'mouse'); });
+        tabsWrapper[0].addEventListener('mousemove', function(e) { tabsMove(e, 'mouse'); });
         tabsWrapper[0].addEventListener('mouseup', tabsEnd);
 
         controls[0].addEventListener('touchstart', sliderStart);
