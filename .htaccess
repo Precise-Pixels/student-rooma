@@ -1,3 +1,15 @@
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ front-controller.php?q=$1 [QSA]
+
+# 1 YEAR CACHE - IMAGES & FONTS
+
+<FilesMatch "\.(ico|gif|jpg|png|eot|svg|ttf|woff)$">
+    Header set Cache-Control "max-age=29030400"
+</FilesMatch>
+
+# 1 MONTH CACHE - CSS & JAVASCRIPT
+
+<FilesMatch "\.(css|js)$">
+    Header set Cache-Control "max-age=2419200"
+</FilesMatch>
