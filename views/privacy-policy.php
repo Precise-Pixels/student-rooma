@@ -45,6 +45,6 @@
         <p>In accordance with the Data Protection Act 1998 you have the right to access any information that we hold relating to you. Please note that we reserve the right to charge a fee of £10 to cover costs incurred by us in providing you with the information.</p>
 
         <h2>Contact Us</h2>
-        <p>Please do not hesitate to contact us regarding any matter relating to this Privacy Policy at <a href="&#109;ailto:support&#64;studentrooma&#46;co&#46;uk">support&#64;studentrooma&#46;co&#46;uk</a></p>
+        <p>Please do not hesitate to contact us regarding any matter relating to this Privacy Policy at <a href="&#109;ailto:support&#64;studentrooma&#46;co&#46;uk" class="paragraph-a">support&#64;studentrooma&#46;co&#46;uk</a></p>
     </div>
 </main>

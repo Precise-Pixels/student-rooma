@@ -21,10 +21,10 @@
         <p>This app also requires Javascript and cookies to be enabled at all times.</p>
 
         <h2>Support</h2>
-        <p>Having troubles with this app? Drop us an email at: <a href="&#109;ailto:support&#64;studentrooma&#46;co&#46;uk">support&#64;studentrooma&#46;co&#46;uk</a></p>
+        <p>Having troubles with this app? Drop us an email at: <a href="&#109;ailto:support&#64;studentrooma&#46;co&#46;uk" class="paragraph-a">support&#64;studentrooma&#46;co&#46;uk</a></p>
 
         <hr>
 
-        <p>Designed and developed by <a href="http://precisepixels.co.uk" target="_blank">Precise Pixels</a></p>
+        <p>Designed and developed by <a href="http://precisepixels.co.uk" target="_blank" class="paragraph-a">Precise Pixels</a></p>
     </div>
 </main>

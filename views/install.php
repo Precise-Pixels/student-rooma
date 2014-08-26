@@ -8,7 +8,7 @@
         <h2 id="chrome" class="anchor-target">Chrome</h2>
         <p>
             <ol>
-                <li>Go <a href="/">back to the homepage</a></li>
+                <li>Go <a href="/" class="paragraph-a">back to the homepage</a></li>
                 <li>Tap the 'More/Menu' icon</li>
                 <li>Tap 'Add to home screen'</li>
             </ol>
@@ -17,7 +17,7 @@
         <h2 id="ios" class="anchor-target">iOS Safari</h2>
         <p>
             <ol>
-                <li>Go <a href="/">back to the homepage</a></li>
+                <li>Go <a href="/" class="paragraph-a">back to the homepage</a></li>
                 <li>Tap the 'Share' icon</li>
                 <li>Tap 'Add to Home Screen'</li>
                 <li>Tap 'Add'</li>
@@ -50,7 +50,7 @@
         <h2 id="windows-phone" class="anchor-target">Windows Phone</h2>
         <p>
             <ol>
-                <li>Go <a href="/">back to the homepage</a></li>
+                <li>Go <a href="/" class="paragraph-a">back to the homepage</a></li>
                 <li>Tap the 'More' icon</li>
                 <li>Tap 'Pin to Start'</li>
             </ol>

@@ -23,6 +23,18 @@ a {
     outline: 0;
 }
 
+.paragraph-a {
+    border-bottom: 1px solid $dgrey;
+    color: $dgrey;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        border-bottom: 1px solid $orange;
+        color: $orange;
+    }
+}
+
 .error {
     color: $red;
 }
