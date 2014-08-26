@@ -22,6 +22,11 @@ header {
     color: $white;
     font-size: 34px;
     line-height: 64px;
+
+    a:focus & {
+        color: $dgrey;
+        background: $mgrey;
+    }
 }
 
 #header-btn-l {

@@ -196,6 +196,11 @@
     text-decoration: none;
     line-height: 45px;
     background: $dgrey-a;
+
+    &:hover,
+    &:focus {
+        background: $dgrey-a-hover;
+    }
 }
 
 .room-info {
@@ -270,6 +275,10 @@
     margin-bottom: 15px;
     overflow: hidden;
     background: url(/img/spinner.gif) no-repeat center;
+
+    &:focus {
+        box-shadow: 0 0 0 2px $orange;
+    }
 
     img {
         width: 100%;
