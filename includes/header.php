@@ -24,35 +24,35 @@
         <?php endif; ?>
 
         <?php if($isProperties): ?>
-            <a href="/activity#starred"><div id="header-btn-l"><i class="ico-activity ico--centre"><span>Activity</span></i></div></a>
-            <a href="/profile"><div id="header-btn-r"><i class="ico-profile ico--centre"><span>Profile</span></i></div></a>
+            <a href="/activity#starred" id="header-btn-l"><i class="ico-activity ico--centre"><span>Activity</span></i></a>
+            <a href="/profile" id="header-btn-r"><i class="ico-profile ico--centre"><span>Profile</span></i></a>
         <?php endif; ?>
 
         <?php if($isActivity): ?>
-            <a href="/properties"><div id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back to Properties</span></i></div></a>
-            <a href="/profile"><div id="header-btn-r"><i class="ico-profile ico--centre"><span>Profile</span></i></div></a>
+            <a href="/properties" id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back to Properties</span></i></a>
+            <a href="/profile" id="header-btn-r"><i class="ico-profile ico--centre"><span>Profile</span></i></a>
         <?php endif; ?>
 
         <?php if($isProperty): ?>
-            <a href="/activity#starred"><div id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back to Activity</span></i></div></a>
-            <a href="/profile"><div id="header-btn-r"><i class="ico-profile ico--centre"><span>Profile</span></i></div></a>
+            <a href="/activity#starred" id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back to Activity</span></i></a>
+            <a href="/profile" id="header-btn-r"><i class="ico-profile ico--centre"><span>Profile</span></i></a>
         <?php endif; ?>
 
         <?php if($isGallery): ?>
-            <a href="<?= (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '/properties'); ?>"><div id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></div></a>
-            <a href="/profile"><div id="header-btn-r"><i class="ico-profile ico--centre"><span>Profile</span></i></div></a>
+            <a href="<?= (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '/properties'); ?>" id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></a>
+            <a href="/profile" id="header-btn-r"><i class="ico-profile ico--centre"><span>Profile</span></i></a>
         <?php endif; ?>
 
         <?php if($isInstall || $isAbout): ?>
-            <a href="/profile"><div id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></div></a>
+            <a href="/profile" id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></a>
         <?php endif; ?>
 
         <?php if($isTerms || $isPrivacy): ?>
-            <a href="/"><div id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></div></a>
+            <a href="/" id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></a>
         <?php endif; ?>
 
         <?php if($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability): ?>
-            <a href="/admin"><div id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></div></a>
+            <a href="/admin" id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></a>
         <?php endif; ?>
     </header>
 

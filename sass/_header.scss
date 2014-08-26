@@ -23,7 +23,8 @@ header {
     font-size: 34px;
     line-height: 64px;
 
-    a:focus & {
+    &:focus {
+        outline: 0;
         color: $dgrey;
         background: $mgrey;
     }
