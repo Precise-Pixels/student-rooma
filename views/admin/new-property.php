@@ -59,7 +59,7 @@
                 <label for="rooms">Number of bedrooms</label>
                 <div class="stepper">
                     <button type="button" id="rooms-decrement" disabled>-</button>
-                    <input type="number" id="rooms" name="rooms" readonly/>
+                    <input type="number" id="rooms" name="rooms" readonly tabindex="-1"/>
                     <button type="button" id="rooms-increment">+</button>
                 </div>
             </div>
