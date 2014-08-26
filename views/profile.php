@@ -21,7 +21,7 @@
             <label for="rooms">Number of bedrooms</label>
             <div class="stepper">
                 <button id="rooms-decrement"<?= ($user->rooms === 'ANY' ? ' disabled' : ''); ?>>-</button>
-                <input type="text" id="rooms" name="rooms" value="<?= $user->rooms; ?>" readonly/>
+                <input type="text" id="rooms" name="rooms" value="<?= $user->rooms; ?>" readonly tabindex="-1"/>
                 <button id="rooms-increment">+</button>
             </div>
         </div>
@@ -57,7 +57,7 @@
         </div>
 
         <button id="reset" class="button-profile--left"><i class="ico-refresh"></i>Reset No's</button>
-        <a href="logout"><button class="button-profile--right">Logout</button></a>
+        <a href="logout"><button class="button-profile--right" tabindex="-1">Logout</button></a>
 
         <p id="install-this-app"><a href="/install">Install this app on your device</a></p>
         <p id="about-this-app"><a href="/about">About this app</a></p>

@@ -18,9 +18,9 @@
 
         <?php if($isProfile): ?>
             <?php if(!isset($_SESSION['s_firstTime']) || !$_SESSION['s_firstTime']): ?>
-                <div id="header-btn-l"><i class="ico-cross ico--centre"><span>Cancel</span></i></div>
+                <div id="header-btn-l" tabindex="1"><i class="ico-cross ico--centre"><span>Cancel</span></i></div>
             <?php endif; ?>
-            <div id="header-btn-r"><i class="ico-tick ico--centre"><span>Save</span></i></div>
+            <div id="header-btn-r" tabindex="2"><i class="ico-tick ico--centre"><span>Save</span></i></div>
         <?php endif; ?>
 
         <?php if($isProperties): ?>
