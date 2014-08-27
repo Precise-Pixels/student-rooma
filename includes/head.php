@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<meta name="description" content=""/>
+<meta name="description" content="Student Rooma - Find your perfect room in Canterbury &amp; Medway"/>
 <meta name="author" content="Precise Pixels"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 <meta name="mobile-web-app-capable" content="yes"/>
@@ -15,6 +15,13 @@
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/touchicon-72.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/touchicon-114.png">
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/touchicon-144.png">
+
+<meta property="og:title" content="Student Rooma"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://studentrooma.co.uk"/>
+<meta property="og:image" content="http://studentrooma.co.uk/img/meta-logo.png"/>
+<meta property="og:site_name" content="Student Rooma"/>
+<meta property="og:description" content="Student Rooma - Find your perfect room in Canterbury &amp; Medway"/>
 
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
