@@ -69,6 +69,10 @@
     background: none;
 }
 
+.rooms--loaded > .room-content {
+    opacity: 1;
+}
+
 .property .tabs {
     position: relative;
     z-index: 3;
@@ -79,7 +83,9 @@
     margin-bottom: 60px;
     padding-bottom: 56.25%;
     position: relative;
+    opacity: 0;
     z-index: 1;
+    transition: opacity .3s;
 }
 
 .room-slider {
