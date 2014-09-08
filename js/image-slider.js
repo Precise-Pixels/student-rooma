@@ -27,7 +27,7 @@ function loadSlider() {
             tabsTouchMove,
             tabsMoveAmt,
             tabsMoveEnd = 0,
-            tabsMoving  = false;
+            tabsMoving  = false,
             tabsSmall   = false;
 
         function tabsStart(e, interaction) {
@@ -137,18 +137,11 @@ function loadSlider() {
             tabsSmall = true;
         }
 
-        slider[0].style.width = totalSlides * 100 + '%';
-        slider[0].className   = 'room-slider room-slider--loaded';
+        slider[0].className = 'room-slider room-slider--loaded';
 
         for(var i = 0; i < totalSlides; i++) {
-            rooms[i].style.width = 100 / totalSlides + '%';
+            rooms[i].style.left = 100 * i + '%';
         }
-
-        // Fix height:100% not redrawing on resize
-        // Thanks: http://stackoverflow.com/a/3485654/1696757
-        slider[0].style.display = 'none';
-        slider[0].offsetHeight;
-        slider[0].style.display = 'block';
 
         updateTabs();
 
@@ -170,11 +163,14 @@ function loadSlider() {
         left[0].addEventListener('click', sliderLeft);
         right[0].addEventListener('click', sliderRight);
     }
+
+    var resizeTimer;
+
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            slideWidth = controls[0].offsetWidth;
+            slider[0].style.transform = slider[0].style.webkitTransform = 'translate3d(-' + currentSlide * slideWidth + 'px,0,0)';
+        }, 100);
+    });
 }
-
-var resizeTimer;
-
-window.addEventListener('resize', function() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(loadSlider, 100);
-});

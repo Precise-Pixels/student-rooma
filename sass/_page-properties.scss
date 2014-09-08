@@ -83,8 +83,7 @@
 }
 
 .room-slider {
-    width: 1000%;
-    height: 100%;
+    width: 100%;
     position: absolute;
     top: 0;
     opacity: 0;
@@ -100,9 +99,10 @@
 }
 
 .room {
-    height: 100%;
+    width: 100%;
     float: left;
-    position: relative;
+    position: absolute;
+    top: 0;
 }
 
 .room--unavailable:before {
