@@ -56,9 +56,12 @@ function requestFBData() {
         location;
 
     FB.api('/me', function(response) {
-        fbId     = encodeURI(response.id);
-        name     = encodeURI(response.name);
-        location = encodeURI(response.location.name);
+        fbId = encodeURI(response.id);
+        name = encodeURI(response.name);
+
+        if(response.location != undefined) {
+            location = encodeURI(response.location.name);
+        }
 
         proceedLogin();
     });
