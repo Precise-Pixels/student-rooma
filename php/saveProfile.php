@@ -28,3 +28,7 @@ $result = $sth->execute();
 if(isset($_SESSION['s_firstTime'])) {
     unset($_SESSION['s_firstTime']);
 }
+
+if(isset($_SESSION['s_noPhone'])) {
+    unset($_SESSION['s_noPhone']);
+}

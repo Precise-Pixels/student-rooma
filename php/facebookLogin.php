@@ -32,15 +32,21 @@ if($userExists === false) {
     $_SESSION['s_userId'] = $dbh->lastInsertId();
 
     $_SESSION['s_firstTime'] = 'true';
+    $_SESSION['s_noPhone']   = 'true';
 
     echo 'new';
 } else {
     // Existing user
-    $sth = $dbh->query("SELECT userId FROM users WHERE fbId=$fbId");
+    $sth = $dbh->query("SELECT userId, phone FROM users WHERE fbId=$fbId");
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $result = $sth->fetch();
 
     $_SESSION['s_userId'] = $result->userId;
 
-    echo 'existing';
+    if($result->phone) {
+        echo 'existing';
+    } else {
+        $_SESSION['s_noPhone'] = 'true';
+        echo 'new';
+    }
 }
