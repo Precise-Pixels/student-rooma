@@ -22,12 +22,15 @@ function loadImages() {
             img.src = rooms[i].getAttribute('data-src');
             img.className = 'room-image';
 
-            img.addEventListener('load', function() {
+            img.addEventListener('load', loadOrError);
+            img.addEventListener('error', loadOrError);
+
+            function loadOrError() {
                 imagesLoaded++;
                 if(imagesLoaded === rooms.length) {
                     roomsWrapper[0].className += ' rooms--loaded';
                 }
-            });
+            }
 
             rooms[i].parentNode.replaceChild(img, rooms[i]);
         }
