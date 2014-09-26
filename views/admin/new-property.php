@@ -70,7 +70,7 @@
 
             <div class="form-row">
                 <label for="other-images">General house images (e.g. kitchen, bathroom)</label>
-                <input type="file" name="other-images[]" multiple required/>
+                <input type="file" name="other-images[]" multiple/>
                 <span class="hint">The file name will be used as the image's caption in the gallery. Ctrl+click / Cmd+click to select multiple images. Valid file types: .jpg .jpeg .png</span>
             </div>
 
