@@ -130,8 +130,8 @@ class Admin {
 
         foreach(reArrayFiles($_FILES['other-images']) as $image) {
             $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
-            $jpg = (($ext === 'jpg' || $ext === 'jpeg') && $image['type'] === 'image/jpeg');
-            $png = ($ext === 'png' && $image['type'] === 'image/png');
+            $jpg = ((strtolower($ext) === 'jpg' || strtolower($ext) === 'jpeg') && $image['type'] === 'image/jpeg');
+            $png = (strtolower($ext) === 'png' && $image['type'] === 'image/png');
 
             if($jpg || $png) {
                 if($jpg) {
@@ -159,8 +159,8 @@ class Admin {
 
         foreach($_FILES as $image) {
             $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
-            $jpg = (($ext === 'jpg' || $ext === 'jpeg') && $image['type'] === 'image/jpeg');
-            $png = ($ext === 'png' && $image['type'] === 'image/png');
+            $jpg = ((strtolower($ext) === 'jpg' || strtolower($ext) === 'jpeg') && $image['type'] === 'image/jpeg');
+            $png = (strtolower($ext) === 'png' && $image['type'] === 'image/png');
 
             if($jpg || $png) {
                 if($jpg) {
