@@ -21,18 +21,20 @@ $isAdminActivity               = preg_match('#^admin\/activity/?$#', $q);
 $isAdminAllProperties          = preg_match('#^admin\/all-properties/?$#', $q);
 $isAdminNewProperty            = preg_match('#^admin\/new-property/?$#', $q);
 $isAdminUpdateRoomAvailability = preg_match('#^admin\/update-room-availability/?$#', $q);
+$isAdminDeleteProperty         = preg_match('#^admin\/delete-property/?$#', $q);
 
 $path = preg_replace('/\/$|.php/', '', $q);
 if(empty($path)) {                                  // HOME
     $file = 'index';
 } elseif($isTerms || $isPrivacy || $isAdmin) {
     $file = $path;                                  // ALLOW WITHOUT LOGGING IN
-} elseif($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability) {
+} elseif($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability || $isAdminDeleteProperty) {
     if(!isset($_SESSION['s_admin'])) {
         if($isAdminActivity)               { $r = 'activity'; }
         if($isAdminAllProperties)          { $r = 'all-properties'; }
         if($isAdminNewProperty)            { $r = 'new-property'; }
         if($isAdminUpdateRoomAvailability) { $r = 'update-room-availability'; }
+        if($isAdminDeleteProperty)         { $r = 'delete-property'; }
         header("location: /admin?r=$r");
     } else {
         $file = $path;                              // ADMIN
@@ -81,6 +83,10 @@ if($isAdminAllProperties) {
 
 if($isAdminUpdateRoomAvailability) {
     require_once('models/model-admin-update-room-availability.php');
+}
+
+if($isAdminDeleteProperty) {
+    require_once('models/model-admin-delete-property.php');
 }
 
 require_once('front-view.php');

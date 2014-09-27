@@ -35,6 +35,14 @@ input[type='file'] {
     width: 100%;
 }
 
+.button--spinner {
+    background-image: url(/img/spinner-ico.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 22px;
+    color: transparent;
+}
+
 .decision-buttons {
     button {
         width: 100%;
