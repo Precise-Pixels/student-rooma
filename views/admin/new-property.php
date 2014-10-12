@@ -25,9 +25,14 @@
             </div>
 
             <div class="form-row">
+                <label for="address-number">House/Flat number</label>
+                <input type="text" name="address-number" required/>
+            </div>
+
+            <div class="form-row">
                 <label for="address">Address</label>
                 <input type="text" name="address" required/>
-                <span class="hint">The address is used to generate the Google Maps. For best results, use the following format: [House number optional] Road, Town/City, County (e.g. 100 Downs Road, Canterbury, Kent)</span>
+                <span class="hint">The address is used to generate the Google Maps and walking distances. For best results, use the following format: Road, Town/City, County (e.g. Downs Road, Canterbury, Kent)</span>
             </div>
 
             <div id="distances-canterbury" class="form-row">

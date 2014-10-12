@@ -22,7 +22,7 @@
                         <td><?= $activity->name; ?></td>
                         <td><?= $activity->phone; ?></td>
                         <td><?= $activity->status; ?></td>
-                        <td><?= $activity->address; ?></td>
+                        <td><?= $activity->addressNumber; ?> <?= $activity->address; ?></td>
                         <td><?= $activity->timestamp; ?></td>
                     </tr>
                 <?php endforeach; ?>

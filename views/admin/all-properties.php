@@ -24,7 +24,7 @@
                     <tr>
                         <td><?= $property->propertyId; ?></td>
                         <td><?= $property->location; ?></td>
-                        <td><?= $property->address; ?></td>
+                        <td><?= $property->addressNumber; ?> <?= $property->address; ?></td>
                         <td><?= $property->distanceUKC; ?></td>
                         <td><?= $property->distanceCCCU; ?></td>
                         <td><?= $property->distanceUKM; ?></td>

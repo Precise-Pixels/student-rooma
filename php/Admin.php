@@ -4,7 +4,7 @@ class Admin {
     static function getActivity() {
         require('db.php');
 
-        $sth = $dbh->query("SELECT users.name, users.phone, status, properties.address, activity.timestamp, activity.userId, activity.propertyId
+        $sth = $dbh->query("SELECT users.name, users.phone, status, properties.addressNumber, properties.address, activity.timestamp, activity.userId, activity.propertyId
                             FROM activity
                             INNER JOIN properties ON activity.propertyId=properties.propertyId
                             INNER JOIN users ON activity.userId=users.userId
@@ -18,7 +18,7 @@ class Admin {
     static function getAllProperties() {
         require('db.php');
 
-        $sth = $dbh->query("SELECT propertyId, location, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp FROM properties ORDER BY propertyId DESC");
+        $sth = $dbh->query("SELECT propertyId, location, addressNumber, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp FROM properties ORDER BY propertyId DESC");
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $properties = $sth->fetchAll();
 
@@ -54,8 +54,9 @@ class Admin {
         $info = addslashes($post['info']);
         $timestamp = date("Y-m-d H:i:s");
 
-        $sth = $dbh->prepare("INSERT INTO properties (location, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp) VALUE (:location, :address, :distanceUKC, :distanceCCCU, :distanceUKM, :noOfRooms, :availableFrom, :info, :timestamp)");
+        $sth = $dbh->prepare("INSERT INTO properties (location, addressNumber, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp) VALUE (:location, :addressNumber, :address, :distanceUKC, :distanceCCCU, :distanceUKM, :noOfRooms, :availableFrom, :info, :timestamp)");
         $sth->bindParam(':location', $post['location']);
+        $sth->bindParam(':addressNumber', $post['address-number']);
         $sth->bindParam(':address', $post['address']);
         $sth->bindParam(':distanceUKC', $distanceUKC);
         $sth->bindParam(':distanceCCCU', $distanceCCCU);
@@ -185,7 +186,7 @@ class Admin {
     static function getProperties() {
         require('db.php');
 
-        $sth = $dbh->query("SELECT propertyId, address FROM properties ORDER BY propertyId DESC");
+        $sth = $dbh->query("SELECT propertyId, addressNumber, address FROM properties ORDER BY propertyId DESC");
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $properties = $sth->fetchAll();
 

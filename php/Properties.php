@@ -12,7 +12,7 @@ class Properties {
 
         $roomsQuery = ($user->rooms == 'ANY' ? '' : "HAVING SUM(availability=1) = $user->rooms");
 
-        $sth = $dbh->query("SELECT DISTINCT properties.propertyId, location, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp
+        $sth = $dbh->query("SELECT DISTINCT properties.propertyId, location, addressNumber, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp
                             FROM properties
                             INNER JOIN rooms ON properties.propertyId=rooms.propertyId
                             WHERE location = '$user->lookingIn'
@@ -62,7 +62,7 @@ class Properties {
     static function getProperty($propertyId) {
         require('db.php');
 
-        $sth = $dbh->query("SELECT propertyId, location, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp FROM properties WHERE propertyId=$propertyId");
+        $sth = $dbh->query("SELECT propertyId, location, addressNumber, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp FROM properties WHERE propertyId=$propertyId");
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $property = $sth->fetch();
 

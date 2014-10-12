@@ -6,7 +6,7 @@
 
         <?php foreach($properties as $property): ?>
             <div class="availability-row">
-                <div class="availability-address"><?= $property->address; ?></div>
+                <div class="availability-address"><?= $property->addressNumber; ?> <?= $property->address; ?></div>
                 <div class="availability-rooms">
                     <?php foreach($property->rooms as $room): ?>
                         <div class="availability-room">

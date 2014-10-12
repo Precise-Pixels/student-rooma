@@ -14,7 +14,7 @@
                 <?php foreach($properties as $property): ?>
                     <tr>
                         <td><?= $property->propertyId; ?></td>
-                        <td><?= $property->address; ?></td>
+                        <td><?= $property->addressNumber; ?> <?= $property->address; ?></td>
                         <td><button data-property-id="<?= $property->propertyId; ?>">Delete</button></td>
                     </tr>
                 <?php endforeach; ?>
