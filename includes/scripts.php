@@ -41,6 +41,7 @@
     <?php endif; ?>
 
     <?php if($isAdminNewProperty): ?>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
         <script src="/js/page-admin-new-property.js"></script>
     <?php endif; ?>
 

@@ -65,6 +65,7 @@ function removeRoomFields() {
 var radios              = document.form.location;
 var distancesCanterbury = document.getElementById('distances-canterbury');
 var distancesMedway     = document.getElementById('distances-medway');
+var chosenLocation;
 
 for(var i = 0, l = radios.length; i < l; i++) {
     radios[i].addEventListener('change', changeLocation);
@@ -74,8 +75,10 @@ function changeLocation(e) {
     distancesCanterbury.className = distancesMedway.className = 'form-row';
 
     if(e.target.id === 'canterbury') {
+        chosenLocation = 'canterbury';
         distancesMedway.className = 'form-row--hide';
     } else if(e.target.id === 'medway') {
+        chosenLocation = 'medway';
         distancesCanterbury.className = 'form-row--hide';
     }
 }
@@ -91,3 +94,38 @@ window.onbeforeunload = function() {
         return 'Unsaved changes will be lost. Click the Submit button at the bottom of the page to finish adding a new property.';
     }
 };
+
+var addressNumber = document.getElementById('address-number');
+var address       = document.getElementById('address');
+var distanceUKC   = document.getElementById('distance-UKC');
+var distanceCCCU  = document.getElementById('distance-CCCU');
+var distanceUKM   = document.getElementById('distance-UKM');
+
+addressNumber.addEventListener('change', calculateDistances);
+address.addEventListener('change', calculateDistances);
+
+function calculateDistances() {
+    if(addressNumber.value != '' && address.value != '') {
+        var service = new google.maps.DistanceMatrixService();
+        service.getDistanceMatrix({
+            origins: [addressNumber.value + ' ' + address.value],
+            destinations: ['University of Kent Canterbury', 'Canterbury Christ Church University', 'University of Kent Medway'],
+            travelMode: google.maps.TravelMode.WALKING
+        }, callback);
+
+        function callback(response, status) {
+            if(status === 'OK') {
+                var secondsToUKC  = response.rows[0].elements[0].duration.value;
+                var secondsToCCCU = response.rows[0].elements[1].duration.value;
+                var secondsToUKM  = response.rows[0].elements[2].duration.value;
+
+                if(chosenLocation === 'canterbury') {
+                    distanceUKC.value  = Math.round(secondsToUKC / 60);
+                    distanceCCCU.value = Math.round(secondsToCCCU / 60);
+                } else if(chosenLocation === 'medway') {
+                    distanceUKM.value = Math.round(secondsToUKM / 60);
+                }
+            }
+        }
+    }
+}

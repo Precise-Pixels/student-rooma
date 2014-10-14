@@ -26,26 +26,26 @@
 
             <div class="form-row">
                 <label for="address-number">House/Flat number</label>
-                <input type="text" name="address-number" required/>
+                <input type="text" id="address-number" name="address-number" required/>
             </div>
 
             <div class="form-row">
                 <label for="address">Address</label>
-                <input type="text" name="address" required/>
+                <input type="text" id="address" name="address" required/>
                 <span class="hint">The address is used to generate the Google Maps and walking distances. For best results, use the following format: Road, Town/City, County (e.g. Downs Road, Canterbury, Kent)</span>
             </div>
 
             <div id="distances-canterbury" class="form-row">
                 <label for="distance-UKC">Walking distance from UKC (mins)</label>
-                <input type="number" name="distance-UKC" value="0" min="0" required/>
+                <input type="number" id="distance-UKC" name="distance-UKC" value="0" min="0" required/>
 
                 <label for="distance-CCCU">Walking distance from CCCU (mins)</label>
-                <input type="number" name="distance-CCCU" value="0" min="0" required/>
+                <input type="number" id="distance-CCCU" name="distance-CCCU" value="0" min="0" required/>
             </div>
 
             <div id="distances-medway" class="form-row">
                 <label for="distance-UKM">Walking distance from UKM (mins)</label>
-                <input type="number" name="distance-UKM" value="0" min="0" required/>
+                <input type="number" id="distance-UKM" name="distance-UKM" value="0" min="0" required/>
             </div>
 
             <div class="form-row">
