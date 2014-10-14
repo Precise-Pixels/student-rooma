@@ -14,10 +14,10 @@ $userExists = $sth->fetch();
 
 if($userExists === false) {
     // New user
-    if(strpos($location, 'Medway') !== false) {
-        $lookingIn = 'Medway';
-    } else {
+    if(strpos($location, 'Canterbury') !== false) {
         $lookingIn = 'Canterbury';
+    } else {
+        $lookingIn = 'Medway';
     }
 
     $timestamp = date("Y-m-d H:i:s");

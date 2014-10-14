@@ -11,8 +11,8 @@
         <div id="profile-looking-in" class="form-row">
             <p>Your search filters</p>
             <label for="looking-in" id="profile-looking-in-label">Looking in</label>
-            <input type="radio" id="canterbury" name="looking-in" value="Canterbury"<?= ($user->lookingIn === 'Canterbury' ? ' checked' : '') ?>/> <label for="canterbury" class="radio-style">Canterbury</label>
             <input type="radio" id="medway" name="looking-in" value="Medway"<?= ($user->lookingIn === 'Medway' ? ' checked' : '') ?>/> <label for="medway" class="radio-style">Medway</label>
+            <input type="radio" id="canterbury" name="looking-in" value="Canterbury"<?= ($user->lookingIn === 'Canterbury' ? ' checked' : '') ?>/> <label for="canterbury" class="radio-style">Canterbury</label>
         </div>
 
         <hr>

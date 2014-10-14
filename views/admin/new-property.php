@@ -20,8 +20,8 @@
         <form action="" method="post" enctype="multipart/form-data" name="form">
             <div class="form-row">
                 <label for="location">Location</label>
-                <input type="radio" id="canterbury" name="location" value="Canterbury" required/> <label for="canterbury" class="radio-style">Canterbury</label>
                 <input type="radio" id="medway" name="location" value="Medway"/> <label for="medway" class="radio-style">Medway</label>
+                <input type="radio" id="canterbury" name="location" value="Canterbury" required/> <label for="canterbury" class="radio-style">Canterbury</label>
             </div>
 
             <div class="form-row">
