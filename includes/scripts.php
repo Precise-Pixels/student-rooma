@@ -2,6 +2,12 @@
 // SANDBOX ?>
 
     <script src="/js/dialog.js"></script>
+    <script src="/js/fastclick.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            FastClick.attach(document.body);
+        }, false);
+    </script>
 
     <?php if($isIndex): ?>
         <script src="/js/page-index.js"></script>
@@ -57,6 +63,8 @@
 // LIVE ?>
 
     <script src="/build/dialog.min.js"></script>
+    <script src="/build/fastclick.min.js"></script>
+    <script>window.addEventListener('load',function(){FastClick.attach(document.body)},false);</script>
 
     <?php if($isIndex): ?>
         <script src="/build/page-index.min.js"></script>
