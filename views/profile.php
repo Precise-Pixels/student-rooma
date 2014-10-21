@@ -17,19 +17,13 @@
 
         <hr>
 
-        <div class="form-row form-row--half">
+        <div class="form-row">
             <label for="rooms">Number of bedrooms</label>
             <div class="stepper">
                 <button id="rooms-decrement"<?= ($user->rooms === 'ANY' ? ' disabled' : ''); ?>>-</button>
                 <input type="text" id="rooms" name="rooms" value="<?= $user->rooms; ?>" readonly tabindex="-1"/>
                 <button id="rooms-increment">+</button>
             </div>
-        </div>
-
-        <div class="form-row form-row--half">
-            <label for="available-from">Available from</label>
-            <input type="date" id="available-from" name="available-from" value="<?= $user->availableFrom; ?>"/>
-            <span class="hint hint--date">yyyy-mm-dd</span>
         </div>
 
         <div class="form-row form-row--half">

@@ -164,14 +164,12 @@ phone.addEventListener('focus', function() {
 // Form submission
 var lookingInBefore     = document.querySelector('input[name="looking-in"]:checked').value;
 var roomsBefore         = document.getElementById('rooms').value;
-var availableFromBefore = document.getElementById('available-from').value;
 var minPriceBefore      = document.getElementById('min-price').value;
 var maxPriceBefore      = document.getElementById('max-price').value;
 var phoneBefore         = document.getElementById('phone').value;
 
 var lookingInAfter,
     roomsAfter,
-    availableFromAfter,
     minPriceAfter,
     maxPriceAfter,
     phoneAfter;
@@ -194,7 +192,7 @@ document.getElementById('header-btn-r').addEventListener('click', function() {
             var tick = document.getElementsByClassName('ico-tick');
             tick[0].className = 'ico-spinner ico--centre';
 
-            var data = 'lookingIn=' + lookingInAfter + '&rooms=' + roomsAfter + '&availableFrom=' + availableFromAfter + '&minPrice=' + minPriceAfter + '&maxPrice=' + maxPriceAfter + '&phone=' + phoneAfter;
+            var data = 'lookingIn=' + lookingInAfter + '&rooms=' + roomsAfter + '&minPrice=' + minPriceAfter + '&maxPrice=' + maxPriceAfter + '&phone=' + phoneAfter;
             var request = new XMLHttpRequest();
             request.open('POST', '/php/saveProfile.php', true);
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
@@ -219,14 +217,12 @@ document.getElementById('header-btn-r').addEventListener('click', function() {
 function formComplete() {
     lookingInAfter     = document.querySelector('input[name="looking-in"]:checked');
     roomsAfter         = document.getElementById('rooms').value;
-    availableFromAfter = document.getElementById('available-from').value;
     minPriceAfter      = document.getElementById('min-price').value;
     maxPriceAfter      = document.getElementById('max-price').value;
     phoneAfter         = document.getElementById('phone').value;
 
     if(lookingInAfter     != null &&
        roomsAfter         != ''   &&
-       availableFromAfter != ''   && availableFromAfter.match(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/) &&
        minPriceAfter      != ''   && !isNaN(minPriceAfter) && minPriceAfter >= 0 && minPriceAfter <= maxPriceAfter &&
        maxPriceAfter      != ''   && !isNaN(maxPriceAfter) && maxPriceAfter >= 0 &&
        phoneAfter         != '') {
@@ -239,14 +235,12 @@ function formComplete() {
 function anyChanges() {
     lookingInAfter     = document.querySelector('input[name="looking-in"]:checked').value;
     roomsAfter         = document.getElementById('rooms').value;
-    availableFromAfter = document.getElementById('available-from').value;
     minPriceAfter      = document.getElementById('min-price').value;
     maxPriceAfter      = document.getElementById('max-price').value;
     phoneAfter         = document.getElementById('phone').value;
 
     if(lookingInBefore     != lookingInAfter     ||
        roomsBefore         != roomsAfter         ||
-       availableFromBefore != availableFromAfter ||
        minPriceBefore      != minPriceAfter      ||
        maxPriceBefore      != maxPriceAfter      ||
        phoneBefore         != phoneAfter) {
