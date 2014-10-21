@@ -44,7 +44,7 @@
                     <p><span>Walk to UKC:</span> <?= $property->distanceUKC; ?>min</p>
                     <p><span>Walk to CCCU:</span> <?= $property->distanceCCCU; ?>min</p>
                 <?php else: ?>
-                    <p><span>Walk to UKM:</span> <?= $property->distanceUKM; ?>min</p>
+                    <p><span>Walk to Medway Campus:</span> <?= $property->distanceUKM; ?>min</p>
                 <?php endif; ?>
             </div>
 
