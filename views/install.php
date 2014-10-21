@@ -3,6 +3,7 @@
         <h1 class="h1--show">Install This App On Your Device</h1>
 
         <p>Add Student Rooma to your homescreen to have quick and easy access to it at any time.</p>
+        <p><strong>Important:</strong> Ensure that you are already <a href="https://m.facebook.com" target="_blank">logged into Facebook</a> on this browser before accessing the Student Rooma app icon.</p>
         <p>Follow the instructions for your browser below.</p>
 
         <h2 id="chrome" class="anchor-target">Chrome</h2>
