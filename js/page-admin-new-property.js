@@ -115,9 +115,9 @@ function calculateDistances() {
 
         function callback(response, status) {
             if(status === 'OK') {
-                var secondsToUKC  = response.rows[0].elements[0].duration.value;
-                var secondsToCCCU = response.rows[0].elements[1].duration.value;
-                var secondsToUKM  = response.rows[0].elements[2].duration.value;
+                var secondsToUKC  = (response.rows[0].elements[0].status == 'OK' ? response.rows[0].elements[0].duration.value : 0);
+                var secondsToCCCU = (response.rows[0].elements[1].status == 'OK' ? response.rows[0].elements[1].duration.value : 0);
+                var secondsToUKM  = (response.rows[0].elements[2].status == 'OK' ? response.rows[0].elements[2].duration.value : 0);
 
                 if(chosenLocation === 'canterbury') {
                     distanceUKC.value  = Math.round(secondsToUKC / 60);
