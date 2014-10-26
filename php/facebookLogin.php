@@ -33,8 +33,6 @@ if($userExists === false) {
 
     $_SESSION['s_firstTime'] = 'true';
     $_SESSION['s_noPhone']   = 'true';
-
-    echo 'new';
 } else {
     // Existing user
     $sth = $dbh->query("SELECT userId, phone FROM users WHERE fbId=$fbId");
@@ -43,10 +41,7 @@ if($userExists === false) {
 
     $_SESSION['s_userId'] = $result->userId;
 
-    if($result->phone) {
-        echo 'existing';
-    } else {
+    if(!$result->phone) {
         $_SESSION['s_noPhone'] = 'true';
-        echo 'new';
     }
 }

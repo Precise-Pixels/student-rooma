@@ -75,14 +75,7 @@ function requestFBData() {
 
         request.onreadystatechange = function() {
             if(request.readyState == 4 && request.status == 200) {
-                if(request.responseText == 'new') {
-                    window.location.href = '/profile';
-                } else if(request.responseText == 'existing') {
-                    window.location.href = '/properties';
-                } else {
-                    openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
-                    resetLoginButton();
-                }
+                window.location.href = '/properties';
             } else if(request.status != 200) {
                 openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
                 resetLoginButton();
