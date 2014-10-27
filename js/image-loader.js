@@ -22,8 +22,14 @@ function loadImages() {
             img.src = rooms[i].getAttribute('data-src');
             img.className = 'room-image';
 
-            img.addEventListener('load', loadOrError);
-            img.addEventListener('error', loadOrError);
+            img.addEventListener('load', function() {
+                loadOrError();
+            });
+
+            img.addEventListener('error', function(e) {
+                e.target.parentNode.className += ' room-image--unavailable';
+                loadOrError();
+            });
 
             function loadOrError() {
                 imagesLoaded++;
