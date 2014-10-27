@@ -175,6 +175,8 @@ class Admin {
                 imagejpeg($resizedImage, "img/properties/$propertyId/Room $i.jpg", 50);
                 imagedestroy($img);
                 imagedestroy($resizedImage);
+            } else {
+                copy('img/image-unavailable.jpg', "img/properties/$propertyId/Room $i.jpg");
             }
 
             $i++;
