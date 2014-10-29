@@ -8,13 +8,9 @@
 <?php else: ?>
 
     <header>
-        <?php if($isAdmin || $isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability || $isAdminDeleteProperty): ?>
-            <a href="/">
-                <img src="/img/logo.png" alt="Student Rooma" id="logo"/>
-            </a>
-        <?php else: ?>
+        <a href="/">
             <img src="/img/logo.png" alt="Student Rooma" id="logo"/>
-        <?php endif; ?>
+        </a>
 
         <?php if($isProfile): ?>
             <?php if(!isset($_SESSION['s_firstTime']) || !$_SESSION['s_firstTime']): ?>
