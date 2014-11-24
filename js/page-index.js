@@ -5,8 +5,6 @@
 
 var loginBtn       = document.getElementById('login');
 var loginText      = document.getElementById('login-text');
-var youtubeWrapper = document.getElementById('youtube-wrapper');
-var youtube        = document.getElementById('youtube');
 
 // Facebook SDK
 (function(d, s, id) {
@@ -88,13 +86,3 @@ function resetLoginButton() {
     loginBtn.className = '';
     loginText.innerHTML = 'Continue with Facebook';
 }
-
-youtubeWrapper.addEventListener('click', function() {
-    var iframe = document.createElement('iframe');
-    iframe.src = youtube.getAttribute('data-src');
-    iframe.frameBorder = '0';
-    iframe.setAttribute('allowfullscreen', '');
-
-    youtubeWrapper.replaceChild(iframe, youtube);
-    youtubeWrapper.className = 'youtube--loaded';
-});

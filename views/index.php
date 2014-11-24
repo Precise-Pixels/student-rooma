@@ -4,10 +4,32 @@
 
         <button id="login" autofocus><i class="ico-facebook"></i><span id="login-text">Continue with Facebook</span></button>
 
-        <p id="why-continue">Why continue?</p>
-
-        <div id="youtube-wrapper">
-            <img src="http://img.youtube.com/vi/GUNMBw6p73k/hqdefault.jpg" data-src="http://www.youtube.com/embed/GUNMBw6p73k?showinfo=0&amp;controls=0&amp;rel=0" id="youtube"/>
+        <div id="walkthrough-wrapper">
+            <div id="walkthrough-1" class="walkthrough-slide">
+                <p class="walkthrough-page">PROPERTIES</p>
+                <img src="/img/walkthrough-properties-1.png" alt="Properties page"/>
+                <p class="walkthrough-text">View information about a property</p>
+            </div>
+            <div id="walkthrough-2" class="walkthrough-slide">
+                <p class="walkthrough-page">PROPERTIES</p>
+                <img src="/img/walkthrough-properties-2.png" alt="Properties page"/>
+                <p class="walkthrough-text">Decide if it's a NO, SAVE FOR LATER ★ or you want to BOOK a viewing</p>
+            </div>
+            <div id="walkthrough-3" class="walkthrough-slide">
+                <p class="walkthrough-page">PROPERTIES</p>
+                <img src="/img/walkthrough-properties-3.png" alt="Properties page"/>
+                <p class="walkthrough-text">If you decide to book a viewing you will be called by a Student Rooma representative who will provide you with booking details</p>
+            </div>
+            <div id="walkthrough-4" class="walkthrough-slide">
+                <p class="walkthrough-page">PROFILE</p>
+                <img src="/img/walkthrough-profile-1.png" alt="Profile page"/>
+                <p class="walkthrough-text">Use the search filters to narrow down the type of property you are looking for</p>
+            </div>
+            <div id="walkthrough-5" class="walkthrough-slide">
+                <p class="walkthrough-page">PROFILE</p>
+                <img src="/img/walkthrough-profile-2.png" alt="Profile page"/>
+                <p class="walkthrough-text">Enter your phone number so you can be contacted when booking a property viewing</p>
+            </div>
         </div>
 
         <div id="small-print">

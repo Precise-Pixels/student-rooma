@@ -67,46 +67,77 @@
     }
 }
 
-#why-continue {
-    margin-top: 30px;
-    font-size: 14px;
-    font-weight: 700;
-}
-
-#youtube-wrapper {
-    width: 95%;
-    height: 0;
-    margin: 0 auto;
-    padding-bottom: 56.25%;
+#walkthrough-wrapper {
+    max-width: 400px;
+    height: 590px;
+    background: $white-a;
     position: relative;
-    cursor: pointer;
-    text-align: left;
+    margin: 40px auto;
+}
 
-    img,
-    iframe {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-    }
+.walkthrough-slide {
+    width: 100%;
+    position: absolute;
+    padding: 10px;
 
-    &:after {
-        content: '';
-        width: 60px;
-        height: 42px;
-        margin-top: -21px;
-        margin-left: -30px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        background: url(http://www.youtube.com/yt/brand/media/image/YouTube_light_color_icon.png);
-        background-size: 60px;
+    img {
+        max-height: 450px;
     }
 }
 
-.youtube--loaded:after {
-    display: none;
+.walkthrough-page {
+    margin: 5px 0 15px;
+    font-size: 18px;
 }
 
+@for $i from 1 through 5 {
+    #walkthrough-#{$i} {
+        animation: walkthrough-#{$i} 30s infinite;
+    }
+}
+
+@keyframes walkthrough-1 {
+    0%   { opacity: 1 }
+    19%  { opacity: 1 }
+    20%  { opacity: 0 }
+    99%  { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+@keyframes walkthrough-2 {
+    0%   { opacity: 0 }
+    19%  { opacity: 0 }
+    20%  { opacity: 1 }
+    39%  { opacity: 1 }
+    40%  { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+@keyframes walkthrough-3 {
+    0%   { opacity: 0 }
+    39%  { opacity: 0 }
+    40%  { opacity: 1 }
+    59%  { opacity: 1 }
+    60%  { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+@keyframes walkthrough-4 {
+    0%   { opacity: 0 }
+    59%  { opacity: 0 }
+    60%  { opacity: 1 }
+    79%  { opacity: 1 }
+    80%  { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+@keyframes walkthrough-5 {
+    0%   { opacity: 0 }
+    79%  { opacity: 0 }
+    80%  { opacity: 1 }
+    99%  { opacity: 1 }
+    100% { opacity: 0 }
+}
 
 #small-print {
     margin: 15px auto;
