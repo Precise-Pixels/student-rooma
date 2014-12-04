@@ -70,33 +70,28 @@
 #walkthrough-wrapper {
     max-width: 400px;
     height: 590px;
-    background: $white-a;
+    background: $white;
     position: relative;
     margin: 40px auto;
 }
 
+$slideDuration: 5s;
+$noOfSlides: 5;
+
 .walkthrough-slide {
     width: 100%;
+    background: $white;
     position: absolute;
     padding: 10px;
+    opacity: 0;
+    animation: walkthrough $noOfSlides * $slideDuration infinite;
 
     img {
         max-height: 450px;
     }
 }
 
-.walkthrough-page {
-    margin: 5px 0 15px;
-    font-size: 18px;
-}
-
-@for $i from 1 through 5 {
-    #walkthrough-#{$i} {
-        animation: walkthrough-#{$i} 30s infinite;
-    }
-}
-
-@keyframes walkthrough-1 {
+@keyframes walkthrough {
     0%   { opacity: 1 }
     19%  { opacity: 1 }
     20%  { opacity: 0 }
@@ -104,39 +99,16 @@
     100% { opacity: 1 }
 }
 
-@keyframes walkthrough-2 {
-    0%   { opacity: 0 }
-    19%  { opacity: 0 }
-    20%  { opacity: 1 }
-    39%  { opacity: 1 }
-    40%  { opacity: 0 }
-    100% { opacity: 0 }
+@for $i from 1 through $noOfSlides {
+    #walkthrough-#{$i} {
+        animation-delay: $i * $slideDuration - $slideDuration;
+        z-index: $noOfSlides + 1 - $i;
+    }
 }
 
-@keyframes walkthrough-3 {
-    0%   { opacity: 0 }
-    39%  { opacity: 0 }
-    40%  { opacity: 1 }
-    59%  { opacity: 1 }
-    60%  { opacity: 0 }
-    100% { opacity: 0 }
-}
-
-@keyframes walkthrough-4 {
-    0%   { opacity: 0 }
-    59%  { opacity: 0 }
-    60%  { opacity: 1 }
-    79%  { opacity: 1 }
-    80%  { opacity: 0 }
-    100% { opacity: 0 }
-}
-
-@keyframes walkthrough-5 {
-    0%   { opacity: 0 }
-    79%  { opacity: 0 }
-    80%  { opacity: 1 }
-    99%  { opacity: 1 }
-    100% { opacity: 0 }
+.walkthrough-page {
+    margin: 5px 0 15px;
+    font-size: 18px;
 }
 
 #small-print {
