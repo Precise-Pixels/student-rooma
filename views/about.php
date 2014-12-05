@@ -4,6 +4,7 @@
 
         <h2>What is Student Rooma?</h2>
         <p>...</p>
+        <p>v1.0.0</p>
 
         <h2>Browser Requirements</h2>
         <p>This app has been tested and is fully functional on the following browsers:</p>
