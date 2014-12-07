@@ -30,6 +30,16 @@
                 <img src="/img/walkthrough-profile-2.png" alt="Profile page"/>
                 <p class="walkthrough-text">Enter your phone number so you can be contacted when booking a property viewing</p>
             </div>
+            <div id="walkthrough-6" class="walkthrough-slide">
+                <p class="walkthrough-page">PROFILE</p>
+                <img src="/img/walkthrough-profile-3.png" alt="Profile page"/>
+                <p class="walkthrough-text">Use the "Reset No's" button to reset all the properties you previously decided "NO" on</p>
+            </div>
+            <div id="walkthrough-7" class="walkthrough-slide">
+                <p class="walkthrough-page">ACTIVITY</p>
+                <img src="/img/walkthrough-activity-1.png" alt="Activity page"/>
+                <p class="walkthrough-text">View all your previous activity in one place</p>
+            </div>
         </div>
 
         <div id="small-print">
