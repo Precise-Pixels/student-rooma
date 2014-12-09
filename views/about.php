@@ -3,7 +3,9 @@
         <h1 class="h1--show">About This App</h1>
 
         <h2>What is Student Rooma?</h2>
-        <p>...</p>
+        <p>Student Rooma helps students to find accommodation at the price, location and style they want.</p>
+        <p>This is student house window shopping from the comfort of the lecture hall, library or SU.</p>
+        <p>Find what you want, compare to get the best deal and arrange viewings. All this with your fingertips on Student Rooma.</p>
         <p>v1.0.0</p>
 
         <h2>Browser Requirements</h2>
