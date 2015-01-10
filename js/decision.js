@@ -107,7 +107,7 @@ function propertyDecisionFromGallery(status, propertyId) {
 
     request.onreadystatechange = function() {
         if(request.readyState == 4 && request.status == 200) {
-            window.location = '/properties';
+            window.location = '/app/properties';
         } else if(request.status != 200) {
             openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
             enableDecisionButtons();

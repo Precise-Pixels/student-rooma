@@ -75,7 +75,7 @@ function closeDialog() {
 }
 
 function cancelProfileChanges() {
-    window.location.href = '/properties';
+    window.location.href = '/app/properties';
 }
 
 function resetNos() {
@@ -85,7 +85,7 @@ function resetNos() {
 
     request.onreadystatechange = function() {
         if(request.readyState == 4 && request.status == 200) {
-            window.location.href = '/properties';
+            window.location.href = '/app/properties';
         } else if(request.status != 200) {
             openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
         }
@@ -93,5 +93,5 @@ function resetNos() {
 }
 
 function cancelAdminUpdateRoomAvailabilityChanges() {
-    window.location.href = '/admin';
+    window.location.href = '/app/admin';
 }

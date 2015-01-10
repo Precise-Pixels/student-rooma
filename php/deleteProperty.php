@@ -2,7 +2,7 @@
 
 require('db.php');
 
-if(preg_match('/admin\/delete-property/', $_SERVER['HTTP_REFERER'])) {
+if(preg_match('/app\/admin\/delete-property/', $_SERVER['HTTP_REFERER'])) {
     $propertyId = $_POST['propertyId'];
 
     $sth = $dbh->prepare("DELETE FROM properties WHERE propertyId=:propertyId");

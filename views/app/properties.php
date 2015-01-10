@@ -29,7 +29,7 @@
                         <div class="room-controls">
                             <div class="room-control--left"><i class="ico-arrow-left ico--centre"></i></div>
                             <div class="room-control--right"><i class="ico-arrow-right ico--centre"></i></div>
-                            <a href="/property/<?= $property->propertyId; ?>/gallery" class="view-house-gallery"><i class="ico-home"></i>View house gallery</a>
+                            <a href="/app/property/<?= $property->propertyId; ?>/gallery" class="view-house-gallery"><i class="ico-home"></i>View house gallery</a>
                         </div>
                     </div>
 
@@ -63,7 +63,7 @@
         </div>
         <div class="decision-buttons decision-buttons--decide padding">
             <?php if(isset($_SESSION['s_noPhone'])): ?>
-                <a href="/profile"><div class="decision-buttons-locked">Phone number required to continue</div></a>
+                <a href="/app/profile"><div class="decision-buttons-locked">Phone number required to continue</div></a>
             <?php endif; ?>
             <div class="no-wrapper"><button class="no">NO</button></div>
             <div class="star-wrapper"><button class="star"><i class="ico-star ico--centre"><span>STAR</span></i></button></div>
@@ -73,7 +73,7 @@
         <div id="properties">
             <div class="padding">
                 <p>There are no properties available within your search filters.</p>
-                <p>Expand your filters in your <a href="profile">Profile</a>.</p>
+                <p>Expand your filters in your <a href="/app/profile">Profile</a>.</p>
             </div>
         </div>
     <?php endif; ?>

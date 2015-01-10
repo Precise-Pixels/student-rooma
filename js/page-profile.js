@@ -181,7 +181,7 @@ if(cross) {
         if(anyChanges()) {
             openDialog("Cancel Changes", "<p>There are unsaved changes. Are you sure you want to cancel?</p>", 'Yes', 'No', 'cancelProfileChanges', 'prompt');
         } else {
-            window.location.href = '/properties';
+            window.location.href = '/app/properties';
         }
     });
 }
@@ -200,14 +200,14 @@ document.getElementById('header-btn-r').addEventListener('click', function() {
 
             request.onreadystatechange = function() {
                 if(request.readyState == 4 && request.status == 200) {
-                    window.location.href = '/properties';
+                    window.location.href = '/app/properties';
                 } else if(request.status != 200) {
                     openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
                     tick[0].className = 'ico-tick ico--centre';
                 }
             }
         } else {
-            window.location.href = '/properties';
+            window.location.href = '/app/properties';
         }
     } else {
         openDialog("Profile Incomplete", "<p>Please ensure all the fields are filled out correctly.</p>", 'Okay', '', 'profileIncomplete', 'alert');

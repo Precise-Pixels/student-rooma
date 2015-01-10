@@ -8,7 +8,7 @@
             $success = Admin::postProperty($_POST);
 
             if($success):
-                header('location: /admin/all-properties');
+                header('location: /app/admin/all-properties');
             else:
         ?>
             <p class="error">Something went wrong.</p>

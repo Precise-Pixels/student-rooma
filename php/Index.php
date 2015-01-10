@@ -3,7 +3,7 @@
 class Index {
     static function skipLogin() {
         if(isset($_SESSION['s_userId'])) {
-            header('location: /properties');
+            header('location: /app/properties');
         }
     }
 }

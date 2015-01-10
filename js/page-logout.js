@@ -21,7 +21,7 @@ window.fbAsyncInit = function() {
     FB.getLoginStatus(function(response) {
         if(response && response.status === 'connected') {
             FB.logout(function(response) {
-                window.location.href = '/';
+                window.location.href = '/app/';
             });
         }
     });

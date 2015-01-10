@@ -26,7 +26,7 @@
             <div class="room-controls">
                 <div class="room-control--left"><i class="ico-arrow-left ico--centre"></i></div>
                 <div class="room-control--right"><i class="ico-arrow-right ico--centre"></i></div>
-                <a href="/property/<?= $property->propertyId; ?>/gallery" class="view-house-gallery"><i class="ico-home"></i>View house gallery</a>
+                <a href="/app/property/<?= $property->propertyId; ?>/gallery" class="view-house-gallery"><i class="ico-home"></i>View house gallery</a>
             </div>
         </div>
 

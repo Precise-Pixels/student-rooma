@@ -9,7 +9,7 @@
         }, false);
     </script>
 
-    <?php if($isIndex): ?>
+    <?php if($isAppIndex): ?>
         <script src="/js/page-index.js"></script>
     <?php endif; ?>
 
@@ -66,7 +66,7 @@
     <script src="/build/fastclick.min.js"></script>
     <script>window.addEventListener('load',function(){FastClick.attach(document.body)},false);</script>
 
-    <?php if($isIndex): ?>
+    <?php if($isAppIndex): ?>
         <script src="/build/page-index.min.js"></script>
     <?php endif; ?>
 

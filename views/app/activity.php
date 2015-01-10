@@ -22,7 +22,7 @@
                         <div class="decision-buttons decision-buttons--update" data-property-id="<?= $property->propertyId; ?>">
                             <div class="star-wrapper"><button class="star"><i class="ico-star ico--centre"><span>STAR</span></i></button></div>
                             <div class="no-wrapper"><button class="no">NO</button></div>
-                            <div class="more-info-wrapper"><a href="property/<?= $property->propertyId; ?>"><button class="more-info">MORE INFO</button></a></div>
+                            <div class="more-info-wrapper"><a href="/app/property/<?= $property->propertyId; ?>"><button class="more-info">MORE INFO</button></a></div>
                         </div>
                     </div>
                 <?php $i++; endforeach; ?>
@@ -45,7 +45,7 @@
                         <div class="decision-buttons decision-buttons--update" data-property-id="<?= $property->propertyId; ?>">
                             <div class="book-wrapper"><button class="book">BOOK</button></div>
                             <div class="no-wrapper"><button class="no">NO</button></div>
-                            <div class="more-info-wrapper"><a href="property/<?= $property->propertyId; ?>"><button class="more-info">MORE INFO</button></a></div>
+                            <div class="more-info-wrapper"><a href="/app/property/<?= $property->propertyId; ?>"><button class="more-info">MORE INFO</button></a></div>
                         </div>
                     </div>
                 <?php $i++; endforeach; ?>
@@ -68,7 +68,7 @@
                         <div class="decision-buttons decision-buttons--update" data-property-id="<?= $property->propertyId; ?>">
                             <div class="book-wrapper"><button class="book">BOOK</button></div>
                             <div class="star-wrapper"><button class="star"><i class="ico-star ico--centre"><span>STAR</span></i></button></div>
-                            <div class="more-info-wrapper"><a href="property/<?= $property->propertyId; ?>"><button class="more-info">MORE INFO</button></a></div>
+                            <div class="more-info-wrapper"><a href="/app/property/<?= $property->propertyId; ?>"><button class="more-info">MORE INFO</button></a></div>
                         </div>
                     </div>
                 <?php $i++; endforeach; ?>
