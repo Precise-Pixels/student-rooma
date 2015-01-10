@@ -43,7 +43,7 @@
         </div>
 
         <div id="small-print">
-            <p>If you click "Continue with Facebook" and are not already registered with Student Rooma, you will be registered and you agree to Student Rooma's <a href="/app/terms-and-conditions">Terms &amp; Conditions</a> and <a href="/app/privacy-policy">Privacy Policy</a>.</p>
+            <p>If you click "Continue with Facebook" and are not already registered with Student Rooma, you will be registered and you agree to Student Rooma's <a href="/app/privacy-policy">Privacy Policy</a>.</p>
             <p>This site uses cookies. Some of the cookies we use are essential for the normal operation of this site. Please ensure cookies remain enabled during your use of this site. For further information, please visit our <a href="/app/privacy-policy">Privacy Policy</a>.</p>
         </div>
 

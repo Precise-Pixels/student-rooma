@@ -43,7 +43,7 @@
             <a href="/app/profile" id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></a>
         <?php endif; ?>
 
-        <?php if($isTerms || $isPrivacy): ?>
+        <?php if($isPrivacy): ?>
             <a href="/app/" id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></a>
         <?php endif; ?>
 

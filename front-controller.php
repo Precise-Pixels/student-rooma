@@ -15,7 +15,6 @@ $isProperty                    = preg_match('#^app\/property\/\d+/?$#', $q);
 $isGallery                     = preg_match('#^app\/property\/\d+/gallery/?$#', $q);
 $isInstall                     = preg_match('#^app\/install/?$#', $q);
 $isAbout                       = preg_match('#^app\/about/?$#', $q);
-$isTerms                       = preg_match('#^app\/terms-and-conditions/?$#', $q);
 $isPrivacy                     = preg_match('#^app\/privacy-policy/?$#', $q);
 $isLogout                      = preg_match('#^app\/logout/?$#', $q);
 $isAdmin                       = preg_match('#^app\/admin/?$#', $q);
@@ -30,7 +29,7 @@ $path = preg_replace('/\/$|.php/', '', $q);
 if($isApp) {
     if($isAppIndex) {
         $file = 'app/index';                            // APP HOME
-    } elseif($isTerms || $isPrivacy || $isAdmin) {
+    } elseif($isPrivacy || $isAdmin) {
         $file = $path;                                  // ALLOW WITHOUT LOGGING IN
     } elseif($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability || $isAdminDeleteProperty) {
         if(!isset($_SESSION['s_admin'])) {
