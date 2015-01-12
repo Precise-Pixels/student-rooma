@@ -3,11 +3,22 @@
 <meta name="author" content="Precise Pixels"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 <title>Student Rooma</title>
-<?php if($_SERVER['SERVER_NAME'] == 'sr.dev'): ?>
-    <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
-<?php else: ?>
-    <link rel="stylesheet" type="text/css" href="/build/styles.min.css"/>
+
+<?php if($isApp): ?>
+    <?php if($_SERVER['SERVER_NAME'] == 'sr.dev'): ?>
+        <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+    <?php else: ?>
+        <link rel="stylesheet" type="text/css" href="/build/styles.min.css"/>
+    <?php endif; ?>
 <?php endif; ?>
+<?php if($isLanding): ?>
+    <?php if($_SERVER['SERVER_NAME'] == 'sr.dev'): ?>
+        <link rel="stylesheet" type="text/css" href="/css/styles-landing.css"/>
+    <?php else: ?>
+        <link rel="stylesheet" type="text/css" href="/build/styles-landing.min.css"/>
+    <?php endif; ?>
+<?php endif; ?>
+
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
 <link rel="shortcut icon" href="/img/favicon.ico"/>
 <link rel="apple-touch-icon-precomposed" href="/img/touchicon-57.png">

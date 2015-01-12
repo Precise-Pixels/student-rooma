@@ -2,19 +2,22 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         autoprefixer: {
-            single: {
+            no_dest: {
                 flatten: true,
-                src: 'css/styles.css',
-                dest: 'css/styles.css'
+                src: 'css/*.css'
             }
         },
         cssmin: {
             options: {
                 banner: '/*!\r\n  * Precise Pixels | http://precisepixels.co.uk\r\n  * https://github.com/Precise-Pixels/student-rooma\r\n  */'
             },
-            minify: {
+            minify1: {
                 src: 'css/styles.css',
                 dest: 'build/styles.min.css'
+            },
+            minify2: {
+                src: 'css/styles-landing.css',
+                dest: 'build/styles-landing.min.css'
             }
         },
         sass: {
@@ -23,7 +26,8 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'css/styles.css': 'sass/styles.scss'
+                    'css/styles.css': 'sass/styles.scss',
+                    'css/styles-landing.css': 'sass/styles-landing.scss'
                 }
             },
             dev: {
@@ -80,5 +84,5 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('s', ['sass:dev', 'watch']);
-    grunt.registerTask('build', ['cssmin', 'uglify']);
+    grunt.registerTask('build', ['cssmin:minify1', 'cssmin:minify2', 'uglify']);
 };
