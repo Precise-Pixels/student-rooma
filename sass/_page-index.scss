@@ -29,7 +29,7 @@
     font-weight: 700;
 }
 
-#login {
+.login-buttons {
     width: 85%;
     max-width: 320px;
     height: 40px;
@@ -38,17 +38,10 @@
     padding: 0;
     font-size: 14px;
     line-height: 40px;
-    background: #39579B;
-
-    &:hover,
-    &:focus {
-        box-shadow: 0 0 0 2px #6D84B4;
-    }
 
     i {
         width: 40px;
         height: 40px;
-        border-right: 1px solid #38528C;
         position: absolute;
         left: 5px;
         font-size: 20px;
@@ -60,11 +53,44 @@
     }
 }
 
-#login.login--loading {
+#login-fb-btn {
+    background: #39579B;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 0 0 2px #6D84B4;
+    }
+
+    i {
+        border-right: 1px solid #38528C;
+    }
+}
+
+#login-fb-btn.login--loading {
     i {
         font-size: 0;
         background: url(/img/spinner-fb.gif) no-repeat center;
     }
+}
+
+#login-email-btn {
+    display: block;
+    margin: 20px auto 0;
+
+    i {
+        border-right: 1px solid #292929;
+    }
+}
+
+#login-email-form {
+    width: 85%;
+    max-width: 320px;
+    margin: 20px auto 0;
+    display: none;
+}
+
+#login-email-form.login-email-form--show {
+    display: block;
 }
 
 #walkthrough-wrapper {

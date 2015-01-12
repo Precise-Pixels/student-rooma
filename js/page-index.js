@@ -3,8 +3,8 @@
   * https://github.com/Precise-Pixels/student-rooma
   */
 
-var loginBtn       = document.getElementById('login');
-var loginText      = document.getElementById('login-text');
+var loginFbBtn     = document.getElementById('login-fb-btn');
+var loginFbBtnText = document.getElementById('login-fb-btn-text');
 
 // Facebook SDK
 (function(d, s, id) {
@@ -22,15 +22,15 @@ window.fbAsyncInit = function() {
         version : 'v2.0'
     });
     FB.getLoginStatus(function(response) {
-        loginBtn.className = 'login--loading';
-        loginText.innerHTML = 'Logging in...';
+        loginFbBtn.className += ' login--loading';
+        loginFbBtnText.innerHTML = 'Logging in...';
         statusChangeCallback(response);
     });
 };
 
-loginBtn.addEventListener('click', function() {
-    loginBtn.className = 'login--loading';
-    loginText.innerHTML = 'Logging in...';
+loginFbBtn.addEventListener('click', function() {
+    loginFbBtn.className += ' login--loading';
+    loginFbBtnText.innerHTML = 'Logging in...';
     FB.login(function(response) {
         FB.getLoginStatus(function(response) {
             statusChangeCallback(response);
@@ -83,6 +83,22 @@ function requestFBData() {
 }
 
 function resetLoginButton() {
-    loginBtn.className = '';
-    loginText.innerHTML = 'Continue with Facebook';
+    loginFbBtn.className = loginFbBtn.className.replace(' login--loading', '');
+    loginFbBtnText.innerHTML = 'Continue with Facebook';
+}
+
+// Email login
+
+var loginEmailBtn  = document.getElementById('login-email-btn');
+var loginEmailForm = document.getElementById('login-email-form');
+var loginEmail     = document.getElementById('login-email');
+
+loginEmailBtn.addEventListener('click', function() {
+    loginEmailForm.className = 'login-email-form--show';
+    loginEmail.focus();
+    location.hash = 'continue-with-email';
+});
+
+if(location.hash === '#continue-with-email') {
+    loginEmailForm.className = 'login-email-form--show';
 }

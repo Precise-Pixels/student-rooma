@@ -2,7 +2,27 @@
     <div class="padding">
         <h1>Student Rooma</h1>
 
-        <button id="login" autofocus><i class="ico-facebook"></i><span id="login-text">Continue with Facebook</span></button>
+        <button id="login-fb-btn" class="login-buttons" autofocus><i class="ico-facebook"></i><span id="login-fb-btn-text">Continue with Facebook</span></button>
+
+        <button id="login-email-btn" class="login-buttons"><i class="ico-email"></i><span>Continue with Email</span></button>
+
+        <form method="post" id="login-email-form">
+            <div class="form-row">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" name="login-email" required/>
+            </div>
+            <div class="form-row">
+                <label for="login-password">Password</label>
+                <input type="password" name="login-password" required/>
+            </div>
+            <div class="form-row">
+                <input type="submit" name="login-submit" value="Login"/>
+            </div>
+            <div class="form-row">
+                <p><a href="">Create an account</a></p>
+                <p><a href="">Forgotten your password</a></p>
+            </div>
+        </form>
 
         <div id="walkthrough-wrapper">
             <div id="walkthrough-1" class="walkthrough-slide">
