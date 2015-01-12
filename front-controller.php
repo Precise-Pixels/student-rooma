@@ -7,6 +7,7 @@ $q = $_GET['q'];
 
 $isIndex                       = ($q == '');
 $isApp                         = preg_match('#^app\/#', $q);
+$isLanding                     = !$isApp;
 $isAppIndex                    = preg_match('#^app/?$#', $q);
 $isProfile                     = preg_match('#^app\/profile/?$#', $q);
 $isProperties                  = preg_match('#^app\/properties/?$#', $q);
@@ -49,7 +50,9 @@ if($isApp) {
     } else {
         $file = 'app/404';                              // APP 404 NOT FOUND
     }
-} elseif(!$isApp) {
+}
+
+if($isLanding) {
     if(empty($path)) {                                  // HOME
         $file = 'index';
     } elseif(file_exists("views/$path.php")) {
