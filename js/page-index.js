@@ -87,18 +87,45 @@ function resetLoginButton() {
     loginFbBtnText.innerHTML = 'Continue with Facebook';
 }
 
-// Email login
+// Email Login
 
-var loginEmailBtn  = document.getElementById('login-email-btn');
-var loginEmailForm = document.getElementById('login-email-form');
-var loginEmail     = document.getElementById('login-email');
+var loginEmailBtn          = document.getElementById('login-email-btn');
+var loginEmailForm         = document.getElementById('login-email-form');
+var loginEmail             = document.getElementById('login-email');
+var createAccount          = document.getElementById('create-account');
+var createAccountForm      = document.getElementById('create-account-form');
+var createAccountEmail     = document.getElementById('create-account-email');
+var forgottenPassword      = document.getElementById('forgotten-password');
+var forgottenPasswordForm  = document.getElementById('forgotten-password-form');
+var forgottenPasswordEmail = document.getElementById('forgotten-password-email');
 
 loginEmailBtn.addEventListener('click', function() {
     loginEmailForm.className = 'login-email-form--show';
+    createAccountForm.className = forgottenPasswordForm.className = '';
     loginEmail.focus();
     location.hash = 'continue-with-email';
 });
 
-if(location.hash === '#continue-with-email') {
-    loginEmailForm.className = 'login-email-form--show';
+switch(location.hash) {
+    case '#continue-with-email':
+        loginEmailForm.className = 'login-email-form--show';
+        break;
+    case '#create-an-account':
+        createAccountForm.className = 'create-account-form--show';
+        break;
+    case '#forgotten-your-password':
+        forgottenPasswordForm.className = 'forgotten-password-form--show';
+        break;
 }
+
+createAccount.addEventListener('click', function() {
+    createAccountForm.className = 'create-account-form--show';
+    loginEmailForm.className = forgottenPasswordForm.className = '';
+    createAccountEmail.focus();
+});
+
+forgottenPassword.addEventListener('click', function() {
+    forgottenPasswordForm.className = 'forgotten-password-form--show';
+    loginEmailForm.className = createAccountForm.className = '';
+    forgottenPasswordEmail.focus();
+});

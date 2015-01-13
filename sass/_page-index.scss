@@ -82,14 +82,18 @@
     }
 }
 
-#login-email-form {
+#login-email-form,
+#create-account-form,
+#forgotten-password-form {
     width: 85%;
     max-width: 320px;
     margin: 20px auto 0;
     display: none;
 }
 
-#login-email-form.login-email-form--show {
+#login-email-form.login-email-form--show,
+#create-account-form.create-account-form--show,
+#forgotten-password-form.forgotten-password-form--show {
     display: block;
 }
 
