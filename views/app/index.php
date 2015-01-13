@@ -18,6 +18,18 @@
             <div class="form-row">
                 <input type="submit" name="login-submit" value="Login"/>
             </div>
+            <?php
+            require_once('php/LoginSystem.php');
+
+            if(!empty($_POST['login-submit'])) {
+                if(!empty($_POST['login-email']) && !empty($_POST['login-password'])) {
+                    $response = LoginSystem::login($_POST['login-email'], $_POST['login-password']);
+                    echo $response;
+                } else {
+                    echo $wrapStart . 'Please enter your email and password.' . $wrapEnd;
+                }
+            }
+            ?>
             <div class="form-row">
                 <p><a href="">Create an account</a></p>
                 <p><a href="">Forgotten your password</a></p>

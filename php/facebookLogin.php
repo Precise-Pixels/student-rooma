@@ -29,7 +29,8 @@ if($userExists === false) {
     $sth->bindParam(':timestamp', $timestamp);
     $sth->execute();
 
-    $_SESSION['s_userId'] = $dbh->lastInsertId();
+    $_SESSION['s_userId']      = $dbh->lastInsertId();
+    $_SESSION['s_loginMethod'] = 'facebook';
 
     $_SESSION['s_firstTime'] = 'true';
     $_SESSION['s_noPhone']   = 'true';
@@ -39,7 +40,8 @@ if($userExists === false) {
     $sth->setFetchMode(PDO::FETCH_OBJ);
     $result = $sth->fetch();
 
-    $_SESSION['s_userId'] = $result->userId;
+    $_SESSION['s_userId']      = $result->userId;
+    $_SESSION['s_loginMethod'] = 'facebook';
 
     if(!$result->phone) {
         $_SESSION['s_noPhone'] = 'true';
