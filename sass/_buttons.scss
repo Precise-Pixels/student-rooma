@@ -151,3 +151,22 @@ input[type='file'] {
         color: $orange;
     }
 }
+
+.button-large {
+    border-radius: 38px;
+    padding: 10px 40px;
+    font-size: 22px;
+}
+
+.button-header {
+    margin-top: 14px;
+    float: right;
+    font-size: 14px;
+    border: #222 solid 2px;
+    &:hover,
+    &:focus ,
+    a:focus & {
+        border: $orange solid 2px;
+        box-shadow: none;
+    }
+}

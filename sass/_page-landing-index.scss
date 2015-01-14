@@ -1,0 +1,162 @@
+header {
+	height: 60px;
+	background: $dgrey;
+	line-height: 60px;
+	form {
+		display: inline;
+	}
+}
+
+#logo {
+	width: 100px;
+	display: inline-block;
+	margin-top: 15px;
+}
+
+.menu-right {
+	float: right;
+	font-size: 14px;
+	a {
+		margin-right: 20px;
+	}
+}
+
+section {
+	width: 100%;
+	padding: 80px 0;
+	float: left;
+}
+
+.lgrey {
+	background: $lgrey;
+}
+
+/* SECTION ONE */
+
+#section-one {
+	position: relative;
+	img {
+		width: 100%;
+		max-width: 380px;
+		position: absolute;
+		right: 0px;
+		top: 0;
+	}
+}
+
+#open-app-btn {
+	font-size: 68px;
+}
+
+.landlord-link {
+	margin-top: 40px;
+	a {
+		font-size: 16px;
+		font-weight: 600;
+		color: $dgrey;
+		border-bottom: 1px solid $dgrey;
+		transition: all .2s;
+		&:hover {
+			color: $mgrey;
+			border-bottom: 1px solid $mgrey;
+		}
+	}
+}
+
+/* SECTION ONE END */
+
+/* SECTION TWO */
+
+#section-two {
+	position: relative;
+	img {
+		width: 100%;
+		max-width: 380px;
+		position: absolute;
+		left: 0px;
+		top: 60px;
+	}
+}
+
+.text-right {
+	width: 100%;
+	max-width: 550px;
+	float: left;
+}
+
+/* SECTION TWO END */
+
+/* TYPOGRAHPY */
+
+h1, h2 {
+	width: 100%;
+	font-weight: 300;
+}
+
+h1 {
+	max-width: 550px;
+	color: $orange;
+	font-size: 42px;
+	line-height: 52px;
+	margin: 0 0 60px 0;
+}
+
+h2 {
+	margin-top: 60px;
+	font-size: 28px;
+	line-height: 38px;
+	margin-bottom: 40px;
+}
+
+a {
+	text-decoration: none;
+	color: $lgrey;
+	transition: all .2s;
+	&:hover {
+		color: $mgrey;
+	}
+}
+
+p {
+	font-size: 22px;
+}
+
+ul {
+	display: block;
+	padding: 10px 0 10px 25px;
+	li {
+		list-style: bullet;
+		margin: 10px 0;
+		font-size: 22px;
+		/*list-style: none;*/
+		font-weight: 600;
+	}
+}
+
+/* TYPOGRAHPY END */
+
+#dialog {
+	display: none;
+}
+
+@media ($a) {
+	.half {
+		width: (100%/2);
+	}
+	.text-right {
+		float: right;
+	}
+}
+
+@media ($b) {
+	h1 {
+		color: $orange;
+		font-size: 68px;
+		line-height: 82px;
+	}
+
+	h2 {
+		font-size: 56px;
+		line-height: 72px;
+	}
+}

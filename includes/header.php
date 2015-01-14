@@ -57,7 +57,17 @@
 <?php elseif($isLanding): ?>
 
     <header>
-        HEADER
+        <div class="padding align-center">
+            <a href="/"><img src="/img/logo.png" alt="Student Rooma" id="logo"/></a>
+            <div class="menu-right">
+                <a href="/">About</a>
+                <a href="/landlords">Landlords</a>
+                <form action="/app/">
+                    <button type="submit" class="button-header">OPEN APP</button>
+                </form>
+            </div>
+            
+        </div>
     </header>
 
 <?php endif; ?>

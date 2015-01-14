@@ -5,14 +5,14 @@
 <title>Student Rooma</title>
 
 <?php if($isApp): ?>
-    <?php if($_SERVER['SERVER_NAME'] == 'sr.dev'): ?>
+    <?php if($_SERVER['SERVER_NAME'] == 'localhost'): ?>
         <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
     <?php else: ?>
         <link rel="stylesheet" type="text/css" href="/build/styles.min.css"/>
     <?php endif; ?>
 <?php endif; ?>
 <?php if($isLanding): ?>
-    <?php if($_SERVER['SERVER_NAME'] == 'sr.dev'): ?>
+    <?php if($_SERVER['SERVER_NAME'] == 'localhost'): ?>
         <link rel="stylesheet" type="text/css" href="/css/styles-landing.css"/>
     <?php else: ?>
         <link rel="stylesheet" type="text/css" href="/build/styles-landing.min.css"/>
