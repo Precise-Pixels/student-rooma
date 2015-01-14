@@ -20,7 +20,7 @@ header {
 
 section {
 	width: 100%;
-	padding: 80px 0;
+	padding: 40px 0;
 	float: left;
 }
 
@@ -28,18 +28,19 @@ section {
 	background: $lgrey;
 }
 
-/* SECTION ONE */
-
-#section-one {
+#section-one,
+#section-two {
 	position: relative;
 	img {
-		width: 100%;
+		width: 80%;
 		max-width: 380px;
-		position: absolute;
-		right: 0px;
-		top: 0;
+		position: relative;
+		display: block;
 	}
 }
+
+/* SECTION ONE */
+
 
 #open-app-btn {
 	font-size: 68px;
@@ -64,17 +65,6 @@ section {
 
 /* SECTION TWO */
 
-#section-two {
-	position: relative;
-	img {
-		width: 100%;
-		max-width: 380px;
-		position: absolute;
-		left: 0px;
-		top: 60px;
-	}
-}
-
 .text-right {
 	width: 100%;
 	max-width: 550px;
@@ -95,11 +85,11 @@ h1 {
 	color: $orange;
 	font-size: 42px;
 	line-height: 52px;
-	margin: 0 0 60px 0;
+	margin: 0 0 40px 0;
 }
 
 h2 {
-	margin-top: 60px;
+	/*margin-top: 60px;*/
 	font-size: 28px;
 	line-height: 38px;
 	margin-bottom: 40px;
@@ -115,7 +105,7 @@ a {
 }
 
 p {
-	font-size: 22px;
+	font-size: 16px;
 }
 
 ul {
@@ -124,7 +114,7 @@ ul {
 	li {
 		list-style: bullet;
 		margin: 10px 0;
-		font-size: 22px;
+		font-size: 16px;
 		/*list-style: none;*/
 		font-weight: 600;
 	}
@@ -132,14 +122,22 @@ ul {
 
 /* TYPOGRAHPY END */
 
+#footer {
+	border-top: 1px solid $mgrey;
+}
+
 #dialog {
 	display: none;
 }
 
 @media ($a) {
-	.half {
-		width: (100%/2);
+
+	section {
+		width: 100%;
+		padding: 80px 0;
+		float: left;
 	}
+
 	.text-right {
 		float: right;
 	}
@@ -150,10 +148,53 @@ ul {
 		color: $orange;
 		font-size: 68px;
 		line-height: 82px;
+		margin: 0 0 60px 0;
 	}
 
 	h2 {
 		font-size: 56px;
 		line-height: 72px;
+		margin-bottom: 40px;
+	}
+	
+	p {
+		font-size: 22px;
+	}
+	
+	ul {
+		display: block;
+		padding: 10px 0 10px 25px;
+		li {
+			list-style: bullet;
+			margin: 10px 0;
+			font-size: 22px;
+			font-weight: 600;
+		}
+	}
+
+	#section-one,
+	#section-two {
+		img {
+			width: 100%;
+			position: absolute;
+		}
+	}
+
+	#section-one {
+		img {
+			right: 0px;
+			top: 0;
+		}
+	}
+
+	#section-two {
+		padding-top: 20px;
+		img {
+			left: 0px;
+			top: 80px;
+		}
+	}
+	.text-right {
+		float: right;
 	}
 }
