@@ -2,9 +2,7 @@
 <section class="lgrey">
     <div id="section-one" class="padding align-center">
         <h1 class="h1--show">Matching students to their perfect room!</h1>
-        <form action="/app/">
-        	<button type="submit" class="button-large">OPEN APP</button>
-        </form>
+    	<a href="/app/"><button class="button-large">OPEN APP</button></a>
         <div class="landlord-link">
         	<a href="/landlord">Are you a landlord?</a>
         </div>
