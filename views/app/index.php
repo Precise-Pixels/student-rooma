@@ -31,8 +31,42 @@
             }
             ?>
             <div class="form-row">
-                <p><a href="">Create an account</a></p>
-                <p><a href="">Forgotten your password</a></p>
+                <p><a href="#create-an-account" id="create-account">Create an account</a></p>
+                <p><a href="#forgotten-your-password" id="forgotten-password">Forgotten your password</a></p>
+            </div>
+        </form>
+
+        <form method="post" id="create-account-form">
+            <p>Create an account</p>
+            <div class="form-row">
+                <label for="create-account-email">Email (private)</label>
+                <input type="email" id="create-account-email" name="create-account-email" required/>
+            </div>
+            <div class="form-row">
+                <label for="create-account-email-again">Retype email</label>
+                <input type="email" name="create-account-email-again" required/>
+            </div>
+            <div class="form-row">
+                <label for="create-account-password">Password</label>
+                <input type="password" name="create-account-password" required/>
+            </div>
+            <div class="form-row">
+                <label for="create-account-password-again">Retype password</label>
+                <input type="password" name="create-account-password-again" required/>
+            </div>
+            <div class="form-row">
+                <input type="submit" name="create-account-submit" value="Create"/>
+            </div>
+        </form>
+
+        <form method="post" id="forgotten-password-form">
+            <p>Forgotten your password</p>
+            <div class="form-row">
+                <label for="forgotten-password-email">Email</label>
+                <input type="email" id="forgotten-password-email" name="forgotten-password-email" required/>
+            </div>
+            <div class="form-row">
+                <input type="submit" name="forgotten-password-submit" value="Submit"/>
             </div>
         </form>
 

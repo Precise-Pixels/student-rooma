@@ -10,7 +10,7 @@ class LoginSystem {
 
         $passwordE  = Encryption::encrypt($password);
 
-        $sth = $dbh->query("SELECT userId, password, valid FROM users WHERE email='$email'");
+        $sth = $dbh->query("SELECT userId, password, valid, phone FROM users WHERE email='$email'");
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $row = $sth->fetch();
 
@@ -21,6 +21,10 @@ class LoginSystem {
 
                     $_SESSION['s_userId'] = $row->userId;
                     $_SESSION['s_loginMethod'] = 'email';
+
+                    if(!$row->phone) {
+                        $_SESSION['s_noPhone'] = 'true';
+                    }
 
                     header('location: /app/');
 
@@ -37,6 +41,9 @@ class LoginSystem {
 
     static function logout() {
         unset($_SESSION['s_userId']);
+        if(isset($_SESSION['s_noPhone'])) {
+            unset($_SESSION['s_noPhone']);
+        }
 
         if($_SESSION['s_loginMethod'] === 'email') {
             unset($_SESSION['s_loginMethod']);

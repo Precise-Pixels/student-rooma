@@ -57,6 +57,8 @@ if($isLanding) {
         $file = 'index';
     } elseif(file_exists("views/$path.php")) {
         $file = $path;                                  // LANDING SITE
+    } elseif($path === 'app') {
+        header('location: /app/');                      // REDIRECT TO APP
     } else {
         $file = '404';                                  // LANDING SITE 404 NOT FOUND
     }
