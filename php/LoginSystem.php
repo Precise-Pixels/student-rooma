@@ -1,9 +1,6 @@
 <?php
 
 class LoginSystem {
-    const wrapStart = '<p class="error">';
-    const wrapEnd   = '</p>';
-
     static function login($email, $password) {
         require_once('db.php');
         require_once('Encryption.php');
@@ -29,13 +26,13 @@ class LoginSystem {
                     header('location: /app/');
 
                 } else {
-                    return LoginSystem::wrapStart . 'Wrong email and/or password.' . LoginSystem::wrapEnd;
+                    return '<p class="error">Wrong email and/or password.</p>';
                 }
             } else {
-                return LoginSystem::wrapStart . 'Please verify your account by clicking the verification link in your email before attempting to log in. If you have not receive a verification email, please check your spam/junk or <a href="resend-validation-email">request another verification email</a>.' . LoginSystem::wrapEnd;
+                return '<p class="error">Please verify your account by clicking the verification link in your email before attempting to log in. If you have not receive a verification email, please check your spam/junk or <a href="resend-validation-email">request another verification email</a>.</p>';
             }
         } else {
-            return LoginSystem::wrapStart . 'Wrong email and/or password.' . LoginSystem::wrapEnd;
+            return '<p class="error">Wrong email and/or password.</p>';
         }
     }
 
@@ -97,7 +94,7 @@ class LoginSystem {
 
         MailClient::sendMsg($email, 'Verify your account', "Please follow this link to verify your account: http://cell-industries.co.uk/verify-account?e=$email&r=$rand");
 
-        return LoginSystem::wrapStart . 'We have sent a verification link to your email. Please verify your account before attempting to sign in. If you have not received a verification email, check your spam/junk. Please also bear in mind that, while usually instantaneous, the email may take up to an hour to send.' . LoginSystem::wrapEnd;
+        return '<p class="error">We have sent a verification link to your email. Please verify your account before attempting to sign in. If you have not received a verification email, check your spam/junk. Please also bear in mind that, while usually instantaneous, the email may take up to an hour to send.</p>';
     }
 
     static function validateUser($email, $rand) {
@@ -129,7 +126,7 @@ class LoginSystem {
 
         MailClient::sendMsg($email, 'Reset your account password', "Please follow this link to reset your account password: http://cell-industries.co.uk/reset-password?e=$email&r=$rand");
 
-        return '<p class="full warn"><i class="ico-info"></i>We have sent instructions on how to reset your password to your email. Please check your emails.' . LoginSystem::wrapEnd;
+        return '<p class="success">We have sent instructions on how to reset your password to your email. Please check your emails.</p>';
     }
 
     static function resetPassword($email, $password, $rand) {
@@ -149,9 +146,9 @@ class LoginSystem {
             $sth = $dbh->prepare("UPDATE users SET password='$passwordE', resetRand='$newRand' WHERE email='$email'");
             $sth->execute();
 
-            return '<p class="full success"><i class="ico-info"></i>Password successfully reset. Please <a href="signin">sign in</a>.' . LoginSystem::wrapEnd;
+            return '<p class="success">Password successfully reset. Please <a href="signin">sign in</a>.</p>';
         } else {
-            return LoginSystem::wrapStart . 'This link has expired. Please <a href="forgotten-password">request a new password reset link</a>.' . LoginSystem::wrapEnd;
+            return '<p class="error">This link has expired. Please <a href="forgotten-password">request a new password reset link</a>.</p>';
         }
     }*/
 
