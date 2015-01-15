@@ -63,6 +63,14 @@
         </header>
 
     <?php endif; ?>
+<?php elseif($isLandlord): ?>
+
+    <header>
+        <a href="/landlord">
+            <img src="/img/logo.png" alt="Student Rooma" id="logo"/>
+        </a>
+    </header>
+
 <?php elseif($isAdmin): ?>
 
     <header>

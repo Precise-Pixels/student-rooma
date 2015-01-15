@@ -5,7 +5,7 @@ session_start();
 
 $q = $_GET['q'];
 
-$isLanding                     = !preg_match('#^app|admin#', $q);
+$isLanding                     = !preg_match('#^app|landlord|admin#', $q);
 
 $isApp                         = preg_match('#^app#', $q);
 $isAppIndex                    = preg_match('#^app/?$#', $q);
@@ -21,6 +21,9 @@ $isInstall                     = preg_match('#^app\/install/?$#', $q);
 $isAbout                       = preg_match('#^app\/about/?$#', $q);
 $isPrivacy                     = preg_match('#^app\/privacy-policy/?$#', $q);
 $isLogout                      = preg_match('#^app\/logout/?$#', $q);
+
+$isLandlord                    = preg_match('#^landlord#', $q);
+$isLandlordIndex               = preg_match('#^landlord/?$#', $q);
 
 $isAdmin                       = preg_match('#^admin#', $q);
 $isAdminIndex                  = preg_match('#^admin/?$#', $q);
@@ -55,6 +58,12 @@ if($isApp) {
         $file = $path;                                  // APP
     } else {
         $file = 'app/404';                              // APP 404 NOT FOUND
+    }
+}
+
+if($isLandlord) {
+    if($isLandlordIndex) {
+        $file = 'landlord/index';
     }
 }
 
