@@ -6,7 +6,6 @@ header {
 
 #logo {
 	width: 100px;
-	display: inline-block;
 	margin-top: 15px;
 }
 
@@ -33,7 +32,7 @@ section {
 	position: relative;
 	img {
 		width: 80%;
-		max-width: 380px;
+		max-width: 350px;
 		position: relative;
 		display: block;
 	}
@@ -41,6 +40,10 @@ section {
 
 /* SECTION ONE */
 
+.bg {
+	background: url(../img/index-bkg2.jpg) center no-repeat;
+	background-size: cover;
+}
 
 #open-app-btn {
 	font-size: 68px;
@@ -67,7 +70,6 @@ section {
 
 .text-right {
 	width: 100%;
-	max-width: 550px;
 	float: left;
 }
 
@@ -89,7 +91,6 @@ h1 {
 }
 
 h2 {
-	/*margin-top: 60px;*/
 	font-size: 28px;
 	line-height: 38px;
 	margin-bottom: 40px;
@@ -105,17 +106,17 @@ a {
 }
 
 p {
-	font-size: 16px;
+	font-size: 18px;
 }
 
 ul {
-	display: block;
-	padding: 10px 0 10px 25px;
+	margin: 0;
+	padding: 10px 0;
 	li {
-		list-style: bullet;
 		margin: 10px 0;
-		font-size: 16px;
-		/*list-style: none;*/
+		padding: 0;
+		font-size: 18px;
+		list-style: none;
 		font-weight: 600;
 	}
 }
@@ -123,7 +124,7 @@ ul {
 /* TYPOGRAHPY END */
 
 #footer {
-	border-top: 1px solid $mgrey;
+	background: $dgrey;
 }
 
 #dialog {
@@ -144,31 +145,32 @@ ul {
 }
 
 @media ($b) {
+
+	h1, h2 {
+		max-width: 400px;
+	}
+
+
 	h1 {
-		color: $orange;
-		font-size: 68px;
-		line-height: 82px;
+		font-size: 48px;
+		line-height: 62px;
 		margin: 0 0 60px 0;
 	}
 
 	h2 {
-		font-size: 56px;
-		line-height: 72px;
+		font-size: 36px;
+		line-height: 52px;
 		margin-bottom: 40px;
 	}
+
 	
 	p {
-		font-size: 22px;
+		font-size: 20px;
 	}
 	
 	ul {
-		display: block;
-		padding: 10px 0 10px 25px;
 		li {
-			list-style: bullet;
-			margin: 10px 0;
-			font-size: 22px;
-			font-weight: 600;
+			font-size: 20px;
 		}
 	}
 
@@ -190,11 +192,61 @@ ul {
 	#section-two {
 		padding-top: 20px;
 		img {
+			left: 40px;
+			top: 60px;
+		}
+	}
+
+	.text-right {
+		max-width: 410px;
+	}
+}
+
+@media ($bc) {
+
+	#section-one,
+	#section-two {
+		img {
+			max-width: 375px;
+		}
+	}
+
+	#section-two {
+		padding-top: 20px;
+		img {
 			left: 0px;
 			top: 80px;
 		}
 	}
+		
+	h1, h2 {
+		max-width: 550px;
+	}
+
+	h1 {
+		font-size: 68px;
+		line-height: 82px;
+		margin: 0 0 60px 0;
+	}
+
+	h2 {
+		font-size: 56px;
+		line-height: 72px;
+		margin-top: 60px;
+		margin-bottom: 40px;
+	}
+	
+	p {
+		font-size: 22px;
+	}
+	
+	ul {
+		li {
+			font-size: 22px;
+		}
+	}
+
 	.text-right {
-		float: right;
+		max-width: 550px;
 	}
 }

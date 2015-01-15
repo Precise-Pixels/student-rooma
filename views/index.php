@@ -1,9 +1,11 @@
 
-<section class="lgrey">
-    <div id="section-one" class="padding align-center">
+<div id="line1"></div>
+
+<section class="lgrey bg">
+    <div id="section-one" class="section-padding align-center">
         <h1 class="h1--show">Matching students to their perfect room!</h1>
-    	<a href="/app/"><button class="button-large">OPEN APP</button></a>
     	<img src="/img/landing-page/phone1.png" alt="">
+        <a href="/app/"><button class="button-large">OPEN APP</button></a>
         <div class="landlord-link">
         	<a href="/landlord">Are you a landlord?</a>
         </div>
@@ -11,7 +13,7 @@
 </section>
 
 <section>
-    <div id="section-two" class="padding align-center">
+    <div id="section-two" class="section-padding align-center">
     	<div class="text-right">
     		<h2>Accomodation at the price, location and style you want.</h2>
     		<img src="/img/landing-page/phone2.png" alt="">
