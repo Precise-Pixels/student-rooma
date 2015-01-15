@@ -10,6 +10,7 @@ $isApp                         = preg_match('#^app\/#', $q);
 $isLanding                     = !$isApp;
 $isAppIndex                    = preg_match('#^app/?$#', $q);
 $isResendValidationEmail       = preg_match('#^app\/resend-validation-email/?$#', $q);
+$isVerifyAccount               = preg_match('#^app\/verify-account/?$#', $q);
 $isProfile                     = preg_match('#^app\/profile/?$#', $q);
 $isProperties                  = preg_match('#^app\/properties/?$#', $q);
 $isActivity                    = preg_match('#^app\/activity/?$#', $q);
@@ -31,7 +32,7 @@ $path = preg_replace('/\/$|.php/', '', $q);
 if($isApp) {
     if($isAppIndex) {
         $file = 'app/index';                            // APP HOME
-    } elseif($isResendValidationEmail || $isPrivacy || $isAdmin) {
+    } elseif($isResendValidationEmail || $isVerifyAccount || $isPrivacy || $isAdmin) {
         $file = $path;                                  // ALLOW WITHOUT LOGGING IN
     } elseif($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability || $isAdminDeleteProperty) {
         if(!isset($_SESSION['s_admin'])) {

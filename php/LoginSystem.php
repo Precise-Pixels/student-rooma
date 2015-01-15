@@ -97,7 +97,7 @@ class LoginSystem {
         return '<p class="success">We have sent a verification link to your email. Please verify your account before attempting to sign in. If you have not received a verification email, check your spam/junk. Please also bear in mind that, while usually instantaneous, the email may take up to an hour to send.</p>';
     }
 
-    /*static function validateUser($email, $rand) {
+    static function validateUser($email, $rand) {
         require('db.php');
 
         $sth = $dbh->query("SELECT validateRand FROM users WHERE email='$email'");
@@ -115,7 +115,7 @@ class LoginSystem {
         }
     }
 
-    static function sendResetPasswordLink($email) {
+    /*static function sendResetPasswordLink($email) {
         require('db.php');
         require_once('MailClient.php');
 
