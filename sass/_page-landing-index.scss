@@ -19,7 +19,7 @@ header {
 
 section {
 	width: 100%;
-	padding: 40px 0;
+	padding: 20px 0;
 	float: left;
 }
 
@@ -42,6 +42,41 @@ section {
 	background: url(../img/index-bkg2.jpg) center no-repeat;
 	background-size: cover;
 }
+
+#line1 , #line2, #line3 {
+	position: absolute;
+	display: none;
+	z-index: 2;
+}
+
+#line1 {
+	width: 101px;
+	height: 257px;
+	top: -80px;
+	right: -5px;
+	background: url(../img/landing-page/line1.png) center no-repeat;
+	background-size: 100%;
+}
+
+#line2 {
+	width: 615px;
+	height: 605px;
+	top: 5px;
+	right: -75px;
+	background: url(../img/landing-page/line2.png) center no-repeat;
+	background-size: 50%;
+}
+
+#line3 {
+	width: 515px;
+	height: 343px;
+	top: 315px;
+	left: 156px;
+	background: url(../img/landing-page/line3.png) center no-repeat;
+	background-size: 100%;
+}
+
+
 
 #open-app-btn {
 	font-size: 68px;
@@ -83,6 +118,7 @@ h2 {
 	font-size: 26px;
 	line-height: 36px;
 	margin-bottom: 40px;
+	padding-top: 0;
 }
 
 a {
@@ -150,6 +186,7 @@ ul {
 	h2 {
 		font-size: 36px;
 		line-height: 52px;
+		margin-top: 70px;
 		margin-bottom: 40px;
 	}
 
@@ -181,7 +218,7 @@ ul {
 
 	#section-two {
 		img {
-			left: 15px;
+			left: 40px;
 			top: 60px;
 		}
 	}
@@ -220,7 +257,7 @@ ul {
 	h2 {
 		font-size: 56px;
 		line-height: 72px;
-		margin-top: 60px;
+		margin-top: 80px;
 		margin-bottom: 40px;
 	}
 	
@@ -237,4 +274,19 @@ ul {
 	.text-right {
 		max-width: 550px;
 	}
+}
+
+@media ($c) {
+
+	#line1 , #line2, #line3 {
+		display: block;
+		z-index: 2;
+	}
+
+	#section-two {
+		img {
+			left: 15px;
+		}
+	}
+
 }
