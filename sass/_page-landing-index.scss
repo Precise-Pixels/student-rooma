@@ -34,11 +34,9 @@ section {
 		width: 80%;
 		max-width: 350px;
 		position: relative;
-		display: block;
+		display: none;
 	}
 }
-
-/* SECTION ONE */
 
 .bg {
 	background: url(../img/index-bkg2.jpg) center no-repeat;
@@ -64,18 +62,9 @@ section {
 	}
 }
 
-/* SECTION ONE END */
-
-/* SECTION TWO */
-
 .text-right {
-	width: 100%;
 	float: left;
 }
-
-/* SECTION TWO END */
-
-/* TYPOGRAHPY */
 
 h1, h2 {
 	width: 100%;
@@ -91,8 +80,8 @@ h1 {
 }
 
 h2 {
-	font-size: 28px;
-	line-height: 38px;
+	font-size: 26px;
+	line-height: 36px;
 	margin-bottom: 40px;
 }
 
@@ -106,7 +95,7 @@ a {
 }
 
 p {
-	font-size: 18px;
+	font-size: 16px;
 }
 
 ul {
@@ -115,13 +104,11 @@ ul {
 	li {
 		margin: 10px 0;
 		padding: 0;
-		font-size: 18px;
+		font-size: 16px;
 		list-style: none;
 		font-weight: 600;
 	}
 }
-
-/* TYPOGRAHPY END */
 
 #footer {
 	background: $dgrey;
@@ -138,13 +125,16 @@ ul {
 		padding: 80px 0;
 		float: left;
 	}
-
-	.text-right {
-		float: right;
-	}
 }
 
 @media ($b) {
+
+	#section-one,
+	#section-two {
+		img {
+			display: block;
+		}
+	}
 
 	h1, h2 {
 		max-width: 400px;
@@ -190,14 +180,14 @@ ul {
 	}
 
 	#section-two {
-		padding-top: 20px;
 		img {
-			left: 40px;
+			left: 15px;
 			top: 60px;
 		}
 	}
 
 	.text-right {
+		float: right;
 		max-width: 410px;
 	}
 }
@@ -212,9 +202,7 @@ ul {
 	}
 
 	#section-two {
-		padding-top: 20px;
 		img {
-			left: 0px;
 			top: 80px;
 		}
 	}
