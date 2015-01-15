@@ -21,8 +21,14 @@
             $email = $_POST['email'];
 
             if(!empty($email)) {
-                $response = LoginSystem::resendValidationEmail($email);
-                echo $response;
+                $exists = LoginSystem::checkEmailExists($email);
+
+                if($exists) {
+                    $response = LoginSystem::resendValidationEmail($email);
+                    echo $response;
+                } else {
+                    echo '<p class="error">No account with this email exists.</p>';
+                }
             } else {
                 echo '<p class="error">Please enter your email.</p>';
             }
