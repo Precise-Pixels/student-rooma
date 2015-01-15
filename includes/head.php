@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 <title>Student Rooma</title>
 
-<?php if($isApp): ?>
+<?php if($isApp || $isAdmin): ?>
     <?php if($_SERVER['SERVER_NAME'] == 'localhost'): ?>
         <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
     <?php else: ?>
