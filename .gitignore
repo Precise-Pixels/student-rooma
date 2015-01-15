@@ -1,3 +1,4 @@
+.DS_Store
 .sass-cache
 build
 css
@@ -6,4 +7,3 @@ node_modules
 php/db.php
 php/Encryption.php
 php/hash.php
-.DS_Store
