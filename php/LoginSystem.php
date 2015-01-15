@@ -83,7 +83,7 @@ class LoginSystem {
         return (!$result ? false : true);
     }
 
-    /*static function resendValidationEmail($email) {
+    static function resendValidationEmail($email) {
         require('db.php');
         require_once('MailClient.php');
 
@@ -92,12 +92,12 @@ class LoginSystem {
         $sth = $dbh->prepare("UPDATE users SET validateRand='$rand' WHERE email='$email'");
         $sth->execute();
 
-        MailClient::sendMsg($email, 'Verify your account', "Please follow this link to verify your account: http://cell-industries.co.uk/verify-account?e=$email&r=$rand");
+        MailClient::verifyAccount($email, $rand);
 
-        return '<p class="error">We have sent a verification link to your email. Please verify your account before attempting to sign in. If you have not received a verification email, check your spam/junk. Please also bear in mind that, while usually instantaneous, the email may take up to an hour to send.</p>';
+        return '<p class="success">We have sent a verification link to your email. Please verify your account before attempting to sign in. If you have not received a verification email, check your spam/junk. Please also bear in mind that, while usually instantaneous, the email may take up to an hour to send.</p>';
     }
 
-    static function validateUser($email, $rand) {
+    /*static function validateUser($email, $rand) {
         require('db.php');
 
         $sth = $dbh->query("SELECT validateRand FROM users WHERE email='$email'");
