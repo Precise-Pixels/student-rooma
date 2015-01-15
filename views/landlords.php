@@ -4,7 +4,4 @@
     </div>
 </section>
 
-<section id="footer">
-    <div class="padding align-center">
-    </div>
-</section>
+<?php require_once('includes/footer.php'); ?>
