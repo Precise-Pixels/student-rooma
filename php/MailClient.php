@@ -45,4 +45,11 @@ class MailClient {
         $headers .= "Content-Type: text/html\r\n";
         mail($email, $subject, $msg, $headers);
     }
+
+    static function verifyAccount($email, $rand1) {
+        $headers = "From: system@studentrooma.co.uk\r\n";
+        $headers .= "Content-Type: text/html\r\n";
+
+        mail($email, 'Verify your account', "Please follow this link to verify your account: http://studentrooma.co.uk/app/verify-account?e=$email&r=$rand1", $headers);
+    }
 }

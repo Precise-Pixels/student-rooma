@@ -51,7 +51,7 @@ class LoginSystem {
         }
     }
 
-    /*static function createUser($email, $password, $username) {
+    static function createUser($email, $password) {
         require('db.php');
         require_once('Encryption.php');
         require_once('MailClient.php');
@@ -63,19 +63,30 @@ class LoginSystem {
 
         $timestamp = date("Y-m-d H:i:s");
 
-        $sth = $dbh->prepare("INSERT INTO users (email, password, valid, validateRand, resetRand, timestamp, username, location, facebook, twitter) value (:email, :password, 0, $rand1, $rand2, :timestamp, :username, '', '', '')");
+        $sth = $dbh->prepare("INSERT INTO users (fbId, email, password, valid, validateRand, resetRand, name, phone, lookingIn, rooms, availableFrom, minPrice, maxPrice, timestamp) value (0, :email, :password, 0, :rand1, :rand2, '', '', 'Medway', 'ANY', '1970-01-01', 0, 9001, :timestamp)");
         $sth->bindParam(':email', $email);
         $sth->bindParam(':password', $passwordE);
+        $sth->bindParam(':rand1', $rand1);
+        $sth->bindParam(':rand2', $rand2);
         $sth->bindParam(':timestamp', $timestamp);
-        $sth->bindParam(':username', $username);
         $sth->execute();
 
-        MailClient::sendMsg($email, 'Verify your account', "Please follow this link to verify your account: http://cell-industries.co.uk/verify-account?e=$email&r=$rand1");
+        MailClient::verifyAccount($email, $rand1);
 
-        return '<p class="full success"><i class="ico-info"></i>Account successfully created. We have sent a verification link to your email. Please verify your account before attempting to sign in. If you have not received a verification email, check your spam/junk or <a href="resend-validation-email">request another verification email</a>. Please also bear in mind that, while usually instantaneous, the email may take up to an hour to send.' . LoginSystem::wrapEnd;
+        return '<p class="success">Account successfully created. We have sent a verification link to your email. Please verify your account before attempting to sign in. If you have not received a verification email, check your spam/junk or <a href="/app/resend-validation-email">request another verification email</a>. Please also bear in mind that, while usually instantaneous, the email may take up to an hour to send.</p>';
     }
 
-    static function resendValidationEmail($email) {
+    static function checkEmailExists($email) {
+        require('db.php');
+
+        $sth = $dbh->query("SELECT email FROM users WHERE email='$email'");
+        $sth->setFetchMode(PDO::FETCH_OBJ);
+        $result = $sth->fetch();
+
+        return (!$result ? false : true);
+    }
+
+    /*static function resendValidationEmail($email) {
         require('db.php');
         require_once('MailClient.php');
 
@@ -105,16 +116,6 @@ class LoginSystem {
                 return false;
             }
         }
-    }
-
-    static function checkUserExists($email, $username) {
-        require('db.php');
-
-        $sth = $dbh->query("SELECT email, username FROM users WHERE email='$email' OR username='$username'");
-        $sth->setFetchMode(PDO::FETCH_OBJ);
-        $result = $sth->fetch();
-
-        return (!$result ? false : true);
     }
 
     static function sendResetPasswordLink($email) {
@@ -152,9 +153,9 @@ class LoginSystem {
         } else {
             return LoginSystem::wrapStart . 'This link has expired. Please <a href="forgotten-password">request a new password reset link</a>.' . LoginSystem::wrapEnd;
         }
-    }
+    }*/
 
     static function generateRandomNumber() {
         return rand(pow(10, 6-1), pow(10, 6)-1);
-    }*/
+    }
 }

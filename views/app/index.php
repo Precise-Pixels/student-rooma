@@ -57,6 +57,34 @@
             <div class="form-row">
                 <input type="submit" name="create-account-submit" value="Create"/>
             </div>
+
+            <?php
+            require_once('php/LoginSystem.php');
+
+            if(!empty($_POST['create-account-submit'])) {
+                $email         = $_POST['create-account-email'];
+                $password      = $_POST['create-account-password'];
+                $emailAgain    = $_POST['create-account-email-again'];
+                $passwordAgain = $_POST['create-account-password-again'];
+
+                if(!empty($email) && !empty($password) && !empty($emailAgain) && !empty($passwordAgain)) {
+                    if($email === $emailAgain && $password === $passwordAgain) {
+                        $exists = LoginSystem::checkEmailExists($email);
+
+                        if($exists) {
+                            echo LoginSystem::wrapStart . 'An account with this email already exists.' . LoginSystem::wrapEnd;
+                        } else {
+                            $response = LoginSystem::createUser($email, $password);
+                            echo $response;
+                        }
+                    } else {
+                        echo LoginSystem::wrapStart . 'Email and/or password did not match. Please try again.' . LoginSystem::wrapEnd;
+                    }
+                } else {
+                    echo LoginSystem::wrapStart . 'Please enter your email and password.' . LoginSystem::wrapEnd;
+                }
+            }
+            ?>
         </form>
 
         <form method="post" id="forgotten-password-form">
