@@ -96,6 +96,27 @@
             <div class="form-row">
                 <input type="submit" name="forgotten-password-submit" value="Submit"/>
             </div>
+
+            <?php
+            require_once('php/LoginSystem.php');
+
+            if($_POST) {
+                $email = $_POST['forgotten-password-email'];
+
+                if(!empty($email)) {
+                    $exists = LoginSystem::checkEmailExists($email);
+
+                    if($exists) {
+                        $response = LoginSystem::sendResetPasswordLink($email);
+                        echo $response;
+                    } else {
+                        echo '<p class="error">No account with this email exists.</p>';
+                    }
+                } else {
+                    echo '<p class="error">Please enter your email.</p>';
+                }
+            }
+            ?>
         </form>
 
         <div id="walkthrough-wrapper">

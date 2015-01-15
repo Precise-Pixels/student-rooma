@@ -115,7 +115,7 @@ class LoginSystem {
         }
     }
 
-    /*static function sendResetPasswordLink($email) {
+    static function sendResetPasswordLink($email) {
         require('db.php');
         require_once('MailClient.php');
 
@@ -124,7 +124,7 @@ class LoginSystem {
         $sth = $dbh->prepare("UPDATE users SET resetRand='$rand' WHERE email='$email'");
         $sth->execute();
 
-        MailClient::sendMsg($email, 'Reset your account password', "Please follow this link to reset your account password: http://cell-industries.co.uk/reset-password?e=$email&r=$rand");
+        MailClient::resetPassword($email, $rand);
 
         return '<p class="success">We have sent instructions on how to reset your password to your email. Please check your emails.</p>';
     }
@@ -146,11 +146,11 @@ class LoginSystem {
             $sth = $dbh->prepare("UPDATE users SET password='$passwordE', resetRand='$newRand' WHERE email='$email'");
             $sth->execute();
 
-            return '<p class="success">Password successfully reset. Please <a href="signin">sign in</a>.</p>';
+            return '<p class="success">Password successfully reset. Please <a href="/app/#continue-with-email">login</a>.</p>';
         } else {
-            return '<p class="error">This link has expired. Please <a href="forgotten-password">request a new password reset link</a>.</p>';
+            return '<p class="error">This link has expired. Please <a href="/app/#forgotten-your-password">request a new password reset link</a>.</p>';
         }
-    }*/
+    }
 
     static function generateRandomNumber() {
         return rand(pow(10, 6-1), pow(10, 6)-1);
