@@ -5,7 +5,7 @@ session_start();
 
 $q = $_GET['q'];
 
-$isLanding                     = !preg_match('#^app|landlord|admin#', $q);
+$isLanding                     = !preg_match('#^app|landlord[^s]|admin#', $q);
 
 $isApp                         = preg_match('#^app#', $q);
 $isAppIndex                    = preg_match('#^app/?$#', $q);
@@ -22,7 +22,7 @@ $isAbout                       = preg_match('#^app\/about/?$#', $q);
 $isPrivacy                     = preg_match('#^app\/privacy-policy/?$#', $q);
 $isLogout                      = preg_match('#^app\/logout/?$#', $q);
 
-$isLandlord                    = preg_match('#^landlord#', $q);
+$isLandlord                    = preg_match('#^landlord$#', $q);
 $isLandlordIndex               = preg_match('#^landlord/?$#', $q);
 
 $isAdmin                       = preg_match('#^admin#', $q);
