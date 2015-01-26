@@ -1,3 +1,9 @@
+footer {
+	width: 100%;
+	float: left;
+	padding: 60px 0;
+}
+
 .footer-block {
 	width: 100%;
 	float: left;
@@ -21,6 +27,14 @@
 
 	.copyright {
 		float: right;
+		margin-top: 62px;
+	}
+
+}
+
+@media ($b) {
+
+	.copyright {
 		margin-top: 82px;
 	}
 

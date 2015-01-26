@@ -1,4 +1,4 @@
-<footer id="footer" class="dgrey">
+<footer class="dgrey">
     <div class="section-padding align-center">
         <div class="footer-block">
             <p>Find us on</p>

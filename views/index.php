@@ -4,7 +4,7 @@
         <img src="/img/landing-page/phone1.png" alt="">
         <a href="/app/"><button class="button-large">OPEN APP</button></a>
         <div class="landlord-link">
-            <a href="/landlords">Are you a landlord?</a>
+            <a href="/landlord">Are you a landlord?</a>
         </div>
         <div id="line1"></div>
         <div id="line2"></div>
