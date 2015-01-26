@@ -1,4 +1,4 @@
-<?php if($_SERVER['SERVER_NAME'] == 'localhost'):
+<?php if($_SERVER['SERVER_NAME'] == 'sr.dev'):
 // SANDBOX ?>
 
     <script src="/js/dialog.js"></script>

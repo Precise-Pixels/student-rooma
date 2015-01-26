@@ -1,0 +1,53 @@
+#landlord {
+	background: url(../img/landlord-bkg.jpg) center no-repeat;
+	background-size: cover;
+}
+
+.landlord-prices {
+	width: 100%;
+	margin-top: 40px;
+}
+
+.landlord-price {
+	width: (100%/1);
+	margin: 5px auto;
+	padding: 10px;
+	float: left;
+	text-align: center;
+	border: 3px solid $white;
+	&:hover {
+		color: white;
+		background: $orange;
+	}
+	h3 {
+		font-size: 22px;
+		font-weight: 800;
+		margin-bottom: 20px;
+	}
+	li {
+		font-size: 18px;
+		font-weight: 400;
+	}
+}
+
+.landlord-price-number {
+	margin-top: 20px;
+	font-weight: 800;
+	font-size: 48px;
+}
+
+
+@media ($a) {
+
+	.landlord-price {
+		width: (94%/3);
+		margin-right: 2%;
+		h3 {
+			margin-bottom: 40px;
+		}
+	}
+
+	.landlord-price-number {
+		margin-top: 40px;	}
+
+}

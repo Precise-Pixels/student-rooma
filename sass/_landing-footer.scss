@@ -1,0 +1,27 @@
+.footer-block {
+	width: 100%;
+	float: left;
+	margin-right: 60px;
+	margin-bottom: 20px;
+	a {
+		margin-right: 10px;
+	}
+}
+
+.copyright {
+	float: left;
+	font-size: 14px;
+}
+
+@media ($a) {
+
+	.footer-block {
+		width: auto;
+	}
+
+	.copyright {
+		float: right;
+		margin-top: 82px;
+	}
+
+}

@@ -27,6 +27,11 @@ section {
 	background: $lgrey;
 }
 
+.dgrey {
+	background: $dgrey;
+	color: white;
+}
+
 #section-one,
 #section-two {
 	position: relative;
@@ -118,6 +123,7 @@ h1 {
 h2 {
 	font-size: 26px;
 	line-height: 36px;
+	margin-top: 0;
 	margin-bottom: 40px;
 	padding-top: 0;
 }
@@ -145,10 +151,6 @@ ul {
 		list-style: none;
 		font-weight: 600;
 	}
-}
-
-#footer {
-	background: $dgrey;
 }
 
 #dialog {
@@ -187,7 +189,6 @@ ul {
 	h2 {
 		font-size: 36px;
 		line-height: 52px;
-		margin-top: 70px;
 		margin-bottom: 40px;
 	}
 
@@ -222,6 +223,9 @@ ul {
 			left: 40px;
 			top: 60px;
 		}
+		h2 {
+			margin-top: 70px;
+		}
 	}
 
 	.text-right {
@@ -243,6 +247,9 @@ ul {
 		img {
 			top: 80px;
 		}
+		h2 {
+			margin-top: 80px;
+		}
 	}
 		
 	h1, h2 {
@@ -258,7 +265,6 @@ ul {
 	h2 {
 		font-size: 56px;
 		line-height: 72px;
-		margin-top: 80px;
 		margin-bottom: 40px;
 	}
 	
