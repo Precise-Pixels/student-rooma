@@ -1,7 +1,10 @@
 <section id="landlord" class="lgrey">
     <div class="section-padding align-center">
         <h1 class="h1--show">The perfect tool for landlords</h1>
-        <a href="/app/"><button class="button-large">SIGN UP</button></a>
+        <a href="/landlords"><button class="button-large">SIGN UP</button></a>
+        <div class="landlord-link">
+            <a href="/landlord">Already registered?</a>
+        </div>
     </div>
 </section>
 
