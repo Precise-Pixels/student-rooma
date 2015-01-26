@@ -4,7 +4,7 @@
         <div class="padding align-center">
             <a href="/"><img src="/img/logo.png" alt="Student Rooma" id="logo"/></a>
             <div class="menu-right">
-                <a class="link" href="/">About</a>
+                <a class="link" href="/">Home</a>
                 <a class="link" href="/landlords">Landlords</a>
                 <a href="/app/"><button class="button-header">OPEN APP</button></a>
             </div>
