@@ -1,9 +1,6 @@
 <?php
 
 class LoginSystem {
-    const wrapStart = '<p class="error">';
-    const wrapEnd   = '</p>';
-
     static function login($email, $password) {
         require_once('db.php');
         require_once('Encryption.php');
@@ -29,13 +26,13 @@ class LoginSystem {
                     header('location: /app/');
 
                 } else {
-                    return LoginSystem::wrapStart . 'Wrong email and/or password.' . LoginSystem::wrapEnd;
+                    return '<p class="error">Wrong email and/or password.</p>';
                 }
             } else {
-                return LoginSystem::wrapStart . 'Please verify your account by clicking the verification link in your email before attempting to log in. If you have not receive a verification email, please check your spam/junk or <a href="resend-validation-email">request another verification email</a>.' . LoginSystem::wrapEnd;
+                return '<p class="error">Please verify your account by clicking the verification link in your email before attempting to log in. If you have not receive a verification email, please check your spam/junk or <a href="resend-validation-email">request another verification email</a>.</p>';
             }
         } else {
-            return LoginSystem::wrapStart . 'Wrong email and/or password.' . LoginSystem::wrapEnd;
+            return '<p class="error">Wrong email and/or password.</p>';
         }
     }
 
@@ -51,7 +48,7 @@ class LoginSystem {
         }
     }
 
-    /*static function createUser($email, $password, $username) {
+    static function createUser($email, $password) {
         require('db.php');
         require_once('Encryption.php');
         require_once('MailClient.php');
@@ -63,16 +60,27 @@ class LoginSystem {
 
         $timestamp = date("Y-m-d H:i:s");
 
-        $sth = $dbh->prepare("INSERT INTO users (email, password, valid, validateRand, resetRand, timestamp, username, location, facebook, twitter) value (:email, :password, 0, $rand1, $rand2, :timestamp, :username, '', '', '')");
+        $sth = $dbh->prepare("INSERT INTO users (fbId, email, password, valid, validateRand, resetRand, name, phone, lookingIn, rooms, availableFrom, minPrice, maxPrice, timestamp) value (0, :email, :password, 0, :rand1, :rand2, '', '', 'Medway', 'ANY', '1970-01-01', 0, 9001, :timestamp)");
         $sth->bindParam(':email', $email);
         $sth->bindParam(':password', $passwordE);
+        $sth->bindParam(':rand1', $rand1);
+        $sth->bindParam(':rand2', $rand2);
         $sth->bindParam(':timestamp', $timestamp);
-        $sth->bindParam(':username', $username);
         $sth->execute();
 
-        MailClient::sendMsg($email, 'Verify your account', "Please follow this link to verify your account: http://cell-industries.co.uk/verify-account?e=$email&r=$rand1");
+        MailClient::verifyAccount($email, $rand1);
 
-        return '<p class="full success"><i class="ico-info"></i>Account successfully created. We have sent a verification link to your email. Please verify your account before attempting to sign in. If you have not received a verification email, check your spam/junk or <a href="resend-validation-email">request another verification email</a>. Please also bear in mind that, while usually instantaneous, the email may take up to an hour to send.' . LoginSystem::wrapEnd;
+        return '<p class="success">Account successfully created. We have sent a verification link to your email. Please verify your account before attempting to sign in. If you have not received a verification email, check your spam/junk or <a href="/app/resend-validation-email">request another verification email</a>. Please also bear in mind that, while usually instantaneous, the email may take up to an hour to send.</p>';
+    }
+
+    static function checkEmailExists($email) {
+        require('db.php');
+
+        $sth = $dbh->query("SELECT email FROM users WHERE email='$email'");
+        $sth->setFetchMode(PDO::FETCH_OBJ);
+        $result = $sth->fetch();
+
+        return (!$result ? false : true);
     }
 
     static function resendValidationEmail($email) {
@@ -84,9 +92,9 @@ class LoginSystem {
         $sth = $dbh->prepare("UPDATE users SET validateRand='$rand' WHERE email='$email'");
         $sth->execute();
 
-        MailClient::sendMsg($email, 'Verify your account', "Please follow this link to verify your account: http://cell-industries.co.uk/verify-account?e=$email&r=$rand");
+        MailClient::verifyAccount($email, $rand);
 
-        return LoginSystem::wrapStart . 'We have sent a verification link to your email. Please verify your account before attempting to sign in. If you have not received a verification email, check your spam/junk. Please also bear in mind that, while usually instantaneous, the email may take up to an hour to send.' . LoginSystem::wrapEnd;
+        return '<p class="success">We have sent a verification link to your email. Please verify your account before attempting to sign in. If you have not received a verification email, check your spam/junk. Please also bear in mind that, while usually instantaneous, the email may take up to an hour to send.</p>';
     }
 
     static function validateUser($email, $rand) {
@@ -107,16 +115,6 @@ class LoginSystem {
         }
     }
 
-    static function checkUserExists($email, $username) {
-        require('db.php');
-
-        $sth = $dbh->query("SELECT email, username FROM users WHERE email='$email' OR username='$username'");
-        $sth->setFetchMode(PDO::FETCH_OBJ);
-        $result = $sth->fetch();
-
-        return (!$result ? false : true);
-    }
-
     static function sendResetPasswordLink($email) {
         require('db.php');
         require_once('MailClient.php');
@@ -126,9 +124,9 @@ class LoginSystem {
         $sth = $dbh->prepare("UPDATE users SET resetRand='$rand' WHERE email='$email'");
         $sth->execute();
 
-        MailClient::sendMsg($email, 'Reset your account password', "Please follow this link to reset your account password: http://cell-industries.co.uk/reset-password?e=$email&r=$rand");
+        MailClient::resetPassword($email, $rand);
 
-        return '<p class="full warn"><i class="ico-info"></i>We have sent instructions on how to reset your password to your email. Please check your emails.' . LoginSystem::wrapEnd;
+        return '<p class="success">We have sent instructions on how to reset your password to your email. Please check your emails.</p>';
     }
 
     static function resetPassword($email, $password, $rand) {
@@ -148,13 +146,13 @@ class LoginSystem {
             $sth = $dbh->prepare("UPDATE users SET password='$passwordE', resetRand='$newRand' WHERE email='$email'");
             $sth->execute();
 
-            return '<p class="full success"><i class="ico-info"></i>Password successfully reset. Please <a href="signin">sign in</a>.' . LoginSystem::wrapEnd;
+            return '<p class="success">Password successfully reset. Please <a href="/app/#continue-with-email">login</a>.</p>';
         } else {
-            return LoginSystem::wrapStart . 'This link has expired. Please <a href="forgotten-password">request a new password reset link</a>.' . LoginSystem::wrapEnd;
+            return '<p class="error">This link has expired. Please <a href="/app/#forgotten-your-password">request a new password reset link</a>.</p>';
         }
     }
 
     static function generateRandomNumber() {
         return rand(pow(10, 6-1), pow(10, 6)-1);
-    }*/
+    }
 }

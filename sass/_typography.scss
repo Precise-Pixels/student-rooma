@@ -35,7 +35,6 @@ a {
     }
 }
 
-
 .dgrey .paragraph-a {
     border-bottom: 1px solid $white;
     color: $white;
@@ -46,6 +45,10 @@ a {
         border-bottom: 1px solid $orange;
         color: $orange;
     }
+}
+
+.success {
+    color: $green;
 }
 
 .error {

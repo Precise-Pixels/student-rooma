@@ -45,4 +45,18 @@ class MailClient {
         $headers .= "Content-Type: text/html\r\n";
         mail($email, $subject, $msg, $headers);
     }
+
+    static function verifyAccount($email, $rand1) {
+        $headers = "From: system@studentrooma.co.uk\r\n";
+        $headers .= "Content-Type: text/html\r\n";
+
+        mail($email, 'Verify your account', "Please follow this link to verify your account: http://studentrooma.co.uk/app/verify-account?e=$email&r=$rand1", $headers);
+    }
+
+    static function resetPassword($email, $rand2) {
+        $headers = "From: system@studentrooma.co.uk\r\n";
+        $headers .= "Content-Type: text/html\r\n";
+
+        mail($email, 'Reset your account password', "Please follow this link to reset your account password: http://studentrooma.co.uk/app/reset-password?e=$email&r=$rand2", $headers);
+    }
 }

@@ -1,11 +1,10 @@
-
 <section class="lgrey bg">
     <div id="section-one" class="section-padding align-center">
         <h1 class="h1--show">Matching students to their perfect room!</h1>
         <img src="/img/landing-page/phone1.png" alt="">
         <a href="/app/"><button class="button-large">OPEN APP</button></a>
         <div class="landlord-link">
-            <a href="/landlord">Are you a landlord?</a>
+            <a href="/landlords">Are you a landlord?</a>
         </div>
         <div id="line1"></div>
         <div id="line2"></div>
@@ -29,17 +28,4 @@
     </div>
 </section>
 
-<section id="footer" class="dgrey">
-    <div class="section-padding align-center">
-        <div class="footer-block">
-            <p>Find us on</p>
-            <a href="/" class="paragraph-a">Facebook</a>
-            <a href="/" class="paragraph-a">Twitter</a>
-        </div>
-        <div class="footer-block">
-            <p>Contact us</p>
-            <a href="mailto:info@studentrooma.co.uk" class="paragraph-a">info@studentrooma.co.uk</a>
-        </div>
-        <p class="copyright">&copy; Student Rooma 2015</p>
-    </div>
-</section>
+<?php require_once('includes/footer.php'); ?>

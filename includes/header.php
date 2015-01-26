@@ -1,4 +1,17 @@
-<?php if($isApp): ?>
+<?php if($isLanding): ?>
+
+    <header>
+        <div class="padding align-center">
+            <a href="/"><img src="/img/logo.png" alt="Student Rooma" id="logo"/></a>
+            <div class="menu-right">
+                <a class="link" href="/">About</a>
+                <a class="link" href="/landlords">Landlords</a>
+                <a href="/app/"><button class="button-header">OPEN APP</button></a>
+            </div>
+        </div>
+    </header>
+
+<?php elseif($isApp): ?>
     <?php if($isAppIndex): ?>
 
         <header>
@@ -47,14 +60,10 @@
             <?php if($isPrivacy): ?>
                 <a href="/app/" id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></a>
             <?php endif; ?>
-
-            <?php if($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability || $isAdminDeleteProperty): ?>
-                <a href="/app/admin" id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></a>
-            <?php endif; ?>
         </header>
 
     <?php endif; ?>
-<?php elseif($isLanding): ?>
+<?php elseif($isLandlord): ?>
 
     <header>
         <div class="padding align-center">
@@ -66,6 +75,21 @@
             </div>
             
         </div>
+        <a href="/landlord">
+            <img src="/img/logo.png" alt="Student Rooma" id="logo"/>
+        </a>
+    </header>
+
+<?php elseif($isAdmin): ?>
+
+    <header>
+        <a href="/admin">
+            <img src="/img/logo.png" alt="Student Rooma" id="logo"/>
+        </a>
+
+        <?php if($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability || $isAdminDeleteProperty): ?>
+            <a href="/admin" id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></a>
+        <?php endif; ?>
     </header>
 
 <?php endif; ?>

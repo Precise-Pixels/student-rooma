@@ -5,10 +5,13 @@ session_start();
 
 $q = $_GET['q'];
 
-$isIndex                       = ($q == '');
-$isApp                         = preg_match('#^app\/#', $q);
-$isLanding                     = !$isApp;
+$isLanding                     = !preg_match('#^app|landlord|admin#', $q);
+
+$isApp                         = preg_match('#^app#', $q);
 $isAppIndex                    = preg_match('#^app/?$#', $q);
+$isResendValidationEmail       = preg_match('#^app\/resend-validation-email/?$#', $q);
+$isVerifyAccount               = preg_match('#^app\/verify-account/?$#', $q);
+$isResetPassword               = preg_match('#^app\/reset-password/?$#', $q);
 $isProfile                     = preg_match('#^app\/profile/?$#', $q);
 $isProperties                  = preg_match('#^app\/properties/?$#', $q);
 $isActivity                    = preg_match('#^app\/activity/?$#', $q);
@@ -18,39 +21,19 @@ $isInstall                     = preg_match('#^app\/install/?$#', $q);
 $isAbout                       = preg_match('#^app\/about/?$#', $q);
 $isPrivacy                     = preg_match('#^app\/privacy-policy/?$#', $q);
 $isLogout                      = preg_match('#^app\/logout/?$#', $q);
-$isAdmin                       = preg_match('#^app\/admin/?$#', $q);
-$isAdminActivity               = preg_match('#^app\/admin\/activity/?$#', $q);
-$isAdminAllProperties          = preg_match('#^app\/admin\/all-properties/?$#', $q);
-$isAdminNewProperty            = preg_match('#^app\/admin\/new-property/?$#', $q);
-$isAdminUpdateRoomAvailability = preg_match('#^app\/admin\/update-room-availability/?$#', $q);
-$isAdminDeleteProperty         = preg_match('#^app\/admin\/delete-property/?$#', $q);
+
+$isLandlord                    = preg_match('#^landlord#', $q);
+$isLandlordIndex               = preg_match('#^landlord/?$#', $q);
+
+$isAdmin                       = preg_match('#^admin#', $q);
+$isAdminIndex                  = preg_match('#^admin/?$#', $q);
+$isAdminActivity               = preg_match('#^admin\/activity/?$#', $q);
+$isAdminAllProperties          = preg_match('#^admin\/all-properties/?$#', $q);
+$isAdminNewProperty            = preg_match('#^admin\/new-property/?$#', $q);
+$isAdminUpdateRoomAvailability = preg_match('#^admin\/update-room-availability/?$#', $q);
+$isAdminDeleteProperty         = preg_match('#^admin\/delete-property/?$#', $q);
 
 $path = preg_replace('/\/$|.php/', '', $q);
-
-if($isApp) {
-    if($isAppIndex) {
-        $file = 'app/index';                            // APP HOME
-    } elseif($isPrivacy || $isAdmin) {
-        $file = $path;                                  // ALLOW WITHOUT LOGGING IN
-    } elseif($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability || $isAdminDeleteProperty) {
-        if(!isset($_SESSION['s_admin'])) {
-            if($isAdminActivity)               { $r = 'activity'; }
-            if($isAdminAllProperties)          { $r = 'all-properties'; }
-            if($isAdminNewProperty)            { $r = 'new-property'; }
-            if($isAdminUpdateRoomAvailability) { $r = 'update-room-availability'; }
-            if($isAdminDeleteProperty)         { $r = 'delete-property'; }
-            header("location: /app/admin?r=$r");
-        } else {
-            $file = $path;                              // ADMIN PAGE
-        }
-    } elseif(!isset($_SESSION['s_userId'])) {
-        header('location: /app/');                      // NOT LOGGED IN
-    } elseif(file_exists("views/$path.php")) {
-        $file = $path;                                  // APP
-    } else {
-        $file = 'app/404';                              // APP 404 NOT FOUND
-    }
-}
 
 if($isLanding) {
     if(empty($path)) {                                  // HOME
@@ -61,6 +44,43 @@ if($isLanding) {
         header('location: /app/');                      // REDIRECT TO APP
     } else {
         $file = '404';                                  // LANDING SITE 404 NOT FOUND
+    }
+}
+
+if($isApp) {
+    if($isAppIndex) {
+        $file = 'app/index';                            // APP HOME
+    } elseif($isResendValidationEmail || $isVerifyAccount || $isResetPassword || $isPrivacy) {
+        $file = $path;                                  // ALLOW WITHOUT LOGGING IN
+    } elseif(!isset($_SESSION['s_userId'])) {
+        header('location: /app/');                      // NOT LOGGED IN
+    } elseif(file_exists("views/$path.php")) {
+        $file = $path;                                  // APP
+    } else {
+        $file = 'app/404';                              // APP 404 NOT FOUND
+    }
+}
+
+if($isLandlord) {
+    if($isLandlordIndex) {
+        $file = 'landlord/index';
+    }
+}
+
+if($isAdmin) {
+    if($isAdminIndex) {
+        $file = 'admin/index';
+    } elseif($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability || $isAdminDeleteProperty) {
+        if(!isset($_SESSION['s_admin'])) {
+            if($isAdminActivity)               { $r = 'activity'; }
+            if($isAdminAllProperties)          { $r = 'all-properties'; }
+            if($isAdminNewProperty)            { $r = 'new-property'; }
+            if($isAdminUpdateRoomAvailability) { $r = 'update-room-availability'; }
+            if($isAdminDeleteProperty)         { $r = 'delete-property'; }
+            header("location: /admin?r=$r");
+        } else {
+            $file = $path;                              // ADMIN PAGE
+        }
     }
 }
 
