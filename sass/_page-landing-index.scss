@@ -17,6 +17,10 @@ header {
 	}
 }
 
+.nav-app-btn {
+	display: none;
+}
+
 section {
 	width: 100%;
 	padding: 20px 0;
@@ -50,9 +54,8 @@ section {
 
 #line1 , #line2, #line3 {
 	position: absolute;
-	opacity: 0;
 	z-index: 2;
-	transition: opacity .5s;
+	display: none;
 }
 
 #line1 {
@@ -159,11 +162,16 @@ ul {
 
 @media ($a) {
 
+	.nav-app-btn {
+		display: inline;
+	}
+
 	section {
 		width: 100%;
 		padding: 80px 0;
 		float: left;
 	}
+
 }
 
 @media ($b) {
@@ -286,7 +294,7 @@ ul {
 @media ($c) {
 
 	#line1 , #line2, #line3 {
-		opacity: 1;
+		display: block;
 		z-index: 2;
 	}
 

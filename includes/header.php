@@ -6,7 +6,9 @@
             <div class="menu-right">
                 <a class="link" href="/">Home</a>
                 <a class="link" href="/landlords">Landlords</a>
-                <a href="/app/"><button class="button-header">OPEN APP</button></a>
+                <div class="nav-app-btn">
+                    <a href="/app/"><button class="button-header">OPEN APP</button></a>
+                </div>
             </div>
         </div>
     </header>
@@ -71,7 +73,9 @@
             <div class="menu-right">
                 <a class="link" href="/">Home</a>
                 <a class="link" href="/landlord">Landlords</a>
-                <a href="/app/"><button class="button-header">OPEN APP</button></a>
+                <div class="nav-app-btn">
+                    <a href="/app/"><button class="button-header">OPEN APP</button></a>
+                </div>
             </div>
             
         </div>
