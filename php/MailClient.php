@@ -8,11 +8,11 @@ class MailClient {
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $user = $sth->fetch();
 
-        $sth = $dbh->query("SELECT address FROM properties WHERE propertyId=$propertyId");
+        $sth = $dbh->query("SELECT address, landlords.email AS landlordEmail FROM properties INNER JOIN landlords ON properties.landlordId=landlords.landlordId WHERE propertyId=$propertyId");
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $property = $sth->fetch();
 
-        $email   = 'bookings@studentrooma.co.uk';
+        $email   = $property->landlordEmail;
         $subject = "[$activityId] New property booking";
         $msg     = "<html><body>
                     <table>
