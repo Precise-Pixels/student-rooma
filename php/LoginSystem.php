@@ -14,8 +14,6 @@ class LoginSystem {
         if($row) {
             if($row->valid == 1) {
                 if($row->password === $passwordE) {
-                    require_once('User.php');
-
                     $_SESSION['s_userId'] = $row->userId;
                     $_SESSION['s_loginMethod'] = 'email';
 
