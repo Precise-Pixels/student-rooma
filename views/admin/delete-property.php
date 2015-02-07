@@ -7,7 +7,7 @@
                 <tr>
                     <th class="th--xs">ID</th>
                     <th class="th--l">Address</th>
-                    <th>Delete (immediate / permanent)</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>

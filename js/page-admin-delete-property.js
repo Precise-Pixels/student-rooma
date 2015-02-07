@@ -10,19 +10,23 @@ for(var i = 0, l = buttons.length; i < l; i++) {
 }
 
 function deleteProperty(e) {
-    e.target.className = 'button--spinner';
+    var confirm = window.confirm('Are you sure you want to delete this property?');
 
-    var data = 'propertyId=' + e.target.getAttribute('data-property-id');
-    var request = new XMLHttpRequest();
-    request.open('POST', '/php/deleteProperty.php', true);
-    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-    request.send(data);
+    if(confirm) {
+        e.target.className = 'button--spinner';
 
-    request.onreadystatechange = function() {
-        if(request.readyState == 4 && request.status == 200) {
-            location.reload();
-        } else if(request.status != 200) {
-            openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
+        var data = 'propertyId=' + e.target.getAttribute('data-property-id');
+        var request = new XMLHttpRequest();
+        request.open('POST', '/php/deleteProperty.php', true);
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+        request.send(data);
+
+        request.onreadystatechange = function() {
+            if(request.readyState == 4 && request.status == 200) {
+                location.reload();
+            } else if(request.status != 200) {
+                openDialog('Error', '<p>An error has occurred. Please try again.</p>', 'Close', '', 'error', 'alert');
+            }
         }
     }
 }
