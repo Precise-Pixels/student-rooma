@@ -46,6 +46,10 @@
         <script src="/js/page-logout.js"></script>
     <?php endif; ?>
 
+    <?php if($isLandlordIndex): ?>
+        <script src="/js/page-landlord-index.js"></script>
+    <?php endif; ?>
+
     <?php if($isAdminNewProperty): ?>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
         <script src="/js/page-admin-new-property.js"></script>
@@ -101,6 +105,10 @@
 
     <?php if($isLogout): ?>
         <script src="/build/page-logout.min.js"></script>
+    <?php endif; ?>
+
+    <?php if($isLandlordIndex): ?>
+        <script src="/build/page-landlord-index.min.js"></script>
     <?php endif; ?>
 
     <?php if($isAdminNewProperty): ?>

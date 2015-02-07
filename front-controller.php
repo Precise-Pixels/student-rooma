@@ -5,33 +5,38 @@ session_start();
 
 $q = $_GET['q'];
 
-$isLanding                     = !preg_match('#^app|landlord[^s]|admin#', $q);
+$isLanding                        = !preg_match('#^app|landlord$|admin#', $q);
 
-$isApp                         = preg_match('#^app#', $q);
-$isAppIndex                    = preg_match('#^app/?$#', $q);
-$isResendValidationEmail       = preg_match('#^app\/resend-validation-email/?$#', $q);
-$isVerifyAccount               = preg_match('#^app\/verify-account/?$#', $q);
-$isResetPassword               = preg_match('#^app\/reset-password/?$#', $q);
-$isProfile                     = preg_match('#^app\/profile/?$#', $q);
-$isProperties                  = preg_match('#^app\/properties/?$#', $q);
-$isActivity                    = preg_match('#^app\/activity/?$#', $q);
-$isProperty                    = preg_match('#^app\/property\/\d+/?$#', $q);
-$isGallery                     = preg_match('#^app\/property\/\d+/gallery/?$#', $q);
-$isInstall                     = preg_match('#^app\/install/?$#', $q);
-$isAbout                       = preg_match('#^app\/about/?$#', $q);
-$isPrivacy                     = preg_match('#^app\/privacy-policy/?$#', $q);
-$isLogout                      = preg_match('#^app\/logout/?$#', $q);
+$isApp                            = preg_match('#^app#', $q);
+$isAppIndex                       = preg_match('#^app/?$#', $q);
+$isResendValidationEmail          = preg_match('#^app\/resend-validation-email/?$#', $q);
+$isVerifyAccount                  = preg_match('#^app\/verify-account/?$#', $q);
+$isResetPassword                  = preg_match('#^app\/reset-password/?$#', $q);
+$isProfile                        = preg_match('#^app\/profile/?$#', $q);
+$isProperties                     = preg_match('#^app\/properties/?$#', $q);
+$isActivity                       = preg_match('#^app\/activity/?$#', $q);
+$isProperty                       = preg_match('#^app\/property\/\d+/?$#', $q);
+$isGallery                        = preg_match('#^app\/property\/\d+/gallery/?$#', $q);
+$isInstall                        = preg_match('#^app\/install/?$#', $q);
+$isAbout                          = preg_match('#^app\/about/?$#', $q);
+$isPrivacy                        = preg_match('#^app\/privacy-policy/?$#', $q);
+$isLogout                         = preg_match('#^app\/logout/?$#', $q);
 
-$isLandlord                    = preg_match('#^landlord$#', $q);
-$isLandlordIndex               = preg_match('#^landlord/?$#', $q);
+$isLandlord                       = preg_match('#^landlord#', $q);
+$isLandlordIndex                  = preg_match('#^landlord/?$#', $q);
+$isLandlordActivity               = preg_match('#^landlord\/activity/?$#', $q);
+$isLandlordAllProperties          = preg_match('#^landlord\/all-properties/?$#', $q);
+$isLandlordNewProperty            = preg_match('#^landlord\/new-property/?$#', $q);
+$isLandlordUpdateRoomAvailability = preg_match('#^landlord\/update-room-availability/?$#', $q);
+$isLandlordRemoveProperty         = preg_match('#^landlord\/remove-property/?$#', $q);
 
-$isAdmin                       = preg_match('#^admin#', $q);
-$isAdminIndex                  = preg_match('#^admin/?$#', $q);
-$isAdminActivity               = preg_match('#^admin\/activity/?$#', $q);
-$isAdminAllProperties          = preg_match('#^admin\/all-properties/?$#', $q);
-$isAdminNewProperty            = preg_match('#^admin\/new-property/?$#', $q);
-$isAdminUpdateRoomAvailability = preg_match('#^admin\/update-room-availability/?$#', $q);
-$isAdminDeleteProperty         = preg_match('#^admin\/delete-property/?$#', $q);
+$isAdmin                          = preg_match('#^admin#', $q);
+$isAdminIndex                     = preg_match('#^admin/?$#', $q);
+$isAdminActivity                  = preg_match('#^admin\/activity/?$#', $q);
+$isAdminAllProperties             = preg_match('#^admin\/all-properties/?$#', $q);
+$isAdminNewProperty               = preg_match('#^admin\/new-property/?$#', $q);
+$isAdminUpdateRoomAvailability    = preg_match('#^admin\/update-room-availability/?$#', $q);
+$isAdminDeleteProperty            = preg_match('#^admin\/delete-property/?$#', $q);
 
 $path = preg_replace('/\/$|.php/', '', $q);
 

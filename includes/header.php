@@ -68,20 +68,13 @@
 <?php elseif($isLandlord): ?>
 
     <header>
-        <div class="padding align-center">
-            <a href="/"><img src="/img/logo.png" alt="Student Rooma" id="logo"/></a>
-            <div class="menu-right">
-                <a class="link" href="/">Home</a>
-                <a class="link" href="/landlord">Landlords</a>
-                <div class="nav-app-btn">
-                    <a href="/app/"><button class="button-header">OPEN APP</button></a>
-                </div>
-            </div>
-            
-        </div>
         <a href="/landlord">
             <img src="/img/logo.png" alt="Student Rooma" id="logo"/>
         </a>
+
+        <?php if($isLandlordActivity || $isLandlordAllProperties || $isLandlordNewProperty || $isLandlordUpdateRoomAvailability || $isLandlordRemoveProperty): ?>
+            <a href="/landlord" id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></a>
+        <?php endif; ?>
     </header>
 
 <?php elseif($isAdmin): ?>
