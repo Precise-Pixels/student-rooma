@@ -26,7 +26,7 @@
                     $response = LoginSystem::login($_POST['login-email'], $_POST['login-password']);
                     echo $response;
                 } else {
-                    echo $wrapStart . 'Please enter your email and password.' . $wrapEnd;
+                    echo '<p class="error">Please enter your email and password.</p>';
                 }
             }
             ?>
@@ -72,16 +72,16 @@
                         $exists = LoginSystem::checkEmailExists($email);
 
                         if($exists) {
-                            echo LoginSystem::wrapStart . 'An account with this email already exists.' . LoginSystem::wrapEnd;
+                            echo '<p class="error">An account with this email already exists.</p>';
                         } else {
                             $response = LoginSystem::createUser($email, $password);
                             echo $response;
                         }
                     } else {
-                        echo LoginSystem::wrapStart . 'Email and/or password did not match. Please try again.' . LoginSystem::wrapEnd;
+                        echo '<p class="error">Email and/or password did not match. Please try again.</p>';
                     }
                 } else {
-                    echo LoginSystem::wrapStart . 'Please enter your email and password.' . LoginSystem::wrapEnd;
+                    echo '<p class="error">Please enter your email and password.</p>';
                 }
             }
             ?>
