@@ -54,7 +54,7 @@ class Admin {
         $info = addslashes($post['info']);
         $timestamp = date("Y-m-d H:i:s");
 
-        $sth = $dbh->prepare("INSERT INTO properties (location, addressNumber, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp) VALUE (:location, :addressNumber, :address, :distanceUKC, :distanceCCCU, :distanceUKM, :noOfRooms, :availableFrom, :info, :timestamp)");
+        $sth = $dbh->prepare("INSERT INTO properties (landlordId, location, addressNumber, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp) VALUE (1, :location, :addressNumber, :address, :distanceUKC, :distanceCCCU, :distanceUKM, :noOfRooms, :availableFrom, :info, :timestamp)");
         $sth->bindParam(':location', $post['location']);
         $sth->bindParam(':addressNumber', $post['address-number']);
         $sth->bindParam(':address', $post['address']);
