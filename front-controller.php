@@ -5,7 +5,7 @@ session_start();
 
 $q = $_GET['q'];
 
-$isLanding                        = !preg_match('#^app|landlord[^s]|admin#', $q);
+$isLanding                        = !preg_match('#^app|^landlord|^admin#', $q);
 
 $isApp                            = preg_match('#^app#', $q);
 $isAppIndex                       = preg_match('#^app/?$#', $q);
