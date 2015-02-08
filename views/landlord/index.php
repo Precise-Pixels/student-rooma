@@ -1,8 +1,8 @@
 <main>
     <div class="padding">
-        <h1 class="h1--show">Landlord Login</h1>
+        <h1 class="h1--show">Landlord Tools</h1>
 
-        <?php if(!isset($_SESSION['s_landlord'])): ?>
+        <?php if(!isset($_SESSION['s_landlordId'])): ?>
             <form method="post" id="login-email-form">
                 <div class="form-row">
                     <label for="login-email">Email</label>

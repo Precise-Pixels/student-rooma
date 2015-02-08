@@ -7,14 +7,14 @@ class LandlordLoginSystem {
 
         $passwordE  = Encryption::encrypt($password);
 
-        $sth = $dbh->query("SELECT landlordId, password, valid FROM landlord WHERE email='$email'");
+        $sth = $dbh->query("SELECT landlordId, password, valid FROM landlords WHERE email='$email'");
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $row = $sth->fetch();
 
         if($row) {
             if($row->valid == 1) {
                 if($row->password === $passwordE) {
-                    $_SESSION['s_landlordId'] = $row->landlordId;            // ARE THESE NEEDED???
+                    $_SESSION['s_landlordId'] = $row->landlordId;
 
                     header('location: /landlord/');
 

@@ -5,7 +5,7 @@ session_start();
 
 $q = $_GET['q'];
 
-$isLanding                        = !preg_match('#^app|landlord$|admin#', $q);
+$isLanding                        = !preg_match('#^app|landlord[^s]|admin#', $q);
 
 $isApp                            = preg_match('#^app#', $q);
 $isAppIndex                       = preg_match('#^app/?$#', $q);
@@ -24,6 +24,9 @@ $isLogout                         = preg_match('#^app\/logout/?$#', $q);
 
 $isLandlord                       = preg_match('#^landlord#', $q);
 $isLandlordIndex                  = preg_match('#^landlord/?$#', $q);
+$isLandlordResendValidationEmail  = preg_match('#^landlord\/resend-validation-email/?$#', $q);
+$isLandlordVerifyAccount          = preg_match('#^landlord\/verify-account/?$#', $q);
+$isLandlordResetPassword          = preg_match('#^landlord\/reset-password/?$#', $q);
 $isLandlordActivity               = preg_match('#^landlord\/activity/?$#', $q);
 $isLandlordAllProperties          = preg_match('#^landlord\/all-properties/?$#', $q);
 $isLandlordNewProperty            = preg_match('#^landlord\/new-property/?$#', $q);
@@ -69,6 +72,8 @@ if($isApp) {
 if($isLandlord) {
     if($isLandlordIndex) {
         $file = 'landlord/index';
+    } else {
+        $file = $path;
     }
 }
 
