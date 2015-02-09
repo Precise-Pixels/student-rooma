@@ -101,6 +101,10 @@ if($isActivity)   { require_once('models/model-activity.php');   }
 if($isProperty)   { require_once('models/model-property.php');   }
 if($isGallery)    { require_once('models/model-gallery.php');    }
 
+if($isLandlordActivity)               { require_once('models/model-landlord-activity.php');                 }
+if($isLandlordAllProperties)          { require_once('models/model-landlord-all-properties.php');           }
+if($isLandlordUpdateRoomAvailability) { require_once('models/model-landlord-update-room-availability.php'); }
+
 if($isAdminActivity)               { require_once('models/model-admin-activity.php');                 }
 if($isAdminAllProperties)          { require_once('models/model-admin-all-properties.php');           }
 if($isAdminUpdateRoomAvailability) { require_once('models/model-admin-update-room-availability.php'); }

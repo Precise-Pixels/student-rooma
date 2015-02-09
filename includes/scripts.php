@@ -50,6 +50,14 @@
         <script src="/js/page-landlord-index.js"></script>
     <?php endif; ?>
 
+    <?php if($isLandlordNewProperty): ?>
+        <script src="/js/page-landlord-new-property.js"></script>
+    <?php endif; ?>
+
+    <?php if($isLandlordUpdateRoomAvailability): ?>
+        <script src="/js/page-landlord-update-room-availability.js"></script>
+    <?php endif; ?>
+
     <?php if($isAdminNewProperty): ?>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
         <script src="/js/page-admin-new-property.js"></script>
@@ -109,6 +117,14 @@
 
     <?php if($isLandlordIndex): ?>
         <script src="/build/page-landlord-index.min.js"></script>
+    <?php endif; ?>
+
+    <?php if($isLandlordNewProperty): ?>
+        <script src="/build/page-landlord-new-property.min.js"></script>
+    <?php endif; ?>
+
+    <?php if($isLandlordUpdateRoomAvailability): ?>
+        <script src="/build/page-landlord-update-room-availability.min.js"></script>
     <?php endif; ?>
 
     <?php if($isAdminNewProperty): ?>
