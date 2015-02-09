@@ -1,6 +1,7 @@
 <section id="landlord" class="lgrey">
     <div class="section-padding align-center">
-        <h1 class="h1--show">The perfect tool for landlords</h1>
+        <h1 class="h1--show">Fill your room fast!</h1>
+        <h2>The smart landlord advertising app</h2>
         <a href="/landlord/#create-an-account"><button class="button-large">SIGN UP</button></a>
         <div class="landlord-link">
             <a href="/landlord/">Already registered?</a>
@@ -10,53 +11,51 @@
 
 <section>
     <div class="section-padding align-center">
-    	<h2>How does it work?</h2>
-        <p>Student Rooma allows landlords to lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse iaculis, ipsum vitae congue suscipit.</p>
-        <ul>
-        	<li>Point One</li>
-        	<li>Point Two</li>
-        	<li>Point Three</li>
-        </ul>
+    	<h2>How it works</h2>
+        <div class="how third-margin">
+            <img src="/img/landing/how-1.jpg" alt="Click Sign Up">
+            <p>Click Sign Up to create your first advert. This enables you to add pictures and content.</p>
+        </div>
+        <div class="how third-margin">
+            <img src="/img/landing/how-2.jpg" alt="Click Sign Up">
+            <p>Go live to access thousands of students with secure payment.</p>   
+        </div>
+        <div class="how third-margin">
+            <img src="/img/landing/how-3.jpg" alt="Click Sign Up">
+            <p>Start receiving viewing requests via email alerts. Pick the tenants and fill your rooms.</p>    
+        </div>
     </div>
 </section>
 
 
 <section class="lgrey">
-    <div class="section-padding align-center">
+    <div id="pricing" class="section-padding align-center">
         <h2>Pricing</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <div class="landlord-prices">
-        	<div class="landlord-price">
-        		<h3>PLAN 1</h3>
-        		<ul>
-        			<li>Point One</li>
-        			<li>Point Two</li>
-        			<li>Point Three</li>
-        			<li>Point Four</li>
-        		</ul>
-        		<p class="landlord-price-number">£10</p>
-        	</div>
-        	<div class="landlord-price">
-        		<h3>PLAN 2</h3>
-        		<ul>
-        			<li>Point One</li>
-        			<li>Point Two</li>
-        			<li>Point Three</li>
-        			<li>Point Four</li>
-        		</ul>
-        		<p class="landlord-price-number">£15</p>
-        	</div>
-        	<div class="landlord-price">
-        		<h3>PLAN 3</h3>
-        		<ul>
-        			<li>Point One</li>
-        			<li>Point Two</li>
-        			<li>Point Three</li>
-        			<li>Point Four</li>
-        		</ul>
-        		<p class="landlord-price-number">£20</p>
-        	</div>
+        <h3>SIMPLE AND FAIR</h3>
+        <div class="price">
+            <div class="price-text">
+                <ul>
+                    <li>Advertise until full</li>
+                    <li>One price per property</li>
+                </ul>
+            </div>
+            <div class="price-text">
+                <ul>
+                    <li>Random shuffle for fair listing</li>
+                    <li>No additional cost and time spent renewing bumping or highlighting</li>
+                </ul>
+            </div>
+            <div class="price-text">
+                <p class="price-number">£10</p>
+            </div>
         </div>
+        <a href="/landlord/#create-an-account"><button class="button-large">SIGN UP</button></a>
+        <!-- <div class="landlord-price third-margin">
+            <h3>COMING SOON</h3>
+        </div>
+        <div class="landlord-price third-margin">
+            <h3>COMING SOON</h3>
+        </div> -->
     </div>
 </section>
 
