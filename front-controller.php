@@ -94,44 +94,16 @@ if($isAdmin) {
     }
 }
 
-if($isAppIndex) {
-    require_once('models/model-index.php');
-}
+if($isAppIndex)   { require_once('models/model-index.php');      }
+if($isProfile)    { require_once('models/model-profile.php');    }
+if($isProperties) { require_once('models/model-properties.php'); }
+if($isActivity)   { require_once('models/model-activity.php');   }
+if($isProperty)   { require_once('models/model-property.php');   }
+if($isGallery)    { require_once('models/model-gallery.php');    }
 
-if($isProfile) {
-    require_once('models/model-profile.php');
-}
-
-if($isProperties) {
-    require_once('models/model-properties.php');
-}
-
-if($isActivity) {
-    require_once('models/model-activity.php');
-}
-
-if($isProperty) {
-    require_once('models/model-property.php');
-}
-
-if($isGallery) {
-    require_once('models/model-gallery.php');
-}
-
-if($isAdminActivity) {
-    require_once('models/model-admin-activity.php');
-}
-
-if($isAdminAllProperties) {
-    require_once('models/model-admin-all-properties.php');
-}
-
-if($isAdminUpdateRoomAvailability) {
-    require_once('models/model-admin-update-room-availability.php');
-}
-
-if($isAdminDeleteProperty) {
-    require_once('models/model-admin-delete-property.php');
-}
+if($isAdminActivity)               { require_once('models/model-admin-activity.php');                 }
+if($isAdminAllProperties)          { require_once('models/model-admin-all-properties.php');           }
+if($isAdminUpdateRoomAvailability) { require_once('models/model-admin-update-room-availability.php'); }
+if($isAdminDeleteProperty)         { require_once('models/model-admin-delete-property.php');          }
 
 require_once('front-view.php');
