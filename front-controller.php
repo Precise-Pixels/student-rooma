@@ -80,14 +80,9 @@ if($isLandlord) {
 if($isAdmin) {
     if($isAdminIndex) {
         $file = 'admin/index';
-    } elseif($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability || $isAdminDeleteProperty) {
+    } else {
         if(!isset($_SESSION['s_admin'])) {
-            if($isAdminActivity)               { $r = 'activity'; }
-            if($isAdminAllProperties)          { $r = 'all-properties'; }
-            if($isAdminNewProperty)            { $r = 'new-property'; }
-            if($isAdminUpdateRoomAvailability) { $r = 'update-room-availability'; }
-            if($isAdminDeleteProperty)         { $r = 'delete-property'; }
-            header("location: /admin?r=$r");
+            header("location: /admin?r=" . urlencode(str_replace('/admin/', '', $_SERVER['REQUEST_URI'])));
         } else {
             $file = $path;                              // ADMIN PAGE
         }
