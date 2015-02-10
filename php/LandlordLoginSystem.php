@@ -15,9 +15,6 @@ class LandlordLoginSystem {
             if($row->valid == 1) {
                 if($row->password === $passwordE) {
                     $_SESSION['s_landlordId'] = $row->landlordId;
-
-                    header('location: /landlord/');
-
                 } else {
                     return '<p class="error">Wrong email and/or password.</p>';
                 }

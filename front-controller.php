@@ -73,7 +73,11 @@ if($isLandlord) {
     if($isLandlordIndex) {
         $file = 'landlord/index';
     } else {
-        $file = $path;
+        if(!isset($_SESSION['s_landlordId'])) {
+            header("location: /landlord?r=" . urlencode(str_replace('/landlord/', '', $_SERVER['REQUEST_URI'])));
+        } else {
+            $file = $path;                              // LANDLORD PAGE
+        }
     }
 }
 
