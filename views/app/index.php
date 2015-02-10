@@ -4,7 +4,7 @@
 
         <button id="login-fb-btn" class="login-buttons" autofocus><i class="ico-facebook"></i><span id="login-fb-btn-text">Continue with Facebook</span></button>
 
-        <button id="login-email-btn" class="login-buttons"><i class="ico-email"></i><span>Continue with Email</span></button>
+        <button id="login-email-btn" class="login-buttons"><i class="ico-mail"></i><span>Continue with Email</span></button>
 
         <form method="post" id="login-email-form">
             <div class="form-row">
