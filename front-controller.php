@@ -72,6 +72,8 @@ if($isApp) {
 if($isLandlord) {
     if($isLandlordIndex) {
         $file = 'landlord/index';
+    } elseif($isLandlordResendValidationEmail || $isLandlordVerifyAccount || $isLandlordResetPassword) {
+        $file = $path;                                  // ALLOW WITHOUT LOGGING IN
     } else {
         if(!isset($_SESSION['s_landlordId'])) {
             header("location: /landlord?r=" . urlencode(str_replace('/landlord/', '', $_SERVER['REQUEST_URI'])));
