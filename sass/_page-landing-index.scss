@@ -43,8 +43,15 @@ section {
 		width: 80%;
 		max-width: 350px;
 		position: relative;
-		display: none;
+		/*display: none;*/
 	}
+}
+
+.phone-image {
+	width: 260px;
+	max-height: 200px;
+	margin-bottom: 40px;
+	overflow: hidden;
 }
 
 .bg {
@@ -84,8 +91,6 @@ section {
 	background: url(../img/landing/line3.png) center no-repeat;
 	background-size: 100%;
 }
-
-
 
 #open-app-btn {
 	font-size: 68px;
@@ -170,6 +175,13 @@ ul {
 		width: 100%;
 		padding: 80px 0;
 		float: left;
+	}
+
+	.phone-image {
+		width: 320px;
+		max-height: 260px;
+		margin-bottom: 0;
+		overflow: hidden;
 	}
 
 }
