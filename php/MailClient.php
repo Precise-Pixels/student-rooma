@@ -39,7 +39,6 @@ class MailClient {
                     <p>Ensure the status is still 'book' before following up the booking otherwise the user has cancelled their booking.</p>
                     <p>If no row is highlighted orange, this means that the user has cancelled their booking and reset their no's.</p>
                     <p><a href='http://studentrooma.co.uk/landlord/activity?propertyId=$propertyId&userId=$userId'>http://studentrooma.co.uk/landlord/activity?propertyId=$propertyId&userId=$userId</a></p>
-                    <p>(You will need to be logged in as an landlord before opening this link.)</p>
                     </body></html>";
         $headers = "From: system@studentrooma.co.uk\r\n";
         $headers .= "Content-Type: text/html\r\n";
