@@ -1,5 +1,5 @@
 <main>
-    <div class="padding">
+    <div class="log-in padding">
         <h1>Student Rooma</h1>
 
         <button id="login-fb-btn" class="login-buttons" autofocus><i class="ico-facebook"></i><span id="login-fb-btn-text">Continue with Facebook</span></button>
@@ -118,7 +118,7 @@
             }
             ?>
         </form>
-
+<!-- 
         <div id="walkthrough-wrapper">
             <div id="walkthrough-1" class="walkthrough-slide">
                 <p class="walkthrough-page">PROPERTIES</p>
@@ -155,7 +155,7 @@
                 <img src="/img/walkthrough-activity-1.png" alt="Activity page"/>
                 <p class="walkthrough-text">View all your previous activity in one place</p>
             </div>
-        </div>
+        </div> -->
 
         <div id="small-print">
             <p>If you click "Continue with Facebook" and are not already registered with Student Rooma, you will be registered and you agree to Student Rooma's <a href="/app/privacy-policy">Privacy Policy</a>.</p>
