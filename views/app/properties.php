@@ -56,7 +56,7 @@
                             <?= nl2br(stripcslashes($property->info)); ?>
                         </p>
 
-                        <a href="http://maps.google.com/maps?q=<?= $property->address; ?>" target="_blank" class="property-map"><div data-src="https://maps.googleapis.com/maps/api/staticmap?center=<?= $property->address; ?>&zoom=15&size=WIDTHxHEIGHT&maptype=roadmap&format=jpg&scale=2&markers=scale:2%7Cicon:http://sr.precisepixels.co.uk/img/pin.png%7C<?= $property->address; ?>&key=AIzaSyCNlx7Q6EFJ2nlJfkAnMIsCm94fdSzaqf4"></div></a>
+                        <a href="http://maps.google.com/maps?q=<?= $property->address; ?>" target="_blank" class="property-map"><div data-src="https://maps.googleapis.com/maps/api/staticmap?center=<?= $property->address; ?>&zoom=15&size=WIDTHxHEIGHT&maptype=roadmap&format=jpg&scale=2&markers=scale:2%7Cicon:http://studentrooma.co.uk/img/pin.png%7C<?= $property->address; ?>&key=AIzaSyCNlx7Q6EFJ2nlJfkAnMIsCm94fdSzaqf4"></div></a>
                     </div>
                 </div>
             <?php endforeach; ?>
