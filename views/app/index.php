@@ -162,7 +162,7 @@
             <p>This site uses cookies. Some of the cookies we use are essential for the normal operation of this site. Please ensure cookies remain enabled during your use of this site. For further information, please visit our <a href="/app/privacy-policy">Privacy Policy</a>.</p>
         </div>
 
-        <p id="copyright">&copy; 2014, Student Rooma, All Rights Reserved</p>
+        <p id="copyright">&copy; 2015, Student Rooma, All Rights Reserved</p>
 
         <div id="fb-root"></div>
     </div>
