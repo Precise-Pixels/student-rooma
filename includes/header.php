@@ -17,16 +17,14 @@
     <?php if($isAppIndex): ?>
 
         <header>
-            <img src="/img/logo.png" alt="Student Rooma" id="logo"/>
+            <a href="/"><img src="/img/logo.png" alt="Student Rooma" id="logo"/></a>
             <p id="slogan">Find your perfect room in Canterbury &amp; Medway</p>
         </header>
 
     <?php else: ?>
 
         <header>
-            <a href="/app/">
-                <img src="/img/logo.png" alt="Student Rooma" id="logo"/>
-            </a>
+            <a href="/"><img src="/img/logo.png" alt="Student Rooma" id="logo"/></a>
 
             <?php if($isProfile): ?>
                 <?php if(!isset($_SESSION['s_firstTime']) || !$_SESSION['s_firstTime']): ?>
@@ -68,9 +66,7 @@
 <?php elseif($isLandlord): ?>
 
     <header>
-        <a href="/landlord">
-            <img src="/img/logo.png" alt="Student Rooma" id="logo"/>
-        </a>
+        <a href="/"><img src="/img/logo.png" alt="Student Rooma" id="logo"/></a>
 
         <?php if($isLandlordActivity || $isLandlordAllProperties || $isLandlordNewProperty || $isLandlordUpdateRoomAvailability || $isLandlordRemoveProperty): ?>
             <a href="/landlord" id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></a>
@@ -80,9 +76,7 @@
 <?php elseif($isAdmin): ?>
 
     <header>
-        <a href="/admin">
-            <img src="/img/logo.png" alt="Student Rooma" id="logo"/>
-        </a>
+        <a href="/"><img src="/img/logo.png" alt="Student Rooma" id="logo"/></a>
 
         <?php if($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability || $isAdminDeleteProperty): ?>
             <a href="/admin" id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></a>
