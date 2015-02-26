@@ -19,7 +19,8 @@ class Properties {
                             AND availableFrom >= STR_TO_DATE('$user->availableFrom', '%Y-%m-%d')
                             AND properties.propertyId NOT IN (SELECT propertyId FROM activity WHERE properties.propertyId=activity.propertyId AND activity.userId=$userId)
                             GROUP BY properties.propertyId
-                            $roomsQuery");
+                            $roomsQuery
+                            ORDER BY RAND()");
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $properties = $sth->fetchAll();
 
