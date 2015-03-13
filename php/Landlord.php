@@ -184,6 +184,10 @@ class Landlord {
             $i++;
         }
 
+        // Consume credit
+        $sth = $dbh->prepare("UPDATE landlords SET credits=credits-1 WHERE landlordId=" . $_SESSION['s_landlordId']);
+        $sth->execute();
+
         return $result;
     }
 
