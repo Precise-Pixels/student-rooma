@@ -68,7 +68,7 @@
     <header>
         <a href="/"><img src="/img/logo.png" alt="Student Rooma" id="logo"/></a>
 
-        <?php if($isLandlordActivity || $isLandlordAllProperties || $isLandlordNewProperty || $isLandlordUpdateRoomAvailability || $isLandlordRemoveProperty): ?>
+        <?php if($isLandlordActivity || $isLandlordAllProperties || $isLandlordNewProperty || $isLandlordBuyCredits || $isLandlordUpdateRoomAvailability || $isLandlordRemoveProperty): ?>
             <a href="/landlord" id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></a>
         <?php endif; ?>
     </header>

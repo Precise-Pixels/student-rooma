@@ -212,4 +212,14 @@ class Landlord {
 
         return $properties;
     }
+
+    static function getCredits() {
+        require('db.php');
+
+        $sth = $dbh->query("SELECT credits FROM landlords WHERE landlordId=".$_SESSION['s_landlordId']);
+        $sth->setFetchMode(PDO::FETCH_OBJ);
+        $result = $sth->fetch();
+
+        return $result->credits;
+    }
 }

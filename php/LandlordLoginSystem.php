@@ -44,7 +44,7 @@ class LandlordLoginSystem {
 
         $timestamp = date("Y-m-d H:i:s");
 
-        $sth = $dbh->prepare("INSERT INTO landlords (email, password, valid, validateRand, resetRand, name, phone, timestamp) value (:email, :password, 0, :rand1, :rand2, :name, :phone, :timestamp)");
+        $sth = $dbh->prepare("INSERT INTO landlords (email, password, valid, validateRand, resetRand, name, phone, credits, lastTransactionId, lastPaymentStatus, timestamp) value (:email, :password, 0, :rand1, :rand2, :name, :phone, 0, 'null', 'null', :timestamp)");
         $sth->bindParam(':email', $email);
         $sth->bindParam(':password', $passwordE);
         $sth->bindParam(':rand1', $rand1);
