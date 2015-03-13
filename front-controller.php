@@ -105,6 +105,7 @@ if($isGallery)    { require_once('models/model-gallery.php');    }
 
 if($isLandlordActivity)               { require_once('models/model-landlord-activity.php');                 }
 if($isLandlordAllProperties)          { require_once('models/model-landlord-all-properties.php');           }
+if($isLandlordNewProperty)            { require_once('models/model-landlord-new-property.php');             }
 if($isLandlordBuyCredits)             { require_once('models/model-landlord-buy-credits.php');              }
 if($isLandlordUpdateRoomAvailability) { require_once('models/model-landlord-update-room-availability.php'); }
 

@@ -2,18 +2,24 @@
     <div class="padding">
         <h1 class="h1--show">Add A New Property</h1>
 
+        <?php if($credits == 0): ?>
+            <p class="error">Your credit balance is currently 0. You must have credits to upload a new property.</p>
+            <p class="error">Please <a href="buy-credits">buy credits</a> before continuing.</p>
+        <?php endif; ?>
+
         <?php
         if(!empty($_POST['submit'])) {
-            require('php/Landlord.php');
-            $success = Landlord::postProperty($_POST);
+            if($credits != 0) {
+                $success = Landlord::postProperty($_POST);
 
-            if($success):
-                header('location: /landlord/all-properties');
-            else:
+                if($success):
+                    header('location: /landlord/all-properties');
+                else:
         ?>
-            <p class="error">Something went wrong.</p>
+                <p class="error">Something went wrong.</p>
         <?php
-            endif;
+                endif;
+            }
         }
         ?>
 
