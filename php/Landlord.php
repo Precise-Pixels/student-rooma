@@ -226,4 +226,14 @@ class Landlord {
 
         return $result->credits;
     }
+
+    static function getAllCredits() {
+        require('db.php');
+
+        $sth = $dbh->query("SELECT landlordId, email, name, credits FROM landlords");
+        $sth->setFetchMode(PDO::FETCH_OBJ);
+        $result = $sth->fetchAll();
+
+        return $result;
+    }
 }

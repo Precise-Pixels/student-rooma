@@ -41,6 +41,7 @@ $isAdminAllProperties             = preg_match('#^admin\/all-properties/?$#', $q
 $isAdminNewProperty               = preg_match('#^admin\/new-property/?$#', $q);
 $isAdminUpdateRoomAvailability    = preg_match('#^admin\/update-room-availability/?$#', $q);
 $isAdminDeleteProperty            = preg_match('#^admin\/delete-property/?$#', $q);
+$isAdminLandlordCredits           = preg_match('#^admin\/landlord-credits/?$#', $q);
 
 $path = preg_replace('/\/$|.php/', '', $q);
 
@@ -113,5 +114,6 @@ if($isAdminActivity)               { require_once('models/model-admin-activity.p
 if($isAdminAllProperties)          { require_once('models/model-admin-all-properties.php');           }
 if($isAdminUpdateRoomAvailability) { require_once('models/model-admin-update-room-availability.php'); }
 if($isAdminDeleteProperty)         { require_once('models/model-admin-delete-property.php');          }
+if($isAdminLandlordCredits)        { require_once('models/model-admin-landlord-credits.php');         }
 
 require_once('front-view.php');

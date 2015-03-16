@@ -71,6 +71,10 @@
         <script src="/js/page-admin-delete-property.js"></script>
     <?php endif; ?>
 
+    <?php if($isAdminLandlordCredits): ?>
+        <script src="/js/page-admin-landlord-credits.js"></script>
+    <?php endif; ?>
+
 <?php else:
 // LIVE ?>
 
@@ -137,6 +141,10 @@
 
     <?php if($isAdminDeleteProperty): ?>
         <script src="/build/page-admin-delete-property.min.js"></script>
+    <?php endif; ?>
+
+    <?php if($isAdminLandlordCredits): ?>
+        <script src="/build/page-admin-landlord-credits.min.js"></script>
     <?php endif; ?>
 
     <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-26844628-3','auto');ga('send','pageview');</script>

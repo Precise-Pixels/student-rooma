@@ -43,6 +43,7 @@
                 <p><a href="/admin/new-property" class="paragraph-a">Add a new property</a> - Use this form to add new properties to the application</p>
                 <p><a href="/admin/update-room-availability" class="paragraph-a">Update a room's availability</a> - If a room has become occupied, it's availability can be changed here</p>
                 <p><a href="/admin/delete-property" class="paragraph-a">Delete a property</a> - Completely delete a property from the app (listing, info &amp; photos)</p>
+                <p><a href="/admin/landlord-credits" class="paragraph-a">Manage landlord's credits</a> - Manually modify the number of credits a landlord has</p>
         <?php endif;
         endif; ?>
     </div>
