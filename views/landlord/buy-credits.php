@@ -11,7 +11,7 @@
                 <input type="hidden" name="return" value="http://sr.dev/landlord/buy-credits?s=success">
                 <input type="hidden" name="cancel_return" value="http://sr.dev/landlord/buy-credits?s=cancelled">
                 <input type="hidden" name="notify_url" value="https://studentrooma.co.uk/php/paypal_ipn.php?landlordId=<?= $_SESSION['s_landlordId']; ?>">
-                <input type="image" src="https://studentrooma.co.uk/img/buy-credits.png" border="0" name="submit" alt="Buy credits">
+                <input type="image" src="https://studentrooma.co.uk/img/buy-credits.png" border="0" id="buy-credits-image" name="submit" alt="Buy credits">
                 <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
             </form>
         <?php else: ?>
@@ -21,7 +21,7 @@
                 <input type="hidden" name="return" value="https://studentrooma.co.uk/landlord/buy-credits?s=success">
                 <input type="hidden" name="cancel_return" value="https://studentrooma.co.uk/landlord/buy-credits?s=cancelled">
                 <input type="hidden" name="notify_url" value="https://studentrooma.co.uk/php/paypal_ipn.php?landlordId=<?= $_SESSION['s_landlordId']; ?>">
-                <input type="image" src="https://studentrooma.co.uk/img/buy-credits.png" border="0" name="submit" alt="Buy credits">
+                <input type="image" src="https://studentrooma.co.uk/img/buy-credits.png" border="0" id="buy-credits-image" name="submit" alt="Buy credits">
                 <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
             </form>
         <?php endif; ?>
