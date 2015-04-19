@@ -143,11 +143,6 @@
                         <a href="/landlord/activity" class="paragraph-a"><div class="dashboard-item third"><h3>View user activity</h3><p>View all the activity of users interacting with your properties</p></div></a>
                         <a href="/landlord/all-properties" class="paragraph-a"><div class="dashboard-item third"><p><h3>View all properties</h3><p>View all your properties and rooms in the application</p></div></a>
                         <a href="/landlord/update-room-availability" class="paragraph-a"><div class="dashboard-item third"><p><h3>Update room availability</h3><p>If a room has become occupied, it's availability can be changed here</p></div></a>
-                    </div>
-                </section>
-
-                <section>
-                    <div class="section-padding align-center">
                         <a href="/landlord/new-property" class="paragraph-a"><div class="dashboard-item third"><h3>Add a new property</h3><p>Add properties to the app's listings'</p></div></a>
                         <a href="/landlord/remove-property" class="paragraph-a"><div class="dashboard-item third"><h3>Remove a property</h3><p>Remove a property from the app's listings</p></div></a>
                         <a href="/landlord/buy-credits" class="paragraph-a"><div class="dashboard-item third"><h3>Buy credits</h3><p>Credits are required to add properties</p></div></a>
