@@ -1,0 +1,72 @@
+.third, .half, .third-margin {
+	width: (100%/1);
+	float: left;
+}
+
+@media ($a) {
+
+	.how {
+		margin-bottom: 0;
+	}
+
+	.half {
+		width: (100%/2);
+	}
+
+	.third {
+		width: (100%/3);
+	}
+
+    .third-margin {
+        width: (94%/3);
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    .third-margin:first-of-type {
+        margin-left: 0;
+        margin-right: 2%;
+    }
+
+    .third-margin:last-of-type {
+        margin-left: 2%;
+        margin-right: 0;
+    }
+
+    p.third-margin {
+        width: (97%/1);
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    p.third-margin:first-of-type {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    p.third-margin:last-of-type {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+}
+
+@media ($b) {
+
+    p.third-margin {
+        width: (97%/3);
+        margin-left: .5%;
+        margin-right: .5%;
+    }
+
+    p.third-margin:first-of-type {
+        margin-left: 0;
+        margin-right: 1%;
+    }
+
+    p.third-margin:last-of-type {
+        margin-left: 1%;
+        margin-right: 0;
+    }
+
+}

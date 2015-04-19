@@ -17,7 +17,7 @@
 <section>
     <div id="section-two" class="section-padding align-center">
         <div class="text-right">
-            <h2>Accomodation at the price, location and style you want.</h2>
+            <h2>Accommodation at the price, location and style you want.</h2>
             <div class="phone-image">
                 <img src="/img/landing/phone2.png" alt="">
             </div>
