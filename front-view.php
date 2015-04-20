@@ -7,7 +7,7 @@
 Precise Pixels | http://precisepixels.co.uk
 https://github.com/Precise-Pixels/student-rooma
 -->
-<body<?= ($isAppIndex ? ' class="app-index"' : ''); ?><?= ($isLanding ? ' class="landing"' : ''); ?>>
+<body<?= ($isAppIndex ? ' class="app-index"' : ''); ?><?= ($isLanding ? ' class="landing"' : ''); ?><?= ($isApp ? ' class="app"' : ''); ?>>
     <?php require_once('includes/header.php'); ?>
     <?php require_once("views/$file.php"); ?>
     <?php require_once('includes/dialog.php'); ?>

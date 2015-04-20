@@ -1,5 +1,6 @@
 #dialog {
     width: 100%;
+    max-width: $mw;
     height: 100%;
     display: none;
     position: fixed;
@@ -13,7 +14,6 @@
 }
 
 .dialog--show {
-    position: fixed;
     overflow: hidden;
 }
 
@@ -73,16 +73,5 @@
     #dialog-button-y {
         width: 47%;
         float: right;
-    }
-}
-
-@media ($c) {
-    #dialog {
-        left: 600px;
-    }
-
-    .dialog--show {
-        margin-left: -600px;
-        left: 50%;
     }
 }
