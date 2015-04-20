@@ -1,6 +1,6 @@
 <section class="lgrey bg">
     <div id="section-one" class="section-padding align-center">
-        <h1 class="h1--show">Matching students to their perfect room!</h1>
+        <h1 class="h1--show h1--left">Matching students to their perfect room!</h1>
         <div class="phone-image">
             <img src="/img/landing/phone1.png" alt="">
         </div>

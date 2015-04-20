@@ -1,6 +1,9 @@
 .availability-row {
-    border-top: 1px solid $mgrey;
-    padding: 15px 0;
+    width: 100%;
+    padding: 20px;
+    margin: 10px 0;
+    float: left;
+    background: $lgrey;
 }
 
 .availability-address {
@@ -25,4 +28,13 @@
             visibility: hidden;
         }
     }
+}
+
+@media ($c) {
+
+    .availability-row {
+        width: 48%;
+        margin: 1%;
+    }
+
 }
