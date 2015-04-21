@@ -6,12 +6,12 @@
 define("DEBUG", 1);
 
 // Set to 0 once you're ready to go live
-define("USE_SANDBOX", 1);
+define("USE_SANDBOX", 0);
 
 define("LOG_FILE", "./ipn.log");
 
 // Cost of 1 credit
-define("CREDIT_COST", 10);
+define("CREDIT_COST", 0.01);
 
 // Read POST data
 // reading posted data directly from $_POST causes serialization
@@ -132,9 +132,9 @@ if (strcmp ($res, "VERIFIED") == 0) {
     }
 
 	if(($payment_status == 'Completed' || $payment_status == 'Pending') && empty($duplicateTransaction)) {
-		$creditsBought = (int)$payment_amount / CREDIT_COST;
+		$creditsBought = (float)$payment_amount / CREDIT_COST;
 		if(DEBUG == true) {
-			error_log(date('[Y-m-d H:i e] '). "SUCCESS!!! " . $creditsBought . PHP_EOL, 3, LOG_FILE);
+			error_log(date('[Y-m-d H:i e] '). "SUCCESS!!! " . PHP_EOL, 3, LOG_FILE);
 			error_log(date('[Y-m-d H:i e] '). "Credits bought: " . $creditsBought . PHP_EOL, 3, LOG_FILE);
 			error_log(date('[Y-m-d H:i e] '). "landlordId: " . $_GET['landlordId'] . PHP_EOL, 3, LOG_FILE);
 		}
