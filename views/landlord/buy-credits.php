@@ -27,7 +27,7 @@
         <?php endif; ?>
 
         <?php if(isset($_GET['s']) && $_GET['s'] === 'success'): ?>
-            <p class="success">You have successfully purchased 1 credit.</p>
+            <p class="success">You have successfully purchased credits.</p>
             <p class="success">Although usually immediate, the transaction may take some time to propagate to our systems. If your credit balance has not increased after 1 hour, please contact <a href="mailto:support@studentrooma.co.uk">support@studentrooma.co.uk</a>.</p>
         <?php endif; ?>
 
