@@ -20,7 +20,7 @@ class Landlord {
     static function getAllProperties() {
         require('db.php');
 
-        $sth = $dbh->query("SELECT propertyId, location, addressNumber, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp FROM properties WHERE landlordId=".$_SESSION['s_landlordId']." ORDER BY propertyId DESC");
+        $sth = $dbh->query("SELECT propertyId, location, addressNumber, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, active, timestamp FROM properties WHERE landlordId=".$_SESSION['s_landlordId']." ORDER BY propertyId DESC");
         $sth->setFetchMode(PDO::FETCH_OBJ);
         $properties = $sth->fetchAll();
 
