@@ -30,7 +30,7 @@ $isLandlordResetPassword          = preg_match('#^landlord\/reset-password/?$#',
 $isLandlordActivity               = preg_match('#^landlord\/activity/?$#', $q);
 $isLandlordAllProperties          = preg_match('#^landlord\/all-properties/?$#', $q);
 $isLandlordNewProperty            = preg_match('#^landlord\/new-property/?$#', $q);
-$isLandlordBuyCredits             = preg_match('#^landlord\/buy-credits/?$#', $q);
+$isLandlordPayment                = preg_match('#^landlord\/payment/?$#', $q);
 $isLandlordUpdateRoomAvailability = preg_match('#^landlord\/update-room-availability/?$#', $q);
 $isLandlordRemoveProperty         = preg_match('#^landlord\/remove-property/?$#', $q);
 
@@ -107,7 +107,6 @@ if($isGallery)    { require_once('models/model-gallery.php');    }
 if($isLandlordActivity)               { require_once('models/model-landlord-activity.php');                 }
 if($isLandlordAllProperties)          { require_once('models/model-landlord-all-properties.php');           }
 if($isLandlordNewProperty)            { require_once('models/model-landlord-new-property.php');             }
-if($isLandlordBuyCredits)             { require_once('models/model-landlord-buy-credits.php');              }
 if($isLandlordUpdateRoomAvailability) { require_once('models/model-landlord-update-room-availability.php'); }
 
 if($isAdminActivity)               { require_once('models/model-admin-activity.php');                 }

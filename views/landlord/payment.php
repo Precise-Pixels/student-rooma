@@ -1,8 +1,9 @@
 <main>
     <div class="padding">
-        <h1 class="h1--show">Buy Credits</h1>
+        <h1 class="h1--show">Payment</h1>
 
-         <p>Credit balance: <?= $credits; ?></p>
+        <p>Your property has been successfully added to our system but is not currently active.</p>
+        <p>Activate your property by making your payment.</p>
 
         <?php if($_SERVER['SERVER_NAME'] == 'sr.dev'): ?>
             <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -10,7 +11,7 @@
                 <input type="hidden" name="hosted_button_id" value="K5R6FE6M3RYKU">
                 <input type="hidden" name="return" value="http://sr.dev/landlord/buy-credits?s=success">
                 <input type="hidden" name="cancel_return" value="http://sr.dev/landlord/buy-credits?s=cancelled">
-                <input type="hidden" name="notify_url" value="https://studentrooma.co.uk/php/paypal_ipn.php?landlordId=<?= $_SESSION['s_landlordId']; ?>">
+                <input type="hidden" name="notify_url" value="https://studentrooma.co.uk/php/paypal_ipn.php?propertyId=<?= $propertyId; ?>">
                 <input type="image" src="https://studentrooma.co.uk/img/buy-credits.png" border="0" id="buy-credits-image" name="submit" alt="Buy credits">
                 <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
             </form>
@@ -20,7 +21,7 @@
                 <input type="hidden" name="hosted_button_id" value="C3C72BGXU9LFN">
                 <input type="hidden" name="return" value="https://studentrooma.co.uk/landlord/buy-credits?s=success">
                 <input type="hidden" name="cancel_return" value="https://studentrooma.co.uk/landlord/buy-credits?s=cancelled">
-                <input type="hidden" name="notify_url" value="https://studentrooma.co.uk/php/paypal_ipn.php?landlordId=<?= $_SESSION['s_landlordId']; ?>">
+                <input type="hidden" name="notify_url" value="https://studentrooma.co.uk/php/paypal_ipn.php?propertyId=<?= $propertyId; ?>">
                 <input type="image" src="https://studentrooma.co.uk/img/buy-credits.png" border="0" id="buy-credits-image" name="submit" alt="Buy credits">
                 <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
             </form>

@@ -56,7 +56,7 @@ class Landlord {
         $info = addslashes($post['info']);
         $timestamp = date("Y-m-d H:i:s");
 
-        $sth = $dbh->prepare("INSERT INTO properties (landlordId, location, addressNumber, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, timestamp) VALUE (".$_SESSION['s_landlordId'].", :location, :addressNumber, :address, :distanceUKC, :distanceCCCU, :distanceUKM, :noOfRooms, :availableFrom, :info, :timestamp)");
+        $sth = $dbh->prepare("INSERT INTO properties (landlordId, location, addressNumber, address, distanceUKC, distanceCCCU, distanceUKM, noOfRooms, availableFrom, info, active, timestamp) VALUE (".$_SESSION['s_landlordId'].", :location, :addressNumber, :address, :distanceUKC, :distanceCCCU, :distanceUKM, :noOfRooms, :availableFrom, :info, 0, :timestamp)");
         $sth->bindParam(':location', $post['location']);
         $sth->bindParam(':addressNumber', $post['address-number']);
         $sth->bindParam(':address', $post['address']);
@@ -184,10 +184,6 @@ class Landlord {
             $i++;
         }
 
-        // Consume credit
-        $sth = $dbh->prepare("UPDATE landlords SET credits=credits-1 WHERE landlordId=" . $_SESSION['s_landlordId']);
-        $sth->execute();
-
         return $result;
     }
 
@@ -215,25 +211,5 @@ class Landlord {
         }
 
         return $properties;
-    }
-
-    static function getCredits() {
-        require('db.php');
-
-        $sth = $dbh->query("SELECT credits FROM landlords WHERE landlordId=".$_SESSION['s_landlordId']);
-        $sth->setFetchMode(PDO::FETCH_OBJ);
-        $result = $sth->fetch();
-
-        return $result->credits;
-    }
-
-    static function getAllCredits() {
-        require('db.php');
-
-        $sth = $dbh->query("SELECT landlordId, email, name, credits FROM landlords");
-        $sth->setFetchMode(PDO::FETCH_OBJ);
-        $result = $sth->fetchAll();
-
-        return $result;
     }
 }

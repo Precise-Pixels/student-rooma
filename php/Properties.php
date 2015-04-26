@@ -17,6 +17,7 @@ class Properties {
                             INNER JOIN rooms ON properties.propertyId=rooms.propertyId
                             WHERE location = '$user->lookingIn'
                             AND availableFrom >= STR_TO_DATE('$user->availableFrom', '%Y-%m-%d')
+                            AND active = 1
                             AND properties.propertyId NOT IN (SELECT propertyId FROM activity WHERE properties.propertyId=activity.propertyId AND activity.userId=$userId)
                             GROUP BY properties.propertyId
                             $roomsQuery
