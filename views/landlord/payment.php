@@ -2,7 +2,9 @@
     <div class="padding">
         <h1 class="h1--show">Payment</h1>
 
-        <?php if(isset($_GET['s']) && $_GET['s'] === 'success'): ?>
+        <?php if($active): ?>
+            <p>This property is already active.</p>
+        <?php elseif(isset($_GET['s']) && $_GET['s'] === 'success'): ?>
             <p class="success">You have successfully activated your new property.</p>
             <p><a href="/landlord/all-properties">Click here</a> to see all of your properties.</p>
             <p class="success">Although usually immediate, the transaction may take some time to propagate to our systems. If your property has not been activated after 1 hour, please contact <a href="mailto:support@studentrooma.co.uk">support@studentrooma.co.uk</a>.</p>

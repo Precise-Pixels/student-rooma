@@ -212,4 +212,14 @@ class Landlord {
 
         return $properties;
     }
+
+    static function isPropertyActive() {
+        require('db.php');
+
+        $sth = $dbh->query("SELECT active FROM properties WHERE propertyId=".$_GET['propertyId']);
+        $sth->setFetchMode(PDO::FETCH_OBJ);
+        $property = $sth->fetch();
+
+        return $property->active;
+    }
 }
