@@ -78,7 +78,7 @@
     <header>
         <a href="/"><img src="/img/logo.png" alt="Student Rooma" id="logo"/></a>
 
-        <?php if($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability || $isAdminDeleteProperty || $isAdminLandlordCredits): ?>
+        <?php if($isAdminActivity || $isAdminAllProperties || $isAdminNewProperty || $isAdminUpdateRoomAvailability || $isAdminDeleteProperty): ?>
             <a href="/admin" id="header-btn-l"><i class="ico-arrow-back ico--centre"><span>Back</span></i></a>
         <?php endif; ?>
     </header>
