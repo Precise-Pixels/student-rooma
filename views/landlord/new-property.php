@@ -4,10 +4,10 @@
 
         <?php
         if(!empty($_POST['submit'])) {
-            $success = Landlord::postProperty($_POST);
+            $propertyId = Landlord::postProperty($_POST);
 
-            if($success):
-                header('location: /landlord/payment');
+            if($propertyId):
+                header("location: /landlord/payment?propertyId=$propertyId");
             else:
         ?>
             <p class="error">Something went wrong.</p>

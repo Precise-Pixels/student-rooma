@@ -184,7 +184,7 @@ class Landlord {
             $i++;
         }
 
-        return $result;
+        return $propertyId;
     }
 
     static function getProperties() {
