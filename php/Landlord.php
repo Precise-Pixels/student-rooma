@@ -216,10 +216,14 @@ class Landlord {
     static function isPropertyActive() {
         require('db.php');
 
-        $sth = $dbh->query("SELECT active FROM properties WHERE propertyId=".$_GET['propertyId']);
-        $sth->setFetchMode(PDO::FETCH_OBJ);
-        $property = $sth->fetch();
+        if(isset($_GET['propertyId'])) {
+            $sth = $dbh->query("SELECT active FROM properties WHERE propertyId=".$_GET['propertyId']);
+            $sth->setFetchMode(PDO::FETCH_OBJ);
+            $property = $sth->fetch();
 
-        return $property->active;
+            return $property->active;
+        } else {
+            return false;
+        }
     }
 }
