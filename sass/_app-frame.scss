@@ -1,4 +1,4 @@
-body {
+body.app {
     background: url(/img/frame.png) no-repeat fixed center 30px;
     background-size: 402px;
 }
@@ -27,5 +27,18 @@ body {
     #dialog {
         height: 640px;
         top: 100px;
+    }
+}
+
+.app-index #app-frame {
+    height: 480px;
+    top: 260px;
+
+    header {
+        position: fixed;
+    }
+
+    main {
+        padding-top: 40px;
     }
 }

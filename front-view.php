@@ -7,7 +7,7 @@
 Precise Pixels | http://precisepixels.co.uk
 https://github.com/Precise-Pixels/student-rooma
 -->
-<body<?= ($isAppIndex ? ' class="app-index"' : ''); ?><?= ($isLanding ? ' class="landing"' : ''); ?><?= ($isApp ? ' class="app"' : ''); ?>>
+<body class="<?= ($isAppIndex ? ' app-index' : ''); ?><?= ($isLanding ? ' landing' : ''); ?><?= ($isApp ? ' app' : ''); ?>">
     <?php if($isApp): ?>
         <div id="app-frame">
     <?php endif; ?>
