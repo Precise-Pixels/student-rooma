@@ -1,0 +1,31 @@
+body {
+    background: url(/img/frame.png) no-repeat fixed center 30px;
+    background-size: 402px;
+}
+
+#app-frame {
+    width: 360px;
+    height: 600px;
+    position: relative;
+    top: 140px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    header {
+        top: 100px;
+    }
+
+    main {
+        padding: 0;
+    }
+
+    .decision-buttons {
+        top: 680px;
+        bottom: auto;
+    }
+
+    #dialog {
+        height: 640px;
+        top: 100px;
+    }
+}
