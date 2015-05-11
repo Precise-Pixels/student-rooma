@@ -3,6 +3,10 @@ body {
     background-size: 402px;
 }
 
+body.app {
+    max-width: $mw;
+}
+
 #app-frame {
     width: 360px;
     height: 600px;
@@ -28,4 +32,33 @@ body {
         height: 640px;
         top: 100px;
     }
+}
+
+.decision-buttons--decide,
+.decision-buttons--gallery {
+    max-width: $mw;
+}
+
+#dialog {
+    max-width: $mw;
+}
+
+.app header {
+    max-width: $mw;
+}
+
+.property--book {
+    max-width: $mw;
+}
+
+.property--star {
+    max-width: $mw;
+}
+
+.property--no {
+    max-width: $mw;
+}
+
+.property--next {
+    max-width: $mw;
 }

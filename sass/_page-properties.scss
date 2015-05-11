@@ -13,28 +13,28 @@
 }
 
 .property--book {
-    max-width: $mw;
+    max-width: 1200px;
     position: fixed;
     z-index: 8;
     animation: property--book .6s ease-in forwards;
 }
 
 .property--star {
-    max-width: $mw;
+    max-width: 1200px;
     position: fixed;
     z-index: 8;
     animation: property--star .6s ease-in forwards;
 }
 
 .property--no {
-    max-width: $mw;
+    max-width: 1200px;
     position: fixed;
     z-index: 8;
     animation: property--no .6s ease-in forwards;
 }
 
 .property--next {
-    max-width: $mw;
+    max-width: 1200px;
     position: fixed;
     display: block;
     animation: property--next .6s ease-out forwards;
