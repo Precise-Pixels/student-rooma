@@ -1,44 +1,79 @@
-body.app {
-    background: url(/img/frame.png) no-repeat fixed center 30px;
-    background-size: 402px;
-}
-
-#app-frame {
-    width: 360px;
-    height: 600px;
-    position: relative;
-    top: 140px;
-    overflow-x: hidden;
-    overflow-y: auto;
-
-    header {
-        top: 100px;
+@media (min-width: 1200px) and (min-height: 800px) {
+    body {
+        background: url(/img/frame.png) no-repeat fixed center 30px;
+        background-size: 402px;
     }
 
-    main {
-        padding: 0;
+    body.app {
+        max-width: $mw;
     }
 
-    .decision-buttons {
-        top: 680px;
-        bottom: auto;
+    #app-frame {
+        width: 360px;
+        height: 600px;
+        position: relative;
+        top: 140px;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        header {
+            top: 100px;
+        }
+
+        main {
+            padding: 0;
+        }
+
+        .decision-buttons {
+            top: 680px;
+            bottom: auto;
+        }
+
+        #dialog {
+            height: 640px;
+            top: 100px;
+        }
+    }
+
+    .app-index #app-frame {
+        height: 480px;
+        top: 260px;
+
+        header {
+            position: fixed;
+        }
+
+        main {
+            padding-top: 40px;
+        }
+    }
+
+    .decision-buttons--decide,
+    .decision-buttons--gallery {
+        max-width: $mw;
     }
 
     #dialog {
-        height: 640px;
-        top: 100px;
-    }
-}
-
-.app-index #app-frame {
-    height: 480px;
-    top: 260px;
-
-    header {
-        position: fixed;
+        max-width: $mw;
     }
 
-    main {
-        padding-top: 40px;
+    .app header {
+        max-width: $mw;
+    }
+
+    .property--book {
+        max-width: $mw;
+    }
+
+    .property--star {
+        max-width: $mw;
+    }
+
+    .property--no {
+        max-width: $mw;
+    }
+
+    .property--next {
+        max-width: $mw;
     }
 }
