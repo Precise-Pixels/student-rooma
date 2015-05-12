@@ -4,6 +4,9 @@ RewriteCond %{SERVER_NAME} !sr.dev
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{SERVER_NAME}/$1 [R,L]
 
+RewriteCond %{HTTP_HOST} ^www.studentrooma.co.uk$ [NC]
+RewriteRule ^(.*)$ http://studentrooma.co.uk/$1 [R=301,L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ front-controller.php?q=$1 [QSA]
 
