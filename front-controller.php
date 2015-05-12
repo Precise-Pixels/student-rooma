@@ -30,7 +30,7 @@ $isLandlordResetPassword          = preg_match('#^landlord\/reset-password/?$#',
 $isLandlordActivity               = preg_match('#^landlord\/activity/?$#', $q);
 $isLandlordAllProperties          = preg_match('#^landlord\/all-properties/?$#', $q);
 $isLandlordNewProperty            = preg_match('#^landlord\/new-property/?$#', $q);
-$isLandlordBuyCredits             = preg_match('#^landlord\/buy-credits/?$#', $q);
+$isLandlordPayment                = preg_match('#^landlord\/payment/?$#', $q);
 $isLandlordUpdateRoomAvailability = preg_match('#^landlord\/update-room-availability/?$#', $q);
 $isLandlordRemoveProperty         = preg_match('#^landlord\/remove-property/?$#', $q);
 
@@ -41,7 +41,6 @@ $isAdminAllProperties             = preg_match('#^admin\/all-properties/?$#', $q
 $isAdminNewProperty               = preg_match('#^admin\/new-property/?$#', $q);
 $isAdminUpdateRoomAvailability    = preg_match('#^admin\/update-room-availability/?$#', $q);
 $isAdminDeleteProperty            = preg_match('#^admin\/delete-property/?$#', $q);
-$isAdminLandlordCredits           = preg_match('#^admin\/landlord-credits/?$#', $q);
 
 $path = preg_replace('/\/$|.php/', '', $q);
 
@@ -107,13 +106,12 @@ if($isGallery)    { require_once('models/model-gallery.php');    }
 if($isLandlordActivity)               { require_once('models/model-landlord-activity.php');                 }
 if($isLandlordAllProperties)          { require_once('models/model-landlord-all-properties.php');           }
 if($isLandlordNewProperty)            { require_once('models/model-landlord-new-property.php');             }
-if($isLandlordBuyCredits)             { require_once('models/model-landlord-buy-credits.php');              }
+if($isLandlordPayment)                { require_once('models/model-landlord-payment.php');                  }
 if($isLandlordUpdateRoomAvailability) { require_once('models/model-landlord-update-room-availability.php'); }
 
 if($isAdminActivity)               { require_once('models/model-admin-activity.php');                 }
 if($isAdminAllProperties)          { require_once('models/model-admin-all-properties.php');           }
 if($isAdminUpdateRoomAvailability) { require_once('models/model-admin-update-room-availability.php'); }
 if($isAdminDeleteProperty)         { require_once('models/model-admin-delete-property.php');          }
-if($isAdminLandlordCredits)        { require_once('models/model-admin-landlord-credits.php');         }
 
 require_once('front-view.php');

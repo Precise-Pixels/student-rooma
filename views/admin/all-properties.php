@@ -14,6 +14,7 @@
                     <th class="th--s">No. of Rooms</th>
                     <th class="th--m">Available From</th>
                     <th class="th--l">Info</th>
+                    <th class="th--xs">Active</th>
                     <th class="th--m">Timestamp</th>
                     <th class="th--l">Rooms</th>
                     <th class="th--l">General House Images</th>
@@ -31,6 +32,10 @@
                         <td><?= $property->noOfRooms; ?></td>
                         <td><?= $property->availableFrom; ?></td>
                         <td><?= nl2br(stripcslashes($property->info)); ?></td>
+                        <td>
+                            <input type="checkbox" id="checkbox-<?= $property->propertyId; ?>" class="active" data-property-id="<?= $property->propertyId; ?>"<?= ($property->active ? ' checked' : ''); ?>/>
+                            <label for="checkbox-<?= $property->propertyId; ?>" class="checkbox-style"></label>
+                        </td>
                         <td><?= $property->timestamp; ?></td>
                         <td>
                             <?php foreach($property->rooms as $room): ?>
