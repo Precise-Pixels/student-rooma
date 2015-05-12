@@ -2,24 +2,17 @@
     <div class="padding">
         <h1 class="h1--show">Add A New Property</h1>
 
-        <?php if($credits == 0): ?>
-            <p class="error">Your credit balance is currently 0. You must have credits to upload a new property.</p>
-            <p class="error">Please <a href="buy-credits">buy credits</a> before continuing.</p>
-        <?php endif; ?>
-
         <?php
         if(!empty($_POST['submit'])) {
-            if($credits != 0) {
-                $success = Landlord::postProperty($_POST);
+            $propertyId = Landlord::postProperty($_POST);
 
-                if($success):
-                    header('location: /landlord/all-properties');
-                else:
+            if($propertyId):
+                header("location: /landlord/payment?propertyId=$propertyId");
+            else:
         ?>
-                <p class="error">Something went wrong.</p>
+            <p class="error">Something went wrong.</p>
         <?php
-                endif;
-            }
+            endif;
         }
         ?>
 
@@ -86,6 +79,7 @@
             </div>
 
             <div class="form-row">
+            <label>Payment will be arranged on the next page.</label>
                 <input type="submit" id="submit" name="submit" value="Submit"/>
             </div>
         </form>

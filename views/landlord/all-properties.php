@@ -14,6 +14,7 @@
                     <th class="th--s">No. of Rooms</th>
                     <th class="th--m">Available From</th>
                     <th class="th--l">Info</th>
+                    <th class="th--xs">Active</th>
                     <th class="th--m">Timestamp</th>
                     <th class="th--l">Rooms</th>
                     <th class="th--l">General House Images</th>
@@ -31,6 +32,7 @@
                         <td><?= $property->noOfRooms; ?></td>
                         <td><?= $property->availableFrom; ?></td>
                         <td><?= nl2br(stripcslashes($property->info)); ?></td>
+                        <td><?= ($property->active ? 'Y' : 'N<br><a href="/landlord/payment?propertyId=' . $property->propertyId . '">Activate</a>'); ?></td>
                         <td><?= $property->timestamp; ?></td>
                         <td>
                             <?php foreach($property->rooms as $room): ?>

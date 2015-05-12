@@ -10,8 +10,8 @@ define("USE_SANDBOX", 1);
 
 define("LOG_FILE", "./ipn.log");
 
-// Cost of 1 credit
-define("CREDIT_COST", 10);
+// Cost
+define("COST", 0.01);
 
 // Read POST data
 // reading posted data directly from $_POST causes serialization
@@ -131,14 +131,15 @@ if (strcmp ($res, "VERIFIED") == 0) {
     	error_log(date('[Y-m-d H:i e] '). "TEST: $payment_status - $payment_amount - $txn_id" . PHP_EOL, 3, LOG_FILE);
     }
 
-	if(($payment_status == 'Completed' || $payment_status == 'Pending') && empty($duplicateTransaction)) {
-		$creditsBought = (int)$payment_amount / CREDIT_COST;
+	if(($payment_status == 'Completed' || $payment_status == 'Pending') && $payment_amount == COST && empty($duplicateTransaction)) {
 		if(DEBUG == true) {
-			error_log(date('[Y-m-d H:i e] '). "SUCCESS!!! " . $creditsBought . PHP_EOL, 3, LOG_FILE);
-			error_log(date('[Y-m-d H:i e] '). "Credits bought: " . $creditsBought . PHP_EOL, 3, LOG_FILE);
+			error_log(date('[Y-m-d H:i e] '). "SUCCESS!!! " . PHP_EOL, 3, LOG_FILE);
 			error_log(date('[Y-m-d H:i e] '). "landlordId: " . $_GET['landlordId'] . PHP_EOL, 3, LOG_FILE);
 		}
-		$sth = $dbh->prepare("UPDATE landlords SET credits=credits+$creditsBought, lastTransactionId='$txn_id', lastPaymentStatus='$payment_status' WHERE landlordId=" . $_GET['landlordId']);
+		$sth = $dbh->prepare("UPDATE landlords SET lastTransactionId='$txn_id', lastPaymentStatus='$payment_status' WHERE landlordId=" . $_GET['landlordId']);
+        $sth->execute();
+
+        $sth = $dbh->prepare("UPDATE properties SET active=1 WHERE propertyId=" . $_GET['propertyId']);
         $sth->execute();
 	}
 	

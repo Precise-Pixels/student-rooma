@@ -1,6 +1,6 @@
 <section id="landlord" class="lgrey">
     <div class="section-padding align-center">
-        <h1 class="h1--show">Fill your room fast!</h1>
+        <h1 class="h1--show h1--left">Fill your room fast!</h1>
         <h2>The smart landlord advertising app</h2>
         <a href="/landlord/#create-an-account"><button class="button-large">SIGN UP</button></a>
         <div class="landlord-link">
