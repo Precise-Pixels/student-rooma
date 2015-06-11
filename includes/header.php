@@ -18,7 +18,7 @@
 
         <header>
             <a href="/"><img src="/img/logo.png" alt="Student Rooma" id="logo"/></a>
-            <p id="slogan">Find your perfect room in Canterbury &amp; Medway</p>
+            <p id="slogan">Find your perfect room</p>
         </header>
 
     <?php else: ?>

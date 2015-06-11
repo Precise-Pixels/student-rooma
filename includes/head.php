@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<meta name="description" content="Student Rooma - Find your perfect room in Canterbury &amp; Medway"/>
+<meta name="description" content="Student Rooma - Find your perfect room"/>
 <meta name="author" content="Precise Pixels"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 <title>Student Rooma</title>
@@ -31,7 +31,7 @@
 <meta property="og:url" content="http://studentrooma.co.uk"/>
 <meta property="og:image" content="http://studentrooma.co.uk/img/meta-logo.png"/>
 <meta property="og:site_name" content="Student Rooma"/>
-<meta property="og:description" content="Student Rooma - Find your perfect room in Canterbury &amp; Medway"/>
+<meta property="og:description" content="Student Rooma - Find your perfect room"/>
 
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
