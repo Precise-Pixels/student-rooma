@@ -3,16 +3,16 @@
   * https://github.com/Precise-Pixels/student-rooma
   */
 
-var credits = document.getElementsByClassName('credits');
+var actives = document.getElementsByClassName('active');
 
-for(var i = 0, l = credits.length; i < l; i++) {
-    credits[i].addEventListener('change', changeCredits);
+for(var i = 0, l = actives.length; i < l; i++) {
+    actives[i].addEventListener('change', changeActive);
 }
 
-function changeCredits(e) {
-    var data = 'landlordId=' + e.target.getAttribute('data-landlord-id') + '&credits=' + e.target.value;
+function changeActive(e) {
+    var data = 'propertyId=' + e.target.getAttribute('data-property-id') + '&active=' + +e.target.checked;
     var request = new XMLHttpRequest();
-    request.open('POST', '/php/updateLandlordCredits.php', true);
+    request.open('POST', '/php/updatePropertyActive.php', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     request.send(data);
 
