@@ -19,7 +19,7 @@
     <?php endif; ?>
 <?php endif; ?>
 
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
 <link rel="shortcut icon" href="/img/favicon.ico"/>
 <link rel="apple-touch-icon-precomposed" href="/img/touchicon-57.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/touchicon-72.png">
@@ -28,8 +28,8 @@
 
 <meta property="og:title" content="Student Rooma"/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="http://studentrooma.co.uk"/>
-<meta property="og:image" content="http://studentrooma.co.uk/img/meta-logo.png"/>
+<meta property="og:url" content="https://sr.precisepixels.co.uk"/>
+<meta property="og:image" content="https://sr.precisepixels.co.uk/img/meta-logo.png"/>
 <meta property="og:site_name" content="Student Rooma"/>
 <meta property="og:description" content="Student Rooma - Find your perfect room"/>
 
